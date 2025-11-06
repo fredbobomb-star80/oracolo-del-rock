@@ -36,24 +36,37 @@
   <!-- Qui ci sono TUTTI gli ID (lo generi al passo 3) -->
   <script src="ids.js"></script>
 
-  <script>
-    function pickId(){
-      const arr = (window.ORACOLO_IDS||[]);
-      return arr.length ? arr[Math.floor(Math.random()*arr.length)] : null;
-    }
-    function loadRandom(){
-      const id = pickId();
-      const frame = document.getElementById('yt');
-      if(!id){
-        frame.replaceWith(document.createTextNode("Nessun ID caricato (ids.js)."));
-        return;
-      }
-      frame.src = `https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1`;
-      document.getElementById('open').href = `https://www.youtube.com/watch?v=${id}`;
-    }
-    document.getElementById('new').addEventListener('click', loadRandom);
-    loadRandom();
-  </script>
+<script>
+const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx"; // la tua playlist
+const PLAYLIST_URL = `https://www.youtube.com/playlist?list=${PLAYLIST_ID}`;
+const iframe = document.getElementById("player");
+
+async function pickRandom() {
+  try {
+    const res = await fetch(`https://www.youtube.com/playlist?list=${PLAYLIST_ID}`);
+    const text = await res.text();
+
+    // Estrae gli ID video dal codice HTML della playlist
+    const matches = [...text.matchAll(/"videoId":"(.*?)"/g)].map(m => m[1]);
+    const unique = [...new Set(matches)];
+    if (!unique.length) throw new Error("Nessun video trovato nella playlist!");
+
+    const id = unique[Math.floor(Math.random() * unique.length)];
+    iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+    document.getElementById("ytlink").href = `${PLAYLIST_URL}`;
+  } catch (err) {
+    console.error(err);
+    iframe.src = "";
+    alert("Errore nel caricamento della playlist. Riprova più tardi!");
+  }
+}
+
+document.getElementById("new").addEventListener("click", pickRandom);
+pickRandom(); // parte subito al caricamento
+</script>
+
+  
 </body>
 </html>
+
 
