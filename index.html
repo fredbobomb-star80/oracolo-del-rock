@@ -35,37 +35,93 @@
 
 
 <script>
-   const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx"; // la tua playlist
-   const PLAYLIST_URL = `https://www.youtube.com/playlist?list=${PLAYLIST_ID}`;
-   const iframe = document.getElementById("player");
+// === CONFIG ===
+const API_KEY     = "YOUR_API_KEY"; // <-- metti la tua
+const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx"; // tua playlist
+const PAGE_SIZE   = 50; // massimo consentito dall'API
 
-   async function pickRandom() {
-     try {
-       const res = await fetch(`https://www.youtube.com/playlist?list=${PLAYLIST_ID}`);
-       const text = await res.text();
+// Carico la YouTube IFrame API
+(function(){
+  const s=document.createElement('script');
+  s.src="https://www.youtube.com/iframe_api";
+  document.head.appendChild(s);
+})();
 
-       // Estrae gli ID video dal codice HTML della playlist
-       const matches = [...text.matchAll(/"videoId":"(.*?)"/g)].map(m => m[1]);
-       const unique = [...new Set(matches)];
-       if (!unique.length) throw new Error("Nessun video trovato nella playlist!");
+let player = null;
+let allIds = [];
 
-       const id = unique[Math.floor(Math.random() * unique.length)];
-       iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
-       document.getElementById("ytlink").href = `${PLAYLIST_URL}`;
-     } catch (err) {
-       console.error(err);
-       iframe.src = "";
-       alert("Errore nel caricamento della playlist. Riprova più tardi!");
-     }
-   }
+window.onYouTubeIframeAPIReady = () => {
+  player = new YT.Player('yt', {
+    height: '390',
+    width: '640',
+    playerVars: { modestbranding:1, rel:0 },
+    events: { onReady: onReady }
+  });
+};
 
-   document.getElementById("new").addEventListener("click", pickRandom);
-   pickRandom(); // parte subito al caricamento
+function onReady(){
+  document.getElementById("new").addEventListener("click", playRandom);
+  boot();
+}
+
+async function boot(){
+  try{
+    allIds = await fetchAllPlaylistIds(PLAYLIST_ID);
+    if(!allIds.length) throw new Error("Playlist vuota o non accessibile");
+    playRandom(); // parte subito
+  }catch(err){
+    console.error(err);
+    alert("Errore nel caricare la playlist. Controlla API key e visibilità playlist.");
+  }
+}
+
+// Scarica TUTTE le pagine della playlist
+async function fetchAllPlaylistIds(playlistId){
+  let ids = [];
+  let pageToken = "";
+  do{
+    const url = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
+    url.searchParams.set("key", API_KEY);
+    url.searchParams.set("part", "snippet");
+    url.searchParams.set("playlistId", playlistId);
+    url.searchParams.set("maxResults", PAGE_SIZE);
+    if(pageToken) url.searchParams.set("pageToken", pageToken);
+
+    const res = await fetch(url.toString());
+    if(!res.ok) throw new Error("HTTP "+res.status);
+    const data = await res.json();
+
+    const batch = (data.items||[])
+      .map(i => i?.snippet?.resourceId?.videoId)
+      .filter(Boolean);
+
+    ids.push(...batch);
+    pageToken = data.nextPageToken || "";
+  } while(pageToken);
+
+  // Filtra eventuali duplicati
+  return [...new Set(ids)];
+}
+
+function playRandom(){
+  if(!player || !allIds.length) return;
+  const idx = Math.floor(Math.random() * allIds.length);
+  const id  = allIds[idx];
+
+  player.loadVideoById(id);
+  // aggiorna il link "Apri su YouTube"
+  const open = document.getElementById("open");
+  if(open) open.href = `https://www.youtube.com/watch?v=${id}&list=${PLAYLIST_ID}`;
+}
 </script>
+
+
+
 
   
 </body>
 </html>
+
 
 
 
