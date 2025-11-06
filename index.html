@@ -37,36 +37,37 @@
   <script src="ids.js"></script>
 
 <script>
-const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx"; // la tua playlist
-const PLAYLIST_URL = `https://www.youtube.com/playlist?list=${PLAYLIST_ID}`;
-const iframe = document.getElementById("player");
+   const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx"; // la tua playlist
+   const PLAYLIST_URL = `https://www.youtube.com/playlist?list=${PLAYLIST_ID}`;
+   const iframe = document.getElementById("player");
 
-async function pickRandom() {
-  try {
-    const res = await fetch(`https://www.youtube.com/playlist?list=${PLAYLIST_ID}`);
-    const text = await res.text();
+   async function pickRandom() {
+     try {
+       const res = await fetch(`https://www.youtube.com/playlist?list=${PLAYLIST_ID}`);
+       const text = await res.text();
 
-    // Estrae gli ID video dal codice HTML della playlist
-    const matches = [...text.matchAll(/"videoId":"(.*?)"/g)].map(m => m[1]);
-    const unique = [...new Set(matches)];
-    if (!unique.length) throw new Error("Nessun video trovato nella playlist!");
+       // Estrae gli ID video dal codice HTML della playlist
+       const matches = [...text.matchAll(/"videoId":"(.*?)"/g)].map(m => m[1]);
+       const unique = [...new Set(matches)];
+       if (!unique.length) throw new Error("Nessun video trovato nella playlist!");
 
-    const id = unique[Math.floor(Math.random() * unique.length)];
-    iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
-    document.getElementById("ytlink").href = `${PLAYLIST_URL}`;
-  } catch (err) {
-    console.error(err);
-    iframe.src = "";
-    alert("Errore nel caricamento della playlist. Riprova più tardi!");
-  }
-}
+       const id = unique[Math.floor(Math.random() * unique.length)];
+       iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+       document.getElementById("ytlink").href = `${PLAYLIST_URL}`;
+     } catch (err) {
+       console.error(err);
+       iframe.src = "";
+       alert("Errore nel caricamento della playlist. Riprova più tardi!");
+     }
+   }
 
-document.getElementById("new").addEventListener("click", pickRandom);
-pickRandom(); // parte subito al caricamento
+   document.getElementById("new").addEventListener("click", pickRandom);
+   pickRandom(); // parte subito al caricamento
 </script>
 
   
 </body>
 </html>
+
 
 
