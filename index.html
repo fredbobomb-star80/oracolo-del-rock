@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chiedilo all’oracolo del Rock — risposta casuale</title>
+  <style>
+    body{margin:0;background:#0b0b0f;color:#eee;font-family:system-ui,Arial,sans-serif}
+    .wrap{max-width:920px;margin:32px auto;padding:0 16px;text-align:center}
+    h1{font-size:28px;margin:8px 0 6px}
+    p{opacity:.85}
+    iframe{width:100%;aspect-ratio:16/9;border:0;border-radius:12px;background:#111}
+    .btns{display:flex;gap:10px;justify-content:center;margin:16px 0;flex-wrap:wrap}
+    button,a.btn{padding:10px 14px;border-radius:10px;border:1px solid #333;background:#1b1b22;color:#eee;cursor:pointer}
+    button:hover,a.btn:hover{background:#262632}
+    .note{font-size:13px;opacity:.7;margin-top:8px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Chiedilo all’oracolo del Rock — risposta casuale</h1>
+    <p>Pesca una clip a caso dalla playlist ufficiale. Clicca “Nuova risposta”.</p>
+
+    <iframe id="yt" title="oracolo"
+      allow="autoplay; encrypted-media; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+    <div class="btns">
+      <button id="new">🎲 Nuova risposta</button>
+      <a class="btn" id="open" target="_blank" rel="noopener">↗ Apri su YouTube</a>
+    </div>
+
+    <p class="note">Se l’embed non parte per adblock/CSP, usa il link qui sopra.</p>
+  </div>
+
+  <!-- Qui ci sono TUTTI gli ID (lo generi al passo 3) -->
+  <script src="ids.js"></script>
+
+  <script>
+    function pickId(){
+      const arr = (window.ORACOLO_IDS||[]);
+      return arr.length ? arr[Math.floor(Math.random()*arr.length)] : null;
+    }
+    function loadRandom(){
+      const id = pickId();
+      const frame = document.getElementById('yt');
+      if(!id){
+        frame.replaceWith(document.createTextNode("Nessun ID caricato (ids.js)."));
+        return;
+      }
+      frame.src = `https://www.youtube-nocookie.com/embed/${id}?rel=0&modestbranding=1`;
+      document.getElementById('open').href = `https://www.youtube.com/watch?v=${id}`;
+    }
+    document.getElementById('new').addEventListener('click', loadRandom);
+    loadRandom();
+  </script>
+</body>
+</html>
