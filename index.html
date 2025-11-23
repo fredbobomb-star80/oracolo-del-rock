@@ -34,11 +34,11 @@
     .yt-overlay{
       position:absolute;
 
-      /* nuovissime coordinate */
-      left:22%;      /* centrato meglio */
-      top:66%;       /* più in basso */
-      width:56%;     /* più piccolo */
-      height:16%;    /* più basso */
+      /* posizione finale */
+      left:22%;
+      top:66%;
+      width:56%;
+      height:16%;
 
       display:flex;
       align-items:center;
@@ -51,7 +51,7 @@
       border:3px solid #00c8ff;
       border-radius:14px;
       background:#111;
-      opacity:0.90;
+      opacity:0.75;   /* 🔥 più trasparente */
       box-shadow:0 0 20px rgba(0,200,255,0.35);
       backdrop-filter: blur(1px);
       animation: destinyPop 420ms ease-out;
@@ -67,7 +67,7 @@
     /* SCRITTA SOTTO IL FRAME MA DENTRO LA CABINA */
     .frame-text{
       position:absolute;
-      top:83%;         /* posizione sotto il frame */
+      top:83%;
       left:50%;
       transform:translateX(-50%);
       width:80%;
@@ -78,46 +78,39 @@
       animation: destinyPop 600ms ease-out;
     }
 
-    /* SOTTO LA CABINA */
-    .wrap{
-      max-width:920px;
-      margin:0 auto;
-      padding:16px 16px 40px;
-      margin-top:6px;
-      display:flex;
-      flex-direction:column;
-      gap:12px;
+    /* BOTTONE SOTTO LA SCRITTA MA DENTRO LA CABINA */
+    .frame-button{
+      position:absolute;
+      top:90%;   /* leggermente più sotto del testo */
+      left:50%;
+      transform:translateX(-50%);
     }
 
-    /* BOTTONI */
-    .btns{
-      display:flex;
-      justify-content:center;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:4px;
-    }
-    button, a.btn{
-      padding:12px 16px;
-      border-radius:12px;
-      border:1px solid #333;
-      background:#1b1b22;
-      color:#eee;
-      font-weight:800;
-      cursor:pointer;
-      text-decoration:none;
-    }
-    button:hover, a.btn:hover{
-      background:#262632;
-    }
+    /* STILE BOTTONE */
     #new{
       background:#00c8ff;
       color:#000;
       border:none;
       padding:14px 22px;
       border-radius:999px;
-      box-shadow:0 0 15px rgba(0,200,255,.5);
       font-weight:900;
+      font-size:15px;
+      box-shadow:0 0 15px rgba(0,200,255,.5);
+      cursor:pointer;
+    }
+    #new:hover{
+      filter:brightness(1.08);
+    }
+
+    /* SOTTO CABINA */
+    .wrap{
+      max-width:920px;
+      margin:0 auto;
+      padding:16px 16px 40px;
+      margin-top:16px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
     }
 
     /* SOCIAL */
@@ -172,31 +165,25 @@
     <!-- VIDEO -->
     <div id="yt" class="yt-overlay"></div>
 
-    <!-- SCRITTA SOTTO IL FRAME -->
+    <!-- SCRITTA -->
     <div class="frame-text">
       Pesca una tra le <strong>666 risposte</strong> che gli Dei del Rock hanno in serbo per te.
     </div>
 
-  </header>
-
-  <!-- CONTENUTO SOTTO -->
-  <main class="wrap">
-
-    <div class="btns">
+    <!-- BOTTONE -->
+    <div class="frame-button">
       <button id="new">🎲 Nuova risposta</button>
-      <a class="btn" id="open" target="_blank" rel="noopener">↗ Apri su YouTube</a>
     </div>
 
+  </header>
+
+  <!-- BELOW -->
+  <main class="wrap">
+
     <div class="social-buttons">
-      <a href="https://youtube.com/@TUOCANALE" target="_blank" class="social-btn youtube">
-        YouTube
-      </a>
-      <a href="https://www.facebook.com/profile.php?id=61583198656003" target="_blank" class="social-btn facebook">
-        Facebook
-      </a>
-      <a href="https://www.instagram.com/chiedilo_all_oracolo_del_rock" target="_blank" class="social-btn instagram">
-        Instagram
-      </a>
+      <a href="https://youtube.com/@TUOCANALE" target="_blank" class="social-btn youtube">YouTube</a>
+      <a href="https://www.facebook.com/profile.php?id=61583198656003" target="_blank" class="social-btn facebook">Facebook</a>
+      <a href="https://www.instagram.com/chiedilo_all_oracolo_del_rock" target="_blank" class="social-btn instagram">Instagram</a>
     </div>
 
     <p class="note">Da un’idea originale di FredBee — tutti i diritti riservati ©2025</p>
@@ -276,9 +263,6 @@
       const id  = allIds[idx];
 
       player.loadVideoById(id);
-
-      const open = document.getElementById("open");
-      open.href = `https://www.youtube.com/watch?v=${id}&list=${PLAYLIST_ID}`;
     }
   </script>
 
