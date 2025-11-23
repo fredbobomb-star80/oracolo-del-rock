@@ -30,13 +30,13 @@
       display:block;
     }
 
-    /* --- AREA VIDEO SOVRAPPOSTA --- */
+    /* AREA VIDEO = SOLO CONTENITORE TRASPARENTE */
     .yt-overlay{
       position:absolute;
 
-      /* VIDEO PIÙ BASSO */
+      /* VIDEO ANCORA PIÙ BASSO */
       left:22%;
-      top:70%;        /* <-- abbassato */
+      top:73%;     /* <-- abbassato ancora */
       width:56%;
       height:16%;
 
@@ -44,61 +44,37 @@
       align-items:center;
       justify-content:center;
 
-      /* “VETRO” fumé dietro, per far sentire trasparenza SEMPRE */
-      background:rgba(0,0,0,0.35);
+      /* TRASPARENZA VERA DEL CONTENITORE */
+      background:rgba(0,0,0,0.25);  /* <-- si vede DAVVERO */
       border-radius:14px;
-      box-shadow:0 0 16px rgba(0,0,0,0.6);
+      padding:4px; /* piccola cornice vetro */
+      box-shadow:0 0 10px rgba(0,0,0,0.6);
       backdrop-filter: blur(2px);
     }
 
     .yt-overlay iframe{
       width:100%;
       height:100%;
-      border:3px solid #00c8ff;
-      border-radius:14px;
-      background:#111;
-      opacity:0.60;   /* <-- trasparenza FORTE e visibile */
-      box-shadow:0 0 20px rgba(0,200,255,0.35);
-      animation: destinyPop 420ms ease-out;
+      border-radius:10px;
+      border:2px solid rgba(0,200,255,0.6);
+      box-shadow:0 0 12px rgba(0,200,255,0.35);
     }
 
-    /* Animazione evocazione */
-    @keyframes destinyPop {
-      0%   { transform: translateY(14px) scale(0.92); opacity:0; filter:blur(6px); }
-      60%  { transform: translateY(-3px) scale(1.02); opacity:1; filter:blur(0); }
-      100% { transform: translateY(0) scale(1); opacity:1; }
-    }
-
-    /* SCRITTA SOTTO IL FRAME MA DENTRO LA CABINA */
-    .frame-text{
-      position:absolute;
-      top:83%;
-      left:50%;
-      transform:translateX(-50%);
-      width:80%;
-      font-size:13px;   /* <-- più piccola */
-      color:#f0eaff;
-      text-shadow:0 0 6px #ff3ccf;
-      opacity:0.95;
-      animation: destinyPop 600ms ease-out;
-    }
-
-    /* BOTTONE SOTTO LA SCRITTA MA DENTRO LA CABINA */
+    /* BOTTONE DENTRO LA CABINA */
     .frame-button{
       position:absolute;
-      top:93%;  /* <-- più in basso */
+      top:92%;   /* più in basso */
       left:50%;
       transform:translateX(-50%);
     }
 
-    /* STILE BOTTONE */
     #new{
       background:#00c8ff;
       color:#000;
       border:none;
       padding:14px 22px;
       border-radius:999px;
-      font-weight:900;
+      font-weight:800;
       font-size:15px;
       box-shadow:0 0 15px rgba(0,200,255,.5);
       cursor:pointer;
@@ -112,7 +88,7 @@
       max-width:920px;
       margin:0 auto;
       padding:16px 16px 40px;
-      margin-top:16px;
+      margin-top:20px;
       display:flex;
       flex-direction:column;
       gap:12px;
@@ -170,14 +146,9 @@
     <!-- VIDEO -->
     <div id="yt" class="yt-overlay"></div>
 
-    <!-- SCRITTA -->
-    <div class="frame-text">
-      Pesca una tra le <strong>666 risposte</strong> che gli Dei del Rock hanno in serbo per te.
-    </div>
-
     <!-- BOTTONE -->
     <div class="frame-button">
-      <button id="new">🎲 Nuova risposta</button>
+      <button id="new">NUOVA RISPOSTA</button>
     </div>
 
   </header>
