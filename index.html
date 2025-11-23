@@ -58,7 +58,7 @@
       box-shadow:0 0 12px rgba(0,200,255,0.35);
     }
 
-    /* BOTTONE PRINCIPALE (NON TOCCATO) */
+    /* BOTTONE PRINCIPALE — VERSIONE MIGLIORATA */
     .frame-button{
       position:absolute;
       top:96%;
@@ -67,18 +67,45 @@
     }
 
     #new{
-      background:#00c8ff;
-      color:#000;
-      border:none;
-      padding:12px 22px;
+      background: linear-gradient(180deg, #0fe3ff 0%, #00a9d6 45%, #006b8a 100%);
+      color:#001018;
+      border: 2px solid rgba(0,200,255,0.9);
+      padding:13px 26px;
       font-size:15px;
       border-radius:999px;
       font-weight:1000;
       cursor:pointer;
-      letter-spacing:0.7px;
-      box-shadow:0 0 14px rgba(0,200,255,.6);
+      letter-spacing:1px;
+
+      box-shadow:
+        0 6px 16px rgba(0,0,0,0.8),
+        inset 0 2px 0 rgba(255,255,255,0.35),
+        inset 0 -3px 8px rgba(0,0,0,0.6),
+        0 0 14px rgba(0,200,255,0.65),
+        0 0 30px rgba(0,200,255,0.35);
+
+      transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
     }
-    #new:hover{ filter:brightness(1.08); }
+
+    #new:hover{
+      transform: translateY(-1px) scale(1.02);
+      filter: brightness(1.12) saturate(1.1);
+      box-shadow:
+        0 8px 18px rgba(0,0,0,0.85),
+        inset 0 2px 0 rgba(255,255,255,0.45),
+        inset 0 -3px 10px rgba(0,0,0,0.7),
+        0 0 18px rgba(0,200,255,0.9),
+        0 0 42px rgba(0,200,255,0.55);
+    }
+
+    #new:active{
+      transform: translateY(1px) scale(0.99);
+      filter: brightness(0.98);
+      box-shadow:
+        0 3px 10px rgba(0,0,0,0.9),
+        inset 0 3px 8px rgba(0,0,0,0.8),
+        0 0 10px rgba(0,200,255,0.6);
+    }
 
     /* SOTTO CABINA */
     .wrap{
@@ -91,14 +118,13 @@
       gap:12px;
     }
 
-    /* SOCIAL – più in basso e più piccoli */
+    /* SOCIAL */
     .social-buttons{
       display:flex;
       justify-content:center;
       gap:10px;
       flex-wrap:wrap;
-
-      margin-top:30px;  /* <-- più in basso */
+      margin-top:30px;
     }
 
     .social-btn{
@@ -106,10 +132,8 @@
       color:#ddd;
       background:#1a1a1a;
       border:2px solid #ff3ccf;
-
-      padding:4px 10px; /* <-- più piccoli */
-      font-size:12px;   /* <-- più piccoli */
-
+      padding:4px 10px;
+      font-size:12px;
       border-radius:999px;
       font-weight:700;
       display:flex;
@@ -168,7 +192,6 @@
     const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx";
     const PAGE_SIZE   = 50;
 
-    // Carica IFrame API
     (function(){
       const s=document.createElement('script');
       s.src="https://www.youtube.com/iframe_api";
