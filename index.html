@@ -30,15 +30,13 @@
       display:block;
     }
 
-    /* AREA VIDEO — più piccolo e più in alto */
+    /* AREA VIDEO – parametri attuali */
     .yt-overlay{
       position:absolute;
-
-      /* posizione CHIRURGICA */
-      top:70%;         /* ← più in alto */
       left:27%;
-      width:46%;       /* ← più piccolo */
-      height:13%;      /* ← più piccolo */
+      top:66%;
+      width:46%;
+      height:12%;
 
       display:flex;
       align-items:center;
@@ -49,6 +47,7 @@
       padding:4px;
       box-shadow:0 0 10px rgba(0,0,0,0.6);
       backdrop-filter: blur(2px);
+      overflow:hidden;
     }
 
     .yt-overlay iframe{
@@ -59,10 +58,10 @@
       box-shadow:0 0 12px rgba(0,200,255,0.35);
     }
 
-    /* BOTTONE — più in basso e più piccolo */
+    /* BOTTONE PRINCIPALE – più grande */
     .frame-button{
       position:absolute;
-      top:97%;            /* ← più in basso */
+      top:96%;
       left:50%;
       transform:translateX(-50%);
     }
@@ -71,14 +70,18 @@
       background:#00c8ff;
       color:#000;
       border:none;
-      padding:9px 16px;   /* ← più piccolo */
+
+      /* più grande di prima */
+      padding:12px 22px;
+      font-size:15px;
+
       border-radius:999px;
-      font-weight:900;
-      font-size:13px;     /* ← più piccolo */
-      box-shadow:0 0 10px rgba(0,200,255,.4);
+      font-weight:1000;
       cursor:pointer;
-      letter-spacing:0.6px;
+      letter-spacing:0.7px;
+      box-shadow:0 0 14px rgba(0,200,255,.6);
     }
+
     #new:hover{ filter:brightness(1.08); }
 
     /* SOTTO CABINA */
@@ -92,41 +95,44 @@
       gap:12px;
     }
 
-    /* SOCIAL */
+    /* SOCIAL – un pelo più piccoli */
     .social-buttons{
       display:flex;
       justify-content:center;
-      gap:12px;
+      gap:10px;
       flex-wrap:wrap;
       margin-top:2px;
     }
+
     .social-btn{
       text-decoration:none;
       color:#ddd;
       background:#1a1a1a;
       border:2px solid #ff3ccf;
-      padding:8px 14px;
+
+      /* leggermente più piccoli */
+      padding:6px 12px;
+      font-size:13px;
+
       border-radius:999px;
-      font-size:14px;
       font-weight:800;
       display:flex;
       align-items:center;
       gap:8px;
       transition:all .2s ease;
-      box-shadow:0 0 12px rgba(255,60,207,.25);
+      box-shadow:0 0 10px rgba(255,60,207,.2);
     }
+
     .social-btn:hover{
       transform:scale(1.05);
       color:#fff;
     }
+
     .social-btn.youtube:hover{ background:#ff0000; border-color:#ff0000; }
     .social-btn.facebook:hover{ background:#1877f2; border-color:#1877f2; }
     .social-btn.instagram:hover{ background:#e4405f; border-color:#e4405f; }
 
-    .note{
-      font-size:13px;
-      opacity:.7;
-    }
+    .note{ font-size:13px; opacity:.7; }
   </style>
 </head>
 
@@ -146,12 +152,12 @@
 
     <!-- BOTTONE -->
     <div class="frame-button">
-      <button id="new">PESCA LA RISPOSTA</button>
+      <button id="new">PESCA LA TUA CARTA</button>
     </div>
 
   </header>
 
-  <!-- SOTTO -->
+  <!-- SOTTO CABINA -->
   <main class="wrap">
 
     <div class="social-buttons">
@@ -242,5 +248,3 @@
 
 </body>
 </html>
-
-
