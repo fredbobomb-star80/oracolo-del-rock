@@ -37,11 +37,9 @@
       top:66%;
       width:46%;
       height:12%;
-
       display:flex;
       align-items:center;
       justify-content:center;
-
       background:rgba(0,0,0,0.25);
       border-radius:14px;
       padding:4px;
@@ -58,10 +56,40 @@
       box-shadow:0 0 12px rgba(0,200,255,0.35);
     }
 
-    /* BOTTONE PRINCIPALE — VERSIONE MIGLIORATA */
+    /* ====== TENDINA SUSPENSE (copre il video, non tocca YouTube) ====== */
+    .curtain{
+      position:absolute;
+      inset:4px; /* rispettando il padding dell’overlay */
+      border-radius:10px;
+      background:
+        radial-gradient(120% 100% at 50% 0%, rgba(0,200,255,0.18), transparent 60%),
+        linear-gradient(180deg, rgba(0,0,0,0.96), rgba(5,5,10,0.98));
+      border:1px solid rgba(0,200,255,0.25);
+      box-shadow:
+        inset 0 0 25px rgba(0,0,0,0.95),
+        0 0 14px rgba(0,200,255,0.25);
+      opacity:1;
+      transform:scale(1);
+      pointer-events:none;
+      transition: opacity .35s ease, transform .35s ease;
+    }
+
+    /* quando si svela */
+    .curtain.reveal{
+      opacity:0;
+      transform:scale(1.03);
+    }
+
+    /* quando ricopre per nuova divinazione */
+    .curtain.cover{
+      opacity:1;
+      transform:scale(1);
+    }
+
+    /* BOTTONE PRINCIPALE */
     .frame-button{
       position:absolute;
-      top:96%;
+      top:98%;
       left:50%;
       transform:translateX(-50%);
     }
@@ -76,14 +104,12 @@
       font-weight:1000;
       cursor:pointer;
       letter-spacing:1px;
-
       box-shadow:
         0 6px 16px rgba(0,0,0,0.8),
         inset 0 2px 0 rgba(255,255,255,0.35),
         inset 0 -3px 8px rgba(0,0,0,0.6),
         0 0 14px rgba(0,200,255,0.65),
         0 0 30px rgba(0,200,255,0.35);
-
       transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
     }
 
@@ -167,7 +193,10 @@
     />
 
     <!-- VIDEO -->
-    <div id="yt" class="yt-overlay"></div>
+    <div id="yt" class="yt-overlay">
+      <!-- tendina suspense -->
+      <div id="curtain" class="curtain cover"></div>
+    </div>
 
     <!-- BOTTONE -->
     <div class="frame-button">
@@ -200,6 +229,10 @@
 
     let player = null;
     let allIds = [];
+    let revealedOnce = false;
+    let animating = false;
+
+    const curtain = () => document.getElementById("curtain");
 
     window.onYouTubeIframeAPIReady = () => {
       player = new YT.Player('yt', {
@@ -211,13 +244,14 @@
     };
 
     function onReady(){
-      document.getElementById("new").addEventListener("click", playRandom);
+      document.getElementById("new").addEventListener("click", magicPick);
       boot();
     }
 
     async function boot(){
       try{
         allIds = await fetchAllPlaylistIds(PLAYLIST_ID);
+        // niente autoplay visivo: il video può partire sotto la tendina, ma resta coperto
         playRandom();
       }catch(err){
         console.error(err);
@@ -255,11 +289,36 @@
 
     function playRandom(){
       if(!player || !allIds.length) return;
-
       const idx = Math.floor(Math.random() * allIds.length);
       const id  = allIds[idx];
-
       player.loadVideoById(id);
+    }
+
+    function magicPick(){
+      if(!player || !allIds.length || animating) return;
+      animating = true;
+
+      // primo click: solo rivelazione (sveliamo il video che già gira sotto)
+      if(!revealedOnce){
+        revealedOnce = true;
+        curtain().classList.add("reveal");
+        curtain().classList.remove("cover");
+        setTimeout(()=> animating=false, 380);
+        return;
+      }
+
+      // click successivi: copri → pausa → cambia video → svela
+      curtain().classList.remove("reveal");
+      curtain().classList.add("cover");
+
+      setTimeout(() => {
+        playRandom();
+        setTimeout(() => {
+          curtain().classList.add("reveal");
+          curtain().classList.remove("cover");
+          setTimeout(()=> animating=false, 380);
+        }, 140);
+      }, 320);
     }
   </script>
 
