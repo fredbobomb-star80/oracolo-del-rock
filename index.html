@@ -30,24 +30,23 @@
       display:block;
     }
 
-    /* AREA VIDEO = SOLO CONTENITORE TRASPARENTE */
+    /* AREA VIDEO — più piccolo e più in alto */
     .yt-overlay{
       position:absolute;
 
-      /* VIDEO ANCORA PIÙ BASSO */
-      left:22%;
-      top:73%;     /* <-- abbassato ancora */
-      width:56%;
-      height:16%;
+      /* posizione CHIRURGICA */
+      top:66%;         /* ← più in alto */
+      left:27%;
+      width:46%;       /* ← più piccolo */
+      height:13%;      /* ← più piccolo */
 
       display:flex;
       align-items:center;
       justify-content:center;
 
-      /* TRASPARENZA VERA DEL CONTENITORE */
-      background:rgba(0,0,0,0.25);  /* <-- si vede DAVVERO */
+      background:rgba(0,0,0,0.25);
       border-radius:14px;
-      padding:4px; /* piccola cornice vetro */
+      padding:4px;
       box-shadow:0 0 10px rgba(0,0,0,0.6);
       backdrop-filter: blur(2px);
     }
@@ -60,10 +59,10 @@
       box-shadow:0 0 12px rgba(0,200,255,0.35);
     }
 
-    /* BOTTONE DENTRO LA CABINA */
+    /* BOTTONE — più in basso e più piccolo */
     .frame-button{
       position:absolute;
-      top:92%;   /* più in basso */
+      top:97%;            /* ← più in basso */
       left:50%;
       transform:translateX(-50%);
     }
@@ -72,16 +71,15 @@
       background:#00c8ff;
       color:#000;
       border:none;
-      padding:14px 22px;
+      padding:9px 16px;   /* ← più piccolo */
       border-radius:999px;
-      font-weight:800;
-      font-size:15px;
-      box-shadow:0 0 15px rgba(0,200,255,.5);
+      font-weight:900;
+      font-size:13px;     /* ← più piccolo */
+      box-shadow:0 0 10px rgba(0,200,255,.4);
       cursor:pointer;
+      letter-spacing:0.6px;
     }
-    #new:hover{
-      filter:brightness(1.08);
-    }
+    #new:hover{ filter:brightness(1.08); }
 
     /* SOTTO CABINA */
     .wrap{
@@ -148,12 +146,12 @@
 
     <!-- BOTTONE -->
     <div class="frame-button">
-      <button id="new">NUOVA RISPOSTA</button>
+      <button id="new">PESCA LA RISPOSTA</button>
     </div>
 
   </header>
 
-  <!-- BELOW -->
+  <!-- SOTTO -->
   <main class="wrap">
 
     <div class="social-buttons">
