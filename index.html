@@ -5,35 +5,23 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Chiedilo all’Oracolo del Rock — risposta casuale</title>
 
-  <!-- TUTTO LO STILE (aka CSS) È QUI DENTRO -->
   <style>
-    :root{
-      --bg:#0b0b0f;
-      --text:#eee;
-      --panel:#1b1b22;
-      --panel-hover:#262632;
-      --border:#333;
-      --neon-blue:#00c8ff;
-      --neon-pink:#ff3ccf;
-    }
-
     body{
       margin:0;
-      background:var(--bg);
-      color:var(--text);
+      background:#0b0b0f;
+      color:#eee;
       font-family:system-ui,Arial,sans-serif;
       text-align:center;
     }
 
-    /* CABINA DELL’ORACOLO = CONTENITORE */
+    /* CABINA */
     .hero{
       width:100%;
       max-width:980px;
       margin:0 auto;
-      position:relative;          /* fondamentale per sovrapporre il video */
+      position:relative;
       display:flex;
       justify-content:center;
-      background: radial-gradient(circle at top, #120018, #050507 70%);
       padding-top:10px;
     }
     .hero-img{
@@ -42,72 +30,97 @@
       display:block;
     }
 
-    /* VIDEO DENTRO LA CABINA (come nel tuo disegno) */
+    /* --- AREA VIDEO SOVRAPPOSTA --- */
     .yt-overlay{
       position:absolute;
-      left:20%;       /* spostamento orizzontale */
-      top:66%;      /* spostamento verticale */
-      width:60%;      /* larghezza del video */
-      height:18%;     /* altezza del video */
+
+      /* nuovissime coordinate */
+      left:22%;      /* centrato meglio */
+      top:66%;       /* più in basso */
+      width:56%;     /* più piccolo */
+      height:16%;    /* più basso */
+
       display:flex;
       align-items:center;
       justify-content:center;
     }
+
     .yt-overlay iframe{
       width:100%;
       height:100%;
-      border:3px solid var(--neon-blue);
+      border:3px solid #00c8ff;
       border-radius:14px;
       background:#111;
-      box-shadow:0 0 18px rgba(0,200,255,.35);
+      opacity:0.90;
+      box-shadow:0 0 20px rgba(0,200,255,0.35);
+      backdrop-filter: blur(1px);
+      animation: destinyPop 420ms ease-out;
     }
 
-    /* BLOCCO SOTTO CABINA */
+    /* Animazione evocazione */
+    @keyframes destinyPop {
+      0%   { transform: translateY(14px) scale(0.92); opacity:0; filter:blur(6px); }
+      60%  { transform: translateY(-3px) scale(1.02); opacity:1; filter:blur(0); }
+      100% { transform: translateY(0) scale(1); opacity:1; }
+    }
+
+    /* SCRITTA SOTTO IL FRAME MA DENTRO LA CABINA */
+    .frame-text{
+      position:absolute;
+      top:83%;         /* posizione sotto il frame */
+      left:50%;
+      transform:translateX(-50%);
+      width:80%;
+      font-size:15px;
+      color:#f0eaff;
+      text-shadow:0 0 6px #ff3ccf;
+      opacity:0.95;
+      animation: destinyPop 600ms ease-out;
+    }
+
+    /* SOTTO LA CABINA */
     .wrap{
       max-width:920px;
       margin:0 auto;
-      padding:16px 16px 36px;
+      padding:16px 16px 40px;
+      margin-top:6px;
       display:flex;
       flex-direction:column;
-      align-items:center;
       gap:12px;
-      box-sizing:border-box;
     }
-    .wrap p{ opacity:.9; margin:0; }
 
-    /* PULSANTI PRINCIPALI */
+    /* BOTTONI */
     .btns{
       display:flex;
-      gap:10px;
       justify-content:center;
+      gap:12px;
       flex-wrap:wrap;
       margin-top:4px;
     }
     button, a.btn{
       padding:12px 16px;
       border-radius:12px;
-      border:1px solid var(--border);
-      background:var(--panel);
-      color:var(--text);
+      border:1px solid #333;
+      background:#1b1b22;
+      color:#eee;
+      font-weight:800;
       cursor:pointer;
       text-decoration:none;
-      font-weight:800;
     }
-    button:hover, a.btn:hover{ background:var(--panel-hover); }
-
-    /* BOTTONE DOMINANTE */
+    button:hover, a.btn:hover{
+      background:#262632;
+    }
     #new{
-      background:var(--neon-blue);
+      background:#00c8ff;
       color:#000;
       border:none;
-      font-weight:900;
       padding:14px 22px;
       border-radius:999px;
-      box-shadow:0 0 15px rgba(0,200,255,.55);
+      box-shadow:0 0 15px rgba(0,200,255,.5);
+      font-weight:900;
     }
-    #new:hover{ filter:brightness(1.05); }
 
-    /* SOCIAL COERENTI */
+    /* SOCIAL */
     .social-buttons{
       display:flex;
       justify-content:center;
@@ -119,7 +132,7 @@
       text-decoration:none;
       color:#ddd;
       background:#1a1a1a;
-      border:2px solid var(--neon-pink);
+      border:2px solid #ff3ccf;
       padding:8px 14px;
       border-radius:999px;
       font-size:14px;
@@ -130,8 +143,10 @@
       transition:all .2s ease;
       box-shadow:0 0 12px rgba(255,60,207,.25);
     }
-    .social-btn i{ font-size:16px; }
-    .social-btn:hover{ transform:scale(1.05); color:#fff; }
+    .social-btn:hover{
+      transform:scale(1.05);
+      color:#fff;
+    }
     .social-btn.youtube:hover{ background:#ff0000; border-color:#ff0000; }
     .social-btn.facebook:hover{ background:#1877f2; border-color:#1877f2; }
     .social-btn.instagram:hover{ background:#e4405f; border-color:#e4405f; }
@@ -139,28 +154,33 @@
     .note{
       font-size:13px;
       opacity:.7;
-      margin-top:4px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- CABINA -->
+  <!-- CABINA ORACOLO -->
   <header class="hero">
+
     <img 
       src="https://raw.githubusercontent.com/fredbobomb-star80/oracolo-del-rock/main/214417.png"
       alt="Chiedilo all’Oracolo del Rock"
       class="hero-img"
     />
 
-    <!-- DIV CHE LA YOUTUBE API RIEMPIE CON L’IFRAME -->
+    <!-- VIDEO -->
     <div id="yt" class="yt-overlay"></div>
+
+    <!-- SCRITTA SOTTO IL FRAME -->
+    <div class="frame-text">
+      Pesca una tra le <strong>666 risposte</strong> che gli Dei del Rock hanno in serbo per te.
+    </div>
+
   </header>
 
-  <!-- SOTTO CABINA -->
+  <!-- CONTENUTO SOTTO -->
   <main class="wrap">
-    <p>Pesca una tra le <strong>666 risposte</strong> che gli Dei del Rock hanno in serbo per te.</p>
 
     <div class="btns">
       <button id="new">🎲 Nuova risposta</button>
@@ -168,106 +188,99 @@
     </div>
 
     <div class="social-buttons">
-      <!-- metti qui il tuo canale vero se vuoi -->
       <a href="https://youtube.com/@TUOCANALE" target="_blank" class="social-btn youtube">
-        <i class="fab fa-youtube"></i> YouTube
+        YouTube
       </a>
       <a href="https://www.facebook.com/profile.php?id=61583198656003" target="_blank" class="social-btn facebook">
-        <i class="fab fa-facebook-f"></i> Facebook
+        Facebook
       </a>
       <a href="https://www.instagram.com/chiedilo_all_oracolo_del_rock" target="_blank" class="social-btn instagram">
-        <i class="fab fa-instagram"></i> Instagram
+        Instagram
       </a>
     </div>
 
     <p class="note">Da un’idea originale di FredBee — tutti i diritti riservati ©2025</p>
+
   </main>
 
-
-  <!-- LOGICA YOUTUBE (UGUALE ALLA TUA, SOLO RIPULITA) -->
+  <!-- SCRIPT YOUTUBE -->
   <script>
-  const API_KEY     = "AIzaSyDNsQKEvKwHOyZCJ0mojJS325Sbw6wX9as";
-  const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx";
-  const PAGE_SIZE   = 50;
+    const API_KEY     = "AIzaSyDNsQKEvKwHOyZCJ0mojJS325Sbw6wX9as";
+    const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx";
+    const PAGE_SIZE   = 50;
 
-  (function(){
-    const s=document.createElement('script');
-    s.src="https://www.youtube.com/iframe_api";
-    document.head.appendChild(s);
-  })();
+    (function(){
+      const s=document.createElement('script');
+      s.src="https://www.youtube.com/iframe_api";
+      document.head.appendChild(s);
+    })();
 
-  let player = null;
-  let allIds = [];
+    let player = null;
+    let allIds = [];
 
-  window.onYouTubeIframeAPIReady = () => {
-    player = new YT.Player('yt', {
-      height: '390',
-      width: '640',
-      playerVars: { modestbranding:1, rel:0 },
-      events: { onReady: onReady }
-    });
-  };
+    window.onYouTubeIframeAPIReady = () => {
+      player = new YT.Player('yt', {
+        height: '390',
+        width: '640',
+        playerVars: { modestbranding:1, rel:0 },
+        events: { onReady: onReady }
+      });
+    };
 
-  function onReady(){
-    document.getElementById("new").addEventListener("click", playRandom);
-    boot();
-  }
-
-  async function boot(){
-    try{
-      allIds = await fetchAllPlaylistIds(PLAYLIST_ID);
-      if(!allIds.length) throw new Error("Playlist vuota o non accessibile");
-      playRandom();
-    }catch(err){
-      console.error(err);
-      alert("Errore nel caricare la playlist. Controlla API key e visibilità playlist.");
+    function onReady(){
+      document.getElementById("new").addEventListener("click", playRandom);
+      boot();
     }
-  }
 
-  async function fetchAllPlaylistIds(playlistId){
-    let ids = [];
-    let pageToken = "";
-    do{
-      const url = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
-      url.searchParams.set("key", API_KEY);
-      url.searchParams.set("part", "snippet");
-      url.searchParams.set("playlistId", playlistId);
-      url.searchParams.set("maxResults", PAGE_SIZE);
-      if(pageToken) url.searchParams.set("pageToken", pageToken);
+    async function boot(){
+      try{
+        allIds = await fetchAllPlaylistIds(PLAYLIST_ID);
+        playRandom();
+      }catch(err){
+        console.error(err);
+        alert("Errore nel caricare la playlist.");
+      }
+    }
 
-      const res = await fetch(url.toString());
-      if(!res.ok) throw new Error("HTTP "+res.status);
-      const data = await res.json();
+    async function fetchAllPlaylistIds(playlistId){
+      let ids = [];
+      let pageToken = "";
 
-      const batch = (data.items||[])
-        .map(i => i?.snippet?.resourceId?.videoId)
-        .filter(Boolean);
+      do{
+        const url = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
+        url.searchParams.set("key", API_KEY);
+        url.searchParams.set("part", "snippet");
+        url.searchParams.set("playlistId", playlistId);
+        url.searchParams.set("maxResults", PAGE_SIZE);
+        if(pageToken) url.searchParams.set("pageToken", pageToken);
 
-      ids.push(...batch);
-      pageToken = data.nextPageToken || "";
-    } while(pageToken);
+        const res = await fetch(url.toString());
+        const data = await res.json();
 
-    return [...new Set(ids)];
-  }
+        const batch = (data.items||[])
+          .map(i => i?.snippet?.resourceId?.videoId)
+          .filter(Boolean);
 
-  function playRandom(){
-    if(!player || !allIds.length) return;
-    const idx = Math.floor(Math.random() * allIds.length);
-    const id  = allIds[idx];
+        ids.push(...batch);
+        pageToken = data.nextPageToken || "";
 
-    player.loadVideoById(id);
+      } while(pageToken);
 
-    const open = document.getElementById("open");
-    if(open) open.href = `https://www.youtube.com/watch?v=${id}&list=${PLAYLIST_ID}`;
-  }
+      return [...new Set(ids)];
+    }
+
+    function playRandom(){
+      if(!player || !allIds.length) return;
+
+      const idx = Math.floor(Math.random() * allIds.length);
+      const id  = allIds[idx];
+
+      player.loadVideoById(id);
+
+      const open = document.getElementById("open");
+      open.href = `https://www.youtube.com/watch?v=${id}&list=${PLAYLIST_ID}`;
+    }
   </script>
-
-  <!-- icone social -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
-
-
-
-
