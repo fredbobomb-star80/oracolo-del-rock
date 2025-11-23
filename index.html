@@ -58,12 +58,26 @@
       box-shadow:0 0 12px rgba(0,200,255,0.35);
     }
 
-    /* BOTTONE PRINCIPALE — più in basso */
+    /* BLOCCO FRASE + BOTTONE (come prima, solo con frase sopra) */
     .frame-button{
       position:absolute;
-      top:108%; /* <<<<< spostato più in basso */
+      top:102%;
       left:50%;
       transform:translateX(-50%);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+    }
+
+    /* FRASE 666 */
+    .prophecy{
+      font-size:15px;
+      color:#9cecff;
+      opacity:0.9;
+      text-shadow:0 0 6px rgba(0,200,255,0.4);
+      font-weight:600;
+      margin:0;
     }
 
     #new{
@@ -107,17 +121,7 @@
         0 0 10px rgba(0,200,255,0.6);
     }
 
-    /* FRASE 666 */
-    .prophecy{
-      margin-top:20px;
-      font-size:14px;
-      color:#9cecff;
-      opacity:0.85;
-      text-shadow:0 0 6px rgba(0,200,255,0.4);
-      font-weight:500;
-    }
-
-    /* SOTTO CABINA — TUTTO GIÙ */
+    /* SOTTO CABINA — IDENTICO A PRIMA */
     .wrap{
       max-width:920px;
       margin:0 auto;
@@ -179,12 +183,11 @@
     <!-- VIDEO -->
     <div id="yt" class="yt-overlay"></div>
 
-    <!-- BOTTONE -->
+    <!-- FRASE 666 + BOTTONE -->
     <div class="frame-button">
-      <button id="new">PESCA LA TUA CARTA</button>
       <p class="prophecy">«L’Oracolo custodisce 666 risposte. Solo una è destinata a te.»</p>
+      <button id="new">PESCA LA TUA CARTA</button>
     </div>
-
   </header>
 
   <!-- SOTTO CABINA -->
