@@ -3,14 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Chiedilo all’Oracolo del Rock</title>
+  <title>Chiedilo all’Oracolo del Rock — risposta casuale</title>
 
+  <!-- TUTTO LO STILE (aka CSS) È QUI DENTRO -->
   <style>
     :root{
       --bg:#0b0b0f;
       --text:#eee;
-      --panel:#111218;
-      --panel2:#1b1b22;
+      --panel:#1b1b22;
+      --panel-hover:#262632;
       --border:#333;
       --neon-blue:#00c8ff;
       --neon-pink:#ff3ccf;
@@ -24,145 +25,142 @@
       text-align:center;
     }
 
-    /* HERO con immagine oracolo intera */
+    /* CABINA DELL’ORACOLO = CONTENITORE */
     .hero{
       width:100%;
+      max-width:980px;
+      margin:0 auto;
+      position:relative;          /* fondamentale per sovrapporre il video */
       display:flex;
       justify-content:center;
-      padding:10px 0 0;
       background: radial-gradient(circle at top, #120018, #050507 70%);
+      padding-top:10px;
     }
     .hero-img{
       width:100%;
-      max-width:980px;     /* così si vede tutta senza tagli */
       height:auto;
       display:block;
     }
 
-    /* Contenuto sotto immagine */
-    .wrap{
-      max-width:920px;
-      margin:0 auto;
-      padding:18px 16px 40px;
+    /* VIDEO DENTRO LA CABINA (come nel tuo disegno) */
+    .yt-overlay{
+      position:absolute;
+      left:13%;       /* spostamento orizzontale */
+      top:48.5%;      /* spostamento verticale */
+      width:70%;      /* larghezza del video */
+      height:23%;     /* altezza del video */
       display:flex;
-      flex-direction:column;
       align-items:center;
-      gap:14px;
-      box-sizing:border-box;
-    }
-
-    /* iframe youtube più “monitorino” */
-    #yt{
-      width:100%;
-      display:flex;
       justify-content:center;
     }
-    iframe{
+    .yt-overlay iframe{
       width:100%;
-      max-width:720px;
-      aspect-ratio:16/9;
+      height:100%;
       border:3px solid var(--neon-blue);
       border-radius:14px;
       background:#111;
       box-shadow:0 0 18px rgba(0,200,255,.35);
     }
 
-    /* pulsanti principali */
+    /* BLOCCO SOTTO CABINA */
+    .wrap{
+      max-width:920px;
+      margin:0 auto;
+      padding:16px 16px 36px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:12px;
+      box-sizing:border-box;
+    }
+    .wrap p{ opacity:.9; margin:0; }
+
+    /* PULSANTI PRINCIPALI */
     .btns{
       display:flex;
       gap:10px;
       justify-content:center;
-      margin-top:6px;
       flex-wrap:wrap;
+      margin-top:4px;
     }
     button, a.btn{
       padding:12px 16px;
       border-radius:12px;
       border:1px solid var(--border);
-      background:var(--panel2);
+      background:var(--panel);
       color:var(--text);
       cursor:pointer;
       text-decoration:none;
-      font-weight:700;
+      font-weight:800;
     }
-    button:hover, a.btn:hover{
-      background:#262632;
-    }
+    button:hover, a.btn:hover{ background:var(--panel-hover); }
 
-    /* bottone principale più importante */
+    /* BOTTONE DOMINANTE */
     #new{
       background:var(--neon-blue);
       color:#000;
       border:none;
       font-weight:900;
-      padding:14px 20px;
+      padding:14px 22px;
       border-radius:999px;
       box-shadow:0 0 15px rgba(0,200,255,.55);
     }
     #new:hover{ filter:brightness(1.05); }
 
-    /* social coerenti */
+    /* SOCIAL COERENTI */
     .social-buttons{
       display:flex;
       justify-content:center;
       gap:12px;
-      margin-top:2px;
       flex-wrap:wrap;
+      margin-top:2px;
     }
     .social-btn{
       text-decoration:none;
       color:#ddd;
-      background-color:#1a1a1a;
+      background:#1a1a1a;
       border:2px solid var(--neon-pink);
       padding:8px 14px;
       border-radius:999px;
-      transition:all .2s ease;
       font-size:14px;
+      font-weight:800;
       display:flex;
       align-items:center;
       gap:8px;
-      font-weight:800;
+      transition:all .2s ease;
       box-shadow:0 0 12px rgba(255,60,207,.25);
     }
     .social-btn i{ font-size:16px; }
-    .social-btn:hover{
-      transform:scale(1.05);
-      color:#fff;
-    }
-    .social-btn.youtube:hover{
-      background:#ff0000; border-color:#ff0000;
-    }
-    .social-btn.facebook:hover{
-      background:#1877f2; border-color:#1877f2;
-    }
-    .social-btn.instagram:hover{
-      background:#e4405f; border-color:#e4405f;
-    }
+    .social-btn:hover{ transform:scale(1.05); color:#fff; }
+    .social-btn.youtube:hover{ background:#ff0000; border-color:#ff0000; }
+    .social-btn.facebook:hover{ background:#1877f2; border-color:#1877f2; }
+    .social-btn.instagram:hover{ background:#e4405f; border-color:#e4405f; }
 
     .note{
       font-size:13px;
       opacity:.7;
-      margin-top:6px;
+      margin-top:4px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO sopra tutto -->
+  <!-- CABINA -->
   <header class="hero">
     <img 
       src="https://raw.githubusercontent.com/fredbobomb-star80/oracolo-del-rock/main/214417.png"
       alt="Chiedilo all’Oracolo del Rock"
       class="hero-img"
     />
+
+    <!-- DIV CHE LA YOUTUBE API RIEMPIE CON L’IFRAME -->
+    <div id="yt" class="yt-overlay"></div>
   </header>
 
-  <!-- CONTENUTO -->
-  <div class="wrap">
+  <!-- SOTTO CABINA -->
+  <main class="wrap">
     <p>Pesca una tra le <strong>666 risposte</strong> che gli Dei del Rock hanno in serbo per te.</p>
-
-    <div id="yt"></div>
 
     <div class="btns">
       <button id="new">🎲 Nuova risposta</button>
@@ -170,7 +168,8 @@
     </div>
 
     <div class="social-buttons">
-      <a href="https://youtube.com/@fred_bee" target="_blank" class="social-btn youtube">
+      <!-- metti qui il tuo canale vero se vuoi -->
+      <a href="https://youtube.com/@TUOCANALE" target="_blank" class="social-btn youtube">
         <i class="fab fa-youtube"></i> YouTube
       </a>
       <a href="https://www.facebook.com/profile.php?id=61583198656003" target="_blank" class="social-btn facebook">
@@ -182,11 +181,11 @@
     </div>
 
     <p class="note">Da un’idea originale di FredBee — tutti i diritti riservati ©2025</p>
-  </div>
+  </main>
 
 
+  <!-- LOGICA YOUTUBE (UGUALE ALLA TUA, SOLO RIPULITA) -->
   <script>
-  // === CONFIG ===
   const API_KEY     = "AIzaSyDNsQKEvKwHOyZCJ0mojJS325Sbw6wX9as";
   const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx";
   const PAGE_SIZE   = 50;
@@ -257,11 +256,14 @@
     const id  = allIds[idx];
 
     player.loadVideoById(id);
+
     const open = document.getElementById("open");
     if(open) open.href = `https://www.youtube.com/watch?v=${id}&list=${PLAYLIST_ID}`;
   }
   </script>
 
+  <!-- icone social -->
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
