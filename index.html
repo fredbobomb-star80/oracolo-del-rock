@@ -23,6 +23,7 @@
       display:flex;
       justify-content:center;
       padding-top:10px;
+      padding-bottom:170px; /* <<< SPAZIO RISERVATO PER FRASE + BOTTONE */
     }
     .hero-img{
       width:100%;
@@ -58,7 +59,7 @@
       box-shadow:0 0 12px rgba(0,200,255,0.35);
     }
 
-    /* BLOCCO FRASE + BOTTONE (come prima, solo con frase sopra) */
+    /* BLOCCO FRASE + BOTTONE */
     .frame-button{
       position:absolute;
       top:102%;
@@ -121,7 +122,7 @@
         0 0 10px rgba(0,200,255,0.6);
     }
 
-    /* SOTTO CABINA — IDENTICO A PRIMA */
+    /* SOTTO CABINA — IDENTICO */
     .wrap{
       max-width:920px;
       margin:0 auto;
@@ -167,6 +168,11 @@
     .social-btn.instagram:hover{ background:#e4405f; border-color:#e4405f; }
 
     .note{ font-size:13px; opacity:.7; }
+
+    /* extra respiro su smartphone */
+    @media (max-width:600px){
+      .hero{ padding-bottom:200px; }
+    }
   </style>
 </head>
 
