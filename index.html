@@ -209,85 +209,108 @@
     <p class="note">L'oracolo custodisce 666 risposte e solo una è destinata a te. Da un’idea originale di FredBee — tutti i diritti riservati ©2025</p>
   </main>
 
-  <!-- SCRIPT YOUTUBE -->
-  <script>
-    const API_KEY     = "AIzaSyDNsQKEvKwHOyZCJ0mojJS325Sbw6wX9as";
-    const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx";
-    const PAGE_SIZE   = 50;
+<!-- SCRIPT YOUTUBE -->
+<script>
+  const API_KEY     = "AIzaSyDNsQKEvKwHOyZCJ0mojJS325Sbw6wX9as";
+  const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx";
+  const PAGE_SIZE   = 50;
 
-    (function(){
-      const s=document.createElement('script');
-      s.src="https://www.youtube.com/iframe_api";
-      document.head.appendChild(s);
-    })();
+  (function(){
+    const s=document.createElement('script');
+    s.src="https://www.youtube.com/iframe_api";
+    document.head.appendChild(s);
+  })();
 
-    let player = null;
-    let allIds = [];
+  let player = null;
+  let allIds = [];
 
-    window.onYouTubeIframeAPIReady = () => {
-      player = new YT.Player('yt', {
-        height: '390',
-        width: '640',
-        playerVars: { modestbranding:1, rel:0 },
-        events: { onReady: onReady }
-      });
-    };
-
-    function onReady(){
-      document.getElementById("new").addEventListener("click", playRandom);
-      boot();
-    }
-
-    async function boot(){
-      try{
-        allIds = await fetchAllPlaylistIds(PLAYLIST_ID);
-        playRandom();
-      }catch(err){
-        console.error(err);
-        alert("Errore nel caricare la playlist.");
+  window.onYouTubeIframeAPIReady = () => {
+    player = new YT.Player('yt', {
+      height: '390',
+      width:  '640',
+      playerVars: { modestbranding:1, rel:0 },
+      events: { 
+        onReady: onReady,
+        onStateChange: onStateChange
       }
+    });
+  };
+
+  function onReady(){
+    // il bottone PESCA (id="new") fa partire il random
+    document.getElementById("new").addEventListener("click", playRandom);
+    boot();
+  }
+
+  async function boot(){
+    try{
+      allIds = await fetchAllPlaylistIds(PLAYLIST_ID);
+      // NON parte nessun video da solo all'apertura
+    }catch(err){
+      console.error(err);
+      alert("Errore nel caricare la playlist.");
     }
+  }
 
-    async function fetchAllPlaylistIds(playlistId){
-      let ids = [];
-      let pageToken = "";
+  async function fetchAllPlaylistIds(playlistId){
+    let ids = [];
+    let pageToken = "";
 
-      do{
-        const url = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
-        url.searchParams.set("key", API_KEY);
-        url.searchParams.set("part", "snippet");
-        url.searchParams.set("playlistId", playlistId);
-        url.searchParams.set("maxResults", PAGE_SIZE);
-        if(pageToken) url.searchParams.set("pageToken", pageToken);
+    do{
+      const url = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
+      url.searchParams.set("key", API_KEY);
+      url.searchParams.set("part", "snippet");
+      url.searchParams.set("playlistId", playlistId);
+      url.searchParams.set("maxResults", PAGE_SIZE);
+      if(pageToken) url.searchParams.set("pageToken", pageToken);
 
-        const res = await fetch(url.toString());
-        if(!res.ok) throw new Error("HTTP "+res.status);
-        const data = await res.json();
+      const res = await fetch(url.toString());
+      if(!res.ok) throw new Error("HTTP "+res.status);
+      const data = await res.json();
 
-        const batch = (data.items||[])
-          .map(i => i?.snippet?.resourceId?.videoId)
-          .filter(Boolean);
+      const batch = (data.items||[])
+        .map(i => i?.snippet?.resourceId?.videoId)
+        .filter(Boolean);
 
-        ids.push(...batch);
-        pageToken = data.nextPageToken || "";
+      ids.push(...batch);
+      pageToken = data.nextPageToken || "";
 
-      } while(pageToken);
+    } while(pageToken);
 
-      return [...new Set(ids)];
+    return [...new Set(ids)];
+  }
+
+  function playRandom(){
+    if(!player || !allIds.length) return;
+
+    const ytBox = document.getElementById("yt");
+
+    // 1) fai comparire il box del video (fade-in)
+    ytBox.classList.remove("is-hidden");
+    ytBox.classList.add("is-visible");
+
+    // 2) scegli un video random
+    const idx = Math.floor(Math.random() * allIds.length);
+    const id  = allIds[idx];
+
+    // 3) avvia
+    player.loadVideoById(id);
+  }
+
+  function onStateChange(e){
+    // quando il video finisce, nascondi il player (fade-out)
+    if(e.data === YT.PlayerState.ENDED){
+      const ytBox = document.getElementById("yt");
+      ytBox.classList.remove("is-visible");
+      ytBox.classList.add("is-hidden");
     }
+  }
+</script>
 
-    function playRandom(){
-      if(!player || !allIds.length) return;
-
-      const idx = Math.floor(Math.random() * allIds.length);
-      const id  = allIds[idx];
-
-      player.loadVideoById(id);
-    }
-  </script>
 
 </body>
 </html>
+
 
 
 
