@@ -37,6 +37,23 @@
     }
 
     /* AREA VIDEO */
+
+/* ---- FADE IN/OUT VIDEO (NUOVO BLOCCO) ---- */
+    
+.yt-overlay.is-hidden{
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .6s ease, transform .6s ease;
+  pointer-events: none;
+}
+
+.yt-overlay.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .6s ease, transform .6s ease;
+  pointer-events: auto;
+}
+    
     .yt-overlay{
       position:absolute;
       left:41%;
@@ -64,7 +81,7 @@
       box-shadow:0 0 12px rgba(0,200,255,0.35);
     }
 
-    /* BOTTONE PRINCIPALE — SOLO PIÙ GIÙ */
+    /* BOTTONE PRINCIPALE */
     .frame-button{
       position:absolute;
       top:102%; /* <<<<< prima era 96% */
@@ -113,7 +130,7 @@
         0 0 10px rgba(0,200,255,0.6);
     }
 
-    /* SOTTO CABINA — TUTTO PIÙ GIÙ */
+    /* SOTTO CABINA */
     .wrap{
       max-width:920px;
       margin:0 auto;
@@ -271,6 +288,7 @@
 
 </body>
 </html>
+
 
 
 
