@@ -310,11 +310,11 @@
     // 3) avvia SUBITO: audio immediato
     player.loadVideoById(id);
 
-    // 4) dopo 4 secondi, il video appare pulito
+    // 4) dopo 3 secondi, il video appare pulito
     entranceTimer = setTimeout(() => {
       ytBox.classList.remove("audio-first");
       entranceTimer = null;
-    }, 4000);
+    }, 3000);
   }
 
   function onStateChange(e){
@@ -337,3 +337,4 @@
 
 </body>
 </html>
+
