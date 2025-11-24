@@ -6,11 +6,12 @@
   <title>Chiedilo all’Oracolo del Rock</title>
 
   <style>
-    /* ============================
-       ***   MIO CSS   ***
-       Qui dentro c’è tutto lo stile del sito
-       ============================ */
 
+    /* ============================
+      ***   MIO CSS   ***
+   Qui dentro c’è tutto lo stile del sito
+   ============================ */
+    
     body{
       margin:0;
       background:#0b0b0f;
@@ -33,58 +34,51 @@
       width:100%;
       height:auto;
       display:block;
-      position:relative;
-      z-index:1;
     }
-
-    /* -------- OVERLAY GIF ACCENSIONE (NUOVO) -------- */
-    .fx-overlay{
-      position:absolute;
-      left:0; top:0;
-      width:100%;
-      height:100%;
-      object-fit:cover;      /* forza il combacio anche se la gif è leggermente diversa */
-      pointer-events:none;
-      opacity:0;             /* parte spenta */
-      transition: opacity .2s ease;
-      z-index:2;             /* sopra la cabina */
-    }
-    .fx-overlay.is-on{ opacity:1; }
 
     /* AREA VIDEO */
-    .yt-overlay.is-hidden{
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity .6s ease, transform .6s ease;
-      pointer-events: none;
-    }
-    .yt-overlay.is-visible{
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity .6s ease, transform .6s ease;
-      pointer-events: auto;
-    }
-    .yt-overlay.audio-first{
-      opacity:0 !important;
-      pointer-events:none;
-    }
 
+/* ---- FADE IN/OUT VIDEO (NUOVO BLOCCO) ---- */
+    
+.yt-overlay.is-hidden{
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity .6s ease, transform .6s ease;
+  pointer-events: none;
+}
+
+.yt-overlay.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity .6s ease, transform .6s ease;
+  pointer-events: auto;
+}
+
+/* ---- EFFETTO DI ENTRATA (AUDIO SUBITO, VIDEO DOPO 4s) ---- */
+/* quando c'è questa classe, il player suona ma resta invisibile */
+.yt-overlay.is-visible.audio-first{
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+    
     .yt-overlay{
       position:absolute;
       left:41%;
       top:80%;
       width:15%;
       height:12%;
+
       display:flex;
       align-items:center;
       justify-content:center;
+
       background:rgba(0,0,0,0.25);
       border-radius:14px;
       padding:4px;
       box-shadow:0 0 10px rgba(0,0,0,0.6);
       backdrop-filter: blur(2px);
       overflow:hidden;
-      z-index:3; /* sopra la gif, così quando appare la carta resta leggibile */
     }
 
     .yt-overlay iframe{
@@ -98,10 +92,9 @@
     /* BOTTONE PRINCIPALE */
     .frame-button{
       position:absolute;
-      top:102%;
+      top:102%; /* <<<<< prima era 96% */
       left:50%;
       transform:translateX(-50%);
-      z-index:4;
     }
 
     #new{
@@ -114,12 +107,14 @@
       font-weight:1000;
       cursor:pointer;
       letter-spacing:1px;
+
       box-shadow:
         0 6px 16px rgba(0,0,0,0.8),
         inset 0 2px 0 rgba(255,255,255,0.35),
         inset 0 -3px 8px rgba(0,0,0,0.6),
         0 0 14px rgba(0,200,255,0.65),
         0 0 30px rgba(0,200,255,0.35);
+
       transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
     }
 
@@ -148,7 +143,7 @@
       max-width:920px;
       margin:0 auto;
       padding:16px 16px 40px;
-      margin-top:60px;
+      margin-top:60px; /* <<<<< prima era 20px */
       display:flex;
       flex-direction:column;
       gap:12px;
@@ -202,11 +197,7 @@
       class="hero-img"
     />
 
-    <!-- ✅ GIF ACCENSIONE (NUOVO) -->
-    <!-- CAMBIA SOLO QUESTA RIGA src= con il RAW URL della tua gif su GitHub -->
-    <img id="fx" class="fx-overlay" src="https://raw.githubusercontent.com/fredbobomb-star80/oracolo-del-rock/main/214418.gif" alt="">
-
-    <!-- VIDEO YOUTUBE -->
+    <!-- SCATOLA CONTENITRICE DEL VIDEO/Partenza invisibile e dissolvenza alla fine -->
     <div id="yt" class="yt-overlay is-hidden"></div>
 
     <!-- BOTTONE -->
@@ -226,194 +217,201 @@
     <p class="note">L'oracolo custodisce 666 risposte e solo una è destinata a te. Da un’idea originale di FredBee — tutti i diritti riservati ©2025</p>
   </main>
 
-  <!-- SCRIPT YOUTUBE + GIF -->
-  <script>
-    const API_KEY     = "AIzaSyDNsQKEvKwHOyZCJ0mojJS325Sbw6wX9as";
-    const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx";
-    const PAGE_SIZE   = 50;
+<!-- SCRIPT YOUTUBE -->
 
-    (function(){
-      const s = document.createElement('script');
-      s.src = "https://www.youtube.com/iframe_api";
-      document.head.appendChild(s);
-    })();
 
-    let player = null;
-    let allIds = [];
-    let entranceTimer = null;
+  <!-- SCRIPT YOUTUBE -->
+<script>
+  const API_KEY     = "AIzaSyDNsQKEvKwHOyZCJ0mojJS325Sbw6wX9as";
+  const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx";
+  const PAGE_SIZE   = 50;
 
-    // watcher per uscita pro
-    let outroInterval = null;
-    let outroTriggered = false;
+  (function(){
+    const s = document.createElement('script');
+    s.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(s);
+  })();
 
-    window.onYouTubeIframeAPIReady = () => {
-      player = new YT.Player('yt', {
-        height: '390',
-        width:  '640',
-        playerVars: { modestbranding: 1, rel: 0 },
-        events: {
-          onReady: onReady,
-          onStateChange: onStateChange
-        }
-      });
-    };
+  let player = null;
+  let allIds = [];
+  let entranceTimer = null;
 
-    function onReady(){
-      document.getElementById("new").addEventListener("click", playRandom);
-      boot();
-    }
+  // watcher per uscita pro
+  let outroInterval = null;
+  let outroTriggered = false;
 
-    async function boot(){
-      try{
-        allIds = await fetchAllPlaylistIds(PLAYLIST_ID);
-      }catch(err){
-        console.error(err);
-        alert("Errore nel caricare la playlist.");
+  window.onYouTubeIframeAPIReady = () => {
+    player = new YT.Player('yt', {
+      height: '390',
+      width:  '640',
+      playerVars: { modestbranding: 1, rel: 0 },
+      events: {
+        onReady: onReady,
+        onStateChange: onStateChange
       }
+    });
+  };
+
+  function onReady(){
+    document.getElementById("new").addEventListener("click", playRandom);
+    boot();
+  }
+
+  async function boot(){
+    try{
+      allIds = await fetchAllPlaylistIds(PLAYLIST_ID);
+    }catch(err){
+      console.error(err);
+      alert("Errore nel caricare la playlist.");
+    }
+  }
+
+  async function fetchAllPlaylistIds(playlistId){
+    let ids = [];
+    let pageToken = "";
+
+    do{
+      const url = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
+      url.searchParams.set("key", API_KEY);
+      url.searchParams.set("part", "snippet");
+      url.searchParams.set("playlistId", playlistId);
+      url.searchParams.set("maxResults", PAGE_SIZE);
+      if(pageToken) url.searchParams.set("pageToken", pageToken);
+
+      const res = await fetch(url.toString());
+      if(!res.ok) throw new Error("HTTP " + res.status);
+      const data = await res.json();
+
+      const batch = (data.items || [])
+        .map(i => i?.snippet?.resourceId?.videoId)
+        .filter(Boolean);
+
+      ids.push(...batch);
+      pageToken = data.nextPageToken || "";
+
+    } while(pageToken);
+
+    return [...new Set(ids)];
+  }
+
+  function playRandom(){
+    if(!player || !allIds.length) return;
+
+    const ytBox = document.getElementById("yt");
+
+    // reset timer entrata
+    if(entranceTimer){
+      clearTimeout(entranceTimer);
+      entranceTimer = null;
     }
 
-    async function fetchAllPlaylistIds(playlistId){
-      let ids = [];
-      let pageToken = "";
+    // reset uscita pro
+    clearOutroWatcher();
+    outroTriggered = false;
 
-      do{
-        const url = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
-        url.searchParams.set("key", API_KEY);
-        url.searchParams.set("part", "snippet");
-        url.searchParams.set("playlistId", playlistId);
-        url.searchParams.set("maxResults", PAGE_SIZE);
-        if(pageToken) url.searchParams.set("pageToken", pageToken);
+    // box visibile ma audio-first (invisibile per 3s)
+    ytBox.classList.remove("is-hidden");
+    ytBox.classList.add("is-visible");
+    ytBox.classList.add("audio-first");
 
-        const res = await fetch(url.toString());
-        if(!res.ok) throw new Error("HTTP " + res.status);
-        const data = await res.json();
+    // pesca random
+    const idx = Math.floor(Math.random() * allIds.length);
+    const id  = allIds[idx];
 
-        const batch = (data.items || [])
-          .map(i => i?.snippet?.resourceId?.videoId)
-          .filter(Boolean);
+    // audio subito
+    player.loadVideoById(id);
 
-        ids.push(...batch);
-        pageToken = data.nextPageToken || "";
+    // dopo 3 secondi appare il video
+    entranceTimer = setTimeout(() => {
+      ytBox.classList.remove("audio-first");
+      entranceTimer = null;
+    }, 3000);
+  }
 
-      } while(pageToken);
+  function onStateChange(e){
+    const ytBox = document.getElementById("yt");
 
-      return [...new Set(ids)];
+    // quando parte a suonare davvero → attiva watcher uscita pro
+    if(e.data === YT.PlayerState.PLAYING){
+      startOutroWatcher();
     }
 
-    function playRandom(){
-      if(!player || !allIds.length) return;
+    // se metti in pausa/bufferizza → stop watcher
+    if(
+      e.data === YT.PlayerState.PAUSED ||
+      e.data === YT.PlayerState.BUFFERING
+    ){
+      clearOutroWatcher();
+    }
 
-      const ytBox = document.getElementById("yt");
-      const fx    = document.getElementById("fx");
+    // se finisce per davvero → pulizia e sicurezza
+    if(e.data === YT.PlayerState.ENDED){
+      clearOutroWatcher();
+      outroTriggered = false;
 
-      // --- reset timer entrata ---
       if(entranceTimer){
         clearTimeout(entranceTimer);
         entranceTimer = null;
       }
+      ytBox.classList.remove("audio-first");
 
-      // --- reset uscita pro ---
-      clearOutroWatcher();
-      outroTriggered = false;
-
-      // ✅ ACCENDO LA GIF al click + la riavvio sempre
-      fx.classList.add("is-on");
-      const baseSrc = fx.src.split("?")[0];
-      fx.src = baseSrc + "?t=" + Date.now(); // forza restart gif
-
-      // la spengo da sola dopo 9.5s (se vuoi altro timing cambia qui)
-      setTimeout(() => fx.classList.remove("is-on"), 9500);
-
-      // video box visibile ma audio-first (invisibile 3s)
-      ytBox.classList.remove("is-hidden");
-      ytBox.classList.add("is-visible");
-      ytBox.classList.add("audio-first");
-
-      // pesca random
-      const idx = Math.floor(Math.random() * allIds.length);
-      const id  = allIds[idx];
-
-      // audio subito
-      player.loadVideoById(id);
-
-      // dopo 3 secondi appare il video
-      entranceTimer = setTimeout(() => {
-        ytBox.classList.remove("audio-first");
-        entranceTimer = null;
-      }, 3000);
-    }
-
-    function onStateChange(e){
-      const ytBox = document.getElementById("yt");
-
-      if(e.data === YT.PlayerState.PLAYING){
-        startOutroWatcher();
-      }
-
-      if(
-        e.data === YT.PlayerState.PAUSED ||
-        e.data === YT.PlayerState.BUFFERING
-      ){
-        clearOutroWatcher();
-      }
-
-      if(e.data === YT.PlayerState.ENDED){
-        clearOutroWatcher();
-        outroTriggered = false;
-
-        if(entranceTimer){
-          clearTimeout(entranceTimer);
-          entranceTimer = null;
-        }
-        ytBox.classList.remove("audio-first");
-
-        ytBox.classList.remove("is-visible");
-        ytBox.classList.add("is-hidden");
-      }
-    }
-
-    function startOutroWatcher(){
-      clearOutroWatcher();
-      outroTriggered = false;
-
-      outroInterval = setInterval(() => {
-        if(!player || outroTriggered) return;
-
-        const dur = player.getDuration();
-        const cur = player.getCurrentTime();
-        if(!dur || !cur) return;
-
-        const remaining = dur - cur;
-
-        if(remaining <= 1.0){
-          outroTriggered = true;
-          triggerOutro();
-        }
-      }, 250);
-    }
-
-    function clearOutroWatcher(){
-      if(outroInterval){
-        clearInterval(outroInterval);
-        outroInterval = null;
-      }
-    }
-
-    function triggerOutro(){
-      const ytBox = document.getElementById("yt");
-
+      // se per qualche motivo non era già sparito, sparisce ora
       ytBox.classList.remove("is-visible");
       ytBox.classList.add("is-hidden");
-
-      setTimeout(() => {
-        try{ player.stopVideo(); }catch(_){}
-      }, 200);
-
-      clearOutroWatcher();
     }
-  </script>
+  }
+
+  // ---- USCITA PRO PRIMA DELLA FINE ----
+  function startOutroWatcher(){
+    clearOutroWatcher();
+    outroTriggered = false;
+
+    outroInterval = setInterval(() => {
+      if(!player || outroTriggered) return;
+
+      const dur = player.getDuration();
+      const cur = player.getCurrentTime();
+
+      if(!dur || !cur) return;
+
+      const remaining = dur - cur;
+
+      // soglia "pro": 1 secondo prima della fine
+      if(remaining <= 1.0){
+        outroTriggered = true;
+        triggerOutro();
+      }
+    }, 250);
+  }
+
+  function clearOutroWatcher(){
+    if(outroInterval){
+      clearInterval(outroInterval);
+      outroInterval = null;
+    }
+  }
+
+  function triggerOutro(){
+    const ytBox = document.getElementById("yt");
+
+    // fai svanire PRIMA che YouTube mostri la schermata finale
+    ytBox.classList.remove("is-visible");
+    ytBox.classList.add("is-hidden");
+
+    // ferma il video poco dopo (box già invisibile)
+    setTimeout(() => {
+      try{ player.stopVideo(); }catch(_){}
+    }, 200);
+
+    clearOutroWatcher();
+  }
+</script>
 
 </body>
 </html>
+
+
+
+
 
 
