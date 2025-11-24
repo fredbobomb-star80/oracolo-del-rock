@@ -310,11 +310,11 @@
     // 3) avvia SUBITO: audio immediato
     player.loadVideoById(id);
 
-    // 4) dopo 2,5 secondi, il video appare pulito
+    // 4) dopo 3 secondi, il video appare pulito, timing perfetto per evitare le scritte
     entranceTimer = setTimeout(() => {
       ytBox.classList.remove("audio-first");
       entranceTimer = null;
-    }, 2500);
+    }, 3000);
   }
 
   function onStateChange(e){
@@ -341,6 +341,7 @@ setTimeout(() => {
 
 </body>
 </html>
+
 
 
 
