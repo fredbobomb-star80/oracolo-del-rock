@@ -218,27 +218,34 @@
   </main>
 
 <!-- SCRIPT YOUTUBE -->
+
+
+  <!-- SCRIPT YOUTUBE -->
 <script>
   const API_KEY     = "AIzaSyDNsQKEvKwHOyZCJ0mojJS325Sbw6wX9as";
   const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx";
   const PAGE_SIZE   = 50;
 
   (function(){
-    const s=document.createElement('script');
-    s.src="https://www.youtube.com/iframe_api";
+    const s = document.createElement('script');
+    s.src = "https://www.youtube.com/iframe_api";
     document.head.appendChild(s);
   })();
 
   let player = null;
   let allIds = [];
-  let entranceTimer = null; // <-- timer per l'effetto di entrata
+  let entranceTimer = null;
+
+  // watcher per uscita pro
+  let outroInterval = null;
+  let outroTriggered = false;
 
   window.onYouTubeIframeAPIReady = () => {
     player = new YT.Player('yt', {
       height: '390',
       width:  '640',
-      playerVars: { modestbranding:1, rel:0 },
-      events: { 
+      playerVars: { modestbranding: 1, rel: 0 },
+      events: {
         onReady: onReady,
         onStateChange: onStateChange
       }
@@ -272,10 +279,10 @@
       if(pageToken) url.searchParams.set("pageToken", pageToken);
 
       const res = await fetch(url.toString());
-      if(!res.ok) throw new Error("HTTP "+res.status);
+      if(!res.ok) throw new Error("HTTP " + res.status);
       const data = await res.json();
 
-      const batch = (data.items||[])
+      const batch = (data.items || [])
         .map(i => i?.snippet?.resourceId?.videoId)
         .filter(Boolean);
 
@@ -292,25 +299,29 @@
 
     const ytBox = document.getElementById("yt");
 
-    // sicurezza: se clicchi di nuovo mentre sta entrando, reset
+    // reset timer entrata
     if(entranceTimer){
       clearTimeout(entranceTimer);
       entranceTimer = null;
     }
 
-    // 1) rendi visibile il box MA con effetto di entrata (audio-first)
+    // reset uscita pro
+    clearOutroWatcher();
+    outroTriggered = false;
+
+    // box visibile ma audio-first (invisibile per 3s)
     ytBox.classList.remove("is-hidden");
     ytBox.classList.add("is-visible");
     ytBox.classList.add("audio-first");
 
-    // 2) scegli un video random
+    // pesca random
     const idx = Math.floor(Math.random() * allIds.length);
     const id  = allIds[idx];
 
-    // 3) avvia SUBITO: audio immediato
+    // audio subito
     player.loadVideoById(id);
 
-    // 4) dopo 3 secondi, il video appare pulito, timing perfetto per evitare le scritte
+    // dopo 3 secondi appare il video
     entranceTimer = setTimeout(() => {
       ytBox.classList.remove("audio-first");
       entranceTimer = null;
@@ -318,29 +329,87 @@
   }
 
   function onStateChange(e){
-    if(e.data === YT.PlayerState.ENDED){
-      const ytBox = document.getElementById("yt");
+    const ytBox = document.getElementById("yt");
 
-      // pulizia timer ed effetto entrata
+    // quando parte a suonare davvero → attiva watcher uscita pro
+    if(e.data === YT.PlayerState.PLAYING){
+      startOutroWatcher();
+    }
+
+    // se metti in pausa/bufferizza → stop watcher
+    if(
+      e.data === YT.PlayerState.PAUSED ||
+      e.data === YT.PlayerState.BUFFERING
+    ){
+      clearOutroWatcher();
+    }
+
+    // se finisce per davvero → pulizia e sicurezza
+    if(e.data === YT.PlayerState.ENDED){
+      clearOutroWatcher();
+      outroTriggered = false;
+
       if(entranceTimer){
         clearTimeout(entranceTimer);
         entranceTimer = null;
       }
       ytBox.classList.remove("audio-first");
 
-      // fade-out
-      // micro-respiro prima dell’uscita (sottile ma elegante)
-setTimeout(() => {
-  ytBox.classList.remove("is-visible");
-  ytBox.classList.add("is-hidden");
-}, 150);
- }
+      // se per qualche motivo non era già sparito, sparisce ora
+      ytBox.classList.remove("is-visible");
+      ytBox.classList.add("is-hidden");
+    }
   }
-  
+
+  // ---- USCITA PRO PRIMA DELLA FINE ----
+  function startOutroWatcher(){
+    clearOutroWatcher();
+    outroTriggered = false;
+
+    outroInterval = setInterval(() => {
+      if(!player || outroTriggered) return;
+
+      const dur = player.getDuration();
+      const cur = player.getCurrentTime();
+
+      if(!dur || !cur) return;
+
+      const remaining = dur - cur;
+
+      // soglia "pro": 1 secondo prima della fine
+      if(remaining <= 1.0){
+        outroTriggered = true;
+        triggerOutro();
+      }
+    }, 250);
+  }
+
+  function clearOutroWatcher(){
+    if(outroInterval){
+      clearInterval(outroInterval);
+      outroInterval = null;
+    }
+  }
+
+  function triggerOutro(){
+    const ytBox = document.getElementById("yt");
+
+    // fai svanire PRIMA che YouTube mostri la schermata finale
+    ytBox.classList.remove("is-visible");
+    ytBox.classList.add("is-hidden");
+
+    // ferma il video poco dopo (box già invisibile)
+    setTimeout(() => {
+      try{ player.stopVideo(); }catch(_){}
+    }, 200);
+
+    clearOutroWatcher();
+  }
 </script>
 
 </body>
 </html>
+
 
 
 
