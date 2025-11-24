@@ -53,6 +53,14 @@
   transition: opacity .6s ease, transform .6s ease;
   pointer-events: auto;
 }
+
+/* ---- EFFETTO DI ENTRATA (AUDIO SUBITO, VIDEO DOPO 4s) ---- */
+/* quando c'è questa classe, il player suona ma resta invisibile */
+.yt-overlay.is-visible.audio-first{
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}
     
     .yt-overlay{
       position:absolute;
@@ -223,6 +231,7 @@
 
   let player = null;
   let allIds = [];
+  let entranceTimer = null; // <-- timer per l'effetto di entrata
 
   window.onYouTubeIframeAPIReady = () => {
     player = new YT.Player('yt', {
@@ -237,7 +246,6 @@
   };
 
   function onReady(){
-    // il bottone PESCA (id="new") fa partire il random
     document.getElementById("new").addEventListener("click", playRandom);
     boot();
   }
@@ -245,7 +253,6 @@
   async function boot(){
     try{
       allIds = await fetchAllPlaylistIds(PLAYLIST_ID);
-      // NON parte nessun video da solo all'apertura
     }catch(err){
       console.error(err);
       alert("Errore nel caricare la playlist.");
@@ -285,35 +292,48 @@
 
     const ytBox = document.getElementById("yt");
 
-    // 1) fai comparire il box del video (fade-in)
+    // sicurezza: se clicchi di nuovo mentre sta entrando, reset
+    if(entranceTimer){
+      clearTimeout(entranceTimer);
+      entranceTimer = null;
+    }
+
+    // 1) rendi visibile il box MA con effetto di entrata (audio-first)
     ytBox.classList.remove("is-hidden");
     ytBox.classList.add("is-visible");
+    ytBox.classList.add("audio-first");
 
     // 2) scegli un video random
     const idx = Math.floor(Math.random() * allIds.length);
     const id  = allIds[idx];
 
-    // 3) avvia
+    // 3) avvia SUBITO: audio immediato
     player.loadVideoById(id);
+
+    // 4) dopo 4 secondi, il video appare pulito
+    entranceTimer = setTimeout(() => {
+      ytBox.classList.remove("audio-first");
+      entranceTimer = null;
+    }, 4000);
   }
 
   function onStateChange(e){
-    // quando il video finisce, nascondi il player (fade-out)
     if(e.data === YT.PlayerState.ENDED){
       const ytBox = document.getElementById("yt");
+
+      // pulizia timer ed effetto entrata
+      if(entranceTimer){
+        clearTimeout(entranceTimer);
+        entranceTimer = null;
+      }
+      ytBox.classList.remove("audio-first");
+
+      // fade-out
       ytBox.classList.remove("is-visible");
       ytBox.classList.add("is-hidden");
     }
   }
 </script>
 
-
 </body>
 </html>
-
-
-
-
-
-
-
