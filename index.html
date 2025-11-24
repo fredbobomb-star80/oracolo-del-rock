@@ -329,12 +329,16 @@
       ytBox.classList.remove("audio-first");
 
       // fade-out
-      ytBox.classList.remove("is-visible");
-      ytBox.classList.add("is-hidden");
-    }
+      // micro-respiro prima dell’uscita (sottile ma elegante)
+setTimeout(() => {
+  ytBox.classList.remove("is-visible");
+  ytBox.classList.add("is-hidden");
+}, 150);
+
   }
 </script>
 
 </body>
 </html>
+
 
