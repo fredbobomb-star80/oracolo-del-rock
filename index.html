@@ -36,51 +36,48 @@
       /* stato normale: nessuna animazione */
     }
 
-    /* --- EFFETTO 2+3: MICRO-VIBRAZIONE NEON + ACCENSIONE --- */
+    /* --- EFFETTO MICRO-VIBRAZIONE + ACCENSIONE + FLASH FINALE --- */
     /* quando l'oracolo si "attiva", aggiungiamo la classe .activating alla hero-img */
     .hero-img.activating{
       /* due animazioni in parallelo:
          - heroShake: micro-vibrazione continua
-         - powerOn: accensione progressiva della cabina */
+         - powerOnFlash: accensione + flash finale */
       animation:
         heroShake 0.16s infinite alternate,
-        powerOn 2.6s ease-out forwards; /* << durata aumentata */
+        powerOnFlash 1.7s ease-out forwards;
       transform-origin:center;
-      filter: brightness(0.6); /* parte leggermente scura */
     }
 
-    /* micro movimento, molto leggero per non dare fastidio all'occhio */
+    /* micro-movimento, leggero per non dare fastidio */
     @keyframes heroShake{
       from{
         transform: translate(0px, 0px);
-        /* nessun filter qui, lo gestisce powerOn */
       }
       to{
         transform: translate(0.7px, -0.7px);
-        /* niente filter per evitare conflitti */
       }
     }
 
-    /* ACCENSIONE della cabina dell'oracolo (dark + flash) */
-    @keyframes powerOn{
+    /* accensione con sparizione e flash finale */
+    @keyframes powerOnFlash{
       0%{
-        filter: brightness(0.4) contrast(0.9);
+        opacity: 0;
+        filter: brightness(0.3) contrast(0.8);
       }
-      40%{
-        filter: brightness(0.7) contrast(1.1);
-          }
-  70%{
-    opacity: 0; /* sparisce completamente: colpo di corrente */
-  }
-  85%{
-    opacity: 1;
-    filter: brightness(1.4) saturate(1.6); /* SUPER FLASH */
-  }
+      50%{
+        opacity: 1;
+        filter: brightness(0.8) contrast(1.1);
       }
-      65%{
-        filter: brightness(1.1) saturate(1.2);
+      70%{
+        opacity: 0; /* sparisce: colpo di corrente */
+        filter: brightness(0.4) contrast(1);
+      }
+      85%{
+        opacity: 1;
+        filter: brightness(1.4) saturate(1.6); /* super flash */
       }
       100%{
+        opacity: 1;
         filter: brightness(1) contrast(1);
       }
     }
@@ -107,6 +104,11 @@
       opacity: 0;
       transform: translateY(6px);
       pointer-events: none;
+    }
+
+    /* FIX: durante audio-first l'iframe è proprio invisibile (PC + smartphone) */
+    .yt-overlay.is-visible.audio-first iframe{
+      visibility: hidden;
     }
     
     .yt-overlay{
@@ -319,7 +321,7 @@
     };
 
     function onReady(){
-      const btn    = document.getElementById("new");
+      const btn     = document.getElementById("new");
       const heroImg = document.querySelector(".hero-img");
 
       /* --- FASE 1: appena carichi la pagina, l'oracolo si "accende" --- */
@@ -493,4 +495,3 @@
 
 </body>
 </html>
-
