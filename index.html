@@ -34,6 +34,26 @@
       width:100%;
       height:auto;
       display:block;
+      /* stato normale: nessuna animazione */
+    }
+
+    /* --- EFFETTO 2: MICRO-VIBRAZIONE NEON DURANTE L'ACCENSIONE --- */
+    /* quando l'oracolo si "attiva", aggiungiamo la classe .activating alla hero-img */
+    .hero-img.activating{
+      animation: heroShake 0.16s infinite alternate;
+      transform-origin:center;
+    }
+
+    /* micro movimento, molto leggero per non dare fastidio all'occhio */
+    @keyframes heroShake{
+      from{
+        transform: translate(0px, 0px);
+        filter: brightness(1);
+      }
+      to{
+        transform: translate(0.7px, -0.7px);
+        filter: brightness(1.03); /* leggerissimo bagliore */
+      }
     }
 
     /* AREA VIDEO */
@@ -271,11 +291,17 @@
     };
 
     function onReady(){
-      const btn = document.getElementById("new");
+      const btn    = document.getElementById("new");
+      const heroImg = document.querySelector(".hero-img");
 
       /* --- FASE 1: appena carichi la pagina, l'oracolo si "accende" --- */
       btn.classList.add("disabled");                         // bottone non cliccabile
       btn.textContent = "ACCENSIONE DELL'ORACOLO...";        // testo temporaneo
+
+      // attiva micro-vibrazione neon sulla cabina
+      if(heroImg){
+        heroImg.classList.add("activating");
+      }
 
       /* --- Prepariamo il click (funzionerà solo quando disabilitato sarà tolto) --- */
       btn.addEventListener("click", playRandom);
@@ -294,9 +320,16 @@
       }
 
       /* --- FASE 2: oracolo pronto → bottone normale e cliccabile --- */
-      const btn = document.getElementById("new");
+      const btn     = document.getElementById("new");
+      const heroImg = document.querySelector(".hero-img");
+
       btn.classList.remove("disabled");          // togli stato "accensione"
       btn.textContent = "PESCA LA TUA CARTA";    // testo definitivo
+
+      // spegni la micro-vibrazione della cabina
+      if(heroImg){
+        heroImg.classList.remove("activating");
+      }
     }
 
     async function fetchAllPlaylistIds(playlistId){
