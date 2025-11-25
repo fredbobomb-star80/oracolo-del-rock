@@ -6,7 +6,6 @@
   <title>Chiedilo all’Oracolo del Rock</title>
 
   <style>
-
     /* ============================
        ***   MIO CSS   ***
        Qui dentro c’è tutto lo stile del sito
@@ -37,48 +36,47 @@
       /* stato normale: nessuna animazione */
     }
 
-    /* --- EFFETTO 2: MICRO-VIBRAZIONE NEON DURANTE L'ACCENSIONE --- */
+    /* --- EFFETTO 2+3: MICRO-VIBRAZIONE NEON + ACCENSIONE --- */
     /* quando l'oracolo si "attiva", aggiungiamo la classe .activating alla hero-img */
     .hero-img.activating{
-      animation: heroShake 0.16s infinite alternate;
+      /* due animazioni in parallelo:
+         - heroShake: micro-vibrazione continua
+         - powerOn: accensione progressiva della cabina */
+      animation:
+        heroShake 0.16s infinite alternate,
+        powerOn 2.6s ease-out forwards; /* << durata aumentata */
       transform-origin:center;
+      filter: brightness(0.6); /* parte leggermente scura */
     }
 
     /* micro movimento, molto leggero per non dare fastidio all'occhio */
     @keyframes heroShake{
       from{
         transform: translate(0px, 0px);
-        filter: brightness(1);
+        /* nessun filter qui, lo gestisce powerOn */
       }
       to{
         transform: translate(0.7px, -0.7px);
-        filter: brightness(1.03); /* leggerissimo bagliore */
+        /* niente filter per evitare conflitti */
       }
     }
 
-/* --- EFFETTO 3: ACCENSIONE della cabina dell'oracolo (dark + flash) --- */
-/* usata solo durante ACCENSIONE dell'oracolo */
-.hero-img.activating{
-  animation: powerOn 1.8s ease-out forwards;
-  filter: brightness(0.6); /* parte leggermente scura */
-}
+    /* ACCENSIONE della cabina dell'oracolo (dark + flash) */
+    @keyframes powerOn{
+      0%{
+        filter: brightness(0.4) contrast(0.9);
+      }
+      40%{
+        filter: brightness(0.7) contrast(1.1);
+      }
+      65%{
+        filter: brightness(1.1) saturate(1.2);
+      }
+      100%{
+        filter: brightness(1) contrast(1);
+      }
+    }
 
-@keyframes powerOn{
-  0%{
-    filter: brightness(0.4) contrast(0.9);
-  }
-  40%{
-    filter: brightness(0.7) contrast(1.1);
-  }
-  65%{
-    filter: brightness(1.1) saturate(1.2);
-  }
-  100%{
-    filter: brightness(1) contrast(1);
-  }
-}
-
-    
     /* AREA VIDEO */
 
     /* ---- FADE IN/OUT VIDEO ---- */
@@ -97,7 +95,6 @@
     }
 
     /* ---- EFFETTO DI ENTRATA (AUDIO SUBITO, VIDEO DOPO 3s) ---- */
-    /* quando c'è questa classe, il player suona ma resta invisibile */
     .yt-overlay.is-visible.audio-first{
       opacity: 0;
       transform: translateY(6px);
@@ -134,7 +131,7 @@
     /* BOTTONE PRINCIPALE */
     .frame-button{
       position:absolute;
-      top:102%; /* <<<<< prima era 96% */
+      top:102%;
       left:50%;
       transform:translateX(-50%);
     }
@@ -183,9 +180,9 @@
     /* --- STATO "ACCENSIONE" DEL BOTTONE (prima che l'oracolo sia pronto) --- */
     #new.disabled{
       opacity:0.5;
-      pointer-events:none;        /* non cliccabile */
+      pointer-events:none;
       filter:grayscale(90%);
-      animation: btnPulse 1s infinite alternate; /* leggero respiro di luce */
+      animation: btnPulse 1s infinite alternate;
     }
 
     @keyframes btnPulse{
@@ -206,7 +203,7 @@
       max-width:920px;
       margin:0 auto;
       padding:16px 16px 40px;
-      margin-top:60px; /* <<<<< prima era 20px */
+      margin-top:60px;
       display:flex;
       flex-direction:column;
       gap:12px;
@@ -318,15 +315,15 @@
       const heroImg = document.querySelector(".hero-img");
 
       /* --- FASE 1: appena carichi la pagina, l'oracolo si "accende" --- */
-      btn.classList.add("disabled");                         // bottone non cliccabile
-      btn.textContent = "ACCENSIONE DELL'ORACOLO...";        // testo temporaneo
+      btn.classList.add("disabled");
+      btn.textContent = "ACCENSIONE DELL'ORACOLO...";
 
-      // attiva micro-vibrazione neon sulla cabina
+      // attiva vibrazione + accensione cabina
       if(heroImg){
         heroImg.classList.add("activating");
       }
 
-      /* --- Prepariamo il click (funzionerà solo quando disabilitato sarà tolto) --- */
+      /* --- Prepariamo il click --- */
       btn.addEventListener("click", playRandom);
 
       /* --- Avviamo il caricamento della playlist YouTube --- */
@@ -346,10 +343,10 @@
       const btn     = document.getElementById("new");
       const heroImg = document.querySelector(".hero-img");
 
-      btn.classList.remove("disabled");          // togli stato "accensione"
-      btn.textContent = "PESCA LA TUA CARTA";    // testo definitivo
+      btn.classList.remove("disabled");
+      btn.textContent = "PESCA LA TUA CARTA";
 
-      // spegni la micro-vibrazione della cabina
+      // spegni animazione cabina
       if(heroImg){
         heroImg.classList.remove("activating");
       }
@@ -384,7 +381,6 @@
     }
 
     function playRandom(){
-      // sicurezza extra: se per qualche motivo è ancora "disabled", esci
       const btn = document.getElementById("new");
       if(btn.classList.contains("disabled")) return;
 
@@ -392,29 +388,23 @@
 
       const ytBox = document.getElementById("yt");
 
-      // reset timer entrata
       if(entranceTimer){
         clearTimeout(entranceTimer);
         entranceTimer = null;
       }
 
-      // reset uscita pro
       clearOutroWatcher();
       outroTriggered = false;
 
-      // box visibile ma audio-first (invisibile per 3s)
       ytBox.classList.remove("is-hidden");
       ytBox.classList.add("is-visible");
       ytBox.classList.add("audio-first");
 
-      // pesca random
       const idx = Math.floor(Math.random() * allIds.length);
       const id  = allIds[idx];
 
-      // audio subito
       player.loadVideoById(id);
 
-      // dopo 3 secondi appare il video (la carta)
       entranceTimer = setTimeout(() => {
         ytBox.classList.remove("audio-first");
         entranceTimer = null;
@@ -424,12 +414,10 @@
     function onStateChange(e){
       const ytBox = document.getElementById("yt");
 
-      // quando parte a suonare davvero → attiva watcher uscita pro
       if(e.data === YT.PlayerState.PLAYING){
         startOutroWatcher();
       }
 
-      // se metti in pausa/bufferizza → stop watcher
       if(
         e.data === YT.PlayerState.PAUSED ||
         e.data === YT.PlayerState.BUFFERING
@@ -437,7 +425,6 @@
         clearOutroWatcher();
       }
 
-      // se finisce per davvero → pulizia e sicurezza
       if(e.data === YT.PlayerState.ENDED){
         clearOutroWatcher();
         outroTriggered = false;
@@ -448,7 +435,6 @@
         }
         ytBox.classList.remove("audio-first");
 
-        // se per qualche motivo non era già sparito, sparisce ora
         ytBox.classList.remove("is-visible");
         ytBox.classList.add("is-hidden");
       }
@@ -469,7 +455,6 @@
 
         const remaining = dur - cur;
 
-        // soglia "pro": 1 secondo prima della fine
         if(remaining <= 1.0){
           outroTriggered = true;
           triggerOutro();
@@ -487,11 +472,9 @@
     function triggerOutro(){
       const ytBox = document.getElementById("yt");
 
-      // fai svanire PRIMA che YouTube mostri la schermata finale
       ytBox.classList.remove("is-visible");
       ytBox.classList.add("is-hidden");
 
-      // ferma il video poco dopo (box già invisibile)
       setTimeout(() => {
         try{ player.stopVideo(); }catch(_){}
       }, 200);
@@ -502,4 +485,3 @@
 
 </body>
 </html>
-
