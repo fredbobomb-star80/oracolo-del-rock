@@ -3030,6 +3030,706 @@ const ORACOLO_RISPOSTE = [
     cardImage: "carta_430.png",
     videoId: ""
    },
+  {
+    id: 431,
+    code: "431",
+    text: "Quando credi di non avere più voce lascia che sia il tuo cuore a cantare.",
+    cardImage: "carta_431.png",
+    videoId: ""
+  },
+  {
+    id: 432,
+    code: "432",
+    text: "Nessuno nasce in piedi.",
+    cardImage: "carta_432.png",
+    videoId: ""
+  },
+  {
+    id: 433,
+    code: "433",
+    text: "Hai cercato la luce dove ti vendevano ombre.",
+    cardImage: "carta_433.png",
+    videoId: ""
+  },
+  {
+    id: 434,
+    code: "434",
+    text: "Ti rialzi se lo desideri ma resta a terra se ti piace mollare.",
+    cardImage: "carta_434.png",
+    videoId: ""
+  },
+  {
+    id: 435,
+    code: "435",
+    text: "La pace non intende le ragioni della guerra. Ma la guerra di rompere la pace lo intende benissimo.",
+    cardImage: "carta_435.png",
+    videoId: ""
+  },
+  {
+    id: 436,
+    code: "436",
+    text: "No, non arriverà un giorno in cui tutto sarà risolto. La libertà comincia danzando sulle macerie dell'incertezza.",
+    cardImage: "carta_436.png",
+    videoId: ""
+  },
+  {
+    id: 437,
+    code: "437",
+    text: "Tutto questo disprezzo, non farà altro che darti la giusta carica per affrontare il prossimo palco.",
+    cardImage: "carta_437.png",
+    videoId: ""
+  },
+  {
+    id: 438,
+    code: "438",
+    text: "Scegli, o diventi leader o continui a seguire il flow ma senza rompere troppo i coglioni.",
+    cardImage: "carta_438.png",
+    videoId: ""
+  },
+  {
+    id: 439,
+    code: "439",
+    text: "Invece tu provaci lo stesso, nonostante tutto e tutti.",
+    cardImage: "carta_439.png",
+    videoId: ""
+  },
+  {
+    id: 440,
+    code: "440",
+    text: "Spaccherai di brutto.",
+    cardImage: "carta_440.png",
+    videoId: ""
+  },
+  {
+    id: 441,
+    code: "441",
+    text: "Difendi meglio i tuoi spazi interiori.",
+    cardImage: "carta_441.png",
+    videoId: ""
+  },
+  {
+    id: 442,
+    code: "442",
+    text: "Coerente come un terrapiattista sulla luna.",
+    cardImage: "carta_442.png",
+    videoId: ""
+  },
+  {
+    id: 443,
+    code: "443",
+    text: "Hai disegnato con il sangue e dipinto con il tuo dolore. Vendi i tuoi capolavori a caro prezzo. A caro prezzo.",
+    cardImage: "carta_443.png",
+    videoId: ""
+  },
+  {
+    id: 444,
+    code: "444",
+    text: "Una Rock star non vende corsi su come diventare una Rock star.",
+    cardImage: "carta_444.png",
+    videoId: ""
+  },
+  {
+    id: 445,
+    code: "445",
+    text: "Qualcuno è vecchio, qualcun altro è Lenny Kravitz.",
+    cardImage: "carta_445.png",
+    videoId: ""
+  },
+  {
+    id: 446,
+    code: "446",
+    text: "C'è così tanta mediocrità in giro, che l'originalità non piace.",
+    cardImage: "carta_446.png",
+    videoId: ""
+  },
+  {
+    id: 447,
+    code: "447",
+    text: "Già fai proprio così. Come se fosse scritto e diretto da Quentin Tarantino. Da, Quentin Tarantino, si!",
+    cardImage: "carta_447.png",
+    videoId: ""
+  },
+  {
+    id: 448,
+    code: "448",
+    text: "Quand'è stata l'ultima volta che hai dormito otto sacrosante ore di fila?",
+    cardImage: "carta_448.png",
+    videoId: ""
+  },
+  {
+    id: 449,
+    code: "449",
+    text: "I tuoi demoni saranno i tuoi migliori alleati se gli dai un bel biscottino fatto in casa alla vaniglia.",
+    cardImage: "carta_449.png",
+    videoId: ""
+  },
+  {
+    id: 450,
+    code: "450",
+    text: "Parli dei supereroi come se esistessero. Sparli delle Rock star come se ti cagassero.",
+    cardImage: "carta_450.png",
+    videoId: ""
+  },
+  {
+    id: 451,
+    code: "451",
+    text: "Chi ti sta rubando, tempo, idee ed energie, se la vedrà con l'ira implacabile degli dei del Rock.",
+    cardImage: "carta_451.png",
+    videoId: ""
+  },
+  {
+    id: 452,
+    code: "452",
+    text: "I tuoi falsi amici si mangeranno il fegato farcito con una spruzzatina di culo bruciato.",
+    cardImage: "carta_452.png",
+    videoId: ""
+  },
+  {
+    id: 453,
+    code: "453",
+    text: "I tuoi nemici continueranno a parlare male di te, si, ma con le quattro mura del manicomio.",
+    cardImage: "carta_453.png",
+    videoId: ""
+  },
+  {
+    id: 454,
+    code: "454",
+    text: "Chi vuole colpirti sotto la cintura inciamperà sulla sua ridicola coda di topo da laboratorio.",
+    cardImage: "carta_454.png",
+    videoId: ""
+  },
+  {
+    id: 455,
+    code: "455",
+    text: "Chi ti ha tradito passerà più tempo seduto sul cesso che sul suo trono di carta igienica.",
+    cardImage: "carta_455.png",
+    videoId: ""
+  },
+  {
+    id: 456,
+    code: "456",
+    text: "Non crederti sto gran cazzo.",
+    cardImage: "carta_456.png",
+    videoId: ""
+  },
+  {
+    id: 457,
+    code: "457",
+    text: "Chi ti ha messo all'angolo quando avevi bisogno di lui, fidati che andrà in KO tecnico per un bel po'.",
+    cardImage: "carta_457.png",
+    videoId: ""
+  },
+  {
+    id: 458,
+    code: "458",
+    text: "Chi ti sta sminuendo perché si crede migliore di te, verrà a lucidarti le chitarre, le scarpe e tutti i tuoi trofei.",
+    cardImage: "carta_458.png",
+    videoId: ""
+  },
+  {
+    id: 459,
+    code: "459",
+    text: "Chi ti ha preso in giro alle tue spalle, riderà ancora ma solo nei suoi sogni migliori.",
+    cardImage: "carta_459.png",
+    videoId: ""
+  },
+  {
+    id: 460,
+    code: "460",
+    text: "Tra cento anni avranno ben altro di cui preoccuparsi.",
+    cardImage: "carta_460.png",
+    videoId: ""
+  },
+  {
+    id: 461,
+    code: "461",
+    text: "Chi ti ha tradito solo per farsi bello, pagherà caro per entrare ai tuoi concerti ma non entrerà mai.",
+    cardImage: "carta_461.png",
+    videoId: ""
+  },
+  {
+    id: 462,
+    code: "462",
+    text: "Chi ti ha invidiato e covato rancore per te, saprà solo scimmiottare i tuoi peggiori sbagli.",
+    cardImage: "carta_462.png",
+    videoId: ""
+  },
+  {
+    id: 463,
+    code: "463",
+    text: "No, questo non è un film di Nolan, anche se sta implodendo tutto. Tutto, sta implodendo tutto.",
+    cardImage: "carta_463.png",
+    videoId: ""
+  },
+  {
+    id: 464,
+    code: "464",
+    text: "Chi ti ha ignorato perché gli è convenuto, vedrà i propri figli tatuarsi in petto il tuo nome.",
+    cardImage: "carta_464.png",
+    videoId: ""
+  },
+  {
+    id: 465,
+    code: "465",
+    text: "Chi ti ha sputato addosso il suo ego, odio e veleno, ingoierà la sua lingua e litri di bile.",
+    cardImage: "carta_465.png",
+    videoId: ""
+  },
+  {
+    id: 466,
+    code: "466",
+    text: "Fatti guidare dalla lussuria per un po'.",
+    cardImage: "carta_466.png",
+    videoId: ""
+  },
+  {
+    id: 467,
+    code: "467",
+    text: "Si, sobrio come un santo protettore dei gin tonic.",
+    cardImage: "carta_467.png",
+    videoId: ""
+  },
+  {
+    id: 468,
+    code: "468",
+    text: "Ogni tanto coltiva un po' di sana superbia.",
+    cardImage: "carta_468.png",
+    videoId: ""
+  },
+  {
+    id: 469,
+    code: "469",
+    text: "Non cantare vittoria, può essere ancora troppo presto per il Rock.",
+    cardImage: "carta_469.png",
+    videoId: ""
+  },
+  {
+    id: 470,
+    code: "470",
+    text: "Non invidi mai quello che non hai, invidi solo quello che ti sottrai.",
+    cardImage: "carta_470.png",
+    videoId: ""
+  },
+  {
+    id: 471,
+    code: "471",
+    text: "Si, come un bacio al retrogusto di bruciato.",
+    cardImage: "carta_471.png",
+    videoId: ""
+  },
+  {
+    id: 472,
+    code: "472",
+    text: "Ma dove vai? Ma cosa fai? Cosa provi? Come stai?",
+    cardImage: "carta_472.png",
+    videoId: ""
+  },
+  {
+    id: 473,
+    code: "473",
+    text: "L'accidia ti ha sedotto. L'ego ti ha distratto. Ma il tempo non fa sconto. Adotta un altro gatto.",
+    cardImage: "carta_473.png",
+    videoId: ""
+  },
+  {
+    id: 474,
+    code: "474",
+    text: "Si, è come l'ultimo giorno di galera.",
+    cardImage: "carta_474.png",
+    videoId: ""
+  },
+  {
+    id: 475,
+    code: "475",
+    text: "Non sei il professore de “La casa di carta”. Pianifica meglio questo colpo.",
+    cardImage: "carta_475.png",
+    videoId: ""
+  },
+  {
+    id: 476,
+    code: "476",
+    text: "Si, prezioso e raro come il plettro del destino.",
+    cardImage: "carta_476.png",
+    videoId: ""
+  },
+  {
+    id: 477,
+    code: "477",
+    text: "Si, è tutto magico come un open bar. Come un open bar.",
+    cardImage: "carta_477.png",
+    videoId: ""
+  },
+  {
+    id: 478,
+    code: "478",
+    text: "Si, adrenalinico come un concerto in prima fila.",
+    cardImage: "carta_478.png",
+    videoId: ""
+  },
+  {
+    id: 479,
+    code: "479",
+    text: "Sorridi e già sai che la vita sorriderà. Rocckeggia e vedrai che la vita spaccherà.",
+    cardImage: "carta_479.png",
+    videoId: ""
+  },
+  {
+    id: 480,
+    code: "480",
+    text: "Si, avventuroso come il primo giorno di vacanze ma con il bagaglio smarrito.",
+    cardImage: "carta_480.png",
+    videoId: ""
+  },
+  {
+    id: 481,
+    code: "481",
+    text: "E' un tuo sacrosanto diritto. Dire no. Dire stop. Dire non ci sto.",
+    cardImage: "carta_481.png",
+    videoId: ""
+  },
+  {
+    id: 482,
+    code: "482",
+    text: "Sono questioni che non ti riguardano. Sono questioni che ti fan male al Rock'n'Roll.",
+    cardImage: "carta_482.png",
+    videoId: ""
+  },
+  {
+    id: 483,
+    code: "483",
+    text: "Ricordati il tuo ultimo sogno e svela il suo vero significato.",
+    cardImage: "carta_483.png",
+    videoId: ""
+  },
+  {
+    id: 484,
+    code: "484",
+    text: "Ricordati il tuo ultimo incubo e dai un volto alla tua paura.",
+    cardImage: "carta_484.png",
+    videoId: ""
+  },
+  {
+    id: 485,
+    code: "485",
+    text: "Si, ti hanno premuto il sacro punto di pressione, per farti sganciare tutti i soldi. Ti hanno aperto come un salvadanaio a forma di coglione, astuto come un bancomat senza il pin.",
+    cardImage: "carta_485.png",
+    videoId: ""
+  },
+  {
+    id: 486,
+    code: "486",
+    text: "Cosa diavolo ti ha suggerito di farlo. Cosa diavolo ti ha suggerito di dirlo. Insomma, cosa diavolo.",
+    cardImage: "carta_486.png",
+    videoId: ""
+  },
+  {
+    id: 487,
+    code: "487",
+    text: "Solo se sconfiggerai la paura della solitudine.",
+    cardImage: "carta_487.png",
+    videoId: ""
+  },
+  {
+    id: 488,
+    code: "488",
+    text: "Solo se sconfiggerai la paura del successo.",
+    cardImage: "carta_488.png",
+    videoId: ""
+  },
+  {
+    id: 489,
+    code: "489",
+    text: "Solo se sconfiggerai la paura di concedertelo.",
+    cardImage: "carta_489.png",
+    videoId: ""
+  },
+  {
+    id: 490,
+    code: "490",
+    text: "C'è chi lo dice e chi lo fa.",
+    cardImage: "carta_490.png",
+    videoId: ""
+  },
+  {
+    id: 491,
+    code: "491",
+    text: "Tutto ciò è imbarazzante come uno stadio con un finto Sold Out.",
+    cardImage: "carta_491.png",
+    videoId: ""
+  },
+  {
+    id: 492,
+    code: "492",
+    text: "Che lo spettacolo abbia inizio.",
+    cardImage: "carta_492.png",
+    videoId: ""
+  },
+  {
+    id: 493,
+    code: "493",
+    text: "Chiudi tutti e fallo presto. Non è il momento dello show.",
+    cardImage: "carta_493.png",
+    videoId: ""
+  },
+  {
+    id: 494,
+    code: "494",
+    text: "E tu, quale pillola ingoieresti, la blu o la rossa? Già... ci avrei scommesso.",
+    cardImage: "carta_494.png",
+    videoId: ""
+  },
+  {
+    id: 495,
+    code: "495",
+    text: "Compra tanti preservativi. Per lui o per lei, basta che ce li hai.",
+    cardImage: "carta_495.png",
+    videoId: ""
+  },
+  {
+    id: 496,
+    code: "496",
+    text: "Smettila di migliorarti per gli altri. Sei già perfettamente scomodo così come sei.",
+    cardImage: "carta_496.png",
+    videoId: ""
+  },
+  {
+    id: 497,
+    code: "497",
+    text: "No. Non vai dal maestro di spade per imparare l'uncinetto. No!",
+    cardImage: "carta_497.png",
+    videoId: ""
+  },
+  {
+    id: 498,
+    code: "498",
+    text: "Siamo figli di dei che non ci hanno desiderato, per questo ti conviene abbracciare i fragorosi dei del Rock.",
+    cardImage: "carta_498.png",
+    videoId: ""
+  },
+  {
+    id: 499,
+    code: "499",
+    text: "Che importa? Siamo tutti fratelli e sorelle, figli del dottor Frankenstein, Mostri, assemblati fatti di pezzi di ego di cadaveri, ed alla fine mal voluti, perché dovevano seguire un piano e tenere in piedi solo un macabro show.",
+    cardImage: "carta_499.png",
+    videoId: ""
+  },
+  {
+    id: 500,
+    code: "500",
+    text: "Controcorrente. Contro tutto e tutti. Perchè in questo pazzo mondo è giusto anche così.",
+    cardImage: "carta_500.png",
+    videoId: ""
+  },
+  {
+    id: 501,
+    code: "501",
+    text: "Chiedi aiuto a qualcuno che ha per lo meno dieci anni più di te ed una moto.",
+    cardImage: "carta_501.png",
+    videoId: ""
+  },
+  {
+    id: 502,
+    code: "502",
+    text: "L’anima Rock non ha bisogno di un cauto manager. Vuole un avvocato più forte per bruciare tutti i contratti.",
+    cardImage: "carta_502.png",
+    videoId: ""
+  },
+  {
+    id: 503,
+    code: "503",
+    text: "Ci sono paure, ombre, serpenti e demoni che dovrai sconfiggere.",
+    cardImage: "carta_503.png",
+    videoId: ""
+  },
+  {
+    id: 504,
+    code: "504",
+    text: "Su dai chiedimelo di nuovo.",
+    cardImage: "carta_504.png",
+    videoId: ""
+  },
+  {
+    id: 505,
+    code: "505",
+    text: "Perchè continui a chiedermelo se in realtà hai già deciso.",
+    cardImage: "carta_505.png",
+    videoId: ""
+  },
+  {
+    id: 506,
+    code: "506",
+    text: "Accadrà perché è destino.",
+    cardImage: "carta_506.png",
+    videoId: ""
+  },
+  {
+    id: 507,
+    code: "507",
+    text: "Le pagine del destino non sono ancora scritte.",
+    cardImage: "carta_507.png",
+    videoId: ""
+  },
+  {
+    id: 508,
+    code: "508",
+    text: "Figliolo, chiedi un consiglio a chi ha visto tutti i film di Clint Eastwood.",
+    cardImage: "carta_508.png",
+    videoId: ""
+  },
+  {
+    id: 509,
+    code: "509",
+    text: "Chiedi pure quello che ti turba. L'Oracolo del Rock ti farà una burla.",
+    cardImage: "carta_509.png",
+    videoId: ""
+  },
+  {
+    id: 510,
+    code: "510",
+    text: "Era meglio il primo album. Era meglio il romanzo. Era meglio la prima serie. Era meglio l'universo ancora prima delle sue macerie.",
+    cardImage: "carta_510.png",
+    videoId: ""
+  },
+  {
+    id: 511,
+    code: "511",
+    text: "Il tuo desiderio sarà esaudito. L'Oracolo del Rock non ti ha mai tradito.",
+    cardImage: "carta_511.png",
+    videoId: ""
+  },
+  {
+    id: 512,
+    code: "512",
+    text: "Vendi cara la tua pelle. Tira fuori il tuo animo ribelle.",
+    cardImage: "carta_512.png",
+    videoId: ""
+  },
+  {
+    id: 513,
+    code: "513",
+    text: "Tenta pure la fortuna. L'uomo non è stato per caso sulla Luna.",
+    cardImage: "carta_513.png",
+    videoId: ""
+  },
+  {
+    id: 514,
+    code: "514",
+    text: "Il destino non è ancora scritto. Il tuo cuore non starà più zitto.",
+    cardImage: "carta_514.png",
+    videoId: ""
+  },
+  {
+    id: 515,
+    code: "515",
+    text: "Non rubare il parcheggio, a chi suona il Rock'n'Roll.",
+    cardImage: "carta_515.png",
+    videoId: ""
+  },
+  {
+    id: 516,
+    code: "516",
+    text: "Gira la Terra. Gira la ruota. Salta a tempo, fai una capriola.",
+    cardImage: "carta_516.png",
+    videoId: ""
+  },
+  {
+    id: 517,
+    code: "517",
+    text: "Si può fingere un orgasmo non si può fingere il buon Rock.",
+    cardImage: "carta_517.png",
+    videoId: ""
+  },
+  {
+    id: 518,
+    code: "518",
+    text: "Sarà meglio di un orgasmo.",
+    cardImage: "carta_518.png",
+    videoId: ""
+  },
+  {
+    id: 519,
+    code: "519",
+    text: "Qui la fortuna non è contemplata, sarà solo il talento a determinarne l'esito.",
+    cardImage: "carta_519.png",
+    videoId: ""
+  },
+  {
+    id: 520,
+    code: "520",
+    text: "Puoi puntare sul talento ma questo giro sceglierà solo la fortuna.",
+    cardImage: "carta_520.png",
+    videoId: ""
+  },
+  {
+    id: 521,
+    code: "521",
+    text: "Abbonati alla tua felicità. Zero noie e con giga illimitati.",
+    cardImage: "carta_521.png",
+    videoId: ""
+  },
+  {
+    id: 522,
+    code: "522",
+    text: "Scrolla tra i ricordi delle tue vite passate.",
+    cardImage: "carta_522.png",
+    videoId: ""
+  },
+  {
+    id: 523,
+    code: "523",
+    text: "Scarica il tuo nuovo angelo custode ed assicurati che sia abbastanza Rock!",
+    cardImage: "carta_523.png",
+    videoId: ""
+  },
+  {
+    id: 524,
+    code: "524",
+    text: "Su forza corri al Black Friday delle mezze verità.",
+    cardImage: "carta_524.png",
+    videoId: ""
+  },
+  {
+    id: 525,
+    code: "525",
+    text: "Sarai tu a stabilire se sarà la fine di tutto o la nascita di un nuovo impero.",
+    cardImage: "carta_525.png",
+    videoId: ""
+  },
+  {
+    id: 526,
+    code: "526",
+    text: "Tutto chiaro : il tuo messaggio è stato ricevuto e verrà recapitato al diretto interessato.",
+    cardImage: "carta_526.png",
+    videoId: ""
+  },
+  {
+    id: 527,
+    code: "527",
+    text: "Un gattino che dorme ha più follower di te che lavori come un dannato. Ora dimmi chi governa realmente questo mondo.",
+    cardImage: "carta_527.png",
+    videoId: ""
+  },
+  {
+    id: 528,
+    code: "528",
+    text: "A volta tre desideri non bastano. Conceditene cento.",
+    cardImage: "carta_528.png",
+    videoId: ""
+  },
+  {
+    id: 529,
+    code: "529",
+    text: "Non fidarti di chi non canta mai al Karaoke.",
+    cardImage: "carta_529.png",
+    videoId: ""
+  },
+  {
+    id: 530,
+    code: "530",
+    text: "Come in quel film di Sergio Leone, tieni giù la testa coglione!",
+    cardImage: "carta_530.png",
+    videoId: ""
+  },
 
   {
     id: 666,
