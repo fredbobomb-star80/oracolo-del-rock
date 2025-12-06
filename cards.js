@@ -39,91 +39,91 @@ const ORACOLO_RISPOSTE = [
     code: "003",
     text: "Tu punti in alto. Il cielo è terso. Dove arriverai?",
     cardImage: "carta_003.png",
-    videoId: ""
+    videoId: "nAYIU2PIJJI"
   },
   {
     id: 4,
     code: "004",
     text: "Arriverà il momento. Me lo sento. Arriverà.",
     cardImage: "carta_004.png",
-    videoId: ""
+    videoId: "BjbPTpv-rCA"
   },
   {
     id: 5,
     code: "005",
     text: "Se non lo fai lo sai che lo rimpiangerai.",
     cardImage: "carta_005.png",
-    videoId: ""
+    videoId: "AWf0_6KypMc"
   },
   {
     id: 6,
     code: "006",
     text: "No. No, non aspettare un segno. Sii tu quel lampo fottutamente Rock!",
     cardImage: "carta_006.png",
-    videoId: ""
+    videoId: "bHmpeTSu_Z8"
   },
   {
     id: 7,
     code: "007",
     text: "Prendi il tuo tempo. Si, prenditi il tempo, che suona come questo Rock.",
     cardImage: "carta_007.png",
-    videoId: ""
+    videoId: "14iiUqChork"
   },
   {
     id: 8,
     code: "008",
     text: "Fatti i cazzi tuoi! Fatti i cazzi i tuoi! Si, pensa ai fatti tuoi.",
     cardImage: "carta_008.png",
-    videoId: ""
+    videoId: "VA1FmwnjeEE"
   },
   {
     id: 9,
     code: "009",
     text: "Follia! Si, questa è follia, ma mi piace. Si, ma che follia!",
     cardImage: "carta_009.png",
-    videoId: ""
+    videoId: "Cr-hUVQZ4XA"
   },
   {
     id: 10,
     code: "010",
     text: "Forse c'ha un altro. Magari no. Forse mi sbaglio. Magari no.",
     cardImage: "carta_010.png",
-    videoId: ""
+    videoId: "lKzWbJgaHFc"
   },
   {
     id: 11,
     code: "011",
     text: "C'è qualcosa che non sai. Ti tengono all'oscuro, Si, c'è qualcosa che non sai!",
     cardImage: "carta_011.png",
-    videoId: ""
+    videoId: "aah4wdOaoKA"
   },
   {
     id: 12,
     code: "012",
     text: "Non dipende da te. Oh, no no no no. Questo non dipende da te.",
     cardImage: "carta_012.png",
-    videoId: ""
+    videoId: "8gqzDuwbfcg"
   },
   {
     id: 13,
     code: "013",
     text: "Non serve che sia perfetto, serve che suoni vero. Vero!",
     cardImage: "carta_013.png",
-    videoId: ""
+    videoId: "SBK8msfRrss"
   },
   {
     id: 14,
     code: "014",
     text: "Adesso no, non ti serve urlare.\nMa lascia che sia il silenzio ad urlare per te.",
     cardImage: "carta_014.png",
-    videoId: ""
+    videoId: "haalUoYa3kg"
   },
   {
     id: 15,
     code: "015",
     text: "Finché vibra, restaci dentro.",
     cardImage: "carta_015.png",
-    videoId: ""
+    videoId: "7pYcY82VnDk"
   },
   {
     id: 16,
