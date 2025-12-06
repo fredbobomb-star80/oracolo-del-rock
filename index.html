@@ -251,6 +251,23 @@
       text-align:center;
       text-shadow:0 0 10px #000;
       font-weight:500;
+
+      /* parte nascosto e fa fade-in */
+      opacity:0;
+      transition: opacity .6s ease, transform .6s ease;
+
+      /* font più “display schermo” */
+      font-family:"Courier New", monospace;
+      letter-spacing:0.04em;
+      text-transform:none; /* tieni il tuo testo com’è */
+}
+
+/* stato visibile con leggero movimento / comparsa morbida */
+.oracle-text.visible{
+  opacity:1;
+  transform:translate(-50%, -52%);
+}
+      
     }
   </style>
 </head>
@@ -561,6 +578,7 @@
   </script>
 </body>
 </html>
+
 
 
 
