@@ -4684,6 +4684,9 @@ const ORACOLO_RISPOSTE = [
   }
 ];
 
+// ⬅️ AGGIUNGI SOLO QUESTO
+const cards = ORACOLO_RISPOSTE;
+
 // Restituisce una risposta casuale
 function pescaRispostaCasuale() {
   if (!ORACOLO_RISPOSTE.length) return null;
