@@ -32,7 +32,7 @@ const ORACOLO_RISPOSTE = [
     code: "002",
     text: "Dai. Ma cosa stai aspettando? Ma cosa stai aspettando?",
     cardImage: "carta_002.png",
-    videoId: ""
+    videoId: "k1tlOd7Iy-g"
   },
   {
     id: 3,
