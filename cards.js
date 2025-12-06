@@ -23,7 +23,7 @@ const ORACOLO_RISPOSTE = [
   {
     id: 1,
     code: "001",                   
-    text: "Sì, ma hai rotto il cazzo.",
+    text: "Non devi farlo ora.",
     cardImage: "carta_001.png",
     videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
   },
