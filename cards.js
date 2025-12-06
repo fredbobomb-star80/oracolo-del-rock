@@ -3730,7 +3730,951 @@ const ORACOLO_RISPOSTE = [
     cardImage: "carta_530.png",
     videoId: ""
   },
-
+  {
+    id: 531,
+    code: "531",
+    text: "L’anima Rock non ha bisogno di nuove regole. Vuole nuovi orizzonti da esplorare e vento sulla pelle.",
+    cardImage: "carta_531.png",
+    videoId: ""
+  },
+  {
+    id: 532,
+    code: "532",
+    text: "L’anima Rock non ha bisogno di vecchie favole. Vuole pagine bianche per ridisegnare tutte le stelle.",
+    cardImage: "carta_532.png",
+    videoId: ""
+  },
+  {
+    id: 533,
+    code: "533",
+    text: "Cambia tutte le password. Su cambia tutte le password. E cambia tutte le password, ma non quelle del tuo cuor.",
+    cardImage: "carta_533.png",
+    videoId: ""
+  },
+  {
+    id: 534,
+    code: "534",
+    text: "Hai tanti dubbi e già lo sai che non li scioglierai mai, se non ritorni ad imparare a volare.",
+    cardImage: "carta_534.png",
+    videoId: ""
+  },
+  {
+    id: 535,
+    code: "535",
+    text: "L’anima Rock non ha bisogno di un cauto manager. Ha già licenziato il buonsenso ed assunto il caos.",
+    cardImage: "carta_535.png",
+    videoId: ""
+  },
+  {
+    id: 536,
+    code: "536",
+    text: "Condividi qualche cosa. Non trovare un'altra scusa. Condividi qualche cosa, dell'Oracolo del Rock!",
+    cardImage: "carta_536.png",
+    videoId: ""
+  },
+  {
+    id: 537,
+    code: "537",
+    text: "Non preoccuparti di insonorizzare le pareti. Preoccupati di sfondarle.",
+    cardImage: "carta_537.png",
+    videoId: ""
+  },
+  {
+    id: 538,
+    code: "538",
+    text: "A chi ti dice , io sono fatto così. Rispondi pure, che peccato potevi farti decisamente meglio.",
+    cardImage: "carta_538.png",
+    videoId: ""
+  },
+  {
+    id: 539,
+    code: "539",
+    text: "Il disco giusto può dare vita alla festa.",
+    cardImage: "carta_539.png",
+    videoId: ""
+  },
+  {
+    id: 540,
+    code: "540",
+    text: "Fai l'autostop lungo le strade dei tuoi dubbi.",
+    cardImage: "carta_540.png",
+    videoId: ""
+  },
+  {
+    id: 541,
+    code: "541",
+    text: "Gioca al gioco della vita. Nulla è certo finché non è finita. Gioca al gioco della vita. Ma sorridi e rendila magnifica.",
+    cardImage: "carta_541.png",
+    videoId: ""
+  },
+  {
+    id: 542,
+    code: "542",
+    text: "La lussuria ti ha tradito.",
+    cardImage: "carta_542.png",
+    videoId: ""
+  },
+  {
+    id: 543,
+    code: "543",
+    text: "La superbia ti ha ferito.",
+    cardImage: "carta_543.png",
+    videoId: ""
+  },
+  {
+    id: 544,
+    code: "544",
+    text: "La gola ti ha dominato.",
+    cardImage: "carta_544.png",
+    videoId: ""
+  },
+  {
+    id: 545,
+    code: "545",
+    text: "L'invidia ti ha bruciato. Nei selfie vieni tutto sfocato.",
+    cardImage: "carta_545.png",
+    videoId: ""
+  },
+  {
+    id: 546,
+    code: "546",
+    text: "Fallo, se vuoi fallo. Ti dico fallo che aspetti fallo.",
+    cardImage: "carta_546.png",
+    videoId: ""
+  },
+  {
+    id: 547,
+    code: "547",
+    text: "In un'altra vita. In un'altra storia. In un altro mondo.",
+    cardImage: "carta_547.png",
+    videoId: ""
+  },
+  {
+    id: 548,
+    code: "548",
+    text: "Non puoi fare tutto con pazienza, a volte sfoga pure la tua rabbia. Ma mi raccomando fallo con coscienza, non è il momento di finire in gabbia.",
+    cardImage: "carta_548.png",
+    videoId: ""
+  },
+  {
+    id: 549,
+    code: "549",
+    text: "Se sei diverso da tutti gli altri, allora vuol dire che sei un pezzo unico dal valore inestimabile.",
+    cardImage: "carta_549.png",
+    videoId: ""
+  },
+  {
+    id: 550,
+    code: "550",
+    text: "Si ma adotta un bel cagnolino. Se preferisci un gattino.",
+    cardImage: "carta_550.png",
+    videoId: ""
+  },
+  {
+    id: 551,
+    code: "551",
+    text: "Oggi ti serve imparare una ricetta nuova. Si ma sbagliala ed innaffia tutto di rhum.",
+    cardImage: "carta_551.png",
+    videoId: ""
+  },
+  {
+    id: 552,
+    code: "552",
+    text: "Oggi hai bisogno di un piccolo palco. Luci soffuse, poco clamore ma tanto calore.",
+    cardImage: "carta_552.png",
+    videoId: ""
+  },
+  {
+    id: 553,
+    code: "553",
+    text: "Oggi ti serve elargire più vaffanculo che sorrisi.",
+    cardImage: "carta_553.png",
+    videoId: ""
+  },
+  {
+    id: 554,
+    code: "554",
+    text: "Oggi stampati un sorriso sul volto. E non dare spiegazioni.",
+    cardImage: "carta_554.png",
+    videoId: ""
+  },
+  {
+    id: 555,
+    code: "555",
+    text: "La nona regola dell'Oracolo del Rock è : qui non si ruba e non si copia.",
+    cardImage: "carta_555.png",
+    videoId: ""
+  },
+  {
+    id: 556,
+    code: "556",
+    text: "Oggi hai bisogno di parlare con un vecchio amico, che ti fa ancora ridere.",
+    cardImage: "carta_556.png",
+    videoId: ""
+  },
+  {
+    id: 557,
+    code: "557",
+    text: "Oggi ti serve sudare. Non per qualcuno, ma per qualcosa.",
+    cardImage: "carta_557.png",
+    videoId: ""
+  },
+  {
+    id: 558,
+    code: "558",
+    text: "Oggi ti serve commettere un nuovo errore in stile Tarantino. Gli altri li conosci già.",
+    cardImage: "carta_558.png",
+    videoId: ""
+  },
+  {
+    id: 559,
+    code: "559",
+    text: "Oggi devi chiedere scusa a tutti ma non a te stesso.",
+    cardImage: "carta_559.png",
+    videoId: ""
+  },
+  {
+    id: 560,
+    code: "560",
+    text: "Oggi hai bisogno di riposo. Per la tua anima, per la tua voce, per il tuo dolore.",
+    cardImage: "carta_560.png",
+    videoId: ""
+  },
+  {
+    id: 561,
+    code: "561",
+    text: "Capta la frequenza del successo e dimentica le note del fallimento.",
+    cardImage: "carta_561.png",
+    videoId: ""
+  },
+  {
+    id: 562,
+    code: "562",
+    text: "Prova a testare la fedeltà di chi oggi consideri un vero amico.",
+    cardImage: "carta_562.png",
+    videoId: ""
+  },
+  {
+    id: 563,
+    code: "563",
+    text: "Oggi devi chiedere l'aumento. E pure il rispetto.",
+    cardImage: "carta_563.png",
+    videoId: ""
+  },
+  {
+    id: 564,
+    code: "564",
+    text: "Fai uno scherzo anche di cattivo gusto.",
+    cardImage: "carta_564.png",
+    videoId: ""
+  },
+  {
+    id: 565,
+    code: "565",
+    text: "Un bel tappeto può dare un tono all'ambiente.",
+    cardImage: "carta_565.png",
+    videoId: ""
+  },
+  {
+    id: 566,
+    code: "566",
+    text: "Chiediti cosa farebbe il grande Lebowski al posto tuo.",
+    cardImage: "carta_566.png",
+    videoId: ""
+  },
+  {
+    id: 567,
+    code: "567",
+    text: "Chiediti cosa farebbe Bruce Lee al posto tuo.",
+    cardImage: "carta_567.png",
+    videoId: ""
+  },
+  {
+    id: 568,
+    code: "568",
+    text: "Chiediti che cosa farebbe Ozzy Osbourne al posto tuo.",
+    cardImage: "carta_568.png",
+    videoId: ""
+  },
+  {
+    id: 569,
+    code: "569",
+    text: "Chiediti che cosa farebbe Bob Marley al posto tuo.",
+    cardImage: "carta_569.png",
+    videoId: ""
+  },
+  {
+    id: 570,
+    code: "570",
+    text: "Chiediti che cosa farebbe Elvis al posto tuo.",
+    cardImage: "carta_570.png",
+    videoId: ""
+  },
+  {
+    id: 571,
+    code: "571",
+    text: "Chiediti che cosa farebbe il Joker al posto tuo.",
+    cardImage: "carta_571.png",
+    videoId: ""
+  },
+  {
+    id: 572,
+    code: "572",
+    text: "Chiedi che cosa farebbe il Corvo al posto tuo.",
+    cardImage: "carta_572.png",
+    videoId: ""
+  },
+  {
+    id: 573,
+    code: "573",
+    text: "Ascolta altre due risposte. La prima è per il tuo peggior nemico, la seconda è per te.",
+    cardImage: "carta_573.png",
+    videoId: ""
+  },
+  {
+    id: 574,
+    code: "574",
+    text: "Chiediti che cosa farebbe Lenny Kravitz al posto tuo.",
+    cardImage: "carta_574.png",
+    videoId: ""
+  },
+  {
+    id: 575,
+    code: "575",
+    text: "Chiediti che cosa farebbe Tyler Durden al posto tuo.",
+    cardImage: "carta_575.png",
+    videoId: ""
+  },
+  {
+    id: 576,
+    code: "576",
+    text: "Chiediti che cosa farebbe Steve Vai al posto tuo.",
+    cardImage: "carta_576.png",
+    videoId: ""
+  },
+  {
+    id: 577,
+    code: "577",
+    text: "Chiediti che cosa farebbe Jack Black al posto tuo.",
+    cardImage: "carta_577.png",
+    videoId: ""
+  },
+  {
+    id: 578,
+    code: "578",
+    text: "Chiediti che cosa farebbe Heisenberg al posto tuo.",
+    cardImage: "carta_578.png",
+    videoId: ""
+  },
+  {
+    id: 579,
+    code: "579",
+    text: "Chiediti che cosa farebbe Marcellus Wallace al posto tuo.",
+    cardImage: "carta_579.png",
+    videoId: ""
+  },
+  {
+    id: 580,
+    code: "580",
+    text: "Chiediti che cosa farebbe la sposa in bianco di Tarantino al posto tuo.",
+    cardImage: "carta_580.png",
+    videoId: ""
+  },
+  {
+    id: 581,
+    code: "581",
+    text: "Datti questa possibilità.",
+    cardImage: "carta_581.png",
+    videoId: ""
+  },
+  {
+    id: 582,
+    code: "582",
+    text: "Vola più in alto.",
+    cardImage: "carta_582.png",
+    videoId: ""
+  },
+  {
+    id: 583,
+    code: "583",
+    text: "Hai pazientato anche troppo.",
+    cardImage: "carta_583.png",
+    videoId: ""
+  },
+  {
+    id: 584,
+    code: "584",
+    text: "No, bere una bottiglia di vino al giorno non fa di te un esperto sommelier. Ma darà sicuramente più spessore al tuo alito.",
+    cardImage: "carta_584.png",
+    videoId: ""
+  },
+  {
+    id: 585,
+    code: "585",
+    text: "Sarà imperfetto ma autentico e con quel retrogusto di Rock.",
+    cardImage: "carta_585.png",
+    videoId: ""
+  },
+  {
+    id: 586,
+    code: "586",
+    text: "Dovrai aspettare ancora un po'.",
+    cardImage: "carta_586.png",
+    videoId: ""
+  },
+  {
+    id: 587,
+    code: "587",
+    text: "Smettila di tentare la fortuna ma seducila.",
+    cardImage: "carta_587.png",
+    videoId: ""
+  },
+  {
+    id: 588,
+    code: "588",
+    text: "Nessuno lo fa perché costa cara la libertà.",
+    cardImage: "carta_588.png",
+    videoId: ""
+  },
+  {
+    id: 589,
+    code: "589",
+    text: "Non è obbligatorio mettere tutto nel kebab. Puoi anche evitare la salsa troppo piccante che ti fa male ultimamente.",
+    cardImage: "carta_589.png",
+    videoId: ""
+  },
+  {
+    id: 590,
+    code: "590",
+    text: "Fai la pace col cervello, ma non col Rock'n'Roll.",
+    cardImage: "carta_590.png",
+    videoId: ""
+  },
+  {
+    id: 591,
+    code: "591",
+    text: "Ascolta altre due risposte e fanne un mash up di saggezza.",
+    cardImage: "carta_591.png",
+    videoId: ""
+  },
+  {
+    id: 592,
+    code: "592",
+    text: "Ascolta altre due risposte. La prima è per chi ti è vicino, la seconda è per te.",
+    cardImage: "carta_592.png",
+    videoId: ""
+  },
+  {
+    id: 593,
+    code: "593",
+    text: "Lascia andare i carichi del dolore.",
+    cardImage: "carta_593.png",
+    videoId: ""
+  },
+  {
+    id: 594,
+    code: "594",
+    text: "Chiediti che cosa farebbe la signora Mia Wallace al posto tuo.",
+    cardImage: "carta_594.png",
+    videoId: ""
+  },
+  {
+    id: 595,
+    code: "595",
+    text: "No, mamma mia che paura. Le dure critiche di chi non ha neanche le palle di avere un profilo autentico sui social. Ma andate a cagare signor mistero e signorina mascherina.",
+    cardImage: "carta_595.png",
+    videoId: ""
+  },
+  {
+    id: 596,
+    code: "596",
+    text: "Hai visto i tuoi demoni negli occhi e ti hanno colpito al cuore. Ma non ti hanno ferito, ti hanno solo scolpito. Ora, non c'è paradiso, ora, non c'è più preavviso, ora, che ci sei te. Solo te.",
+    cardImage: "carta_596.png",
+    videoId: ""
+  },
+  {
+    id: 597,
+    code: "597",
+    text: "Quand'è stata l'ultima volta che hai fatto un regalo spontaneo senza pretendere nulla in cambio?",
+    cardImage: "carta_597.png",
+    videoId: ""
+  },
+  {
+    id: 598,
+    code: "598",
+    text: "Cambia paroliere. Se non hai un gruppo allora non è il momento.",
+    cardImage: "carta_598.png",
+    videoId: ""
+  },
+  {
+    id: 599,
+    code: "599",
+    text: "Quand'è stata l'ultima volta che hai fatto un bel pranzo della domenica come dio comanda?",
+    cardImage: "carta_599.png",
+    videoId: ""
+  },
+  {
+    id: 600,
+    code: "600",
+    text: "Devi assolutamente farlo entro la fine del mondo.",
+    cardImage: "carta_600.png",
+    videoId: ""
+  },
+  {
+    id: 601,
+    code: "601",
+    text: "Devi assolutamente farlo entro la fine dell'anno.",
+    cardImage: "carta_601.png",
+    videoId: ""
+  },
+  {
+    id: 602,
+    code: "602",
+    text: "Devi assolutamente farlo entro la fine del mese.",
+    cardImage: "carta_602.png",
+    videoId: ""
+  },
+  {
+    id: 603,
+    code: "603",
+    text: "Devi assolutamente farlo entro le prossime 24 ore.",
+    cardImage: "carta_603.png",
+    videoId: ""
+  },
+  {
+    id: 604,
+    code: "604",
+    text: "Devi assolutamente farlo da sbronzo di Rock.",
+    cardImage: "carta_604.png",
+    videoId: ""
+  },
+  {
+    id: 605,
+    code: "605",
+    text: "Devi assolutamente rimandarlo a settembre.",
+    cardImage: "carta_605.png",
+    videoId: ""
+  },
+  {
+    id: 606,
+    code: "606",
+    text: "Questa volta non cercare di farti piacere. Piuttosto fatti notare.",
+    cardImage: "carta_606.png",
+    videoId: ""
+  },
+  {
+    id: 607,
+    code: "607",
+    text: "Se qui i miracoli non arrivano cercali altrove.",
+    cardImage: "carta_607.png",
+    videoId: ""
+  },
+  {
+    id: 608,
+    code: "608",
+    text: "Se la fortuna si è scordata di te, falle pagare gli interessi quando ritorna.",
+    cardImage: "carta_608.png",
+    videoId: ""
+  },
+  {
+    id: 609,
+    code: "609",
+    text: "Non vivere di scuse e non chiedere scusa per vivere.",
+    cardImage: "carta_609.png",
+    videoId: ""
+  },
+  {
+    id: 610,
+    code: "610",
+    text: "Chi ti ha detto che è troppo tardi per non provarci più? Non provarci più?",
+    cardImage: "carta_610.png",
+    videoId: ""
+  },
+  {
+    id: 611,
+    code: "611",
+    text: "C’è chi si fa i selfie e c'è chi fa la storia.",
+    cardImage: "carta_611.png",
+    videoId: ""
+  },
+  {
+    id: 612,
+    code: "612",
+    text: "Politicamente scorretto.",
+    cardImage: "carta_612.png",
+    videoId: ""
+  },
+  {
+    id: 613,
+    code: "613",
+    text: "E' legale fare la guerra ma si fa l'amore di nascosto.",
+    cardImage: "carta_613.png",
+    videoId: ""
+  },
+  {
+    id: 614,
+    code: "614",
+    text: "Compra due banane, così una te la mangi.",
+    cardImage: "carta_614.png",
+    videoId: ""
+  },
+  {
+    id: 615,
+    code: "615",
+    text: "Non si può più pensare niente. Compra conveniente. Muori lentamente.",
+    cardImage: "carta_615.png",
+    videoId: ""
+  },
+  {
+    id: 616,
+    code: "616",
+    text: "Lavori tanto ma non basta mai. Come mai? Cosa ti hanno insegnato a scuola. E non dubitarne mai. Lavora di più che non basta mai.",
+    cardImage: "carta_616.png",
+    videoId: ""
+  },
+  {
+    id: 617,
+    code: "617",
+    text: "Facciamo la rivoluzione con nuovi podcast sul pallone.",
+    cardImage: "carta_617.png",
+    videoId: ""
+  },
+  {
+    id: 618,
+    code: "618",
+    text: "Ascolta altre due risposte. La prima la condividi senza dare spiegazioni, la seconda è per te.",
+    cardImage: "carta_618.png",
+    videoId: ""
+  },
+  {
+    id: 619,
+    code: "619",
+    text: "Batti i pugni sul tavolo.",
+    cardImage: "carta_619.png",
+    videoId: ""
+  },
+  {
+    id: 620,
+    code: "620",
+    text: "Smettila di pagare per gli errori degli altri.",
+    cardImage: "carta_620.png",
+    videoId: ""
+  },
+  {
+    id: 621,
+    code: "621",
+    text: "Mai fidarti di un batterista che non ha almeno tre vicini incazzati.",
+    cardImage: "carta_621.png",
+    videoId: ""
+  },
+  {
+    id: 622,
+    code: "622",
+    text: "Mai fidarti di un bassista senza calli sulle dita.",
+    cardImage: "carta_622.png",
+    videoId: ""
+  },
+  {
+    id: 623,
+    code: "623",
+    text: "Mai fidarti del leader di una Rock band. No, mai fidarti del leader di una Rock band, mai.",
+    cardImage: "carta_623.png",
+    videoId: ""
+  },
+  {
+    id: 624,
+    code: "624",
+    text: "Mai fidarti di chi ti dice “E' tutto sotto controllo, dai stai sereno che è tranquillo”.",
+    cardImage: "carta_624.png",
+    videoId: ""
+  },
+  {
+    id: 625,
+    code: "625",
+    text: "Mai fidarti della donna del leader di una Rock band.",
+    cardImage: "carta_625.png",
+    videoId: ""
+  },
+  {
+    id: 626,
+    code: "626",
+    text: "Mai fidarti di un locale con una sola birra alla spina.",
+    cardImage: "carta_626.png",
+    videoId: ""
+  },
+  {
+    id: 627,
+    code: "627",
+    text: "La decima regola dell'Oracolo del Rock è : non limitarti a giocare con le risposte, ascolta un po' di Rock!",
+    cardImage: "carta_627.png",
+    videoId: ""
+  },
+  {
+    id: 628,
+    code: "628",
+    text: "Non dare perle ai porci, no. E nemmeno le tue migliori playlist Rock.",
+    cardImage: "carta_628.png",
+    videoId: ""
+  },
+  {
+    id: 629,
+    code: "629",
+    text: "Mai fidarti di un vecchio juke box.",
+    cardImage: "carta_629.png",
+    videoId: ""
+  },
+  {
+    id: 630,
+    code: "630",
+    text: "Mai fidarti di un “era proprio a te a cui stavamo pensando”.",
+    cardImage: "carta_630.png",
+    videoId: ""
+  },
+  {
+    id: 631,
+    code: "631",
+    text: "Mai fidarti del primo della classe, se la materia non è il Rock'n'Roll.",
+    cardImage: "carta_631.png",
+    videoId: ""
+  },
+  {
+    id: 632,
+    code: "632",
+    text: "Mai fidarti dell'ultimo degli stronzi.",
+    cardImage: "carta_632.png",
+    videoId: ""
+  },
+  {
+    id: 633,
+    code: "633",
+    text: "Mai fidarti delle confessioni non richieste.",
+    cardImage: "carta_633.png",
+    videoId: ""
+  },
+  {
+    id: 634,
+    code: "634",
+    text: "Mai fidarti di una birra senza schiuma.",
+    cardImage: "carta_634.png",
+    videoId: ""
+  },
+  {
+    id: 635,
+    code: "635",
+    text: "Mai fidarti di un pubblico troppo sobrio.",
+    cardImage: "carta_635.png",
+    videoId: ""
+  },
+  {
+    id: 636,
+    code: "636",
+    text: "Fai questo salto nel vuoto! Scuoti le acque del destino e sorridi un po' di più.",
+    cardImage: "carta_636.png",
+    videoId: ""
+  },
+  {
+    id: 637,
+    code: "637",
+    text: "Si ma non strafare. Regalaci un disastro per volta.",
+    cardImage: "carta_637.png",
+    videoId: ""
+  },
+  {
+    id: 638,
+    code: "638",
+    text: "Si ma non strafare. Un successo alla volta.",
+    cardImage: "carta_638.png",
+    videoId: ""
+  },
+  {
+    id: 639,
+    code: "639",
+    text: "Senza una buona banda alle spalle non andrai tanto lontano.",
+    cardImage: "carta_639.png",
+    videoId: ""
+  },
+  {
+    id: 640,
+    code: "640",
+    text: "E' il momento di ragionare da solista. Con educazione e rispetto sciogli la band perché è il momento di ragionare da solista.",
+    cardImage: "carta_640.png",
+    videoId: ""
+  },
+  {
+    id: 641,
+    code: "641",
+    text: "Fai come se fosse tutta tua la baracca.",
+    cardImage: "carta_641.png",
+    videoId: ""
+  },
+  {
+    id: 642,
+    code: "642",
+    text: "Scegli un'etichetta indipendente. Indie pendente mente.",
+    cardImage: "carta_642.png",
+    videoId: ""
+  },
+  {
+    id: 643,
+    code: "643",
+    text: "Se inizi porta alla fine la questione.",
+    cardImage: "carta_643.png",
+    videoId: ""
+  },
+  {
+    id: 644,
+    code: "644",
+    text: "Lascia a metà anche questa idea e lanciati su...",
+    cardImage: "carta_644.png",
+    videoId: ""
+  },
+  {
+    id: 645,
+    code: "645",
+    text: "Fa vomitare. Fa vomitare. Fa vomitare, E' utile solo dopo una sbronza, si!",
+    cardImage: "carta_645.png",
+    videoId: ""
+  },
+  {
+    id: 646,
+    code: "646",
+    text: "Come un calcio nelle palle.",
+    cardImage: "carta_646.png",
+    videoId: ""
+  },
+  {
+    id: 647,
+    code: "647",
+    text: "Pensati Rock.",
+    cardImage: "carta_647.png",
+    videoId: ""
+  },
+  {
+    id: 648,
+    code: "648",
+    text: "No, non baciare con prudenza, oh no!",
+    cardImage: "carta_648.png",
+    videoId: ""
+  },
+  {
+    id: 649,
+    code: "649",
+    text: "Scegli la major migliore per te.",
+    cardImage: "carta_649.png",
+    videoId: ""
+  },
+  {
+    id: 650,
+    code: "650",
+    text: "Resta indie che è meglio.",
+    cardImage: "carta_650.png",
+    videoId: ""
+  },
+  {
+    id: 651,
+    code: "651",
+    text: "Una buona idea. Una nuova pelle. Un sapore di un'altra terra.",
+    cardImage: "carta_651.png",
+    videoId: ""
+  },
+  {
+    id: 652,
+    code: "652",
+    text: "Questa la mettiamo qui, sulla mensola delle idee del cazzo.",
+    cardImage: "carta_652.png",
+    videoId: ""
+  },
+  {
+    id: 653,
+    code: "653",
+    text: "Non te l'ha ordinato il dottore di chiedere qualcosa all'Oracolo del Rock. Ma te l'ha sussurrato il destino.",
+    cardImage: "carta_653.png",
+    videoId: ""
+  },
+  {
+    id: 654,
+    code: "654",
+    text: "Cambia ruolo al batterista. Se non hai un gruppo allora è un si.",
+    cardImage: "carta_654.png",
+    videoId: ""
+  },
+  {
+    id: 655,
+    code: "655",
+    text: "Devi imparare una lezione che rimandi da troppi anni ormai, poi sarai più grande e si vedrà.",
+    cardImage: "carta_655.png",
+    videoId: ""
+  },
+  {
+    id: 656,
+    code: "656",
+    text: "Lavora sodo e raccoglierai buoni frutti.",
+    cardImage: "carta_656.png",
+    videoId: ""
+  },
+  {
+    id: 657,
+    code: "657",
+    text: "Se credi che ti farà bene, fallo e basta. Si, fallo adesso, si!",
+    cardImage: "carta_657.png",
+    videoId: ""
+  },
+  {
+    id: 658,
+    code: "658",
+    text: "Non fare il boomer. Dai, non fare il solito boomer.",
+    cardImage: "carta_658.png",
+    videoId: ""
+  },
+  {
+    id: 659,
+    code: "659",
+    text: "Qualche volta una sveglia per alzare il culo, no non basta! Prova ad impostarne tre.",
+    cardImage: "carta_659.png",
+    videoId: ""
+  },
+  {
+    id: 660,
+    code: "660",
+    text: "Una lacrima scenderà sul volto. Chi la raccoglierà?",
+    cardImage: "carta_660.png",
+    videoId: ""
+  },
+  {
+    id: 661,
+    code: "661",
+    text: "Non dimenticare mai che il sole è una stella.",
+    cardImage: "carta_661.png",
+    videoId: ""
+  },
+  {
+    id: 662,
+    code: "662",
+    text: "Resta in piedi, anche se a pezzi dentro. Resta in piedi ancora un po'.",
+    cardImage: "carta_662.png",
+    videoId: ""
+  },
+  {
+    id: 663,
+    code: "663",
+    text: "Può essere tutto più semplice di così. Dai, smettila di complicarti la vita!",
+    cardImage: "carta_663.png",
+    videoId: ""
+  },
+  {
+    id: 664,
+    code: "664",
+    text: "La vita non è fatta solo di sbronze e di letti di cosce. Ma che peccato!",
+    cardImage: "carta_664.png",
+    videoId: ""
+  },
+  {
+    id: 665,
+    code: "665",
+    text: "Ci sono delle rose da raccogliere. Qualcuna pungerà ma qualcuna no.",
+    cardImage: "carta_665.png",
+    videoId: ""
+   },
   {
     id: 666,
     code: "666",
