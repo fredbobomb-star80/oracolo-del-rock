@@ -585,147 +585,147 @@ const ORACOLO_RISPOSTE = [
     code: "081",
     text: "Si che vale la pena farlo. Ma questa volta ti suggerisco di muoverti con furbizia tra le ombre.",
     cardImage: "carta_081.png",
-    videoId: ""
+    videoId: "AW6OsjTBgVY"
   },
   {
     id: 82,
     code: "082",
     text: "No, niente da fare. Lo sento che brucia, ma questo no, non è il momento.",
     cardImage: "carta_082.png",
-    videoId: ""
+    videoId: "Lxd52-mCV7M"
   },
   {
     id: 83,
     code: "083",
     text: "Dai una bella lucidata al cuore. Lustra gli stivali e salta in sella.",
     cardImage: "carta_083.png",
-    videoId: ""
+    videoId: "c4ogyYfZz6M"
   },
   {
     id: 84,
     code: "084",
     text: "E' il momento di uscire con il tuo nuovo album, qualunque esso sia.",
     cardImage: "carta_084.png",
-    videoId: ""
+    videoId: "ermWXTo_eYA"
   },
   {
     id: 85,
     code: "085",
     text: "Non avere paura di farti beccare con le mani nel sacco.",
     cardImage: "carta_085.png",
-    videoId: ""
+    videoId: "janQsliAItw"
   },
   {
     id: 86,
     code: "086",
     text: "Prendi i soldi e scappa. Corri al aeroporto, prendi il primo volo e non tornare più.",
     cardImage: "carta_086.png",
-    videoId: ""
+    videoId: "zFtErxJjo7A"
   },
   {
     id: 87,
     code: "087",
     text: "Vivi con gli assi nascosti nelle maniche e con i sassi nel cuore.",
     cardImage: "carta_087.png",
-    videoId: ""
+    videoId: "NZrT0ZvnnCc"
   },
   {
     id: 88,
     code: "088",
     text: "Non è il momento di essere avidi o avari o taccagni.",
     cardImage: "carta_088.png",
-    videoId: ""
+    videoId: "bYa7_sr27vY"
   },
   {
     id: 89,
     code: "089",
     text: "Vedo tre porte. Un lupo. Una spia. Un serpente e solo l'ultimo colpo in canna.",
     cardImage: "carta_089.png",
-    videoId: ""
+    videoId: "G4Oh7bMEJgk"
   },
   {
     id: 90,
     code: "090",
     text: "Se quella belva si fida di te non ti sbranerà. No. Se quella belva si fida di te non ti sbranerà.",
     cardImage: "carta_090.png",
-    videoId: ""
+    videoId: "KWAJR2eBYhQ"
   },
   {
     id: 91,
     code: "091",
     text: "La prima regola dell'Oracolo del Rock è : L'Oracolo è un gioco serissimo. Si, stai giocando con il fuoco!",
     cardImage: "carta_091.png",
-    videoId: ""
+    videoId: "45CM2Xp8Auw"
   },
   {
     id: 92,
     code: "092",
     text: "Se vuoi bruciare, fallo per te, non per dimostrare qualcosa a qualcuno.",
     cardImage: "carta_092.png",
-    videoId: ""
+    videoId: "Cq4mzAcnmrk"
   },
   {
     id: 93,
     code: "093",
     text: "Non farti fregare. Non farti accecare proprio ora da questi sterili scopi.",
     cardImage: "carta_093.png",
-    videoId: ""
+    videoId: "FV23nBXTyl8"
   },
   {
     id: 94,
     code: "094",
     text: "Insegui il piacere, ora, senza se e senza ma. Ora.",
     cardImage: "carta_094.png",
-    videoId: ""
+    videoId: "LqkqU-vb2XU"
   },
   {
     id: 95,
     code: "095",
     text: "Togliti le cuffie, spegni tutto ed accarezza il mondo per un pò.",
     cardImage: "carta_095.png",
-    videoId: ""
+    videoId: "2ky6FEoiVCQ"
   },
   {
     id: 96,
     code: "096",
     text: "Ti stanno vendendo la prudenza a discapito della pazienza.",
     cardImage: "carta_096.png",
-    videoId: ""
+    videoId: "dPuYdewR3hY"
   },
   {
     id: 97,
     code: "097",
     text: "Prima devi visitare tre posti. Quelli che sono anni che ti dici che li visiterai e non lo fai mai.",
     cardImage: "carta_097.png",
-    videoId: ""
+    videoId: "c7OLwhNHkhY"
   },
   {
     id: 98,
     code: "098",
     text: "L'omologazione è contagiosa, forza, distinguiti un po'.",
     cardImage: "carta_098.png",
-    videoId: ""
+    videoId: "8M6OTDuMfHY"
   },
   {
     id: 99,
     code: "099",
     text: "Oggi non pensare al futuro. Pensa a chi eri durante la tua infanzia.",
     cardImage: "carta_099.png",
-    videoId: ""
+    videoId: "XCD9yuAFBLo"
   },
   {
     id: 100,
     code: "100",
     text: "Non esiste giustizia in questo mondo. Altrimenti perché sarebbe nato il Rock?",
     cardImage: "carta_100.png",
-    videoId: ""
+    videoId: "27D07z3uL2o"
   },
   {
     id: 101,
     code: "101",
     text: "Magari ti sei perso si, ma almeno non stai seguendo le orme di nessuno.",
     cardImage: "carta_101.png",
-    videoId: ""
+    videoId: "KmIUWazjDT8"
   },
   {
     id: 102,
