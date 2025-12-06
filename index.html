@@ -6,10 +6,6 @@
   <title>Chiedilo all’Oracolo del Rock</title>
 
   <style>
-    /* ============================
-       ***   MIO CSS   ***
-       ============================ */
-    
     body{
       margin:0;
       background:#0b0b0f;
@@ -107,16 +103,14 @@
 
     /* SEZIONE AZIONI SOTTO LA CABINA */
     .actions{
-      margin-top:14px;         /* cabina -> nuovi pulsanti */
+      margin-top:14px;
     }
 
-    /* NUOVI DUE TASTI CONDIVIDI */
     .share-row{
       text-align:center;
-      margin-bottom:10px;      /* share -> bottone principale */
+      margin-bottom:10px;
     }
 
-    /* versione ATTIVA del tasto Condividi */
     .share-btn{
       display:inline-block;
       padding:6px 14px;
@@ -132,16 +126,14 @@
       box-shadow:0 0 8px rgba(255,60,207,.2);
     }
 
-    /* versione SPENTA del tasto Condividi carta */
     .share-btn-off{
-      opacity: 0.4;           /* più sbiadito */
-      cursor: default;        /* niente mano */
-      box-shadow: none;       /* niente glow */
+      opacity: 0.4;
+      cursor: default;
+      box-shadow: none;
       filter: grayscale(60%);
-      pointer-events: none;   /* non cliccabile */
+      pointer-events: none;
     }
     
-    /* BOTTONE PRINCIPALE (ORA NEL FLUSSO NORMALE) */
     #new{
       background: linear-gradient(180deg, #0fe3ff 0%, #00a9d6 45%, #006b8a 100%);
       color:#001018;
@@ -159,7 +151,7 @@
         0 0 14px rgba(0,200,255,0.65),
         0 0 30px rgba(0,200,255,0.35);
       transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
-      margin-top: 20px;   /* piccolo stacco dai nuovi tasti Condividi */
+      margin-top: 20px;
     }
 
     #new:hover{
@@ -202,12 +194,11 @@
       }
     }
 
-    /* SOTTO CABINA (SOCIAL + TESTO) */
     .wrap{
       max-width:920px;
       margin:0 auto;
       padding:18px 16px 40px;
-      margin-top:2px;   /* stacco dal bottone principale */
+      margin-top:2px;
       display:flex;
       flex-direction:column;
       gap:12px;
@@ -218,7 +209,7 @@
       justify-content:center;
       gap:10px;
       flex-wrap:wrap;
-      margin-top:2px;    /* pochissimo nero sopra i social */
+      margin-top:2px;
     }
 
     .social-btn{
@@ -247,8 +238,7 @@
     .social-btn.instagram:hover{ background:#e4405f; border-color:#e4405f; }
 
     .note{ font-size:13px; opacity:.7; }
- 
-    /* TESTO NELLA CABINA */
+
     .oracle-text{
       position:absolute;
       top:50%;
@@ -267,7 +257,6 @@
 
 <body>
 
-  <!-- CABINA ORACOLO -->
   <header class="hero">
     <img 
       src="https://raw.githubusercontent.com/fredbobomb-star80/oracolo-del-rock/main/214417.png"
@@ -275,16 +264,12 @@
       class="hero-img"
     />
 
-    <!-- QUI COMPARIRÀ IL TESTO DELL'ORACOLO -->
     <div id="oracle-text" class="oracle-text"></div>
 
-    <!-- SCATOLA CONTENITRICE DEL VIDEO -->
     <div id="yt" class="yt-overlay is-hidden"></div>
   </header>
 
-  <!-- AZIONI SOTTO LA CABINA -->
   <section class="actions">
-    <!-- NUOVI 2 TASTI INCOLLATI SOTTO LA CABINA per il momento Condividi testo disattivato-->
     <div class="share-row">
       <button class="share-btn" id="share-audio">
         🎵 Condividi 🎵
@@ -294,11 +279,9 @@
       </button>
     </div>
 
-    <!-- BOTTONE PRINCIPALE -->
     <button id="new">PESCA LA TUA CARTA</button>
   </section>
 
-  <!-- SOTTO CABINA: SOCIAL + TESTO -->
   <main class="wrap">
     <div class="social-buttons">
       <a href="https://www.youtube.com/watch?v=YdEggax27GA&list=PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx" target="_blank" class="social-btn youtube">YouTube</a>
@@ -309,28 +292,20 @@
     <p class="note">L'oracolo custodisce 666 risposte e solo una è destinata a te. Da un’idea originale di FredBee — tutti i diritti riservati ©2025</p>
   </main>
 
-  <!-- MOTORE CARTE & RISPOSTE (file separato cards.js) -->
+  <!-- CARTE -->
   <script src="cards.js"></script>
 
-  <!-- SCRIPT YOUTUBE + TESTO NELLA CABINA -->
   <script>
     const API_KEY     = "AIzaSyDNsQKEvKwHOyZCJ0mojJS325Sbw6wX9as";
     const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx";
     const PAGE_SIZE   = 50;
 
-    // 🔹 Scrive il testo dentro la cabina
     function mostraTestoNellaCabina(testo){
       const box = document.getElementById("oracle-text");
       if(!box) return;
       box.textContent = testo || "";
     }
 
-    // 🔹 Test base: se vedi questa frase, la cabina funziona
-    document.addEventListener("DOMContentLoaded", () => {
-      mostraTestoNellaCabina("In attesa della tua carta Rock...");
-    });
-
-    // 🔹 Carichiamo lo script dell'API YouTube
     (function(){
       const s = document.createElement('script');
       s.src = "https://www.youtube.com/iframe_api";
@@ -344,7 +319,6 @@
     let outroInterval = null;
     let outroTriggered = false;
 
-    // YouTube chiama questa quando l'API è pronta
     window.onYouTubeIframeAPIReady = () => {
       player = new YT.Player('yt', {
         height: '390',
@@ -439,11 +413,10 @@
       ytBox.classList.add("is-visible");
       ytBox.classList.add("audio-first");
 
-      // 🔹 Usiamo solo i video che hanno una carta collegata (se possibile)
       let idsPool = allIds;
-      if (Array.isArray(window.cards)){
+      if (typeof cards !== "undefined" && Array.isArray(cards)){
         const validIds = new Set(
-          window.cards
+          cards
             .filter(c => c.videoId && c.videoId.trim() !== "")
             .map(c => c.videoId.trim())
         );
@@ -453,24 +426,26 @@
         }
       }
 
+      if (!idsPool.length){
+        mostraTestoNellaCabina("");
+        return;
+      }
+
       const idx = Math.floor(Math.random() * idsPool.length);
       const id  = idsPool[idx];
 
       currentVideoId = id;
       player.loadVideoById(id);
 
-      // 🔹 Troviamo la carta corrispondente a questo videoId
-      if (Array.isArray(window.cards)){
-        const card = window.cards.find(
-          c => (c.videoId || "").trim() === id
-        );
+      if (typeof cards !== "undefined" && Array.isArray(cards)){
+        const card = cards.find(c => (c.videoId || "").trim() === id);
         if (card && card.text){
           mostraTestoNellaCabina(card.text);
         } else {
-          mostraTestoNellaCabina("Nessuna carta collegata a questo video (" + id + ").");
+          mostraTestoNellaCabina("");
         }
       } else {
-        mostraTestoNellaCabina("ATTENZIONE: cards.js non è stato caricato.");
+        mostraTestoNellaCabina("");
       }
 
       entranceTimer = setTimeout(() => {
@@ -506,8 +481,7 @@
         ytBox.classList.remove("is-visible");
         ytBox.classList.add("is-hidden");
 
-        // 🔹 A fine video, messaggio neutro
-        mostraTestoNellaCabina("In attesa della prossima carta Rock...");
+        mostraTestoNellaCabina("");
       }
     }
 
@@ -551,7 +525,6 @@
       clearOutroWatcher();
     }
 
-    // --- TASTO CONDIVIDI AUDIO ---
     const shareAudioBtn = document.getElementById("share-audio");
 
     if (shareAudioBtn) {
