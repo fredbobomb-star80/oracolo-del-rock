@@ -309,12 +309,28 @@
     <p class="note">L'oracolo custodisce 666 risposte e solo una è destinata a te. Da un’idea originale di FredBee — tutti i diritti riservati ©2025</p>
   </main>
 
-  <!-- SCRIPT YOUTUBE -->
+  <!-- MOTORE CARTE & RISPOSTE (file separato cards.js) -->
+  <script src="cards.js"></script>
+
+  <!-- SCRIPT YOUTUBE + TESTO NELLA CABINA -->
   <script>
     const API_KEY     = "AIzaSyDNsQKEvKwHOyZCJ0mojJS325Sbw6wX9as";
     const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx";
     const PAGE_SIZE   = 50;
 
+    // 🔹 Scrive il testo dentro la cabina
+    function mostraTestoNellaCabina(testo){
+      const box = document.getElementById("oracle-text");
+      if(!box) return;
+      box.textContent = testo || "";
+    }
+
+    // 🔹 Test base: se vedi questa frase, la cabina funziona
+    document.addEventListener("DOMContentLoaded", () => {
+      mostraTestoNellaCabina("In attesa della tua carta Rock...");
+    });
+
+    // 🔹 Carichiamo lo script dell'API YouTube
     (function(){
       const s = document.createElement('script');
       s.src = "https://www.youtube.com/iframe_api";
@@ -328,6 +344,7 @@
     let outroInterval = null;
     let outroTriggered = false;
 
+    // YouTube chiama questa quando l'API è pronta
     window.onYouTubeIframeAPIReady = () => {
       player = new YT.Player('yt', {
         height: '390',
@@ -422,16 +439,15 @@
       ytBox.classList.add("is-visible");
       ytBox.classList.add("audio-first");
 
-      // --- NOVITÀ: selezioniamo solo gli ID che hanno una carta collegata (se possibile)
+      // 🔹 Usiamo solo i video che hanno una carta collegata (se possibile)
       let idsPool = allIds;
-
-      if (typeof cards !== "undefined" && Array.isArray(cards) && cards.length){
-        const mappedSet = new Set(
-          cards
+      if (Array.isArray(window.cards)){
+        const validIds = new Set(
+          window.cards
             .filter(c => c.videoId && c.videoId.trim() !== "")
-            .map(c => c.videoId)
+            .map(c => c.videoId.trim())
         );
-        const filtered = allIds.filter(id => mappedSet.has(id));
+        const filtered = allIds.filter(id => validIds.has(id));
         if (filtered.length){
           idsPool = filtered;
         }
@@ -440,19 +456,21 @@
       const idx = Math.floor(Math.random() * idsPool.length);
       const id  = idsPool[idx];
 
-      currentVideoId = id;        // salviamo l'ID del video corrente
+      currentVideoId = id;
       player.loadVideoById(id);
 
-      // --- NOVITÀ: troviamo la carta giusta e mostriamo il suo testo nella cabina
-      if (typeof mostraTestoNellaCabina === "function" &&
-          typeof cards !== "undefined" &&
-          Array.isArray(cards)){
-        const card = cards.find(c => c.videoId === id);
+      // 🔹 Troviamo la carta corrispondente a questo videoId
+      if (Array.isArray(window.cards)){
+        const card = window.cards.find(
+          c => (c.videoId || "").trim() === id
+        );
         if (card && card.text){
           mostraTestoNellaCabina(card.text);
         } else {
-          mostraTestoNellaCabina(""); // nessuna carta collegata → nessun testo
+          mostraTestoNellaCabina("Nessuna carta collegata a questo video (" + id + ").");
         }
+      } else {
+        mostraTestoNellaCabina("ATTENZIONE: cards.js non è stato caricato.");
       }
 
       entranceTimer = setTimeout(() => {
@@ -488,10 +506,8 @@
         ytBox.classList.remove("is-visible");
         ytBox.classList.add("is-hidden");
 
-        // --- NOVITÀ: a fine video svuotiamo il testo nella cabina (opzionale)
-        if (typeof mostraTestoNellaCabina === "function"){
-          mostraTestoNellaCabina("");
-        }
+        // 🔹 A fine video, messaggio neutro
+        mostraTestoNellaCabina("In attesa della prossima carta Rock...");
       }
     }
 
@@ -535,13 +551,12 @@
       clearOutroWatcher();
     }
 
-    // --- FUNZIONE PER IL TASTO CONDIVIDI AUDIO ---
+    // --- TASTO CONDIVIDI AUDIO ---
     const shareAudioBtn = document.getElementById("share-audio");
 
     if (shareAudioBtn) {
       shareAudioBtn.addEventListener("click", async () => {
 
-        // Se non è stato pescato un brano, non c'è nulla da condividere
         if (!currentVideoId) {
           alert("Prima pesca la tua carta!");
           return;
@@ -549,7 +564,6 @@
 
         const videoUrl = `https://youtu.be/${currentVideoId}`;
 
-        // --- TENTATIVO: SHARE NATIVO SU SMARTPHONE ---
         if (navigator.share) {
           try {
             await navigator.share({
@@ -563,7 +577,6 @@
           }
         }
 
-        // --- FALLBACK: COPIA IL LINK SU PC ---
         try {
           await navigator.clipboard.writeText(videoUrl);
           alert("Link copiato! Ora puoi incollarlo dove vuoi:\n\n" + videoUrl);
@@ -571,17 +584,6 @@
           alert("Ecco il link da copiare:\n\n" + videoUrl);
         }
       });
-    }
-  </script>
-
-  <!-- MOTORE CARTE & RISPOSTE (file separato cards.js) -->
-  <script src="cards.js"></script>
-
-  <script>
-    // FUNZIONE SEMPLICE: scrive un testo dentro la cabina
-    function mostraTestoNellaCabina(testo){
-      var box = document.getElementById("oracle-text");
-      box.textContent = testo || "";
     }
   </script>
 </body>
