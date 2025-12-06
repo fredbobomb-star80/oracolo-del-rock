@@ -12,6 +12,11 @@
 // text      → testo della risposta
 // cardImage → nome file immagine dentro /cards
 // (per ora esempio con poche risposte)
+
+
+
+
+
 const ORACOLO_RISPOSTE = [
   {
     id: 1,
