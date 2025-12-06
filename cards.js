@@ -347,98 +347,98 @@ const ORACOLO_RISPOSTE = [
     code: "047",
     text: "Consigli gratis non esistono. Sta a te il compito di condividere il verbo. Metti un faccino, metti un like e condividi, l'oracolo del Rock!",
     cardImage: "carta_047.png",
-    videoId: ""
+    videoId: "iumbdZAsQ4g"
   },
   {
     id: 48,
     code: "048",
     text: "La mamma dei coglioni è sempre incinta e tu lo sai. La mamma dei coglioni, magari non ascolta il Rock.",
     cardImage: "carta_048.png",
-    videoId: ""
+    videoId: "m15IGkojZj8"
   },
   {
     id: 49,
     code: "049",
     text: "Vuoi solo sesso. E vorresti farlo spesso, dai che magari lo farai.",
     cardImage: "carta_049.png",
-    videoId: ""
+    videoId: "1xuqDpfAvpc"
   },
   {
     id: 50,
     code: "050",
     text: "Ma chi se ne frega della carriera, pensa un po' alla carrozzeria! Si, pensa alla tua via!",
     cardImage: "carta_050.png",
-    videoId: ""
+    videoId: "UjqshVy6jUs"
   },
   {
     id: 51,
     code: "051",
     text: "Come dice il proverbio? Tutto è impossibile finché un figlio di puttana non lo fà. Non lo fà.",
     cardImage: "carta_051.png",
-    videoId: ""
+    videoId: "cY97tI2MVK8"
   },
   {
     id: 52,
     code: "052",
     text: "Mandali a cagare. Fai in fretta si. Mandali a cagare almeno per un po'.",
     cardImage: "carta_052.png",
-    videoId: ""
+    videoId: "RiR9t0k8H1c"
   },
   {
     id: 53,
     code: "053",
     text: "Fai qualcosa di più originale. Metti in moto i neuroni e coglioni e non copiare più.",
     cardImage: "carta_053.png",
-    videoId: ""
+    videoId: "IJyQsoERYz4"
   },
   {
     id: 54,
     code: "054",
     text: "Arriverà qualcosa di hot, troppo hot. Si. Prepara il ghiaccio, se vuoi assaggiarne almeno un po'.",
     cardImage: "carta_054.png",
-    videoId: ""
+    videoId: "_v1CyRA-gbY"
   },
   {
     id: 55,
     code: "055",
     text: "La vita è troppo breve per farsi il sangue amaro per queste cazzate. Lo vuoi capire o no?",
     cardImage: "carta_055.png",
-    videoId: ""
+    videoId: "qHwItmMW6o8"
   },
   {
     id: 56,
     code: "056",
     text: "Goditela un po' e goditela un po'.",
     cardImage: "carta_056.png",
-    videoId: ""
+    videoId: "pcqeWves-fY"
   },
   {
     id: 57,
     code: "057",
     text: "Fatti due domande. Si! Poi fattene tre. Quindi arriva a quattro e ti risponderò.",
     cardImage: "carta_057.png",
-    videoId: ""
+    videoId: "JT6ZsE-NlsY"
   },
   {
     id: 58,
     code: "058",
     text: "Alzati. Corri. Grida. Balla. E se non hai abbastanza fiato lo troverai, si lo ritroverai.",
     cardImage: "carta_058.png",
-    videoId: ""
+    videoId: "8s951SSWWHg"
   },
   {
     id: 59,
     code: "059",
     text: "Cerchi la libertà. Ma hai abbastanza fegato per sostenerla?",
     cardImage: "carta_059.png",
-    videoId: ""
+    videoId: "w9gFG6Uq7kk"
   },
   {
     id: 60,
     code: "060",
     text: "Il dolore è arrivato per darti una bella sveglia. Allora che mi dici, ha funzionato o ne vuoi ancora un po'?",
     cardImage: "carta_060.png",
-    videoId: ""
+    videoId: "Fge3q4sVn8s"
   },
   {
     id: 61,
