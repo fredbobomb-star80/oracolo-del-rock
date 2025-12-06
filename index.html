@@ -116,6 +116,8 @@
       margin-bottom:10px;      /* share -> bottone principale */
     }
 
+
+    /* versione ATTIVA del tasto Condividi */
     .share-btn{
       display:inline-block;
       padding:6px 14px;
@@ -131,6 +133,15 @@
       box-shadow:0 0 8px rgba(255,60,207,.2);
     }
 
+/* versione SPENTA del tasto Condividi carta */
+.share-btn-off{
+  opacity: 0.4;           /* più sbiadito */
+  cursor: default;        /* niente mano */
+  box-shadow: none;       /* niente glow */
+  filter: grayscale(60%);
+  pointer-events: none;   /* non cliccabile */
+}
+    
     /* BOTTONE PRINCIPALE (ORA NEL FLUSSO NORMALE) */
     #new{
       background: linear-gradient(180deg, #0fe3ff 0%, #00a9d6 45%, #006b8a 100%);
@@ -476,6 +487,7 @@
 
 </body>
 </html>
+
 
 
 
