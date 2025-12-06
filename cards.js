@@ -137,63 +137,63 @@ const ORACOLO_RISPOSTE = [
     code: "017",
     text: "Ama e gridalo al mondo, si!",
     cardImage: "carta_017.png",
-    videoId: ""
+    videoId: "AqYJP8-Whl0"
   },
   {
     id: 18,
     code: "018",
     text: "No. Non è amore, ma è sesso droga e Rock'n'Roll.",
     cardImage: "carta_018.png",
-    videoId: ""
+    videoId: "U-YcdNzGDAU"
   },
   {
     id: 19,
     code: "019",
     text: "Si e non è per i deboli di cuore.",
     cardImage: "carta_019.png",
-    videoId: ""
+    videoId: "aQPqgSM2hAs"
   },
   {
     id: 20,
     code: "020",
     text: "Chiudi quella chat e fallo di persona. Si! Ma chiudi quella chat!",
     cardImage: "carta_020.png",
-    videoId: ""
+    videoId: "MPbRqmQ3RQY"
   },
   {
     id: 21,
     code: "021",
     text: "Si, ma hai rotto il cazzo.",
     cardImage: "carta_021.png",
-    videoId: ""
+    videoId: "h3Z2YV8KhuM"
   },
   {
     id: 22,
     code: "022",
     text: "Sali su quel fottuto palco. E dai, non farti pregare ancora. Sali.",
     cardImage: "carta_022.png",
-    videoId: ""
+    videoId: "4XX_8tchdZM"
   },
   {
     id: 23,
     code: "023",
     text: "Ama. Ti dicono di no.\nMa se brucia tu ama, perché questo è Rock'n'Roll.",
     cardImage: "carta_023.png",
-    videoId: ""
+    videoId: "Nh0bPuEyA40"
   },
   {
     id: 24,
     code: "024",
     text: "Bastano un paio di birre. Si, un paio di birre e ti sarà tutto chiaro, si!",
     cardImage: "carta_024.png",
-    videoId: ""
+    videoId: "5dSMY3MmQx4"
   },
   {
     id: 25,
     code: "025",
     text: "Raccogli con gentilezza i pezzi ed accarezza l'anima.",
     cardImage: "carta_025.png",
-    videoId: ""
+    videoId: "_JgFttFnrlY"
   },
   {
     id: 26,
