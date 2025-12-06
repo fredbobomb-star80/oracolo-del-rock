@@ -179,7 +179,7 @@ const ORACOLO_RISPOSTE = [
     code: "666",
     text: "Non oggi, non adesso, no, non ora.",
     cardImage: "carta_666.png",
-    videoId: "Pxxxxxxxxx"
+    videoId: "Pxxxxxxxxx"     // <--- ULTIMA CARTA 666
   }
 ];
 
