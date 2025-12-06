@@ -200,147 +200,147 @@ const ORACOLO_RISPOSTE = [
     code: "026",
     text: "No, oh no. Ti sta sfuggendo il tempo. Oh no.",
     cardImage: "carta_026.png",
-    videoId: ""
+    videoId: "O76xonqwSuw"
   },
   {
     id: 27,
     code: "027",
     text: "Sarà memorabile ma solo per pochi fortunati, si.",
     cardImage: "carta_027.png",
-    videoId: ""
+    videoId: "79R4LM5D3Xs"
   },
   {
     id: 28,
     code: "028",
     text: "Qualcuno si farà male e lo sai. Si lo sai, già.",
     cardImage: "carta_028.png",
-    videoId: ""
+    videoId: "ozvnikOZXCo"
   },
   {
     id: 29,
     code: "029",
     text: "La passione che brucia questo pazzo mondo è passata di moda, oppure no?",
     cardImage: "carta_029.png",
-    videoId: ""
+    videoId: "QFyb4OLYc2Y"
   },
   {
     id: 30,
     code: "030",
     text: "Si, se hai voglia di sudare e sputare sangue ancora. Si.\nSi se hai voglia di sudare e sputare altro sangue ancora allora, allora è un si!",
     cardImage: "carta_030.png",
-    videoId: ""   // <--- RISPOSTA NUMERO 30
+    videoId: "vWjE0FgnYjE"   // <--- RISPOSTA NUMERO 30
   },
     {
     id: 31,
     code: "031",
     text: "Dai molla tutto, come una Rock star. Dai molla tutto come una dannata Rock star!",
     cardImage: "carta_031.png",
-    videoId: ""
+    videoId: "iDg9mOPv6Zk"
   },
   {
     id: 32,
     code: "032",
     text: "Preferisco vederti ballare sopra le fiamme dell'inferno piuttosto che vederti morire in una galera del paradiso.",
     cardImage: "carta_032.png",
-    videoId: ""
+    videoId: "Z9qdrTHgtyM"
   },
   {
     id: 33,
     code: "033",
     text: "La tua rabbia, ora, non è la tua musa migliore. No, ci puoi giurare che non lo è.",
     cardImage: "carta_033.png",
-    videoId: ""
+    videoId: "Pp5hKx-mqiU"
   },
   {
     id: 34,
     code: "034",
     text: "Spacca le tue catene e non voltarti mai. Dai su fallo, facci vedere.",
     cardImage: "carta_034.png",
-    videoId: ""
+    videoId: "IG0fdcaIFx4"
   },
   {
     id: 35,
     code: "035",
     text: "Perdona prima te stesso, poi penserai a tutto il resto.",
     cardImage: "carta_035.png",
-    videoId: ""
+    videoId: "C7JLcq2e3Ik"
   },
   {
     id: 36,
     code: "036",
     text: "Non esistono sbagli per chi suona il Rock'n'Roll. Ci sono solo verità per chi vive Rock!",
     cardImage: "carta_036.png",
-    videoId: ""
+    videoId: "BSMiFSY-wYE"
   },
   {
     id: 37,
     code: "037",
     text: "Stai guardando la luna, invece delle stelle. Ah si? E come mai? Come mai?",
     cardImage: "carta_037.png",
-    videoId: ""
+    videoId: "4WINkHNc6SQ"
   },
   {
     id: 38,
     code: "038",
     text: "Lanciati sulla folla. Ma ricorda che non c’è mai stata una cintura di sicurezza nel Rock'n'Roll.",
     cardImage: "carta_038.png",
-    videoId: ""
+    videoId: "LXGjnvKSyOk"
   },
   {
     id: 39,
     code: "039",
     text: "No, non tornare indietro. Non lo fare no! Non tornare solo perché hai sete un po'.",
     cardImage: "carta_039.png",
-    videoId: ""
+    videoId: "eRAHzs9FQBc"
   },
   {
     id: 40,
     code: "040",
     text: "Fidati del caos perché è più onesto di chi ti dà certezze e poi ti tradirà.",
     cardImage: "carta_040.png",
-    videoId: ""
+    videoId: "ux9A4N0kLdE"
   },
   {
     id: 41,
     code: "041",
     text: "Cerchi un segnale fuori, ma può essere solo rumore. Ascolta il suono che viene da dentro.",
     cardImage: "carta_041.png",
-    videoId: ""
+    videoId: "pHghI_hrUK4"
   },
   {
     id: 42,
     code: "042",
     text: "Scegli, anche se non sei pronto perché questo non è un treno che ti aspetta.",
     cardImage: "carta_042.png",
-    videoId: ""
+    videoId: "K2vozN6PQMw"
   },
   {
     id: 43,
     code: "043",
     text: "Smettila di chiedere permesso al destino. Non gliene frega un cazzo, lo hai capito o no?",
     cardImage: "carta_043.png",
-    videoId: ""
+    videoId: "7G2ruBhYrj4"
   },
   {
     id: 44,
     code: "044",
     text: "Non esiste un buon Rock che nasce da un bonsai. Il Rock nasce dai tuoni e tu lo sai.",
     cardImage: "carta_044.png",
-    videoId: ""
+    videoId: "OUDBhAfPCAM"
   },
   {
     id: 45,
     code: "045",
     text: "Smettila di inseguire i fantasmi. Sii tu l’incidente che cambia la trama.",
     cardImage: "carta_045.png",
-    videoId: ""
+    videoId: "rS50QmPqx3c"
   },
   {
     id: 46,
     code: "046",
     text: "Dimmi un po', cosa scriveranno sulla tua lapide? Leone o coglione oppure Rock'n'Roll.?",
     cardImage: "carta_046.png",
-    videoId: ""
+    videoId: "iNRo1J7o2tU"
   },
   {
     id: 47,
