@@ -158,7 +158,7 @@ const ORACOLO_RISPOSTE = [
     code: "020",                   
     text: "Non devi farlo ora.",
     cardImage: "carta_020.png",
-    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+    videoId: "YdEggax27GA"    // <--- CARTA NUMERO 20
   },
   {
     id: 84,
