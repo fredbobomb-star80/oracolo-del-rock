@@ -485,10 +485,55 @@ currentVideoId = id;
 
       clearOutroWatcher();
     }
+
+  
+  // --- FUNZIONE PER IL TASTO CONDIVIDI AUDIO --- FUNZIONE PER IL TASTO CONDIVIDI AUDIO --- FUNZIONE PER IL TASTO CONDIVIDI AUDIO ---
+const shareAudioBtn = document.getElementById("share-audio");
+
+shareAudioBtn.addEventListener("click", async () => {
+
+  // Se non è stato pescato un brano, non c'è nulla da condividere
+  if (!currentVideoId) {
+    alert("Prima pesca la tua carta!");
+    return;
+  }
+
+  const videoUrl = `https://youtu.be/${currentVideoId}`;
+
+  // --- TENTATIVO: SHARE NATIVO SU SMARTPHONE ---
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: "Ascolta il brano che mi è uscito dall'Oracolo del Rock!",
+        text: "Ecco il mio responso musicale:",
+        url: videoUrl
+      });
+      return;
+    } catch (e) {
+      console.log("Condivisione annullata", e);
+    }
+  }
+
+  // --- FALLBACK: COPIA IL LINK SU PC ---
+  try {
+    await navigator.clipboard.writeText(videoUrl);
+    alert("Link copiato! Ora puoi incollarlo dove vuoi:\n\n" + videoUrl);
+  } catch (e) {
+    alert("Ecco il link da copiare:\n\n" + videoUrl);
+  }
+});
+
+  
+  
+  
+  
+  
+  
   </script>
 
 </body>
 </html>
+
 
 
 
