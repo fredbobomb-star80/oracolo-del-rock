@@ -1631,6 +1631,706 @@ const ORACOLO_RISPOSTE = [
     videoId: ""
   }, 
   {
+    id: 231,
+    code: "231",
+    text: "Molla il vittimismo e prenditi quella cazzo di responsabilità",
+    cardImage: "carta_231.png",
+    videoId: ""
+  },
+  {
+    id: 232,
+    code: "232",
+    text: "Il piacere è un giro di rivoluzione, ma devi saperlo suonare.",
+    cardImage: "carta_232.png",
+    videoId: ""
+  },
+  {
+    id: 233,
+    code: "233",
+    text: "Le tue mani sono troppo stanche.",
+    cardImage: "carta_233.png",
+    videoId: ""
+  },
+  {
+    id: 234,
+    code: "234",
+    text: "Le tue mani possono reggere questo peso.",
+    cardImage: "carta_234.png",
+    videoId: ""
+  },
+  {
+    id: 235,
+    code: "235",
+    text: "Non chiamarlo amore, chiamalo Broken Negroni. Just a Broken Negroni.",
+    cardImage: "carta_235.png",
+    videoId: ""
+  },
+  {
+    id: 236,
+    code: "236",
+    text: "Solo se hai già fissato tutte le date del tour.",
+    cardImage: "carta_236.png",
+    videoId: ""
+  },
+  {
+    id: 237,
+    code: "237",
+    text: "Se hai paura di perderti come farai a trovare qualcosa di nuovo?",
+    cardImage: "carta_237.png",
+    videoId: ""
+  },
+  {
+    id: 238,
+    code: "238",
+    text: "È un pericolo che ha il gusto di un buon Rock.",
+    cardImage: "carta_238.png",
+    videoId: ""
+  },
+  {
+    id: 239,
+    code: "239",
+    text: "C'è chi fa sesso e poi ci sei tu.",
+    cardImage: "carta_239.png",
+    videoId: ""
+  },
+  {
+    id: 240,
+    code: "240",
+    text: "Hai confuso una scoreggia per una Stratocaster.",
+    cardImage: "carta_240.png",
+    videoId: ""
+  },
+  {
+    id: 241,
+    code: "241",
+    text: "Ogni bacio è un rischio. Vieni qui che ti do un bel bacetto.",
+    cardImage: "carta_241.png",
+    videoId: ""
+  },
+  {
+    id: 242,
+    code: "242",
+    text: "Ci sono passioni che uccidono lentamente. Scegli con cura.",
+    cardImage: "carta_242.png",
+    videoId: ""
+  },
+  {
+    id: 243,
+    code: "243",
+    text: "Se non ti sporchi le mani, non stai vivendo abbastanza Rock.",
+    cardImage: "carta_243.png",
+    videoId: ""
+  },
+  {
+    id: 244,
+    code: "244",
+    text: "Ti salverà una birra fresca non una zuppa calda.",
+    cardImage: "carta_244.png",
+    videoId: ""
+  },
+  {
+    id: 245,
+    code: "245",
+    text: "Non tutti i demoni vengono per farti soffrire. Qualcuno arriva per ricordarti chi sei.",
+    cardImage: "carta_245.png",
+    videoId: ""
+  },
+  {
+    id: 246,
+    code: "246",
+    text: "Fai qualche sound check in più.",
+    cardImage: "carta_246.png",
+    videoId: ""
+  },
+  {
+    id: 247,
+    code: "247",
+    text: "Ma dimmi un po'. Se non ti fa perdere il fiato, il sonno e sudore, non lo farebbe qualsiasi coglione?",
+    cardImage: "carta_247.png",
+    videoId: ""
+  },
+  {
+    id: 248,
+    code: "248",
+    text: "E' come un biscotto della fortuna, ha il sapore di carta e ti racconta stronzate.",
+    cardImage: "carta_248.png",
+    videoId: ""
+  },
+  {
+    id: 249,
+    code: "249",
+    text: "Smettila di accordare le chitarre degli altri.",
+    cardImage: "carta_249.png",
+    videoId: ""
+  },
+  {
+    id: 250,
+    code: "250",
+    text: "Il corpo ha memorie che la mente nega ma che il cuore ricorda.",
+    cardImage: "carta_250.png",
+    videoId: ""
+  },
+  {
+    id: 251,
+    code: "251",
+    text: "Fai un'offerta che non si può rifiutare.",
+    cardImage: "carta_251.png",
+    videoId: ""
+  },
+  {
+    id: 252,
+    code: "252",
+    text: "Si, eccitante come una birra analcolica scaldata al microonde.",
+    cardImage: "carta_252.png",
+    videoId: ""
+  },
+  {
+    id: 253,
+    code: "253",
+    text: "Aspetta che scotta, scotta, scotta. Aspetta che scatta, scatta, scatta. Aspetta che sboccia, sboccia, sboccia.",
+    cardImage: "carta_253.png",
+    videoId: ""
+  },
+  {
+    id: 254,
+    code: "254",
+    text: "Blocca ed ignora. Blocca ed ignora. Blocca ed ignora. E perché no, segnala. God save the blocking.",
+    cardImage: "carta_254.png",
+    videoId: ""
+  },
+  {
+    id: 255,
+    code: "255",
+    text: "La quarta regola dell'Oracolo del Rock è : nessun discorso troppo complicato, ci penserà l'Oracolo ad incasinarti un po'.",
+    cardImage: "carta_255.png",
+    videoId: ""
+  },
+  {
+    id: 256,
+    code: "256",
+    text: "A questo punto qualcuno bestemmia. Lo fanno anche per molto meno si. Ma a questo punto qualcuno bestemmia.",
+    cardImage: "carta_256.png",
+    videoId: ""
+  },
+  {
+    id: 257,
+    code: "257",
+    text: "Spegni quella televisione del cazzo.",
+    cardImage: "carta_257.png",
+    videoId: ""
+  },
+  {
+    id: 258,
+    code: "258",
+    text: "Valuta di inserire i cori e di cambiare il riff. Se non hai la minima idea di cosa stia parlando allora è un vai a cagare! Si, vai a cagare si!",
+    cardImage: "carta_258.png",
+    videoId: ""
+  },
+  {
+    id: 259,
+    code: "259",
+    text: "Il suo odore sarà la tua nuova religione.",
+    cardImage: "carta_259.png",
+    videoId: ""
+  },
+  {
+    id: 260,
+    code: "260",
+    text: "Ti serve un letto più grande.",
+    cardImage: "carta_260.png",
+    videoId: ""
+  },
+  {
+    id: 261,
+    code: "261",
+    text: "L’amore non è una materia obbligatoria. L'odio si impara dalla prima ora di scuola.",
+    cardImage: "carta_261.png",
+    videoId: ""
+  },
+  {
+    id: 262,
+    code: "262",
+    text: "Fai qualcosa di tuo se ci riesci. Ma fai qualcosa di tuo.",
+    cardImage: "carta_262.png",
+    videoId: ""
+  },
+  {
+    id: 263,
+    code: "263",
+    text: "La pelle non mente. Le labbra si.",
+    cardImage: "carta_263.png",
+    videoId: ""
+  },
+  {
+    id: 264,
+    code: "264",
+    text: "Non fare debiti per comprare una nuova prigione. No, non fare debiti per comprare una nuova prigione.",
+    cardImage: "carta_264.png",
+    videoId: ""
+  },
+  {
+    id: 265,
+    code: "265",
+    text: "Sarà fantastico, come un concerto live di quelli che non si dimenticano mai. Da pelle d'oca.",
+    cardImage: "carta_265.png",
+    videoId: ""
+  },
+  {
+    id: 266,
+    code: "266",
+    text: "Se qualcuno stacca gli occhi dallo schermo e ti sorride, oggi giorno, vale più dell'oro.",
+    cardImage: "carta_266.png",
+    videoId: ""
+  },
+  {
+    id: 267,
+    code: "267",
+    text: "Come un giro di basso che rivoluziona il tutto ma che, mette in crisi il produttore, la majors ed il DJ",
+    cardImage: "carta_267.png",
+    videoId: ""
+  },
+  {
+    id: 268,
+    code: "268",
+    text: "Manda a fanculo il tuo capo.",
+    cardImage: "carta_268.png",
+    videoId: ""
+  },
+  {
+    id: 269,
+    code: "269",
+    text: "Prima fai un regalo speciale a qualcuno.",
+    cardImage: "carta_269.png",
+    videoId: ""
+  },
+  {
+    id: 270,
+    code: "270",
+    text: "Hai l'orecchio assoluto per certe stronzate.",
+    cardImage: "carta_270.png",
+    videoId: ""
+  },
+  {
+    id: 271,
+    code: "271",
+    text: "Appropriato, si. Come uno sfollagente brandito su una folla di monaci tibetani, perché ultimamente le loro preghiere per la pace non stanno funzionando poi così tanto bene.",
+    cardImage: "carta_271.png",
+    videoId: ""
+  },
+  {
+    id: 272,
+    code: "272",
+    text: "Complimenti. Ci vuole un talento speciale per far girare così tanto i coglioni al Karma.",
+    cardImage: "carta_272.png",
+    videoId: ""
+  },
+  {
+    id: 273,
+    code: "273",
+    text: "Ascolta il primo brano in classifica di oggi.",
+    cardImage: "carta_273.png",
+    videoId: ""
+  },
+  {
+    id: 274,
+    code: "274",
+    text: "Ascolta il brano che era primo in classifica il giorno della tua nascita.",
+    cardImage: "carta_274.png",
+    videoId: ""
+  },
+  {
+    id: 275,
+    code: "275",
+    text: "La quinta regola dell'Oracolo del Rock è : non puoi chiedere per qualcun altro. Ma se proprio ci tieni a farlo, taggalo.",
+    cardImage: "carta_275.png",
+    videoId: ""
+  },
+  {
+    id: 276,
+    code: "276",
+    text: "Hai pisciato fuori dal vaso. Hai decisamente pisciato fuori dal vaso, si.",
+    cardImage: "carta_276.png",
+    videoId: ""
+  },
+  {
+    id: 277,
+    code: "277",
+    text: "Hai lasciato la tua chitarra migliore a casa, come mai?",
+    cardImage: "carta_277.png",
+    videoId: ""
+  },
+  {
+    id: 278,
+    code: "278",
+    text: "Dai fastidio a qualcuno.",
+    cardImage: "carta_278.png",
+    videoId: ""
+  },
+  {
+    id: 279,
+    code: "279",
+    text: "Si e sarà così che conquisterai nuovi fan.",
+    cardImage: "carta_279.png",
+    videoId: ""
+  },
+  {
+    id: 280,
+    code: "280",
+    text: "No, non cercare il lieto fine. Cerca il fottuto, fottuto inizio, si.",
+    cardImage: "carta_280.png",
+    videoId: ""
+  },
+  {
+    id: 281,
+    code: "281",
+    text: "Si ma perderai qualche fan.",
+    cardImage: "carta_281.png",
+    videoId: ""
+  },
+  {
+    id: 282,
+    code: "282",
+    text: "Ti renderà bene.",
+    cardImage: "carta_282.png",
+    videoId: ""
+  },
+  {
+    id: 283,
+    code: "283",
+    text: "Se continui così, pagherai più del dovuto.",
+    cardImage: "carta_283.png",
+    videoId: ""
+  },
+  {
+    id: 284,
+    code: "284",
+    text: "Hai imparato a stento a suonare un citofono, ma ti lanci in feroci critiche Rock.",
+    cardImage: "carta_284.png",
+    videoId: ""
+  },
+  {
+    id: 285,
+    code: "285",
+    text: "E' la spezia giusta che renderà le cose più piccanti.",
+    cardImage: "carta_285.png",
+    videoId: ""
+  },
+  {
+    id: 286,
+    code: "286",
+    text: "Ti annoierai, ma tieni la bocca chiusa.",
+    cardImage: "carta_286.png",
+    videoId: ""
+  },
+  {
+    id: 287,
+    code: "287",
+    text: "Un bacio è una prova microfono: se non vibra, cambia palco.",
+    cardImage: "carta_287.png",
+    videoId: ""
+  },
+  {
+    id: 288,
+    code: "288",
+    text: "La vita è come una scatola di plettri, non sceglierai il migliore ma quello giusto per te.",
+    cardImage: "carta_288.png",
+    videoId: ""
+  },
+  {
+    id: 289,
+    code: "289",
+    text: "Prima la follia poi la famiglia e poi la follia ancora.",
+    cardImage: "carta_289.png",
+    videoId: ""
+  },
+  {
+    id: 290,
+    code: "290",
+    text: "Rock e fiamme.",
+    cardImage: "carta_290.png",
+    videoId: ""
+  },
+  {
+    id: 291,
+    code: "291",
+    text: "Fallo, si! E che il Rock sia sempre con te!",
+    cardImage: "carta_291.png",
+    videoId: ""
+  },
+  {
+    id: 292,
+    code: "292",
+    text: "Sì, ma festeggia col wiskey migliore.",
+    cardImage: "carta_292.png",
+    videoId: ""
+  },
+  {
+    id: 293,
+    code: "293",
+    text: "La sesta regola dell'Oracolo del Rock è : niente haters e niente spazzatura. E' chiaro? Tenete le vostre boiate fuori di qui!",
+    cardImage: "carta_293.png",
+    videoId: ""
+  },
+  {
+    id: 294,
+    code: "294",
+    text: "No, il destino oggi non prende appuntamenti inutili.",
+    cardImage: "carta_294.png",
+    videoId: ""
+  },
+  {
+    id: 295,
+    code: "295",
+    text: "O prendi subito l’iniziativa o sarai fatto fuori dai giochi.",
+    cardImage: "carta_295.png",
+    videoId: ""
+  },
+  {
+    id: 296,
+    code: "296",
+    text: "Affila per bene la lama.",
+    cardImage: "carta_296.png",
+    videoId: ""
+  },
+  {
+    id: 297,
+    code: "297",
+    text: "Scrolla. Commenta. Crepa.",
+    cardImage: "carta_297.png",
+    videoId: ""
+  },
+  {
+    id: 298,
+    code: "298",
+    text: "No, scordatelo pure.",
+    cardImage: "carta_298.png",
+    videoId: ""
+  },
+  {
+    id: 299,
+    code: "299",
+    text: "Si, vai a tutto gas.",
+    cardImage: "carta_299.png",
+    videoId: ""
+  },
+  {
+    id: 300,
+    code: "300",
+    text: "Non inciampare dalle scale del paradiso.",
+    cardImage: "carta_300.png",
+    videoId: ""
+  },
+  {
+    id: 301,
+    code: "301",
+    text: "Non scivolare dalle scale dell'inferno.",
+    cardImage: "carta_301.png",
+    videoId: ""
+  },
+  {
+    id: 302,
+    code: "302",
+    text: "Prima di sfrecciare lungo le strade controlla i freni.",
+    cardImage: "carta_302.png",
+    videoId: ""
+  },
+  {
+    id: 303,
+    code: "303",
+    text: "Provane un pò. Se ti accende è la cura, se ti spegne è il veleno.",
+    cardImage: "carta_303.png",
+    videoId: ""
+  },
+  {
+    id: 304,
+    code: "304",
+    text: "Le settima regola dell'Oracolo del Rock è : sono severamente vietati i leoni da tastiera. Tranne quelli che hanno fondato un gruppo Rock.",
+    cardImage: "carta_304.png",
+    videoId: ""
+  },
+  {
+    id: 305,
+    code: "305",
+    text: "Pensa con la tua testaccia dura.",
+    cardImage: "carta_305.png",
+    videoId: ""
+  },
+  {
+    id: 306,
+    code: "306",
+    text: "Fatti guidare dal tuo cuore ingolfato.",
+    cardImage: "carta_306.png",
+    videoId: ""
+  },
+  {
+    id: 307,
+    code: "307",
+    text: "Non farti distrarre da quelle belle cosce!",
+    cardImage: "carta_307.png",
+    videoId: ""
+  },
+  {
+    id: 308,
+    code: "308",
+    text: "Cerca degli antichi tesori nascosti tra le macerie dell'oblio.",
+    cardImage: "carta_308.png",
+    videoId: ""
+  },
+  {
+    id: 309,
+    code: "309",
+    text: "Fatti distrarre un po' da quelle belle cosce.",
+    cardImage: "carta_309.png",
+    videoId: ""
+  },
+  {
+    id: 310,
+    code: "310",
+    text: "Hai confuso un monopattino per una Harley.",
+    cardImage: "carta_310.png",
+    videoId: ""
+  },
+  {
+    id: 311,
+    code: "311",
+    text: "Non vivere nell'ombra per paura della luce.",
+    cardImage: "carta_311.png",
+    videoId: ""
+  },
+  {
+    id: 312,
+    code: "312",
+    text: "Sarà senza anima, come un concerto in playback senza il microfono.",
+    cardImage: "carta_312.png",
+    videoId: ""
+  },
+  {
+    id: 313,
+    code: "313",
+    text: "Meglio ultimi in classifica che sul podio degli stronzi.",
+    cardImage: "carta_313.png",
+    videoId: ""
+  },
+  {
+    id: 314,
+    code: "314",
+    text: "Fai un bel soundcheck di tutte le tue verità.",
+    cardImage: "carta_314.png",
+    videoId: ""
+  },
+  {
+    id: 315,
+    code: "315",
+    text: "Cedi volentieri a questa nuova tentazione.",
+    cardImage: "carta_315.png",
+    videoId: ""
+  },
+  {
+    id: 316,
+    code: "316",
+    text: "Cambia ruolo al bassista. Ma se non hai una band, almeno cambia quella foto profilo del novanta tre.",
+    cardImage: "carta_316.png",
+    videoId: ""
+  },
+  {
+    id: 317,
+    code: "317",
+    text: "Prepara lo zaino per affrontare la prossima fine del mondo.",
+    cardImage: "carta_317.png",
+    videoId: ""
+  },
+  {
+    id: 318,
+    code: "318",
+    text: "Siamo tutti colpevoli di non aver desiderato.",
+    cardImage: "carta_318.png",
+    videoId: ""
+  },
+  {
+    id: 319,
+    code: "319",
+    text: "Non forgiare altre catene. Non forgiare altre catene, no!",
+    cardImage: "carta_319.png",
+    videoId: ""
+  },
+  {
+    id: 320,
+    code: "320",
+    text: "Prepara lo zaino per un weekend al mare fuori stagione.",
+    cardImage: "carta_320.png",
+    videoId: ""
+  },
+  {
+    id: 321,
+    code: "321",
+    text: "Prepara lo zaino e riempilo di cazzi tuoi.",
+    cardImage: "carta_321.png",
+    videoId: ""
+  },
+  {
+    id: 322,
+    code: "322",
+    text: "Prepara lo zaino per un weekend ricco di peccato.",
+    cardImage: "carta_322.png",
+    videoId: ""
+  },
+  {
+    id: 323,
+    code: "323",
+    text: "Impara a sognare più lontano.",
+    cardImage: "carta_323.png",
+    videoId: ""
+  },
+  {
+    id: 324,
+    code: "324",
+    text: "Non pregare che vada bene piuttosto preparati per il maledetto bis.",
+    cardImage: "carta_324.png",
+    videoId: ""
+  },
+  {
+    id: 325,
+    code: "325",
+    text: "Non inseguire quella luce, potrebbe essere una volante della polizia.",
+    cardImage: "carta_325.png",
+    videoId: ""
+  },
+  {
+    id: 326,
+    code: "326",
+    text: "Inventati una scusa più plausibile.",
+    cardImage: "carta_326.png",
+    videoId: ""
+  },
+  {
+    id: 327,
+    code: "327",
+    text: "Ruba tutte le password all'ispirazione.",
+    cardImage: "carta_327.png",
+    videoId: ""
+  },
+  {
+    id: 328,
+    code: "328",
+    text: "Non sarà così semplice, a tratti detestabile, ma neanche facilmente dimenticabile. Imprevedibile. Senza regole. Intramontabile. Direi Irrefrenabile. Irripetibile ma mai stucchevole. Ma no, non così semplice, a tratti detestabile, ma neanche facilmente dimenticabile.",
+    cardImage: "carta_328.png",
+    videoId: ""
+  },
+  {
+    id: 329,
+    code: "329",
+    text: "Dio non giudica, ma i vicini sì.",
+    cardImage: "carta_329.png",
+    videoId: ""
+  },
+  {
+    id: 330,
+    code: "330",
+    text: "Spezza la croce e conserva i chiodi.",
+    cardImage: "carta_330.png",
+    videoId: ""
+  },  
+  {
     id: 666,
     code: "666",
     text: "Non oggi, non adesso, no, non ora.",
