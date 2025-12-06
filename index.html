@@ -8,7 +8,6 @@
   <style>
     /* ============================
        ***   MIO CSS   ***
-       Qui dentro c’è tutto lo stile del sito
        ============================ */
     
     body{
@@ -33,10 +32,9 @@
       width:100%;
       height:auto;
       display:block;
-      /* stato normale: nessuna animazione */
     }
 
-    /* --- EFFETTO MICRO-VIBRAZIONE + ACCENSIONE + FLASH FINALE --- */
+    /* ANIMAZIONE CABINA */
     .hero-img.activating{
       animation:
         heroShake 0.16s infinite alternate,
@@ -45,39 +43,19 @@
     }
 
     @keyframes heroShake{
-      from{
-        transform: translate(0px, 0px);
-      }
-      to{
-        transform: translate(0.7px, -0.7px);
-      }
+      from{ transform: translate(0px, 0px); }
+      to{   transform: translate(0.7px, -0.7px); }
     }
 
     @keyframes powerOnFlash{
-      0%{
-        opacity: 0;
-        filter: brightness(0.3) contrast(0.8);
-      }
-      50%{
-        opacity: 1;
-        filter: brightness(0.8) contrast(1.1);
-      }
-      70%{
-        opacity: 0;
-        filter: brightness(0.4) contrast(1);
-      }
-      85%{
-        opacity: 1;
-        filter: brightness(1.4) saturate(1.6);
-      }
-      100%{
-        opacity: 1;
-        filter: brightness(1) contrast(1);
-      }
+      0%  { opacity:0; filter:brightness(0.3) contrast(0.8); }
+      50% { opacity:1; filter:brightness(0.8) contrast(1.1); }
+      70% { opacity:0; filter:brightness(0.4) contrast(1);   }
+      85% { opacity:1; filter:brightness(1.4) saturate(1.6); }
+      100%{ opacity:1; filter:brightness(1) contrast(1);      }
     }
 
     /* AREA VIDEO */
-
     .yt-overlay.is-hidden{
       opacity: 0;
       transform: translateY(6px);
@@ -127,14 +105,33 @@
       box-shadow:0 0 12px rgba(0,200,255,0.35);
     }
 
-    /* BOTTONE PRINCIPALE */
-    .frame-button{
-      position:absolute;
-      top:102%;
-      left:50%;
-      transform:translateX(-50%);
+    /* SEZIONE AZIONI SOTTO LA CABINA */
+    .actions{
+      margin-top:14px;         /* cabina -> nuovi pulsanti */
     }
 
+    /* NUOVI DUE TASTI CONDIVIDI */
+    .share-row{
+      text-align:center;
+      margin-bottom:10px;      /* share -> bottone principale */
+    }
+
+    .share-btn{
+      display:inline-block;
+      padding:6px 14px;
+      margin:0 4px;
+      border-radius:999px;
+      border:2px solid #ff00ff;
+      background:#000;
+      color:#fff;
+      font-size:13px;
+      font-weight:500;
+      letter-spacing:0.03em;
+      cursor:pointer;
+      box-shadow:0 0 8px rgba(255,60,207,.2);
+    }
+
+    /* BOTTONE PRINCIPALE (ORA NEL FLUSSO NORMALE) */
     #new{
       background: linear-gradient(180deg, #0fe3ff 0%, #00a9d6 45%, #006b8a 100%);
       color:#001018;
@@ -194,47 +191,23 @@
       }
     }
 
-    /* SOTTO CABINA */
+    /* SOTTO CABINA (SOCIAL + TESTO) */
     .wrap{
       max-width:920px;
       margin:0 auto;
-      padding:16px 16px 40px;
-      margin-top:60px;
+      padding:18px 16px 40px;
+      margin-top:16px;   /* poco stacco dal bottone principale */
       display:flex;
       flex-direction:column;
       gap:12px;
     }
 
-    /* Riga dei nuovi due tasti di condivisione video e carta */
-    .share-row{
-      margin-top:70px;      /* <<< spinge i tasti sotto il bottone azzurro */
-      margin-bottom:12px;   /* distanza dai 3 social */
-      text-align: center;
-    }
-
-    /* Bottoni "Condividi il brano / la tua carta" */
-    .share-btn{
-      display: inline-block;
-      padding: 6px 14px;
-      margin: 0 4px;
-      border-radius: 999px;
-      border: 2px solid #ff00ff;
-      background: #000;
-      color: #fff;
-      font-size: 13px;
-      font-weight: 500;
-      letter-spacing: 0.03em;
-      cursor: pointer;
-      box-shadow:0 0 8px rgba(255,60,207,.2);
-    }
-
-    /* SOCIAL */
     .social-buttons{
       display:flex;
       justify-content:center;
       gap:10px;
       flex-wrap:wrap;
-      margin-top:30px;
+      margin-top:4px;    /* pochissimo nero sopra i social */
     }
 
     .social-btn{
@@ -278,24 +251,25 @@
 
     <!-- SCATOLA CONTENITRICE DEL VIDEO -->
     <div id="yt" class="yt-overlay is-hidden"></div>
-
-    <!-- BOTTONE -->
-    <div class="frame-button">
-      <button id="new">PESCA LA TUA CARTA</button>
-    </div>
   </header>
 
-  <!-- NUOVI DUE TASTI: CONDIVIDI IL BRANO / CONDIVIDI LA TUA CARTA -->
-  <div class="share-row">
-    <button class="share-btn">
-      🎵 Condividi 🎵
-    </button>
-    <button class="share-btn">
-      ✍️ Condividi ✍️
-    </button>
-  </div>
+  <!-- AZIONI SOTTO LA CABINA -->
+  <section class="actions">
+    <!-- NUOVI 2 TASTI INCOLLATI SOTTO LA CABINA -->
+    <div class="share-row">
+      <button class="share-btn">
+        🎵 Condividi 🎵
+      </button>
+      <button class="share-btn">
+        ✍️ Condividi ✍️
+      </button>
+    </div>
 
-  <!-- SOTTO CABINA -->
+    <!-- BOTTONE PRINCIPALE -->
+    <button id="new">PESCA LA TUA CARTA</button>
+  </section>
+
+  <!-- SOTTO CABINA: SOCIAL + TESTO -->
   <main class="wrap">
     <div class="social-buttons">
       <a href="https://www.youtube.com/watch?v=YdEggax27GA&list=PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx" target="_blank" class="social-btn youtube">YouTube</a>
@@ -321,8 +295,6 @@
     let player = null;
     let allIds = [];
     let entranceTimer = null;
-
-    // watcher per uscita pro (fade-out prima della fine)
     let outroInterval = null;
     let outroTriggered = false;
 
@@ -404,7 +376,6 @@
     function playRandom(){
       const btn = document.getElementById("new");
       if(btn.classList.contains("disabled")) return;
-
       if(!player || !allIds.length) return;
 
       const ytBox = document.getElementById("yt");
@@ -470,7 +441,6 @@
 
         const dur = player.getDuration();
         const cur = player.getCurrentTime();
-
         if(!dur || !cur) return;
 
         const remaining = dur - cur;
@@ -505,8 +475,3 @@
 
 </body>
 </html>
-
-
-
-
-
