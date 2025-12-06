@@ -30,7 +30,7 @@ const ORACOLO_RISPOSTE = [
    {
     id: 2,
     code: "002",                   
-    text: "Non devi farlo ora.",
+    text: "Dai. Ma cosa stai aspettando? Ma cosa stai aspettando?",
     cardImage: "carta_002.png",
     videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
   },
