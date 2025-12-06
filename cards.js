@@ -175,10 +175,10 @@ const ORACOLO_RISPOSTE = [
     videoId: "Yxxxxxxxxx"
   },
   {
-    id: 203,
-    code: "203",
+    id: 666,
+    code: "666",
     text: "Non oggi, non adesso, no, non ora.",
-    cardImage: "203.png",
+    cardImage: "carta_666.png",
     videoId: "Pxxxxxxxxx"
   }
 ];
