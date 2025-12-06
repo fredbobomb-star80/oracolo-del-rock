@@ -445,140 +445,140 @@ const ORACOLO_RISPOSTE = [
     code: "061",
     text: "Sento più inutile rabbia che sana curiosità. Qualcuno ti ha cagato nel latte stamattina?",
     cardImage: "carta_061.png",
-    videoId: ""
+    videoId: "6gN184oaUAw"
   },
   {
     id: 62,
     code: "062",
     text: "Fai quello che vuoi. Ma portati un amuleto, fidati che ti servirà.",
     cardImage: "carta_062.png",
-    videoId: ""
+    videoId: "sbmAburkkPY"
   },
   {
     id: 63,
     code: "063",
     text: "A chi stai cercando di piacere? A gente a cui non gliene frega niente di te?",
     cardImage: "carta_063.png",
-    videoId: ""
+    videoId: "DZJYtqt66tY"
   },
   {
     id: 64,
     code: "064",
     text: "Preferisci suonare la batteria o la chitarra? Scegli, perché o mantieni il tempo o fai bruciare il pentagramma.",
     cardImage: "carta_064.png",
-    videoId: ""
+    videoId: "4TVEM9ydFYA"
   },
   {
     id: 65,
     code: "065",
     text: "Hai poco fegato. Sento l'odore della tua paura. Fammi un favore, fatti un bel bagno di Rock.",
     cardImage: "carta_065.png",
-    videoId: ""
+    videoId: "MMgyz4YEits"
   },
   {
     id: 66,
     code: "066",
     text: "Si, ma sappi che nessuno ti applaudirà. Allora, lo farai lo stesso, si?",
     cardImage: "carta_066.png",
-    videoId: ""
+    videoId: "mGHTeBw-thg"
   },
   {
     id: 67,
     code: "067",
     text: "Non rompere le palle e fatti un Black Jack! Ci metti coca, whiskey, southern comfort ed un top di Rock'n'Roll.",
     cardImage: "carta_067.png",
-    videoId: ""
+    videoId: "YQbat4CTvS8"
   },
   {
     id: 68,
     code: "068",
     text: "Alchimista dell' anima. Ma attenzione al veleno. Si, Alchimista dell' anima. Ma attenzione al veleno!",
     cardImage: "carta_068.png",
-    videoId: ""
+    videoId: "uCCBwgc_T7Y"
   },
   {
     id: 69,
     code: "069",
     text: "Ti stan portando sfiga! Qualcuno fa voodoo. Ti stan portando sfiga. Riflettici un po' su!",
     cardImage: "carta_069.png",
-    videoId: ""
+    videoId: "YQLIWk1zxPU"
   },
   {
     id: 70,
     code: "070",
     text: "Falli crepare di invidia. Si. Falli crepare di invidia.",
     cardImage: "carta_070.png",
-    videoId: ""
+    videoId: "t0sshooHhls"
   },
   {
     id: 71,
     code: "071",
     text: "Ci vuole un caffè doppio. Magari anche corretto. Buttalo giù in un colpo. Serve lucidità!",
     cardImage: "carta_071.png",
-    videoId: ""
+    videoId: "KhwiudloPxU"
   },
   {
     id: 72,
     code: "072",
     text: "Con il cuore ferito ogni strada che farai sarà livida.",
     cardImage: "carta_072.png",
-    videoId: ""
+    videoId: "is2EOSa-H2w"
   },
   {
     id: 73,
     code: "073",
     text: "E' come se stessi giocando un gioco di dadi truccato.",
     cardImage: "carta_073.png",
-    videoId: ""
+    videoId: "VaIL4ahoEec"
   },
   {
     id: 74,
     code: "074",
     text: "Qualcuno sta scommettendo forte contro di te. Ma tu puoi battere le fredde statistiche!",
     cardImage: "carta_074.png",
-    videoId: ""
+    videoId: "Lfanl51HdAE"
   },
   {
     id: 75,
     code: "075",
     text: "E' stata abolita la schiavitù, ma il mondo è ancora pieno di servi, e tu?",
     cardImage: "carta_075.png",
-    videoId: ""
+    videoId: "isA3pVIongQ"
   },
   {
     id: 76,
     code: "076",
     text: "Guida fino a quando non incontri le onde dell'oceano. Poi cavalcale.",
     cardImage: "carta_076.png",
-    videoId: ""
+    videoId: "79-DOuTCQM8"
   },
   {
     id: 77,
     code: "077",
     text: "Smettila di guardare quelle foto sbiadite del passato.",
     cardImage: "carta_077.png",
-    videoId: ""
+    videoId: "TZS-n03lJqA"
   },
   {
     id: 78,
     code: "078",
     text: "Non ci crederai, ma qualcuno ti sta aspettando. Non so chi o dove sia, devi scoprirlo tu.",
     cardImage: "carta_078.png",
-    videoId: ""
+    videoId: "vjelqKasrnM"
   },
   {
     id: 79,
     code: "079",
     text: "Questo non è un viaggio da fare da soli. No. Questo non è affatto un viaggio da fare da soli.",
     cardImage: "carta_079.png",
-    videoId: ""
+    videoId: "GfDPdgUuYgc"
   },
   {
     id: 80,
     code: "080",
     text: "Ti stanno sottovalutando, non farlo anche tu. Oh no! Non farlo anche tu!",
     cardImage: "carta_080.png",
-    videoId: ""
+    videoId: "sv2LI9b7kco"
   },
   {
     id: 81,
