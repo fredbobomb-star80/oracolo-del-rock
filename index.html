@@ -37,18 +37,13 @@
     }
 
     /* --- EFFETTO MICRO-VIBRAZIONE + ACCENSIONE + FLASH FINALE --- */
-    /* quando l'oracolo si "attiva", aggiungiamo la classe .activating alla hero-img */
     .hero-img.activating{
-      /* due animazioni in parallelo:
-         - heroShake: micro-vibrazione continua
-         - powerOnFlash: accensione + flash finale */
       animation:
         heroShake 0.16s infinite alternate,
         powerOnFlash 1.7s ease-out forwards;
       transform-origin:center;
     }
 
-    /* micro-movimento, leggero per non dare fastidio */
     @keyframes heroShake{
       from{
         transform: translate(0px, 0px);
@@ -58,7 +53,6 @@
       }
     }
 
-    /* accensione con sparizione e flash finale */
     @keyframes powerOnFlash{
       0%{
         opacity: 0;
@@ -69,12 +63,12 @@
         filter: brightness(0.8) contrast(1.1);
       }
       70%{
-        opacity: 0; /* sparisce: colpo di corrente */
+        opacity: 0;
         filter: brightness(0.4) contrast(1);
       }
       85%{
         opacity: 1;
-        filter: brightness(1.4) saturate(1.6); /* super flash */
+        filter: brightness(1.4) saturate(1.6);
       }
       100%{
         opacity: 1;
@@ -84,7 +78,6 @@
 
     /* AREA VIDEO */
 
-    /* ---- FADE IN/OUT VIDEO ---- */
     .yt-overlay.is-hidden{
       opacity: 0;
       transform: translateY(6px);
@@ -99,14 +92,12 @@
       pointer-events: auto;
     }
 
-    /* ---- EFFETTO DI ENTRATA (AUDIO SUBITO, VIDEO DOPO 3s) ---- */
     .yt-overlay.is-visible.audio-first{
       opacity: 0;
       transform: translateY(6px);
       pointer-events: none;
     }
 
-    /* FIX: durante audio-first l'iframe è proprio invisibile (PC + smartphone) */
     .yt-overlay.is-visible.audio-first iframe{
       visibility: hidden;
     }
@@ -117,11 +108,9 @@
       top:80%;
       width:15%;
       height:12%;
-
       display:flex;
       align-items:center;
       justify-content:center;
-
       background:rgba(0,0,0,0.25);
       border-radius:14px;
       padding:4px;
@@ -156,14 +145,12 @@
       font-weight:1000;
       cursor:pointer;
       letter-spacing:1px;
-
       box-shadow:
         0 6px 16px rgba(0,0,0,0.8),
         inset 0 2px 0 rgba(255,255,255,0.35),
         inset 0 -3px 8px rgba(0,0,0,0.6),
         0 0 14px rgba(0,200,255,0.65),
         0 0 30px rgba(0,200,255,0.35);
-
       transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
     }
 
@@ -187,7 +174,6 @@
         0 0 10px rgba(0,200,255,0.6);
     }
 
-    /* --- STATO "ACCENSIONE" DEL BOTTONE (prima che l'oracolo sia pronto) --- */
     #new.disabled{
       opacity:0.5;
       pointer-events:none;
@@ -219,29 +205,29 @@
       gap:12px;
     }
 
-/* Riga dei nuovi due tasti di condivisione video e carta */
-.share-row{
-  margin-top: 8px;      /* distanza dal bottone azzurro */
-  margin-bottom: 10px;  /* distanza dai 3 social */
-  text-align: center;
-}
+    /* Riga dei nuovi due tasti di condivisione video e carta */
+    .share-row{
+      margin-top:70px;      /* <<< spinge i tasti sotto il bottone azzurro */
+      margin-bottom:12px;   /* distanza dai 3 social */
+      text-align: center;
+    }
 
-/* Bottoni "Condividi il brano / la tua carta" */
-.share-btn{
-  display: inline-block;
-  padding: 6px 14px;
-  margin: 0 4px;
-  border-radius: 999px;
-  border: 2px solid #ff00ff;   /* come il bordo rosa dei social */
-  background: #000;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.03em;
-  cursor: pointer;
-}
+    /* Bottoni "Condividi il brano / la tua carta" */
+    .share-btn{
+      display: inline-block;
+      padding: 6px 14px;
+      margin: 0 4px;
+      border-radius: 999px;
+      border: 2px solid #ff00ff;
+      background: #000;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      box-shadow:0 0 8px rgba(255,60,207,.2);
+    }
 
-    
     /* SOCIAL */
     .social-buttons{
       display:flex;
@@ -290,7 +276,7 @@
       class="hero-img"
     />
 
-    <!-- SCATOLA CONTENITRICE DEL VIDEO / Partenza invisibile e dissolvenza alla fine -->
+    <!-- SCATOLA CONTENITRICE DEL VIDEO -->
     <div id="yt" class="yt-overlay is-hidden"></div>
 
     <!-- BOTTONE -->
@@ -299,16 +285,15 @@
     </div>
   </header>
 
-<!-- 🔻 NUOVI DUE TASTI CONDIVIDI IL BRANO e CONDIVIDI LA TUA CARTA --!>
-<div class="share-row">
-  <button class="share-btn">
-    🎵 Condividi il brano 🎵
-  </button>
-  <button class="share-btn">
-    ✍️ Condividi la tua carta  ✍️
-  </button>
-</div>
-<!-- 🔺 FINE NUOVI TASTI 🔺 -->
+  <!-- NUOVI DUE TASTI: CONDIVIDI IL BRANO / CONDIVIDI LA TUA CARTA -->
+  <div class="share-row">
+    <button class="share-btn">
+      🎵 Condividi il tuo brano 🎵
+    </button>
+    <button class="share-btn">
+      ✍️ Condividi la tua carta ✍️
+    </button>
+  </div>
 
   <!-- SOTTO CABINA -->
   <main class="wrap">
@@ -321,7 +306,7 @@
     <p class="note">L'oracolo custodisce 666 risposte e solo una è destinata a te. Da un’idea originale di FredBee — tutti i diritti riservati ©2025</p>
   </main>
 
-  <!-- SCRIPT YOUTUBE -- SCRIPT YOUTUBE -- SCRIPT YOUTUBE --!>
+  <!-- SCRIPT YOUTUBE -->
   <script>
     const API_KEY     = "AIzaSyDNsQKEvKwHOyZCJ0mojJS325Sbw6wX9as";
     const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx";
@@ -341,7 +326,6 @@
     let outroInterval = null;
     let outroTriggered = false;
 
-    // YouTube chiama questa quando la Iframe API è pronta
     window.onYouTubeIframeAPIReady = () => {
       player = new YT.Player('yt', {
         height: '390',
@@ -358,39 +342,32 @@
       const btn     = document.getElementById("new");
       const heroImg = document.querySelector(".hero-img");
 
-      /* --- FASE 1: appena carichi la pagina, l'oracolo si "accende" --- */
       btn.classList.add("disabled");
       btn.textContent = "ACCENSIONE DELL'ORACOLO...";
 
-      // attiva vibrazione + accensione cabina
       if(heroImg){
         heroImg.classList.add("activating");
       }
 
-      /* --- Prepariamo il click --- */
       btn.addEventListener("click", playRandom);
 
-      /* --- Avviamo il caricamento della playlist YouTube --- */
       boot();
     }
 
     async function boot(){
       try{
-        // Scarica TUTTI gli ID della playlist
         allIds = await fetchAllPlaylistIds(PLAYLIST_ID);
       }catch(err){
         console.error(err);
         alert("Errore nel caricare la playlist.");
       }
 
-      /* --- FASE 2: oracolo pronto → bottone normale e cliccabile --- */
       const btn     = document.getElementById("new");
       const heroImg = document.querySelector(".hero-img");
 
       btn.classList.remove("disabled");
       btn.textContent = "PESCA LA TUA CARTA";
 
-      // spegni animazione cabina
       if(heroImg){
         heroImg.classList.remove("activating");
       }
@@ -484,7 +461,6 @@
       }
     }
 
-    // ---- USCITA PRO PRIMA DELLA FINE ----
     function startOutroWatcher(){
       clearOutroWatcher();
       outroTriggered = false;
@@ -529,5 +505,7 @@
 
 </body>
 </html>
+
+
 
 
