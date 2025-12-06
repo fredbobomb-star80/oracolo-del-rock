@@ -116,7 +116,6 @@
       margin-bottom:10px;      /* share -> bottone principale */
     }
 
-
     /* versione ATTIVA del tasto Condividi */
     .share-btn{
       display:inline-block;
@@ -133,14 +132,14 @@
       box-shadow:0 0 8px rgba(255,60,207,.2);
     }
 
-/* versione SPENTA del tasto Condividi carta */
-.share-btn-off{
-  opacity: 0.4;           /* più sbiadito */
-  cursor: default;        /* niente mano */
-  box-shadow: none;       /* niente glow */
-  filter: grayscale(60%);
-  pointer-events: none;   /* non cliccabile */
-}
+    /* versione SPENTA del tasto Condividi carta */
+    .share-btn-off{
+      opacity: 0.4;           /* più sbiadito */
+      cursor: default;        /* niente mano */
+      box-shadow: none;       /* niente glow */
+      filter: grayscale(60%);
+      pointer-events: none;   /* non cliccabile */
+    }
     
     /* BOTTONE PRINCIPALE (ORA NEL FLUSSO NORMALE) */
     #new{
@@ -160,7 +159,7 @@
         0 0 14px rgba(0,200,255,0.65),
         0 0 30px rgba(0,200,255,0.35);
       transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
-      **margin-top: 40px;   /* ← NUOVA RIGA: per il piccolo stacco dai nuovi tasti Condividi */**
+      margin-top: 40px;   /* piccolo stacco dai nuovi tasti Condividi */
     }
 
     #new:hover{
@@ -269,7 +268,7 @@
   <section class="actions">
     <!-- NUOVI 2 TASTI INCOLLATI SOTTO LA CABINA per il momento Condividi testo disattivato-->
     <div class="share-row">
-      <button class="share-btn id="share-audio">
+      <button class="share-btn" id="share-audio">
         🎵 Condividi 🎵
       </button>
       <button class="share-btn share-btn-off">
@@ -408,8 +407,8 @@
       const idx = Math.floor(Math.random() * allIds.length);
       const id  = allIds[idx];
 
+      currentVideoId = id;        // salviamo l'ID del video corrente
       player.loadVideoById(id);
-currentVideoId = id;
       
       entranceTimer = setTimeout(() => {
         ytBox.classList.remove("audio-first");
@@ -486,68 +485,44 @@ currentVideoId = id;
       clearOutroWatcher();
     }
 
-  
-  // --- FUNZIONE PER IL TASTO CONDIVIDI AUDIO --- FUNZIONE PER IL TASTO CONDIVIDI AUDIO --- FUNZIONE PER IL TASTO CONDIVIDI AUDIO ---
-const shareAudioBtn = document.getElementById("share-audio");
+    // --- FUNZIONE PER IL TASTO CONDIVIDI AUDIO ---
+    const shareAudioBtn = document.getElementById("share-audio");
 
-shareAudioBtn.addEventListener("click", async () => {
+    if (shareAudioBtn) {
+      shareAudioBtn.addEventListener("click", async () => {
 
-  // Se non è stato pescato un brano, non c'è nulla da condividere
-  if (!currentVideoId) {
-    alert("Prima pesca la tua carta!");
-    return;
-  }
+        // Se non è stato pescato un brano, non c'è nulla da condividere
+        if (!currentVideoId) {
+          alert("Prima pesca la tua carta!");
+          return;
+        }
 
-  const videoUrl = `https://youtu.be/${currentVideoId}`;
+        const videoUrl = `https://youtu.be/${currentVideoId}`;
 
-  // --- TENTATIVO: SHARE NATIVO SU SMARTPHONE ---
-  if (navigator.share) {
-    try {
-      await navigator.share({
-        title: "Ascolta il brano che mi è uscito dall'Oracolo del Rock!",
-        text: "Ecco il mio responso musicale:",
-        url: videoUrl
+        // --- TENTATIVO: SHARE NATIVO SU SMARTPHONE ---
+        if (navigator.share) {
+          try {
+            await navigator.share({
+              title: "Ascolta il brano che mi è uscito dall'Oracolo del Rock!",
+              text: "Ecco il mio responso musicale:",
+              url: videoUrl
+            });
+            return;
+          } catch (e) {
+            console.log("Condivisione annullata", e);
+          }
+        }
+
+        // --- FALLBACK: COPIA IL LINK SU PC ---
+        try {
+          await navigator.clipboard.writeText(videoUrl);
+          alert("Link copiato! Ora puoi incollarlo dove vuoi:\n\n" + videoUrl);
+        } catch (e) {
+          alert("Ecco il link da copiare:\n\n" + videoUrl);
+        }
       });
-      return;
-    } catch (e) {
-      console.log("Condivisione annullata", e);
     }
-  }
-
-  // --- FALLBACK: COPIA IL LINK SU PC ---
-  try {
-    await navigator.clipboard.writeText(videoUrl);
-    alert("Link copiato! Ora puoi incollarlo dove vuoi:\n\n" + videoUrl);
-  } catch (e) {
-    alert("Ecco il link da copiare:\n\n" + videoUrl);
-  }
-});
-
-  
-  
-  
-  
-  
-  
   </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
