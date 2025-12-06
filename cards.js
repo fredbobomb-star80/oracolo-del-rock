@@ -27,6 +27,34 @@ const ORACOLO_RISPOSTE = [
     cardImage: "carta_001.png",
     videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
   },
+   {
+    id: 2,
+    code: "002",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_001.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+   {
+    id: 3,
+    code: "003",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_001.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+   {
+    id: 4,
+    code: "004",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_001.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+   {
+    id: 5,
+    code: "005",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_001.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
   {
     id: 84,
     code: "084",
