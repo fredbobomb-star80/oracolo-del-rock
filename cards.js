@@ -4684,9 +4684,6 @@ const ORACOLO_RISPOSTE = [
   }
 ];
 
-// ⬅️ AGGIUNGI SOLO QUESTO
-const cards = ORACOLO_RISPOSTE;
-
 // Restituisce una risposta casuale
 function pescaRispostaCasuale() {
   if (!ORACOLO_RISPOSTE.length) return null;
@@ -4698,3 +4695,6 @@ function pescaRispostaCasuale() {
 function trovaRispostaPerCode(code) {
   return ORACOLO_RISPOSTE.find(r => r.code === code) || null;
 }
+
+// ⬅️ AGGIUNGI SOLO QUESTO
+const cards = ORACOLO_RISPOSTE;
