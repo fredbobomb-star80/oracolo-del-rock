@@ -409,7 +409,8 @@
       const id  = allIds[idx];
 
       player.loadVideoById(id);
-
+currentVideoId = id;
+      
       entranceTimer = setTimeout(() => {
         ytBox.classList.remove("audio-first");
         entranceTimer = null;
@@ -488,6 +489,7 @@
 
 </body>
 </html>
+
 
 
 
