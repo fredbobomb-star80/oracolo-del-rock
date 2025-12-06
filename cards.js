@@ -31,28 +31,133 @@ const ORACOLO_RISPOSTE = [
     id: 2,
     code: "002",                   
     text: "Non devi farlo ora.",
-    cardImage: "carta_001.png",
+    cardImage: "carta_002.png",
     videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
   },
    {
     id: 3,
     code: "003",                   
     text: "Non devi farlo ora.",
-    cardImage: "carta_001.png",
+    cardImage: "carta_003.png",
     videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
   },
    {
     id: 4,
     code: "004",                   
     text: "Non devi farlo ora.",
-    cardImage: "carta_001.png",
+    cardImage: "carta_004.png",
     videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
   },
    {
     id: 5,
     code: "005",                   
     text: "Non devi farlo ora.",
+    cardImage: "carta_005.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+  {
+    id: 1,
+    code: "001",                   
+    text: "Non devi farlo ora.",
     cardImage: "carta_001.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+   {
+    id: 2,
+    code: "002",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_002.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+   {
+    id: 3,
+    code: "003",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_003.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+   {
+    id: 4,
+    code: "004",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_004.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+   {
+    id: 5,
+    code: "005",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_005.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+  {
+    id: 1,
+    code: "001",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_001.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+   {
+    id: 2,
+    code: "002",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_002.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+   {
+    id: 3,
+    code: "003",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_003.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+   {
+    id: 4,
+    code: "004",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_004.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+   {
+    id: 5,
+    code: "005",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_005.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+  {
+    id: 1,
+    code: "001",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_001.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+   {
+    id: 2,
+    code: "002",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_002.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+   {
+    id: 3,
+    code: "003",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_003.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+   {
+    id: 4,
+    code: "004",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_004.png",
+    videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
+  },
+   {
+    id: 5,
+    code: "005",                   
+    text: "Non devi farlo ora.",
+    cardImage: "carta_005.png",
     videoId: "YdEggax27GA"    // <--- QUI IL CODICE VIDEO (ESEMPIO)
   },
   {
