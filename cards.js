@@ -527,7 +527,7 @@ const ORACOLO_RISPOSTE = [
   {
     id: 73,
     code: "073",
-    text: "E' come se stessi giocando un gioco di dadi truccato.",
+    text: "E' come se stessi giocando un gioco di dadi truccato. Ma chi ha portato il dado?",
     cardImage: "carta_073.png",
     videoId: "VaIL4ahoEec"
   },
