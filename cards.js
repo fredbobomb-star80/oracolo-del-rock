@@ -931,6 +931,706 @@ const ORACOLO_RISPOSTE = [
     videoId: ""
   },
   {
+    id: 131,
+    code: "131",
+    text: "Stacca la spina e guarda, si guarda le stelle e respira. Forse stanotte la tua stella splenderà.",
+    cardImage: "carta_131.png",
+    videoId: ""
+  },
+  {
+    id: 132,
+    code: "132",
+    text: "Solo gli eroi cambiano il proprio destino, si ma lo fanno a caro, carissimo prezzo.",
+    cardImage: "carta_132.png",
+    videoId: ""
+  },
+  {
+    id: 133,
+    code: "133",
+    text: "Ma cosa indossi, cosa sono quelle? Collane d'oro o catene d'oro?",
+    cardImage: "carta_133.png",
+    videoId: ""
+  },
+  {
+    id: 134,
+    code: "134",
+    text: "Hai confuso i fan con gli amici. Dimmi, cosa te ne fai di un milione di like? Si dimmi cosa te ne fai?",
+    cardImage: "carta_134.png",
+    videoId: ""
+  },
+  {
+    id: 135,
+    code: "135",
+    text: "Oggi fai un gioco, magari, lettere, verità e testamento. Oggi fai un gioco, si. Lettere, verità e testamento.",
+    cardImage: "carta_135.png",
+    videoId: ""
+  },
+  {
+    id: 136,
+    code: "136",
+    text: "Non serve cambiare il mondo ma possiamo evitare di suonare per i bastardi.",
+    cardImage: "carta_136.png",
+    videoId: ""
+  },
+  {
+    id: 137,
+    code: "137",
+    text: "La Dea della fortuna oggi busserà alla tua porta. Fatti trovare a casa.",
+    cardImage: "carta_137.png",
+    videoId: ""
+  },
+  {
+    id: 138,
+    code: "138",
+    text: "Ti hanno convinto che ribellarti fosse fuori moda come il Rock.",
+    cardImage: "carta_138.png",
+    videoId: ""
+  },
+  {
+    id: 139,
+    code: "139",
+    text: "Il tuo silenzio oggi farà più rumore dei loro comunicati stampa.",
+    cardImage: "carta_139.png",
+    videoId: ""
+  },
+  {
+    id: 140,
+    code: "140",
+    text: "Prendi il toro per le maledette corna. Prendi il toro per le corna. Prendi il toro per le stramaledette corna.",
+    cardImage: "carta_140.png",
+    videoId: ""
+  },
+  {
+    id: 141,
+    code: "141",
+    text: "Cambia mestiere che è meglio.",
+    cardImage: "carta_141.png",
+    videoId: ""
+  },
+  {
+    id: 142,
+    code: "142",
+    text: "Non sei rotto, sei solo accordato per un’altra frequenza. Quella vera, quella tua.",
+    cardImage: "carta_142.png",
+    videoId: ""
+  },
+  {
+    id: 143,
+    code: "143",
+    text: "Le verità non si urlano. Le bugie hanno bisogno di grossi megafoni.",
+    cardImage: "carta_143.png",
+    videoId: ""
+  },
+  {
+    id: 144,
+    code: "144",
+    text: "L’anima Rock. Anche in silenzio. Ha un volume da paura.",
+    cardImage: "carta_144.png",
+    videoId: ""
+  },
+  {
+    id: 145,
+    code: "145",
+    text: "Componi una hit, ma con solo quattro accordi. Si, i soliti banali quattro potenti accordi del Rock.",
+    cardImage: "carta_145.png",
+    videoId: ""
+  },
+  {
+    id: 146,
+    code: "146",
+    text: "I sogni hanno bisogno di calli, di scelte e di sangue, non di likes. Ma di tutti quei likes dimmi che te ne fai?",
+    cardImage: "carta_146.png",
+    videoId: ""
+  },
+  {
+    id: 147,
+    code: "147",
+    text: "Se non abbassi il volume, nessuno ti capirà, resterà solo quel dannato fischio nelle orecchie.",
+    cardImage: "carta_147.png",
+    videoId: ""
+  },
+  {
+    id: 148,
+    code: "148",
+    text: "Componi con tutte le note ed il sangue di cui sarai capace.",
+    cardImage: "carta_148.png",
+    videoId: ""
+  },
+  {
+    id: 149,
+    code: "149",
+    text: "Si ma non puntare alla top ten della mediocrità.",
+    cardImage: "carta_149.png",
+    videoId: ""
+  },
+  {
+    id: 150,
+    code: "150",
+    text: "Non temere chi non ti capisce. Temi chi finge di non ascoltare.",
+    cardImage: "carta_150.png",
+    videoId: ""
+  },
+  {
+    id: 151,
+    code: "151",
+    text: "Il rischio per un vero Rocker è la base della vita.",
+    cardImage: "carta_151.png",
+    videoId: ""
+  },
+  {
+    id: 152,
+    code: "152",
+    text: "Potresti rimanere a terra. Fai prima il pieno. Il pieno di Rock, si.",
+    cardImage: "carta_152.png",
+    videoId: ""
+  },
+  {
+    id: 153,
+    code: "153",
+    text: "Salta qualche ostacolo e stringi i denti.",
+    cardImage: "carta_153.png",
+    videoId: ""
+  },
+  {
+    id: 154,
+    code: "154",
+    text: "Butta tutti quei vecchi spartiti scritti a metà. Adesso, te ne serve solo uno e completo.",
+    cardImage: "carta_154.png",
+    videoId: ""
+  },
+  {
+    id: 155,
+    code: "155",
+    text: "Andrà bene e sarà intramontabile, così come i vinili sono tornati di moda.",
+    cardImage: "carta_155.png",
+    videoId: ""
+  },
+  {
+    id: 156,
+    code: "156",
+    text: "Bene, questo renderà l'universo meno noioso.",
+    cardImage: "carta_156.png",
+    videoId: ""
+  },
+  {
+    id: 157,
+    code: "157",
+    text: "Chi non inciampa non ha mai ballato davvero, davvero.",
+    cardImage: "carta_157.png",
+    videoId: ""
+  },
+  {
+    id: 158,
+    code: "158",
+    text: "Chi ti ha spezzato non ti ha ferito, ti ha temprato.",
+    cardImage: "carta_158.png",
+    videoId: ""
+  },
+  {
+    id: 159,
+    code: "159",
+    text: "Ricordati di goderti tutto il casino, non solo l’arrivo.",
+    cardImage: "carta_159.png",
+    videoId: ""
+  },
+  {
+    id: 160,
+    code: "160",
+    text: "Magari tra un paio di mesi non avrà importanza, ma oggi, ma oggi sì.",
+    cardImage: "carta_160.png",
+    videoId: ""
+  },
+  {
+    id: 161,
+    code: "161",
+    text: "Irresistibile e pericoloso come un bacio rubato nel backstage delle verità.",
+    cardImage: "carta_161.png",
+    videoId: ""
+  },
+  {
+    id: 162,
+    code: "162",
+    text: "Si certo, originale come una cover band dei Queen.",
+    cardImage: "carta_162.png",
+    videoId: ""
+  },
+  {
+    id: 163,
+    code: "163",
+    text: "Non sei in ritardo, ma cazzo, non prendertela troppo comoda.",
+    cardImage: "carta_163.png",
+    videoId: ""
+  },
+  {
+    id: 164,
+    code: "164",
+    text: "Che titolo darai a questo nuovo capitolo?",
+    cardImage: "carta_164.png",
+    videoId: ""
+  },
+  {
+    id: 165,
+    code: "165",
+    text: "Nessuno applaude le attese. Ma pochi le reggono.",
+    cardImage: "carta_165.png",
+    videoId: ""
+  },
+  {
+    id: 166,
+    code: "166",
+    text: "Ci sono note che non vuoi suonare.",
+    cardImage: "carta_166.png",
+    videoId: ""
+  },
+  {
+    id: 167,
+    code: "167",
+    text: "Esiste solo una probabilità di successo su cento. Ma la cosa non ti fermerà, vero?",
+    cardImage: "carta_167.png",
+    videoId: ""
+  },
+  {
+    id: 168,
+    code: "168",
+    text: "Ogni notte senza la tua musica è solo una pausa.",
+    cardImage: "carta_168.png",
+    videoId: ""
+  },
+  {
+    id: 169,
+    code: "169",
+    text: "L’orologio non ha cuore, ma se sai usarlo ti indicherà il nord.",
+    cardImage: "carta_169.png",
+    videoId: ""
+  },
+  {
+    id: 170,
+    code: "170",
+    text: "Vacci piano.",
+    cardImage: "carta_170.png",
+    videoId: ""
+  },
+  {
+    id: 171,
+    code: "171",
+    text: "Le parole dei vecchi Rocker hanno più spessore di quanto credi.",
+    cardImage: "carta_171.png",
+    videoId: ""
+  },
+  {
+    id: 172,
+    code: "172",
+    text: "La malinconia sa essere puntuale, puntualissima. Ma tu spostale le lancette.",
+    cardImage: "carta_172.png",
+    videoId: ""
+  },
+  {
+    id: 173,
+    code: "173",
+    text: "Ricorda di santificare i figli del Rock. Si, santifica i figli del Rock.",
+    cardImage: "carta_173.png",
+    videoId: ""
+  },
+  {
+    id: 174,
+    code: "174",
+    text: "Smetti di correre: il tuo vero pubblico ti aspetterà sempre e comunque.",
+    cardImage: "carta_174.png",
+    videoId: ""
+  },
+  {
+    id: 175,
+    code: "175",
+    text: "Scegli i ricordi e gli insegnamenti più giusti per te.",
+    cardImage: "carta_175.png",
+    videoId: ""
+  },
+  {
+    id: 176,
+    code: "176",
+    text: "Anche l’attesa ha il suo ritmo. Puoi sostenerlo.",
+    cardImage: "carta_176.png",
+    videoId: ""
+  },
+  {
+    id: 177,
+    code: "177",
+    text: "Quando tutto tace, ascolta il respiro corto del tuo amplificatore.",
+    cardImage: "carta_177.png",
+    videoId: ""
+  },
+  {
+    id: 178,
+    code: "178",
+    text: "Ogni pausa può diventare un nuovo inizio.",
+    cardImage: "carta_178.png",
+    videoId: ""
+  },
+  {
+    id: 179,
+    code: "179",
+    text: "Interessante come un accordo tra il fa cagare maggiore ed il si coglione bemolle.",
+    cardImage: "carta_179.png",
+    videoId: ""
+  },
+  {
+    id: 180,
+    code: "180",
+    text: "Sei caduto sette volte? Risorgine otto.",
+    cardImage: "carta_180.png",
+    videoId: ""
+  },
+  {
+    id: 181,
+    code: "181",
+    text: "No, non è la fine. E' solo un altro sound check.",
+    cardImage: "carta_181.png",
+    videoId: ""
+  },
+  {
+    id: 182,
+    code: "182",
+    text: "Li chiamavano stupidi punk, ora li chiamano saggi, visionari, maestri, guru si prendi tutti i miei soldi e profeti.",
+    cardImage: "carta_182.png",
+    videoId: ""
+  },
+  {
+    id: 183,
+    code: "183",
+    text: "Il dolore è stato il tuo primo produttore artistico.",
+    cardImage: "carta_183.png",
+    videoId: ""
+  },
+  {
+    id: 184,
+    code: "184",
+    text: "Hai perso tutto, quindi, finalmente, puoi suonare libero.",
+    cardImage: "carta_184.png",
+    videoId: ""
+  },
+  {
+    id: 185,
+    code: "185",
+    text: "Ogni cicatrice è un tatuaggio scelto dal destino.",
+    cardImage: "carta_185.png",
+    videoId: ""
+  },
+  {
+    id: 186,
+    code: "186",
+    text: "Oggi celebrerai con una bevuta la vittoria di qualcun altro.",
+    cardImage: "carta_186.png",
+    videoId: ""
+  },
+  {
+    id: 187,
+    code: "187",
+    text: "Oggi non mischiare la birra con il succo di fragola.",
+    cardImage: "carta_187.png",
+    videoId: ""
+  },
+  {
+    id: 188,
+    code: "188",
+    text: "La notte è la tua migliore consigliera, fanne buon uso.",
+    cardImage: "carta_188.png",
+    videoId: ""
+  },
+  {
+    id: 189,
+    code: "189",
+    text: "Non è il pubblico il problema, è il canale molto disturbato.",
+    cardImage: "carta_189.png",
+    videoId: ""
+  },
+  {
+    id: 190,
+    code: "190",
+    text: "Sali sul palco e racconta a tutti i tuoi segreti.",
+    cardImage: "carta_190.png",
+    videoId: ""
+  },
+  {
+    id: 191,
+    code: "191",
+    text: "Il Rock non guarisce gli zombie, il Rock è il vaccino all'epidemia. Si. Il vaccino all'epidemia!",
+    cardImage: "carta_191.png",
+    videoId: ""
+  },
+  {
+    id: 192,
+    code: "192",
+    text: "L’universo ha un debole per chi non si arrende, mai.",
+    cardImage: "carta_192.png",
+    videoId: ""
+  },
+  {
+    id: 193,
+    code: "193",
+    text: "Questa scelta farà tremare molte persone.",
+    cardImage: "carta_193.png",
+    videoId: ""
+  },
+  {
+    id: 194,
+    code: "194",
+    text: "Ogni errore è un accordo stonato che ripeti finchè non è perfetto.",
+    cardImage: "carta_194.png",
+    videoId: ""
+  },
+  {
+    id: 195,
+    code: "195",
+    text: "Non serve perdonare chi non ti chiede perdono.",
+    cardImage: "carta_195.png",
+    videoId: ""
+  },
+  {
+    id: 196,
+    code: "196",
+    text: "La cenere non sa di morte, ma ha il sapore di un palco spento.",
+    cardImage: "carta_196.png",
+    videoId: ""
+  },
+  {
+    id: 197,
+    code: "197",
+    text: "Le rinascite non si annunciano, all'improvviso esplodono. Si, esplodono!",
+    cardImage: "carta_197.png",
+    videoId: ""
+  },
+  {
+    id: 198,
+    code: "198",
+    text: "Punta tutto. Si hai capito bene, vai All-In ora.",
+    cardImage: "carta_198.png",
+    videoId: ""
+  },
+  {
+    id: 199,
+    code: "199",
+    text: "Torna in scena, fagli paura, torna in scena come un fantasma della storia, come il terrore della trama, si come l'incubo del Rock!",
+    cardImage: "carta_199.png",
+    videoId: ""
+  },
+  {
+    id: 200,
+    code: "200",
+    text: "Non sei più tu che cerchi lo spirito Rock: ormai è lui che da la caccia a te.",
+    cardImage: "carta_200.png",
+    videoId: ""
+  },
+  {
+    id: 201,
+    code: "201",
+    text: "Il mondo finisce ogni volta che parli a vanvera.",
+    cardImage: "carta_201.png",
+    videoId: ""
+  },
+  {
+    id: 202,
+    code: "202",
+    text: "Gli dei del Rock ti hanno sentito. E ridono, tanto, tantissimo.",
+    cardImage: "carta_202.png",
+    videoId: ""
+  },
+  {
+    id: 203,
+    code: "203",
+    text: "Non oggi, non adesso, no, non ora.",
+    cardImage: "carta_203.png",
+    videoId: ""
+  },
+  {
+    id: 204,
+    code: "204",
+    text: "Riposati pure. Ma non staccare la chitarra.",
+    cardImage: "carta_204.png",
+    videoId: ""
+  },
+  {
+    id: 205,
+    code: "205",
+    text: "Chiedilo a chi ti ha insegnato a camminare scalzo sulle macerie dei dischi rotti.",
+    cardImage: "carta_205.png",
+    videoId: ""
+  },
+  {
+    id: 206,
+    code: "206",
+    text: "Non ti dicono tutta la verità? Maddai e perché mai dovrebbero?",
+    cardImage: "carta_206.png",
+    videoId: ""
+  },
+  {
+    id: 207,
+    code: "207",
+    text: "Che cazzo vuoi? Dimmi che cazzo vuoi. Onestamente, che cazzo vuoi?",
+    cardImage: "carta_207.png",
+    videoId: ""
+  },
+  {
+    id: 208,
+    code: "208",
+    text: "E questo sarebbe il massimo che puoi dare? Ah si? Davvero?",
+    cardImage: "carta_208.png",
+    videoId: ""
+  },
+  {
+    id: 209,
+    code: "209",
+    text: "Non cercare il paradiso, cerca di evitare troppi rimpianti.",
+    cardImage: "carta_209.png",
+    videoId: ""
+  },
+  {
+    id: 210,
+    code: "210",
+    text: "La fine del mondo fa sempre comodo a qualcuno.",
+    cardImage: "carta_210.png",
+    videoId: ""
+  },
+  {
+    id: 211,
+    code: "211",
+    text: "Sei ciò che ami fare non ciò che ami collezionare.",
+    cardImage: "carta_211.png",
+    videoId: ""
+  },
+  {
+    id: 212,
+    code: "212",
+    text: "Spegni tutto e stacca la spina per un po'.",
+    cardImage: "carta_212.png",
+    videoId: ""
+  },
+  {
+    id: 213,
+    code: "213",
+    text: "L’anima Rock non ha bisogno di un cauto manager. Vuole un palco più grande ed un amplificatore più forte.",
+    cardImage: "carta_213.png",
+    videoId: ""
+  },
+  {
+    id: 214,
+    code: "214",
+    text: "Hai lasciato il segno, ora lascia il suono Rock'n'Roll",
+    cardImage: "carta_214.png",
+    videoId: ""
+  },
+  {
+    id: 215,
+    code: "215",
+    text: "Questa è solo la prima offerta. Chiediti se sarà la migliore.",
+    cardImage: "carta_215.png",
+    videoId: ""
+  },
+  {
+    id: 216,
+    code: "216",
+    text: "La terza regola dell'Oracolo del Rock è : poni una domanda per volta. Se te lo sto dicendo ci sarà un motivo, si?",
+    cardImage: "carta_216.png",
+    videoId: ""
+  },
+  {
+    id: 217,
+    code: "217",
+    text: "Il Rock sa anche fottersene di quello che sembrerebbe un buon ingaggio ma che di fatto non lo è.",
+    cardImage: "carta_217.png",
+    videoId: ""
+  },
+  {
+    id: 218,
+    code: "218",
+    text: "Il Rock è morto? E tu cosa hai fatto per salvarlo?",
+    cardImage: "carta_218.png",
+    videoId: ""
+  },
+  {
+    id: 219,
+    code: "219",
+    text: "Ti serve una nuova passione che ti rovini la pace.",
+    cardImage: "carta_219.png",
+    videoId: ""
+  },
+  {
+    id: 220,
+    code: "220",
+    text: "Ascolta una playlist che non avresti mai ascoltato.",
+    cardImage: "carta_220.png",
+    videoId: ""
+  },
+  {
+    id: 221,
+    code: "221",
+    text: "Non cercare amore, ma cerca una chitarra più affidabile.",
+    cardImage: "carta_221.png",
+    videoId: ""
+  },
+  {
+    id: 222,
+    code: "222",
+    text: "Prenota il tuo prossimo viaggio.",
+    cardImage: "carta_222.png",
+    videoId: ""
+  },
+  {
+    id: 223,
+    code: "223",
+    text: "Fai i debiti e compra quel biglietto. No, non mi interessa. Fai i debiti e compra quel biglietto.",
+    cardImage: "carta_223.png",
+    videoId: ""
+  },
+  {
+    id: 224,
+    code: "224",
+    text: "Non è possibile.",
+    cardImage: "carta_224.png",
+    videoId: ""
+  },
+  {
+    id: 225,
+    code: "225",
+    text: "Il peccato è un'invenzione redditizia per chi vende le redenzioni.",
+    cardImage: "carta_225.png",
+    videoId: ""
+  },
+  {
+    id: 226,
+    code: "226",
+    text: "Se ti tocca l’anima non devi chiedere altro.",
+    cardImage: "carta_226.png",
+    videoId: ""
+  },
+  {
+    id: 227,
+    code: "227",
+    text: "Ti serve una notte lunga, buona musica e niente domande.",
+    cardImage: "carta_227.png",
+    videoId: ""
+  },
+  {
+    id: 228,
+    code: "228",
+    text: "Sei su questo mondo per far vibrare la pelle, non per far girare le palle!",
+    cardImage: "carta_228.png",
+    videoId: ""
+  },
+  {
+    id: 229,
+    code: "229",
+    text: "Non sei fragile, sei solo in tensione come l'ultima corda.",
+    cardImage: "carta_229.png",
+    videoId: ""
+  },
+  {
+    id: 230,
+    code: "230",
+    text: "Baciale le cicatrici non le curve.",
+    cardImage: "carta_230.png",
+    videoId: ""
+  }, 
+  {
     id: 666,
     code: "666",
     text: "Non oggi, non adesso, no, non ora.",
