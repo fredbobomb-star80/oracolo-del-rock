@@ -245,7 +245,7 @@
     /* TESTO NELLA CABINA */
     .oracle-text{
       position:absolute;
-      top:72%;
+      top:70%;
       left:50%;
       transform:translate(-50%, -50%);
       width:80%;
@@ -498,11 +498,11 @@ function mostraTestoNellaCabina(testo, delayMs = 0){
       // niente testo subito - correzione spoiler iniziale
       mostraTestoNellaCabina("");
 
-      // dopo ~10s facciamo comparire la frase legata a quel video - qui scelgo il timing di ingresso della scritta rispetto il video
+      // dopo ~8s facciamo comparire la frase legata a quel video - qui scelgo il timing di ingresso della scritta rispetto il video
       if (typeof cards !== "undefined" && Array.isArray(cards)){
         const card = cards.find(c => (c.videoId || "").trim() === id);
         if (card && card.text){
-          mostraTestoNellaCabina(card.text, 10000);
+          mostraTestoNellaCabina(card.text, 8000);
         }
       }
 
@@ -625,6 +625,7 @@ function mostraTestoNellaCabina(testo, delayMs = 0){
   </script>
 </body>
 </html>
+
 
 
 
