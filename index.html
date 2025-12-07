@@ -328,38 +328,38 @@
     let outroTriggered = false;
     let textTimer = null;
 
-    // MOSTRA / NASCONDE IL TESTO NELLA CABINA (senza flash)
-    function mostraTestoNellaCabina(testo, delayMs = 0){
-      const box = document.getElementById("oracle-text");
-      if(!box) return;
 
-      if (textTimer){
-        clearTimeout(textTimer);
-        textTimer = null;
-      }
 
-      // se non c'è testo: svuoto subito, niente fade-out strano
-      if(!testo){
-        box.classList.remove("visible");
-        box.textContent = "";
-        return;
-      }
+// MOSTRA / NASCONDE IL TESTO (NO SPOILER, NO FLASH)
+function mostraTestoNellaCabina(testo, delayMs = 0){
+  const box = document.getElementById("oracle-text");
+  if(!box) return;
 
-      // imposto il nuovo testo, che entrerà con fade-in
-      box.textContent = testo;
-      box.classList.remove("visible");
+  // Annulla eventuali timer precedenti
+  if (textTimer){
+    clearTimeout(textTimer);
+    textTimer = null;
+  }
 
-      const show = () => box.classList.add("visible");
+  // Se non c'è testo → svuoto subito, senza far apparire nulla
+  if(!testo){
+    box.classList.remove("visible");
+    box.textContent = "";
+    return;
+  }
 
-      if (delayMs <= 0){
-        requestAnimationFrame(show);
-      } else {
-        textTimer = setTimeout(() => {
-          show();
-          textTimer = null;
-        }, delayMs);
-      }
-    }
+  // Non inserisco ancora il testo nel DOM → nessun flash possibile
+  box.classList.remove("visible");
+  box.textContent = "";  // schermo vuoto
+
+  // Quando scatta il delay → SOLO allora monto il testo e lo mostro
+  textTimer = setTimeout(() => {
+    box.textContent = testo;
+    requestAnimationFrame(() => box.classList.add("visible"));
+    textTimer = null;
+  }, delayMs);
+  }    
+ }
 
     // carico API YouTube
     (function(){
@@ -626,4 +626,5 @@
   </script>
 </body>
 </html>
+
 
