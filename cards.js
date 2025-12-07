@@ -1425,28 +1425,28 @@ const ORACOLO_RISPOSTE = [
     code: "201",
     text: "Il mondo finisce ogni volta che parli a vanvera.",
     cardImage: "carta_201.png",
-    videoId: ""
+    videoId: "8nqNVa3pokQ"
   },
   {
     id: 202,
     code: "202",
     text: "Gli dei del Rock ti hanno sentito. E ridono, tanto, tantissimo.",
     cardImage: "carta_202.png",
-    videoId: ""
+    videoId: "HJ6rJ0v4WJ0"
   },
   {
     id: 203,
     code: "203",
     text: "Non oggi, non adesso, no, non ora.",
     cardImage: "carta_203.png",
-    videoId: ""
+    videoId: "H-iqP-EpPxU"
   },
   {
     id: 204,
     code: "204",
     text: "Riposati pure. Ma non staccare la chitarra.",
     cardImage: "carta_204.png",
-    videoId: ""
+    videoId: "sAIJ4MD6HIk"
   },
   {
     id: 205,
@@ -1460,7 +1460,7 @@ const ORACOLO_RISPOSTE = [
     code: "206",
     text: "Non ti dicono tutta la verità? Maddai e perché mai dovrebbero?",
     cardImage: "carta_206.png",
-    videoId: ""
+    videoId: "AEmiGOis2rc"
   },
   {
     id: 207,
@@ -1474,7 +1474,7 @@ const ORACOLO_RISPOSTE = [
     code: "208",
     text: "E questo sarebbe il massimo che puoi dare? Ah si? Davvero?",
     cardImage: "carta_208.png",
-    videoId: ""
+    videoId: "YTrOvYoXfQQ"
   },
   {
     id: 209,
@@ -1502,7 +1502,7 @@ const ORACOLO_RISPOSTE = [
     code: "212",
     text: "Spegni tutto e stacca la spina per un po'.",
     cardImage: "carta_212.png",
-    videoId: ""
+    videoId: "NNht8zMnCfg"
   },
   {
     id: 213,
@@ -1516,14 +1516,14 @@ const ORACOLO_RISPOSTE = [
     code: "214",
     text: "Hai lasciato il segno, ora lascia il suono Rock'n'Roll",
     cardImage: "carta_214.png",
-    videoId: ""
+    videoId: "HTOgdOj45nE"
   },
   {
     id: 215,
     code: "215",
     text: "Questa è solo la prima offerta. Chiediti se sarà la migliore.",
     cardImage: "carta_215.png",
-    videoId: ""
+    videoId: "SfC7x0Y7wcM"
   },
   {
     id: 216,
@@ -1537,7 +1537,7 @@ const ORACOLO_RISPOSTE = [
     code: "217",
     text: "Il Rock sa anche fottersene di quello che sembrerebbe un buon ingaggio ma che di fatto non lo è.",
     cardImage: "carta_217.png",
-    videoId: ""
+    videoId: "aCk01u_7ACY"
   },
   {
     id: 218,
@@ -1642,7 +1642,7 @@ const ORACOLO_RISPOSTE = [
     code: "232",
     text: "Il piacere è un giro di rivoluzione, ma devi saperlo suonare.",
     cardImage: "carta_232.png",
-    videoId: ""
+    videoId: "HZUnSXzyrYk"
   },
   {
     id: 233,
@@ -2874,7 +2874,7 @@ const ORACOLO_RISPOSTE = [
     code: "408",
     text: "Ti vogliono vedere sconfitto piuttosto che vederti rialzare e risplendere di Rock.",
     cardImage: "carta_408.png",
-    videoId: ""
+    videoId: "yO_WajeP0TU"
   },
   {
     id: 409,
@@ -2895,7 +2895,7 @@ const ORACOLO_RISPOSTE = [
     code: "411",
     text: "Fanculo. Fanculo. Eh si fanculo. Perchè si. Perchè no. Perchè non so. Fanculo a go go.",
     cardImage: "carta_411.png",
-    videoId: ""
+    videoId: "4tEA31jHTMg"
   },
   {
     id: 412,
@@ -3007,14 +3007,14 @@ const ORACOLO_RISPOSTE = [
     code: "427",
     text: "Ci sarà un giorno in cui capirai che il dolore era solo un pentagramma su cui incidere la tua canzone.",
     cardImage: "carta_427.png",
-    videoId: ""
+    videoId: "asvDJGd94ec"
   },
   {
     id: 428,
     code: "428",
     text: "Rialzati piano, con la grazia di chi è stato buttato all’inferno ed è tornato accompagnato dal diavolo in persona.",
     cardImage: "carta_428.png",
-    videoId: ""
+    videoId: "2ywjnJE8d3o"
   },
   {
     id: 429,
@@ -3028,7 +3028,7 @@ const ORACOLO_RISPOSTE = [
     code: "430",
     text: "Forse la domanda giusta non è che altro fare, ma è cosa c'è da sentire meglio.",
     cardImage: "carta_430.png",
-    videoId: ""
+    videoId: "KNFeLNwc-0M"
    },
   {
     id: 431,
@@ -3077,7 +3077,7 @@ const ORACOLO_RISPOSTE = [
     code: "437",
     text: "Tutto questo disprezzo, non farà altro che darti la giusta carica per affrontare il prossimo palco.",
     cardImage: "carta_437.png",
-    videoId: ""
+    videoId: "M-ykqjfUoqw"
   },
   {
     id: 438,
@@ -3504,14 +3504,14 @@ const ORACOLO_RISPOSTE = [
     code: "498",
     text: "Siamo figli di dei che non ci hanno desiderato, per questo ti conviene abbracciare i fragorosi dei del Rock.",
     cardImage: "carta_498.png",
-    videoId: ""
+    videoId: "e8YOxVLLpoY"
   },
   {
     id: 499,
     code: "499",
     text: "Che importa? Siamo tutti fratelli e sorelle, figli del dottor Frankenstein, Mostri, assemblati fatti di pezzi di ego di cadaveri, ed alla fine mal voluti, perché dovevano seguire un piano e tenere in piedi solo un macabro show.",
     cardImage: "carta_499.png",
-    videoId: ""
+    videoId: "kB43eHIJZVQ"
   },
   {
     id: 500,
@@ -3756,7 +3756,7 @@ const ORACOLO_RISPOSTE = [
     code: "534",
     text: "Hai tanti dubbi e già lo sai che non li scioglierai mai, se non ritorni ad imparare a volare.",
     cardImage: "carta_534.png",
-    videoId: ""
+    videoId: "9pTay010TfE"
   },
   {
     id: 535,
@@ -4064,14 +4064,14 @@ const ORACOLO_RISPOSTE = [
     code: "578",
     text: "Chiediti che cosa farebbe Heisenberg al posto tuo.",
     cardImage: "carta_578.png",
-    videoId: ""
+    videoId: "Bt7J96ahTAQ"
   },
   {
     id: 579,
     code: "579",
     text: "Chiediti che cosa farebbe Marcellus Wallace al posto tuo.",
     cardImage: "carta_579.png",
-    videoId: ""
+    videoId: "JUpQhFftkiQ"
   },
   {
     id: 580,
@@ -4106,7 +4106,7 @@ const ORACOLO_RISPOSTE = [
     code: "584",
     text: "No, bere una bottiglia di vino al giorno non fa di te un esperto sommelier. Ma darà sicuramente più spessore al tuo alito.",
     cardImage: "carta_584.png",
-    videoId: ""
+    videoId: "S9bgwtn2J3w"
   },
   {
     id: 585,
@@ -4183,14 +4183,14 @@ const ORACOLO_RISPOSTE = [
     code: "595",
     text: "No, mamma mia che paura. Le dure critiche di chi non ha neanche le palle di avere un profilo autentico sui social. Ma andate a cagare signor mistero e signorina mascherina.",
     cardImage: "carta_595.png",
-    videoId: ""
+    videoId: "gX_jbyvF4lY"
   },
   {
     id: 596,
     code: "596",
     text: "Hai visto i tuoi demoni negli occhi e ti hanno colpito al cuore. Ma non ti hanno ferito, ti hanno solo scolpito. Ora, non c'è paradiso, ora, non c'è più preavviso, ora, che ci sei te. Solo te.",
     cardImage: "carta_596.png",
-    videoId: ""
+    videoId: "ZWXxWDOBKtU"
   },
   {
     id: 597,
@@ -4554,7 +4554,7 @@ const ORACOLO_RISPOSTE = [
     code: "648",
     text: "No, non baciare con prudenza, oh no!",
     cardImage: "carta_648.png",
-    videoId: ""
+    videoId: "MNe6fVxSQEI"
   },
   {
     id: 649,
