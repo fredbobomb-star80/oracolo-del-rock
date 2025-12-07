@@ -1299,21 +1299,21 @@ const ORACOLO_RISPOSTE = [
     code: "183",
     text: "Il dolore è stato il tuo primo produttore artistico.",
     cardImage: "carta_183.png",
-    videoId: ""
+    videoId: "gIuQMUP97WY"
   },
   {
     id: 184,
     code: "184",
     text: "Hai perso tutto, quindi, finalmente, puoi suonare libero.",
     cardImage: "carta_184.png",
-    videoId: ""
+    videoId: "1SGfK8tZEjg"
   },
   {
     id: 185,
     code: "185",
     text: "Ogni cicatrice è un tatuaggio scelto dal destino.",
     cardImage: "carta_185.png",
-    videoId: ""
+    videoId: "0Cgh4eunz_8"
   },
   {
     id: 186,
@@ -1327,7 +1327,7 @@ const ORACOLO_RISPOSTE = [
     code: "187",
     text: "Oggi non mischiare la birra con il succo di fragola.",
     cardImage: "carta_187.png",
-    videoId: ""
+    videoId: "btYmsXtiltE"
   },
   {
     id: 188,
@@ -1369,14 +1369,14 @@ const ORACOLO_RISPOSTE = [
     code: "193",
     text: "Questa scelta farà tremare molte persone.",
     cardImage: "carta_193.png",
-    videoId: ""
+    videoId: "kQSkYERK9-w"
   },
   {
     id: 194,
     code: "194",
     text: "Ogni errore è un accordo stonato che ripeti finchè non è perfetto.",
     cardImage: "carta_194.png",
-    videoId: ""
+    videoId: "c8WxLVtwjBM"
   },
   {
     id: 195,
@@ -1467,7 +1467,7 @@ const ORACOLO_RISPOSTE = [
     code: "207",
     text: "Che cazzo vuoi? Dimmi che cazzo vuoi. Onestamente, che cazzo vuoi?",
     cardImage: "carta_207.png",
-    videoId: ""
+    videoId: "k6McUcHdHlE"
   },
   {
     id: 208,
@@ -1852,7 +1852,7 @@ const ORACOLO_RISPOSTE = [
     code: "262",
     text: "Fai qualcosa di tuo se ci riesci. Ma fai qualcosa di tuo.",
     cardImage: "carta_262.png",
-    videoId: ""
+    videoId: "0W-KKRCzBXw"
   },
   {
     id: 263,
@@ -3378,7 +3378,7 @@ const ORACOLO_RISPOSTE = [
     code: "480",
     text: "Si, avventuroso come il primo giorno di vacanze ma con il bagaglio smarrito.",
     cardImage: "carta_480.png",
-    videoId: ""
+    videoId: "FcAqkcQS1nU"
   },
   {
     id: 481,
@@ -3483,7 +3483,7 @@ const ORACOLO_RISPOSTE = [
     code: "495",
     text: "Compra tanti preservativi. Per lui o per lei, basta che ce li hai.",
     cardImage: "carta_495.png",
-    videoId: ""
+    videoId: "1huy5f-zMXY"
   },
   {
     id: 496,
@@ -3903,7 +3903,7 @@ const ORACOLO_RISPOSTE = [
     code: "555",
     text: "La nona regola dell'Oracolo del Rock è : qui non si ruba e non si copia.",
     cardImage: "carta_555.png",
-    videoId: ""
+    videoId: "K2b2u0hGXbk"
   },
   {
     id: 556,
@@ -3959,7 +3959,7 @@ const ORACOLO_RISPOSTE = [
     code: "563",
     text: "Oggi devi chiedere l'aumento. E pure il rispetto.",
     cardImage: "carta_563.png",
-    videoId: ""
+    videoId: "cMvHVXeAv2w"
   },
   {
     id: 564,
@@ -4491,14 +4491,14 @@ const ORACOLO_RISPOSTE = [
     code: "639",
     text: "Senza una buona banda alle spalle non andrai tanto lontano.",
     cardImage: "carta_639.png",
-    videoId: ""
+    videoId: "lwjvI_TBpEY"
   },
   {
     id: 640,
     code: "640",
     text: "E' il momento di ragionare da solista. Con educazione e rispetto sciogli la band perché è il momento di ragionare da solista.",
     cardImage: "carta_640.png",
-    videoId: ""
+    videoId: "dr9jhiPcg6o"
   },
   {
     id: 641,
