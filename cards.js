@@ -858,14 +858,14 @@ const ORACOLO_RISPOSTE = [
     code: "120",
     text: "Non firmare niente. Questo è un accordo che si fa guardandosi dritto negli occhi e con forti strette di mano.",
     cardImage: "carta_120.png",
-    videoId: ""
+    videoId: "uu8HVLFOmVc"
   },
   {
     id: 121,
     code: "121",
     text: "Sembra una montagna troppo alta da scalare. Con lo sguardo fisso in alto, respira e fai una presa per volta.",
     cardImage: "carta_121.png",
-    videoId: ""
+    videoId: "kdci1eitvlM"
   },
   {
     id: 122,
@@ -886,14 +886,14 @@ const ORACOLO_RISPOSTE = [
     code: "124",
     text: "Ti chiamano maestro, ma lo fanno con disprezzo. Questo ti fermerà?",
     cardImage: "carta_124.png",
-    videoId: ""
+    videoId: "AnFlBIY6bjY"
   },
   {
     id: 125,
     code: "125",
     text: "Ogni palco è un tribunale, ogni applauso una sentenza.",
     cardImage: "carta_125.png",
-    videoId: ""
+    videoId: "nDhoQr62bNw"
   },
   {
     id: 126,
@@ -984,14 +984,14 @@ const ORACOLO_RISPOSTE = [
     code: "138",
     text: "Ti hanno convinto che ribellarti fosse fuori moda come il Rock.",
     cardImage: "carta_138.png",
-    videoId: ""
+    videoId: "_y1svxhiBw0"
   },
   {
     id: 139,
     code: "139",
     text: "Il tuo silenzio oggi farà più rumore dei loro comunicati stampa.",
     cardImage: "carta_139.png",
-    videoId: ""
+    videoId: "auXrJDC94MQ"
   },
   {
     id: 140,
@@ -1005,7 +1005,7 @@ const ORACOLO_RISPOSTE = [
     code: "141",
     text: "Cambia mestiere che è meglio.",
     cardImage: "carta_141.png",
-    videoId: ""
+    videoId: "xB9MU9DwDoM"
   },
   {
     id: 142,
@@ -1019,14 +1019,14 @@ const ORACOLO_RISPOSTE = [
     code: "143",
     text: "Le verità non si urlano. Le bugie hanno bisogno di grossi megafoni.",
     cardImage: "carta_143.png",
-    videoId: ""
+    videoId: "6BxMspauNLI"
   },
   {
     id: 144,
     code: "144",
     text: "L’anima Rock. Anche in silenzio. Ha un volume da paura.",
     cardImage: "carta_144.png",
-    videoId: ""
+    videoId: "4Tt9O9mNOXo"
   },
   {
     id: 145,
@@ -1040,56 +1040,56 @@ const ORACOLO_RISPOSTE = [
     code: "146",
     text: "I sogni hanno bisogno di calli, di scelte e di sangue, non di likes. Ma di tutti quei likes dimmi che te ne fai?",
     cardImage: "carta_146.png",
-    videoId: ""
+    videoId: "Mg5KeAHDk-o"
   },
   {
     id: 147,
     code: "147",
     text: "Se non abbassi il volume, nessuno ti capirà, resterà solo quel dannato fischio nelle orecchie.",
     cardImage: "carta_147.png",
-    videoId: ""
+    videoId: "5EW5NbqAr-0"
   },
   {
     id: 148,
     code: "148",
     text: "Componi con tutte le note ed il sangue di cui sarai capace.",
     cardImage: "carta_148.png",
-    videoId: ""
+    videoId: "GJA3A-M5dWU"
   },
   {
     id: 149,
     code: "149",
     text: "Si ma non puntare alla top ten della mediocrità.",
     cardImage: "carta_149.png",
-    videoId: ""
+    videoId: "ayhyzK9jAmA"
   },
   {
     id: 150,
     code: "150",
     text: "Non temere chi non ti capisce. Temi chi finge di non ascoltare.",
     cardImage: "carta_150.png",
-    videoId: ""
+    videoId: "T7Fr1l4be8s"
   },
   {
     id: 151,
     code: "151",
     text: "Il rischio per un vero Rocker è la base della vita.",
     cardImage: "carta_151.png",
-    videoId: ""
+    videoId: "wTtQ-1rJAeU"
   },
   {
     id: 152,
     code: "152",
     text: "Potresti rimanere a terra. Fai prima il pieno. Il pieno di Rock, si.",
     cardImage: "carta_152.png",
-    videoId: ""
+    videoId: "df8WinyB01c"
   },
   {
     id: 153,
     code: "153",
     text: "Salta qualche ostacolo e stringi i denti.",
     cardImage: "carta_153.png",
-    videoId: ""
+    videoId: "AdpxXz_3sS8"
   },
   {
     id: 154,
@@ -1103,21 +1103,21 @@ const ORACOLO_RISPOSTE = [
     code: "155",
     text: "Andrà bene e sarà intramontabile, così come i vinili sono tornati di moda.",
     cardImage: "carta_155.png",
-    videoId: ""
+    videoId: "6U8cl2TG8Qo"
   },
   {
     id: 156,
     code: "156",
     text: "Bene, questo renderà l'universo meno noioso.",
     cardImage: "carta_156.png",
-    videoId: ""
+    videoId: "mQ_9oj8JmnE"
   },
   {
     id: 157,
     code: "157",
     text: "Chi non inciampa non ha mai ballato davvero, davvero.",
     cardImage: "carta_157.png",
-    videoId: ""
+    videoId: "fVy-ljyFSUU"
   },
   {
     id: 158,
@@ -1138,14 +1138,14 @@ const ORACOLO_RISPOSTE = [
     code: "160",
     text: "Magari tra un paio di mesi non avrà importanza, ma oggi, ma oggi sì.",
     cardImage: "carta_160.png",
-    videoId: ""
+    videoId: "WVkbLDI1XNM"
   },
   {
     id: 161,
     code: "161",
     text: "Irresistibile e pericoloso come un bacio rubato nel backstage delle verità.",
     cardImage: "carta_161.png",
-    videoId: ""
+    videoId: "zbk4ErokZXU"
   },
   {
     id: 162,
@@ -1159,63 +1159,63 @@ const ORACOLO_RISPOSTE = [
     code: "163",
     text: "Non sei in ritardo, ma cazzo, non prendertela troppo comoda.",
     cardImage: "carta_163.png",
-    videoId: ""
+    videoId: "NE4uHZW2HIc"
   },
   {
     id: 164,
     code: "164",
     text: "Che titolo darai a questo nuovo capitolo?",
     cardImage: "carta_164.png",
-    videoId: ""
+    videoId: "n0M0jba4J4Q"
   },
   {
     id: 165,
     code: "165",
     text: "Nessuno applaude le attese. Ma pochi le reggono.",
     cardImage: "carta_165.png",
-    videoId: ""
+    videoId: "0ZOOuEkcVMo"
   },
   {
     id: 166,
     code: "166",
     text: "Ci sono note che non vuoi suonare.",
     cardImage: "carta_166.png",
-    videoId: ""
+    videoId: "e8oSrEULLyo"
   },
   {
     id: 167,
     code: "167",
     text: "Esiste solo una probabilità di successo su cento. Ma la cosa non ti fermerà, vero?",
     cardImage: "carta_167.png",
-    videoId: ""
+    videoId: "D_eAIK4v3kY"
   },
   {
     id: 168,
     code: "168",
     text: "Ogni notte senza la tua musica è solo una pausa.",
     cardImage: "carta_168.png",
-    videoId: ""
+    videoId: "TAok_U7Voac"
   },
   {
     id: 169,
     code: "169",
     text: "L’orologio non ha cuore, ma se sai usarlo ti indicherà il nord.",
     cardImage: "carta_169.png",
-    videoId: ""
+    videoId: "7uAYQSZJYoI"
   },
   {
     id: 170,
     code: "170",
     text: "Vacci piano.",
     cardImage: "carta_170.png",
-    videoId: ""
+    videoId: "5pGJe3WzHY0"
   },
   {
     id: 171,
     code: "171",
     text: "Le parole dei vecchi Rocker hanno più spessore di quanto credi.",
     cardImage: "carta_171.png",
-    videoId: ""
+    videoId: "Og6fOK7SJ18"
   },
   {
     id: 172,
@@ -1229,7 +1229,7 @@ const ORACOLO_RISPOSTE = [
     code: "173",
     text: "Ricorda di santificare i figli del Rock. Si, santifica i figli del Rock.",
     cardImage: "carta_173.png",
-    videoId: ""
+    videoId: "gAL81n68UZ8"
   },
   {
     id: 174,
@@ -1614,7 +1614,7 @@ const ORACOLO_RISPOSTE = [
     code: "228",
     text: "Sei su questo mondo per far vibrare la pelle, non per far girare le palle!",
     cardImage: "carta_228.png",
-    videoId: ""
+    videoId: "3d6uSxuE3sk"
   },
   {
     id: 229,
@@ -2097,7 +2097,7 @@ const ORACOLO_RISPOSTE = [
     code: "297",
     text: "Scrolla. Commenta. Crepa.",
     cardImage: "carta_297.png",
-    videoId: ""
+    videoId: "rbbmYRnxn70"
   },
   {
     id: 298,
@@ -2328,7 +2328,7 @@ const ORACOLO_RISPOSTE = [
     code: "330",
     text: "Spezza la croce e conserva i chiodi.",
     cardImage: "carta_330.png",
-    videoId: ""
+    videoId: "y1gSf26vs0o"
   },  
     {
     id: 331,
@@ -3210,7 +3210,7 @@ const ORACOLO_RISPOSTE = [
     code: "456",
     text: "Non crederti sto gran cazzo.",
     cardImage: "carta_456.png",
-    videoId: ""
+    videoId: "nGnLkFTfE2c"
   },
   {
     id: 457,
@@ -3259,7 +3259,7 @@ const ORACOLO_RISPOSTE = [
     code: "463",
     text: "No, questo non è un film di Nolan, anche se sta implodendo tutto. Tutto, sta implodendo tutto.",
     cardImage: "carta_463.png",
-    videoId: ""
+    videoId: "xBCVFMD1Dtg"
   },
   {
     id: 464,
@@ -4015,14 +4015,14 @@ const ORACOLO_RISPOSTE = [
     code: "571",
     text: "Chiediti che cosa farebbe il Joker al posto tuo.",
     cardImage: "carta_571.png",
-    videoId: ""
+    videoId: "3ntw5r6fb-I"
   },
   {
     id: 572,
     code: "572",
     text: "Chiedi che cosa farebbe il Corvo al posto tuo.",
     cardImage: "carta_572.png",
-    videoId: ""
+    videoId: "AkqltmYx1ik"
   },
   {
     id: 573,
@@ -4050,14 +4050,14 @@ const ORACOLO_RISPOSTE = [
     code: "576",
     text: "Chiediti che cosa farebbe Steve Vai al posto tuo.",
     cardImage: "carta_576.png",
-    videoId: ""
+    videoId: "48jaNXpxcG4"
   },
   {
     id: 577,
     code: "577",
     text: "Chiediti che cosa farebbe Jack Black al posto tuo.",
     cardImage: "carta_577.png",
-    videoId: ""
+    videoId: "Ffl7e20qZ-M"
   },
   {
     id: 578,
@@ -4113,7 +4113,7 @@ const ORACOLO_RISPOSTE = [
     code: "585",
     text: "Sarà imperfetto ma autentico e con quel retrogusto di Rock.",
     cardImage: "carta_585.png",
-    videoId: ""
+    videoId: "oMLo7KL8cmI"
   },
   {
     id: 586,
@@ -4519,35 +4519,35 @@ const ORACOLO_RISPOSTE = [
     code: "643",
     text: "Se inizi porta alla fine la questione.",
     cardImage: "carta_643.png",
-    videoId: ""
+    videoId: "0pPGNj7YnOA"
   },
   {
     id: 644,
     code: "644",
     text: "Lascia a metà anche questa idea e lanciati su...",
     cardImage: "carta_644.png",
-    videoId: ""
+    videoId: "pQSDhbVFfF8"
   },
   {
     id: 645,
     code: "645",
     text: "Fa vomitare. Fa vomitare. Fa vomitare, E' utile solo dopo una sbronza, si!",
     cardImage: "carta_645.png",
-    videoId: ""
+    videoId: "SSyEGqayokY"
   },
   {
     id: 646,
     code: "646",
     text: "Come un calcio nelle palle.",
     cardImage: "carta_646.png",
-    videoId: ""
+    videoId: "1tOOYunQWvE"
   },
   {
     id: 647,
     code: "647",
     text: "Pensati Rock.",
     cardImage: "carta_647.png",
-    videoId: ""
+    videoId: "V8iMeXwW6YY"
   },
   {
     id: 648,
@@ -4561,7 +4561,7 @@ const ORACOLO_RISPOSTE = [
     code: "649",
     text: "Scegli la major migliore per te.",
     cardImage: "carta_649.png",
-    videoId: ""
+    videoId: "dD21a_NAY5I"
   },
   {
     id: 650,
