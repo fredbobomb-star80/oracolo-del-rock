@@ -327,6 +327,9 @@
     let outroInterval = null;
     let outroTriggered = false;
     let textTimer = null;
+    let lastCardForShare = null;      // conterrà l'oggetto carta (testo, videoId, ecc.)
+    let lastCardIndexForShare = null; // numero della risposta (1..666)
+
 
 
 
@@ -625,6 +628,7 @@ function mostraTestoNellaCabina(testo, delayMs = 0){
   </script>
 </body>
 </html>
+
 
 
 
