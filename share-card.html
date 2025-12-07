@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Carta condivisibile - Oracolo del Rock</title>
+  <title>Carta condivisibile - Oracolo del Rock (FINAL)</title>
 
   <!-- Font della cabina -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
@@ -21,7 +21,6 @@
       min-height:100vh;
     }
 
-    /* Contenitore esatto 1080x1350 */
     .card-wrapper{
       width:min(90vw, 540px);
       aspect-ratio:1080/1350;
@@ -39,12 +38,12 @@
       object-fit:cover;
     }
 
-    /* TESTO RISPOSTA — spostato 60px più in basso */
+    /* TESTO RISPOSTA — MOLTO PIÙ IN BASSO, NUOVO SISTEMA */
     .card-text{
       position:absolute;
-      top:45%;   /* ECCO LA MODIFICA */
+      bottom:38%;            /* POSIZIONE VERTICALE */
       left:50%;
-      transform:translate(-50%, -50%);
+      transform:translateX(-50%);
       width:75%;
       text-align:center;
       font-family:"Great Vibes", cursive;
@@ -56,10 +55,10 @@
         0 0 16px rgba(0,0,0,0.85);
     }
 
-    /* NUMERO RISPOSTA */
+    /* NUMERO RISPOSTA, ANCORA IN BASSO */
     .card-number{
       position:absolute;
-      bottom:10%;  /* leggermente rialzato */
+      bottom:10%;
       left:50%;
       transform:translateX(-50%);
       font-size:0.6rem;
@@ -83,8 +82,8 @@
     <img src="card-template.png" alt="Carta Oracolo del Rock">
 
     <div class="card-text">
-      Questa è una risposta di prova<br>
-      dell’Oracolo del Rock.
+      TESTO PROVA NUOVA POSIZIONE<br>
+      (se leggi questo, è il file giusto)
     </div>
 
     <div class="card-number">
