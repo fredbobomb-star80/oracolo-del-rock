@@ -242,25 +242,24 @@
     /* TESTO NELLA CABINA */
     .oracle-text{
       position:absolute;
-      top:64%;                 /* più in basso, non in faccia alla tipa */
+      top:72%;                 /* PIÙ IN BASSO: se è ancora alta, porta a 74% */
       left:50%;
       transform:translate(-50%, -50%);
       width:72%;
       color:#f5f5f5;
-      font-size:18px;          /* grandezza ok */
+      font-size:18px;
       line-height:1.3;
       text-align:center;
       text-shadow:0 0 10px #000;
-      font-weight:500;
+      font-weight:600;
       font-family: Impact, "Arial Black", system-ui, sans-serif;
 
       opacity:0;
-      transition: opacity .6s ease, transform .6s ease;
+      transition: opacity .6s ease;
     }
 
     .oracle-text.visible{
       opacity:1;
-      transform:translate(-50%, -52%);
     }
   </style>
 </head>
@@ -275,7 +274,7 @@
       class="hero-img"
     />
 
-    <!-- TESTO ORACOLO (inizialmente vuoto e invisibile) -->
+    <!-- TESTO ORACOLO -->
     <div id="oracle-text" class="oracle-text"></div>
 
     <!-- SCATOLA CONTENITRICE DEL VIDEO -->
@@ -307,7 +306,7 @@
     <p class="note">L'oracolo custodisce 666 risposte e solo una è destinata a te. Da un’idea originale di FredBee — tutti i diritti riservati ©2025</p>
   </main>
 
-  <!-- CARTE (DEVE ESISTERE cards.js NELLA STESSA CARTELLA) -->
+  <!-- CARTE -->
   <script src="cards.js"></script>
 
   <script>
@@ -321,26 +320,47 @@
     let entranceTimer = null;
     let outroInterval = null;
     let outroTriggered = false;
-    let textTimer = null;  // ritardo per il testo
+    let textTimer = null;   // per il ritardo del testo
 
-    // mostra / nasconde il testo nella cabina con fade-in
-    function mostraTestoNellaCabina(testo){
+    // MOSTRA / NASCONDE IL TESTO NELLA CABINA CON FADE
+    function mostraTestoNellaCabina(testo, delayMs = 0){
       const box = document.getElementById("oracle-text");
       if(!box) return;
 
+      // pulisco eventuale timer precedente
+      if (textTimer){
+        clearTimeout(textTimer);
+        textTimer = null;
+      }
+
       if(!testo){
+        // fade-out
         box.classList.remove("visible");
-        box.textContent = "";
+        // dopo la dissolvenza svuoto il testo
+        setTimeout(() => {
+          if(!box.classList.contains("visible")){
+            box.textContent = "";
+          }
+        }, 400);
         return;
       }
 
-      box.classList.remove("visible");
+      // imposto il testo ma lo tengo nascosto
       box.textContent = testo;
+      box.classList.remove("visible");
 
-      // forzo reflow per riattivare la transizione
-      void box.offsetWidth;
+      const show = () => {
+        box.classList.add("visible");
+      };
 
-      box.classList.add("visible");
+      if (delayMs <= 0){
+        requestAnimationFrame(show);
+      } else {
+        textTimer = setTimeout(() => {
+          show();
+          textTimer = null;
+        }, delayMs);
+      }
     }
 
     // carico API YouTube
@@ -473,16 +493,14 @@
       currentVideoId = id;
       player.loadVideoById(id);
 
-      // subito: niente testo
+      // niente testo subito
       mostraTestoNellaCabina("");
 
-      // dopo 1.5s: appare il testo (se esiste la carta)
+      // dopo ~1.2s facciamo comparire la frase legata a quel video
       if (typeof cards !== "undefined" && Array.isArray(cards)){
         const card = cards.find(c => (c.videoId || "").trim() === id);
         if (card && card.text){
-          textTimer = setTimeout(() => {
-            mostraTestoNellaCabina(card.text);
-          }, 1500);
+          mostraTestoNellaCabina(card.text, 1200);
         }
       }
 
@@ -523,7 +541,7 @@
         ytBox.classList.remove("is-visible");
         ytBox.classList.add("is-hidden");
 
-        // a fine canzone: niente testo nella cabina
+        // fade-out del testo a fine canzone
         mostraTestoNellaCabina("");
       }
     }
