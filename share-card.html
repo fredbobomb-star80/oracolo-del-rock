@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Carta condivisibile - Oracolo del Rock</title>
 
-  <!-- Font della cabina -->
+  <!-- Stesso font calligrafico della cabina -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
 
   <style>
@@ -21,7 +21,7 @@
       min-height:100vh;
     }
 
-    /* Contenitore esatto 1080x1350 */
+    /* Contenitore esatto 1080x1350 (scalato per lo schermo) */
     .card-wrapper{
       width:min(90vw, 540px);
       aspect-ratio:1080/1350;
@@ -39,10 +39,10 @@
       object-fit:cover;
     }
 
-    /* TESTO RISPOSTA — posizione approvata */
+    /* TESTO RISPOSTA – posizione che avevamo approvato */
     .card-text{
       position:absolute;
-      bottom:38%;  /* questa è la posizione che ti andava bene */
+      bottom:38%;
       left:50%;
       transform:translateX(-50%);
       width:75%;
@@ -56,10 +56,10 @@
         0 0 16px rgba(0,0,0,0.85);
     }
 
-    /* NUMERO RISPOSTA — posizione approvata */
+    /* NUMERO RISPOSTA – RISPOSTA N:000 */
     .card-number{
       position:absolute;
-      bottom:10%;  
+      bottom:10%;
       left:50%;
       transform:translateX(-50%);
       font-size:0.6rem;
@@ -80,12 +80,15 @@
 <body>
 
   <div class="card-wrapper">
+    <!-- La tua card-template.png deve stare nella stessa cartella di questo file -->
     <img src="card-template.png" alt="Carta Oracolo del Rock">
 
+    <!-- Frase neutra, minuscola -->
     <div class="card-text" id="card-text">
-      TESTO DI PROVA — SE LO LEGGI, È IL FILE GIUSTO
+      questa è una frase di prova per verificare il font
     </div>
 
+    <!-- Numero di default -->
     <div class="card-number" id="card-number">
       RISPOSTA N:000
     </div>
@@ -101,13 +104,13 @@
     const textEl = document.getElementById("card-text");
     const numEl  = document.getElementById("card-number");
 
-    // Inserisce il testo corretto
+    // Testo carta dalla URL (se presente)
     if (rawText && textEl){
       const decoded = decodeURIComponent(rawText.replace(/\+/g, " "));
       textEl.textContent = decoded;
     }
 
-    // Inserisce il numero formattato RISPOSTA N:000
+    // Numero carta formattato come RISPOSTA N:000
     if (rawNum && numEl){
       const n = parseInt(rawNum, 10);
       if (!isNaN(n) && n > 0){
