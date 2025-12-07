@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Carta condivisibile - Oracolo del Rock (FINAL)</title>
+  <title>Carta condivisibile - Oracolo del Rock</title>
 
   <!-- Font della cabina -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
@@ -21,6 +21,7 @@
       min-height:100vh;
     }
 
+    /* Contenitore esatto 1080x1350 */
     .card-wrapper{
       width:min(90vw, 540px);
       aspect-ratio:1080/1350;
@@ -38,10 +39,10 @@
       object-fit:cover;
     }
 
-    /* TESTO RISPOSTA — MOLTO PIÙ IN BASSO, NUOVO SISTEMA */
+    /* TESTO RISPOSTA — posizione approvata */
     .card-text{
       position:absolute;
-      bottom:38%;            /* POSIZIONE VERTICALE */
+      bottom:38%;  /* questa è la posizione che ti andava bene */
       left:50%;
       transform:translateX(-50%);
       width:75%;
@@ -55,10 +56,10 @@
         0 0 16px rgba(0,0,0,0.85);
     }
 
-    /* NUMERO RISPOSTA, ANCORA IN BASSO */
+    /* NUMERO RISPOSTA — posizione approvata */
     .card-number{
       position:absolute;
-      bottom:10%;
+      bottom:10%;  
       left:50%;
       transform:translateX(-50%);
       font-size:0.6rem;
@@ -81,15 +82,40 @@
   <div class="card-wrapper">
     <img src="card-template.png" alt="Carta Oracolo del Rock">
 
-    <div class="card-text">
-      TESTO PROVA NUOVA POSIZIONE<br>
-      (se leggi questo, è il file giusto)
+    <div class="card-text" id="card-text">
+      TESTO DI PROVA — SE LO LEGGI, È IL FILE GIUSTO
     </div>
 
-    <div class="card-number">
-      RISPOSTA N:023
+    <div class="card-number" id="card-number">
+      RISPOSTA N:000
     </div>
   </div>
+
+  <script>
+    // Legge parametri dalla URL: ?text=...&n=...
+    const params = new URLSearchParams(window.location.search);
+
+    const rawText = params.get("text");
+    const rawNum  = params.get("n");
+
+    const textEl = document.getElementById("card-text");
+    const numEl  = document.getElementById("card-number");
+
+    // Inserisce il testo corretto
+    if (rawText && textEl){
+      const decoded = decodeURIComponent(rawText.replace(/\+/g, " "));
+      textEl.textContent = decoded;
+    }
+
+    // Inserisce il numero formattato RISPOSTA N:000
+    if (rawNum && numEl){
+      const n = parseInt(rawNum, 10);
+      if (!isNaN(n) && n > 0){
+        const padded = String(n).padStart(3, "0");
+        numEl.textContent = "RISPOSTA N:" + padded;
+      }
+    }
+  </script>
 
 </body>
 </html>
