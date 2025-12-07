@@ -330,38 +330,35 @@
     let lastCardForShare = null;      // conterrà l'oggetto carta (testo, videoId, ecc.)
     let lastCardIndexForShare = null; // numero della risposta (1..666)
 
+    // MOSTRA / NASCONDE IL TESTO (NO SPOILER, NO FLASH)
+    function mostraTestoNellaCabina(testo, delayMs = 0){
+      const box = document.getElementById("oracle-text");
+      if(!box) return;
 
+      // Annulla eventuali timer precedenti
+      if (textTimer){
+        clearTimeout(textTimer);
+        textTimer = null;
+      }
 
+      // Se non c'è testo → svuoto subito, senza far apparire nulla
+      if(!testo){
+        box.classList.remove("visible");
+        box.textContent = "";
+        return;
+      }
 
-// MOSTRA / NASCONDE IL TESTO (NO SPOILER, NO FLASH)
-function mostraTestoNellaCabina(testo, delayMs = 0){
-  const box = document.getElementById("oracle-text");
-  if(!box) return;
+      // Non inserisco ancora il testo nel DOM → nessun flash possibile
+      box.classList.remove("visible");
+      box.textContent = "";  // schermo vuoto
 
-  // Annulla eventuali timer precedenti
-  if (textTimer){
-    clearTimeout(textTimer);
-    textTimer = null;
-  }
-
-  // Se non c'è testo → svuoto subito, senza far apparire nulla
-  if(!testo){
-    box.classList.remove("visible");
-    box.textContent = "";
-    return;
-  }
-
-  // Non inserisco ancora il testo nel DOM → nessun flash possibile
-  box.classList.remove("visible");
-  box.textContent = "";  // schermo vuoto
-
-  // Quando scatta il delay → SOLO allora monto il testo e lo mostro
-  textTimer = setTimeout(() => {
-    box.textContent = testo;
-    requestAnimationFrame(() => box.classList.add("visible"));
-    textTimer = null;
-  }, delayMs);
-  }    
+      // Quando scatta il delay → SOLO allora monto il testo e lo mostro
+      textTimer = setTimeout(() => {
+        box.textContent = testo;
+        requestAnimationFrame(() => box.classList.add("visible"));
+        textTimer = null;
+      }, delayMs);
+    }
 
     // carico API YouTube
     (function(){
@@ -456,6 +453,12 @@ function mostraTestoNellaCabina(testo, delayMs = 0){
       if(!player || !allIds.length) return;
 
       const ytBox = document.getElementById("yt");
+      const shareCardBtn = document.getElementById("share-card");
+
+      // disabilito il tasto ✍️ finché non ho una nuova carta valida
+      if (shareCardBtn) {
+        shareCardBtn.classList.add("share-btn-off");
+      }
 
       if(entranceTimer){
         clearTimeout(entranceTimer);
@@ -489,6 +492,8 @@ function mostraTestoNellaCabina(testo, delayMs = 0){
 
       if (!idsPool.length){
         mostraTestoNellaCabina("");
+        lastCardForShare = null;
+        lastCardIndexForShare = null;
         return;
       }
 
@@ -501,11 +506,37 @@ function mostraTestoNellaCabina(testo, delayMs = 0){
       // niente testo subito - correzione spoiler iniziale
       mostraTestoNellaCabina("");
 
-      // dopo ~7s facciamo comparire la frase legata a quel video - qui scelgo il timing di ingresso della scritta rispetto il video
+      // dopo ~7s facciamo comparire la frase legata a quel video
       if (typeof cards !== "undefined" && Array.isArray(cards)){
         const card = cards.find(c => (c.videoId || "").trim() === id);
+
         if (card && card.text){
+          // Salvo la carta per la condivisione
+          lastCardForShare = card;
+
+          // Calcolo il numero della risposta
+          let n = null;
+          if (typeof card.n === "number") {
+            n = card.n;
+          } else if (typeof card.id === "number") {
+            n = card.id;
+          } else {
+            const pos = cards.indexOf(card);
+            if (pos >= 0) n = pos + 1;  // 1..666
+          }
+          lastCardIndexForShare = n;
+
+          // Mostra il testo dopo il delay (qui il tuo timing di ingresso)
           mostraTestoNellaCabina(card.text, 7000);
+
+          // Abilito il bottone ✍️ Condividi
+          if (shareCardBtn) {
+            shareCardBtn.classList.remove("share-btn-off");
+          }
+        } else {
+          // se non trovo la carta, pulisco riferimento
+          lastCardForShare = null;
+          lastCardIndexForShare = null;
         }
       }
 
@@ -625,14 +656,38 @@ function mostraTestoNellaCabina(testo, delayMs = 0){
         }
       });
     }
+
+    // TASTO ✍️ CONDIVIDI CARTA (IMMAGINE)
+    const shareCardBtn = document.getElementById("share-card");
+
+    if (shareCardBtn) {
+      shareCardBtn.addEventListener("click", () => {
+
+        if (!lastCardForShare || !lastCardForShare.text) {
+          alert("Prima pesca la tua carta!");
+          return;
+        }
+
+        // numero della carta
+        let n = lastCardIndexForShare;
+        if (!n || isNaN(n)) {
+          n = 1; // fallback
+        }
+
+        // testo della carta
+        const text = lastCardForShare.text;
+
+        // preparo parametri per share-card.html
+        const params = new URLSearchParams();
+        params.set("text", text);
+        params.set("n", String(n));
+
+        const url = "share-card.html?" + params.toString();
+
+        // apro in una nuova scheda: lì parte html2canvas + condivisione
+        window.open(url, "_blank");
+      });
+    }
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
