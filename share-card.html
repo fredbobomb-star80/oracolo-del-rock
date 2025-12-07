@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Carta condivisibile - Oracolo del Rock</title>
 
-  <!-- Stesso font calligrafico della cabina -->
+  <!-- Font calligrafico, come la cabina -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
 
   <style>
@@ -21,7 +21,7 @@
       min-height:100vh;
     }
 
-    /* Contenitore esatto 1080x1350 (scalato per lo schermo) */
+    /* Contenitore proporzionato 1080x1350 (scalato sullo schermo) */
     .card-wrapper{
       width:min(90vw, 540px);
       aspect-ratio:1080/1350;
@@ -39,7 +39,7 @@
       object-fit:cover;
     }
 
-    /* TESTO RISPOSTA – posizione che avevamo approvato */
+    /* TESTO RISPOSTA – posizione approvata */
     .card-text{
       position:absolute;
       bottom:38%;
@@ -74,50 +74,154 @@
       border-radius:999px;
       border:1px solid rgba(255,255,255,0.25);
     }
+
+    /* Messaggino piccolo per debugging (non verrà visto dall'utente normale) */
+    .debug-note{
+      position:fixed;
+      bottom:6px;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:10px;
+      opacity:0.5;
+      font-family:system-ui,Arial,sans-serif;
+    }
   </style>
 </head>
 
 <body>
 
-  <div class="card-wrapper">
-    <!-- La tua card-template.png deve stare nella stessa cartella di questo file -->
+  <div class="card-wrapper" id="card-wrapper">
+    <!-- La tua card-template.png (1080x1350) -->
     <img src="card-template.png" alt="Carta Oracolo del Rock">
 
-    <!-- Frase neutra, minuscola -->
+    <!-- Frase: verrà sostituita dal parametro ?text= -->
     <div class="card-text" id="card-text">
       questa è una frase di prova per verificare il font
     </div>
 
-    <!-- Numero di default -->
+    <!-- Numero: verrà formattato come RISPOSTA N:000 -->
     <div class="card-number" id="card-number">
       RISPOSTA N:000
     </div>
   </div>
 
+  <div class="debug-note" id="debug-note">
+    Generazione immagine in corso...
+  </div>
+
+  <!-- html2canvas per trasformare la carta in PNG -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
   <script>
-    // Legge parametri dalla URL: ?text=...&n=...
-    const params = new URLSearchParams(window.location.search);
+    (function(){
+      const params = new URLSearchParams(window.location.search);
 
-    const rawText = params.get("text");
-    const rawNum  = params.get("n");
+      const rawText = params.get("text");
+      const rawNum  = params.get("n");
 
-    const textEl = document.getElementById("card-text");
-    const numEl  = document.getElementById("card-number");
+      const textEl  = document.getElementById("card-text");
+      const numEl   = document.getElementById("card-number");
+      const wrapper = document.getElementById("card-wrapper");
+      const debugEl = document.getElementById("debug-note");
 
-    // Testo carta dalla URL (se presente)
-    if (rawText && textEl){
-      const decoded = decodeURIComponent(rawText.replace(/\+/g, " "));
-      textEl.textContent = decoded;
-    }
+      let paddedNum = "000";
 
-    // Numero carta formattato come RISPOSTA N:000
-    if (rawNum && numEl){
-      const n = parseInt(rawNum, 10);
-      if (!isNaN(n) && n > 0){
-        const padded = String(n).padStart(3, "0");
-        numEl.textContent = "RISPOSTA N:" + padded;
+      // 1) Gestione testo dalla URL
+      if (rawText && textEl){
+        const decoded = decodeURIComponent(rawText.replace(/\+/g, " "));
+        textEl.textContent = decoded;
       }
-    }
+
+      // 2) Gestione numero formattato RISPOSTA N:000
+      if (rawNum && numEl){
+        const n = parseInt(rawNum, 10);
+        if (!isNaN(n) && n > 0){
+          paddedNum = String(n).padStart(3, "0");
+          numEl.textContent = "RISPOSTA N:" + paddedNum;
+        }
+      }
+
+      // Aspettiamo un attimo che il font e l'immagine siano pronti
+      window.addEventListener("load", () => {
+        setTimeout(() => {
+          generaECondividi(wrapper, paddedNum, textEl?.textContent || "", debugEl);
+        }, 400); // piccolo delay per sicurezza
+      });
+
+      async function generaECondividi(wrapper, numeroFormattato, frase, debugEl){
+        if (!wrapper){
+          if (debugEl) debugEl.textContent = "Errore: card-wrapper non trovato.";
+          return;
+        }
+
+        if (debugEl) debugEl.textContent = "Creo l'immagine della carta...";
+
+        try{
+          const canvas = await html2canvas(wrapper, {
+            useCORS: true,
+            backgroundColor: null,
+            scale: 2 // qualità migliore
+          });
+
+          if (debugEl) debugEl.textContent = "Preparo il file per la condivisione...";
+
+          canvas.toBlob(async (blob) => {
+            if (!blob){
+              if (debugEl) debugEl.textContent = "Impossibile creare il blob dell'immagine.";
+              return;
+            }
+
+            const fileName = "oracolo-risposta-" + numeroFormattato + ".png";
+            const file = new File([blob], fileName, { type: "image/png" });
+
+            // Dati per la condivisione
+            const shareData = {
+              files: [file],
+              title: "Chiedilo all’Oracolo del Rock",
+              text: frase ? ("La mia carta dell'Oracolo del Rock:\n\n" + frase) : "La mia carta dell'Oracolo del Rock"
+            };
+
+            // 1) TENTATIVO DI CONDIVISIONE DIRETTA (se supportato)
+            if (navigator.canShare && navigator.canShare({ files: [file] })){
+              try{
+                if (debugEl) debugEl.textContent = "Apro il menu di condivisione...";
+                await navigator.share(shareData);
+                if (debugEl) debugEl.textContent = "Condivisione completata.";
+                // opzionale: chiudere la scheda se il browser lo permette
+                if (window.close) {
+                  // window.close(); // lo lasciamo commentato, decidi tu se usarlo un giorno
+                }
+                return;
+              }catch(err){
+                console.log("Condivisione annullata o fallita:", err);
+                if (debugEl) debugEl.textContent = "Condivisione annullata, apro comunque l'immagine.";
+                apriPngInNuovaScheda(canvas);
+                return;
+              }
+            }else{
+              // 2) FALLBACK: apriamo la PNG in una nuova scheda
+              if (debugEl) debugEl.textContent = "Il tuo browser non supporta la condivisione diretta. Apro l'immagine.";
+              apriPngInNuovaScheda(canvas);
+            }
+          }, "image/png");
+        }catch(err){
+          console.error("Errore durante la generazione della carta:", err);
+          if (debugEl) debugEl.textContent = "Errore nella generazione dell'immagine.";
+        }
+      }
+
+      function apriPngInNuovaScheda(canvas){
+        const dataUrl = canvas.toDataURL("image/png");
+        const w = window.open();
+        if (w){
+          w.document.write(
+            "<!doctype html><html><head><title>Carta Oracolo</title></head><body style='margin:0;background:#000;display:flex;align-items:center;justify-content:center;min-height:100vh;'>" +
+            "<img src='" + dataUrl + "' style='max-width:100%;height:auto;display:block;' />" +
+            "</body></html>"
+          );
+        }
+      }
+    })();
   </script>
 
 </body>
