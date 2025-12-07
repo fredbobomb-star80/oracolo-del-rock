@@ -54,54 +54,35 @@
       100%{ opacity:1; filter:brightness(1) contrast(1);      }
     }
 
-    /* AREA VIDEO */
-    .yt-overlay.is-hidden{
-      opacity: 0;
-      transform: translateY(6px);
-      transition: opacity .6s ease, transform .6s ease;
-      pointer-events: none;
-    }
-
-    .yt-overlay.is-visible{
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity .6s ease, transform .6s ease;
-      pointer-events: auto;
-    }
-
-    .yt-overlay.is-visible.audio-first{
-      opacity: 0;
-      transform: translateY(6px);
-      pointer-events: none;
-    }
-
-    .yt-overlay.is-visible.audio-first iframe{
-      visibility: hidden;
-    }
-    
+    /* ============================
+       AREA VIDEO – PLAYER INVISIBILE 1x1
+       ============================ */
     .yt-overlay{
       position:absolute;
-      left:41%;
-      top:80%;
-      width:15%;
-      height:12%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:rgba(0,0,0,0.25);
-      border-radius:14px;
-      padding:4px;
-      box-shadow:0 0 10px rgba(0,0,0,0.6);
-      backdrop-filter: blur(2px);
+      left:50%;
+      top:50%;
+      transform:translate(-50%, -50%);
+      width:1px;
+      height:1px;
+      opacity:0;
+      pointer-events:none;
       overflow:hidden;
     }
 
     .yt-overlay iframe{
-      width:100%;
-      height:100%;
-      border-radius:10px;
-      border:2px solid rgba(0,200,255,0.6);
-      box-shadow:0 0 12px rgba(0,200,255,0.35);
+      width:1px;
+      height:1px;
+      border:0;
+      box-shadow:none;
+    }
+
+    /* Qualunque stato: sempre invisibile */
+    .yt-overlay.is-hidden,
+    .yt-overlay.is-visible,
+    .yt-overlay.is-visible.audio-first{
+      opacity:0;
+      transform:translate(-50%, -50%);
+      pointer-events:none;
     }
 
     /* SEZIONE AZIONI SOTTO LA CABINA */
@@ -153,7 +134,7 @@
         inset 0 -3px 8px rgba(0,0,0,0.6),
         0 0 14px rgba(0,200,255,0.65),
         0 0 30px rgba(0,200,255,0.35);
-      transition: transform .12s ease, filter .12s ease, box-shadow .12s ease;
+      transition: transform .12s ease, filter .12s.ease, box-shadow .12s ease;
       margin-top: 20px;
     }
 
@@ -245,7 +226,7 @@
     /* TESTO NELLA CABINA */
     .oracle-text{
       position:absolute;
-      top:72%;
+      top:72%; /* alzato rispetto alla versione base */
       left:50%;
       transform:translate(-50%, -50%);
       width:80%;
@@ -283,7 +264,7 @@
     <!-- TESTO ORACOLO -->
     <div id="oracle-text" class="oracle-text"></div>
 
-    <!-- SCATOLA CONTENITRICE DEL VIDEO -->
+    <!-- PLAYER YT INVISIBILE -->
     <div id="yt" class="yt-overlay is-hidden"></div>
   </header>
 
@@ -327,8 +308,9 @@
     let outroInterval = null;
     let outroTriggered = false;
     let textTimer = null;
+    let pendingText = null; // 🔧 per evitare il flash della scritta
 
-    // MOSTRA / NASCONDE IL TESTO NELLA CABINA (senza flash)
+    // MOSTRA / NASCONDE IL TESTO NELLA CABINA (NO FLASH)
     function mostraTestoNellaCabina(testo, delayMs = 0){
       const box = document.getElementById("oracle-text");
       if(!box) return;
@@ -338,18 +320,25 @@
         textTimer = null;
       }
 
-      // se non c'è testo: svuoto subito, niente fade-out strano
+      // Se non c'è testo: svuoto subito e stop
       if(!testo){
+        pendingText = null;
         box.classList.remove("visible");
         box.textContent = "";
         return;
       }
 
-      // imposto il nuovo testo, che entrerà con fade-in
-      box.textContent = testo;
+      // Imposto "testo in attesa": finché non scatta il delay, la cabina resta VUOTA
+      pendingText = testo;
       box.classList.remove("visible");
+      box.textContent = "";
 
-      const show = () => box.classList.add("visible");
+      const show = () => {
+        // Se nel frattempo è arrivata un'altra carta, non mostrare questo testo
+        if(pendingText !== testo) return;
+        box.textContent = testo;
+        box.classList.add("visible");
+      };
 
       if (delayMs <= 0){
         requestAnimationFrame(show);
@@ -385,245 +374,3 @@
       const heroImg = document.querySelector(".hero-img");
 
       // pulizia di eventuali vecchi listener
-      const cleanBtn = btn.cloneNode(true);
-      btn.parentNode.replaceChild(cleanBtn, btn);
-      btn = cleanBtn;
-
-      btn.classList.add("disabled");
-      btn.textContent = "ACCENSIONE DELL'ORACOLO...";
-
-      if(heroImg){
-        heroImg.classList.add("activating");
-      }
-
-      btn.addEventListener("click", playRandom);
-
-      boot();
-    }
-
-    async function boot(){
-      try{
-        allIds = await fetchAllPlaylistIds(PLAYLIST_ID);
-      }catch(err){
-        console.error(err);
-        alert("Errore nel caricare la playlist.");
-      }
-
-      const btn     = document.getElementById("new");
-      const heroImg = document.querySelector(".hero-img");
-
-      btn.classList.remove("disabled");
-      btn.textContent = "PESCA LA TUA CARTA";
-
-      if(heroImg){
-        heroImg.classList.remove("activating");
-      }
-    }
-
-    async function fetchAllPlaylistIds(playlistId){
-      let ids = [];
-      let pageToken = "";
-
-      do{
-        const url = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
-        url.searchParams.set("key", API_KEY);
-        url.searchParams.set("part", "snippet");
-        url.searchParams.set("playlistId", playlistId);
-        url.searchParams.set("maxResults", PAGE_SIZE);
-        if(pageToken) url.searchParams.set("pageToken", pageToken);
-
-        const res = await fetch(url.toString());
-        if(!res.ok) throw new Error("HTTP " + res.status);
-        const data = await res.json();
-
-        const batch = (data.items || [])
-          .map(i => i?.snippet?.resourceId?.videoId)
-          .filter(Boolean);
-
-        ids.push(...batch);
-        pageToken = data.nextPageToken || "";
-
-      } while(pageToken);
-
-      return [...new Set(ids)];
-    }
-
-    function playRandom(){
-      const btn = document.getElementById("new");
-      if(btn.classList.contains("disabled")) return;
-      if(!player || !allIds.length) return;
-
-      const ytBox = document.getElementById("yt");
-
-      if(entranceTimer){
-        clearTimeout(entranceTimer);
-        entranceTimer = null;
-      }
-      if(textTimer){
-        clearTimeout(textTimer);
-        textTimer = null;
-      }
-
-      clearOutroWatcher();
-      outroTriggered = false;
-
-      ytBox.classList.remove("is-hidden");
-      ytBox.classList.add("is-visible");
-      ytBox.classList.add("audio-first");
-
-      // se abbiamo cards, filtriamo solo i video mappati
-      let idsPool = allIds;
-      if (typeof cards !== "undefined" && Array.isArray(cards)){
-        const validIds = new Set(
-          cards
-            .filter(c => c.videoId && c.videoId.trim() !== "")
-            .map(c => c.videoId.trim())
-        );
-        const filtered = allIds.filter(id => validIds.has(id));
-        if (filtered.length){
-          idsPool = filtered;
-        }
-      }
-
-      if (!idsPool.length){
-        mostraTestoNellaCabina("");
-        return;
-      }
-
-      const idx = Math.floor(Math.random() * idsPool.length);
-      const id  = idsPool[idx];
-
-      currentVideoId = id;
-      player.loadVideoById(id);
-
-      // niente testo subito
-      mostraTestoNellaCabina("");
-
-      // dopo ~1.2s facciamo comparire la frase legata a quel video
-      if (typeof cards !== "undefined" && Array.isArray(cards)){
-        const card = cards.find(c => (c.videoId || "").trim() === id);
-        if (card && card.text){
-          mostraTestoNellaCabina(card.text, 1200);
-        }
-      }
-
-      entranceTimer = setTimeout(() => {
-        ytBox.classList.remove("audio-first");
-        entranceTimer = null;
-      }, 3000);
-    }
-
-    function onStateChange(e){
-      const ytBox = document.getElementById("yt");
-
-      if(e.data === YT.PlayerState.PLAYING){
-        startOutroWatcher();
-      }
-
-      if(
-        e.data === YT.PlayerState.PAUSED ||
-        e.data === YT.PlayerState.BUFFERING
-      ){
-        clearOutroWatcher();
-      }
-
-      if(e.data === YT.PlayerState.ENDED){
-        clearOutroWatcher();
-        outroTriggered = false;
-
-        if(entranceTimer){
-          clearTimeout(entranceTimer);
-          entranceTimer = null;
-        }
-        if(textTimer){
-          clearTimeout(textTimer);
-          textTimer = null;
-        }
-
-        ytBox.classList.remove("audio-first");
-        ytBox.classList.remove("is-visible");
-        ytBox.classList.add("is-hidden");
-
-        // fine canzone: pulisco il testo senza flash
-        mostraTestoNellaCabina("");
-      }
-    }
-
-    function startOutroWatcher(){
-      clearOutroWatcher();
-      outroTriggered = false;
-
-      outroInterval = setInterval(() => {
-        if(!player || outroTriggered) return;
-
-        const dur = player.getDuration();
-        const cur = player.getCurrentTime();
-        if(!dur || !cur) return;
-
-        const remaining = dur - cur;
-
-        if(remaining <= 1.0){
-          outroTriggered = true;
-          triggerOutro();
-        }
-      }, 250);
-    }
-
-    function clearOutroWatcher(){
-      if(outroInterval){
-        clearInterval(outroInterval);
-        outroInterval = null;
-      }
-    }
-
-    function triggerOutro(){
-      const ytBox = document.getElementById("yt");
-
-      ytBox.classList.remove("is-visible");
-      ytBox.classList.add("is-hidden");
-
-      setTimeout(() => {
-        try{ player.stopVideo(); }catch(_){}
-      }, 200);
-
-      clearOutroWatcher();
-    }
-
-    // TASTO CONDIVIDI AUDIO
-    const shareAudioBtn = document.getElementById("share-audio");
-
-    if (shareAudioBtn) {
-      shareAudioBtn.addEventListener("click", async () => {
-
-        if (!currentVideoId) {
-          alert("Prima pesca la tua carta!");
-          return;
-        }
-
-        const videoUrl = `https://youtu.be/${currentVideoId}`;
-
-        if (navigator.share) {
-          try {
-            await navigator.share({
-              title: "Ascolta il brano che mi è uscito dall'Oracolo del Rock!",
-              text: "Ecco il mio responso musicale:",
-              url: videoUrl
-            });
-            return;
-          } catch (e) {
-            console.log("Condivisione annullata", e);
-          }
-        }
-
-        try {
-          await navigator.clipboard.writeText(videoUrl);
-          alert("Link copiato! Ora puoi incollarlo dove vuoi:\n\n" + videoUrl);
-        } catch (e) {
-          alert("Ecco il link da copiare:\n\n" + videoUrl);
-        }
-      });
-    }
-  </script>
-</body>
-</html>
-
