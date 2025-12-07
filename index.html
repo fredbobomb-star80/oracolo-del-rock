@@ -328,7 +328,7 @@
     let outroTriggered = false;
     let textTimer = null;
 
-    // MOSTRA / NASCONDE IL TESTO NELLA CABINA CON FADE
+    // MOSTRA / NASCONDE IL TESTO NELLA CABINA (senza flash)
     function mostraTestoNellaCabina(testo, delayMs = 0){
       const box = document.getElementById("oracle-text");
       if(!box) return;
@@ -338,16 +338,14 @@
         textTimer = null;
       }
 
+      // se non c'è testo: svuoto subito, niente fade-out strano
       if(!testo){
         box.classList.remove("visible");
-        setTimeout(() => {
-          if(!box.classList.contains("visible")){
-            box.textContent = "";
-          }
-        }, 400);
+        box.textContent = "";
         return;
       }
 
+      // imposto il nuovo testo, che entrerà con fade-in
       box.textContent = testo;
       box.classList.remove("visible");
 
@@ -386,7 +384,7 @@
       let btn     = document.getElementById("new");
       const heroImg = document.querySelector(".hero-img");
 
-      // 🔧 QUI: eliminiamo TUTTI i vecchi listener (anche quelli di cards.js)
+      // pulizia di eventuali vecchi listener
       const cleanBtn = btn.cloneNode(true);
       btn.parentNode.replaceChild(cleanBtn, btn);
       btn = cleanBtn;
@@ -546,7 +544,7 @@
         ytBox.classList.remove("is-visible");
         ytBox.classList.add("is-hidden");
 
-        // fade-out del testo a fine canzone
+        // fine canzone: pulisco il testo senza flash
         mostraTestoNellaCabina("");
       }
     }
