@@ -879,7 +879,7 @@ const ORACOLO_RISPOSTE = [
     code: "123",
     text: "Hai firmato un contratto con la paura, è il momento di disdire l’abbonamento.",
     cardImage: "carta_123.png",
-    videoId: ""
+    videoId: "ve0-To3NNO0"
   },
   {
     id: 124,
@@ -914,56 +914,56 @@ const ORACOLO_RISPOSTE = [
     code: "128",
     text: "Mode temporanee, meteore e fenomeni da baraccone.",
     cardImage: "carta_128.png",
-    videoId: ""
+    videoId: "IFSDWDDF5zc"
   },
   {
     id: 129,
     code: "129",
     text: "Potrebbe cambiare la tua vita.",
     cardImage: "carta_129.png",
-    videoId: ""
+    videoId: "XX_sjlKyLiM"
   },
   {
     id: 130,
     code: "130",
     text: "Non è colpa tua se ti hanno dato un microfono spento. Ma tu puoi ancora urlare.",
     cardImage: "carta_130.png",
-    videoId: ""
+    videoId: "M5ajl-ieuAo"
   },
   {
     id: 131,
     code: "131",
     text: "Stacca la spina e guarda, si guarda le stelle e respira. Forse stanotte la tua stella splenderà.",
     cardImage: "carta_131.png",
-    videoId: ""
+    videoId: "M2n-_hZVtCI"
   },
   {
     id: 132,
     code: "132",
     text: "Solo gli eroi cambiano il proprio destino, si ma lo fanno a caro, carissimo prezzo.",
     cardImage: "carta_132.png",
-    videoId: ""
+    videoId: "Zx8_tzszRJQ"
   },
   {
     id: 133,
     code: "133",
     text: "Ma cosa indossi, cosa sono quelle? Collane d'oro o catene d'oro?",
     cardImage: "carta_133.png",
-    videoId: ""
+    videoId: "jmYb1wpyNJk"
   },
   {
     id: 134,
     code: "134",
     text: "Hai confuso i fan con gli amici. Dimmi, cosa te ne fai di un milione di like? Si dimmi cosa te ne fai?",
     cardImage: "carta_134.png",
-    videoId: ""
+    videoId: "iIbQsMJY0bk"
   },
   {
     id: 135,
     code: "135",
     text: "Oggi fai un gioco, magari, lettere, verità e testamento. Oggi fai un gioco, si. Lettere, verità e testamento.",
     cardImage: "carta_135.png",
-    videoId: ""
+    videoId: "7mKYtW-Az6Y"
   },
   {
     id: 136,
@@ -1943,7 +1943,7 @@ const ORACOLO_RISPOSTE = [
     code: "275",
     text: "La quinta regola dell'Oracolo del Rock è : non puoi chiedere per qualcun altro. Ma se proprio ci tieni a farlo, taggalo.",
     cardImage: "carta_275.png",
-    videoId: ""
+    videoId: "zh0BtwS5_zg"
   },
   {
     id: 276,
@@ -4659,7 +4659,7 @@ const ORACOLO_RISPOSTE = [
     code: "663",
     text: "Può essere tutto più semplice di così. Dai, smettila di complicarti la vita!",
     cardImage: "carta_663.png",
-    videoId: ""
+    videoId: "Fv8xPswzMRM"
   },
   {
     id: 664,
