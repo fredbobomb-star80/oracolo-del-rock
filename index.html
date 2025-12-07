@@ -495,14 +495,14 @@ function mostraTestoNellaCabina(testo, delayMs = 0){
       currentVideoId = id;
       player.loadVideoById(id);
 
-      // niente testo subito
+      // niente testo subito - correzione spoiler iniziale
       mostraTestoNellaCabina("");
 
-      // dopo ~1.2s facciamo comparire la frase legata a quel video
+      // dopo ~10s facciamo comparire la frase legata a quel video - qui scelgo il timing di ingresso della scritta rispetto il video
       if (typeof cards !== "undefined" && Array.isArray(cards)){
         const card = cards.find(c => (c.videoId || "").trim() === id);
         if (card && card.text){
-          mostraTestoNellaCabina(card.text, 1200);
+          mostraTestoNellaCabina(card.text, 10000);
         }
       }
 
@@ -625,6 +625,7 @@ function mostraTestoNellaCabina(testo, delayMs = 0){
   </script>
 </body>
 </html>
+
 
 
 
