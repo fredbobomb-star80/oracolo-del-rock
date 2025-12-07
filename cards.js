@@ -1236,14 +1236,14 @@ const ORACOLO_RISPOSTE = [
     code: "174",
     text: "Smetti di correre: il tuo vero pubblico ti aspetterà sempre e comunque.",
     cardImage: "carta_174.png",
-    videoId: ""
+    videoId: "DVYDjo7Vdvw"
   },
   {
     id: 175,
     code: "175",
     text: "Scegli i ricordi e gli insegnamenti più giusti per te.",
     cardImage: "carta_175.png",
-    videoId: ""
+    videoId: "D3ONpnfIKlI"
   },
   {
     id: 176,
@@ -1348,7 +1348,7 @@ const ORACOLO_RISPOSTE = [
     code: "190",
     text: "Sali sul palco e racconta a tutti i tuoi segreti.",
     cardImage: "carta_190.png",
-    videoId: ""
+    videoId: "cfNhOlPnH_c"
   },
   {
     id: 191,
@@ -1362,7 +1362,7 @@ const ORACOLO_RISPOSTE = [
     code: "192",
     text: "L’universo ha un debole per chi non si arrende, mai.",
     cardImage: "carta_192.png",
-    videoId: ""
+    videoId: "z0QlR-eat8g"
   },
   {
     id: 193,
@@ -1383,7 +1383,7 @@ const ORACOLO_RISPOSTE = [
     code: "195",
     text: "Non serve perdonare chi non ti chiede perdono.",
     cardImage: "carta_195.png",
-    videoId: ""
+    videoId: "UWFZENqOmKc"
   },
   {
     id: 196,
@@ -1453,7 +1453,7 @@ const ORACOLO_RISPOSTE = [
     code: "205",
     text: "Chiedilo a chi ti ha insegnato a camminare scalzo sulle macerie dei dischi rotti.",
     cardImage: "carta_205.png",
-    videoId: ""
+    videoId: "y-or6wdB_RQ"
   },
   {
     id: 206,
@@ -1600,14 +1600,14 @@ const ORACOLO_RISPOSTE = [
     code: "226",
     text: "Se ti tocca l’anima non devi chiedere altro.",
     cardImage: "carta_226.png",
-    videoId: ""
+    videoId: "YZQneo5zfXs"
   },
   {
     id: 227,
     code: "227",
     text: "Ti serve una notte lunga, buona musica e niente domande.",
     cardImage: "carta_227.png",
-    videoId: ""
+    videoId: "MNnjTtjeTLY"
   },
   {
     id: 228,
@@ -1621,14 +1621,14 @@ const ORACOLO_RISPOSTE = [
     code: "229",
     text: "Non sei fragile, sei solo in tensione come l'ultima corda.",
     cardImage: "carta_229.png",
-    videoId: ""
+    videoId: "6PuyjiqLlQQ"
   },
   {
     id: 230,
     code: "230",
     text: "Baciale le cicatrici non le curve.",
     cardImage: "carta_230.png",
-    videoId: ""
+    videoId: "AQq9ysXkchY"
   }, 
   {
     id: 231,
@@ -1677,7 +1677,7 @@ const ORACOLO_RISPOSTE = [
     code: "237",
     text: "Se hai paura di perderti come farai a trovare qualcosa di nuovo?",
     cardImage: "carta_237.png",
-    videoId: ""
+    videoId: "lmbtW9C2UvE"
   },
   {
     id: 238,
@@ -1719,7 +1719,7 @@ const ORACOLO_RISPOSTE = [
     code: "243",
     text: "Se non ti sporchi le mani, non stai vivendo abbastanza Rock.",
     cardImage: "carta_243.png",
-    videoId: ""
+    videoId: "_-fEDuNd798"
   },
   {
     id: 244,
@@ -1768,14 +1768,14 @@ const ORACOLO_RISPOSTE = [
     code: "250",
     text: "Il corpo ha memorie che la mente nega ma che il cuore ricorda.",
     cardImage: "carta_250.png",
-    videoId: ""
+    videoId: "DGtfA3WTEJY"
   },
   {
     id: 251,
     code: "251",
     text: "Fai un'offerta che non si può rifiutare.",
     cardImage: "carta_251.png",
-    videoId: ""
+    videoId: "t5r-JoSf2BY"
   },
   {
     id: 252,
@@ -1817,7 +1817,7 @@ const ORACOLO_RISPOSTE = [
     code: "257",
     text: "Spegni quella televisione del cazzo.",
     cardImage: "carta_257.png",
-    videoId: ""
+    videoId: "mSuxaPRH1Ho"
   },
   {
     id: 258,
@@ -2818,7 +2818,7 @@ const ORACOLO_RISPOSTE = [
     code: "400",
     text: "No, è segreta come la prima regola del Fight Club.",
     cardImage: "carta_400.png",
-    videoId: ""
+    videoId: "IahH3sJ73OQ"
   },
   {
     id: 401,
@@ -3070,7 +3070,7 @@ const ORACOLO_RISPOSTE = [
     code: "436",
     text: "No, non arriverà un giorno in cui tutto sarà risolto. La libertà comincia danzando sulle macerie dell'incertezza.",
     cardImage: "carta_436.png",
-    videoId: ""
+    videoId: "Hhwd5Wrk8HI"
   },
   {
     id: 437,
@@ -3098,7 +3098,7 @@ const ORACOLO_RISPOSTE = [
     code: "440",
     text: "Spaccherai di brutto.",
     cardImage: "carta_440.png",
-    videoId: ""
+    videoId: "G_WScEw_uYg"
   },
   {
     id: 441,
@@ -3119,7 +3119,7 @@ const ORACOLO_RISPOSTE = [
     code: "443",
     text: "Hai disegnato con il sangue e dipinto con il tuo dolore. Vendi i tuoi capolavori a caro prezzo. A caro prezzo.",
     cardImage: "carta_443.png",
-    videoId: ""
+    videoId: "jOjkftI8pJ4"
   },
   {
     id: 444,
@@ -3238,7 +3238,7 @@ const ORACOLO_RISPOSTE = [
     code: "460",
     text: "Tra cento anni avranno ben altro di cui preoccuparsi.",
     cardImage: "carta_460.png",
-    videoId: ""
+    videoId: "l03EBNjfOXY"
   },
   {
     id: 461,
@@ -3315,7 +3315,7 @@ const ORACOLO_RISPOSTE = [
     code: "471",
     text: "Si, come un bacio al retrogusto di bruciato.",
     cardImage: "carta_471.png",
-    videoId: ""
+    videoId: "AyeAg-SuhPM"
   },
   {
     id: 472,
@@ -3343,28 +3343,28 @@ const ORACOLO_RISPOSTE = [
     code: "475",
     text: "Non sei il professore de “La casa di carta”. Pianifica meglio questo colpo.",
     cardImage: "carta_475.png",
-    videoId: ""
+    videoId: "fzLqGkp5Exk"
   },
   {
     id: 476,
     code: "476",
     text: "Si, prezioso e raro come il plettro del destino.",
     cardImage: "carta_476.png",
-    videoId: ""
+    videoId: "CpHt1t-u7Tw"
   },
   {
     id: 477,
     code: "477",
     text: "Si, è tutto magico come un open bar. Come un open bar.",
     cardImage: "carta_477.png",
-    videoId: ""
+    videoId: "a1pXo1ok9g0"
   },
   {
     id: 478,
     code: "478",
     text: "Si, adrenalinico come un concerto in prima fila.",
     cardImage: "carta_478.png",
-    videoId: ""
+    videoId: "IFTu2uuiiFA"
   },
   {
     id: 479,
@@ -3518,7 +3518,7 @@ const ORACOLO_RISPOSTE = [
     code: "500",
     text: "Controcorrente. Contro tutto e tutti. Perchè in questo pazzo mondo è giusto anche così.",
     cardImage: "carta_500.png",
-    videoId: ""
+    videoId: "2lRHejoxm1w"
   },
   {
     id: 501,
@@ -3868,7 +3868,7 @@ const ORACOLO_RISPOSTE = [
     code: "550",
     text: "Si ma adotta un bel cagnolino. Se preferisci un gattino.",
     cardImage: "carta_550.png",
-    videoId: ""
+    videoId: "qBEu_v_FsAU"
   },
   {
     id: 551,
@@ -3889,7 +3889,7 @@ const ORACOLO_RISPOSTE = [
     code: "553",
     text: "Oggi ti serve elargire più vaffanculo che sorrisi.",
     cardImage: "carta_553.png",
-    videoId: ""
+    videoId: "gOn770oEE7Y"
   },
   {
     id: 554,
@@ -3917,14 +3917,14 @@ const ORACOLO_RISPOSTE = [
     code: "557",
     text: "Oggi ti serve sudare. Non per qualcuno, ma per qualcosa.",
     cardImage: "carta_557.png",
-    videoId: ""
+    videoId: "mS-t4PlgLTM"
   },
   {
     id: 558,
     code: "558",
     text: "Oggi ti serve commettere un nuovo errore in stile Tarantino. Gli altri li conosci già.",
     cardImage: "carta_558.png",
-    videoId: ""
+    videoId: "vaRr1voqAqs"
   },
   {
     id: 559,
@@ -4078,7 +4078,7 @@ const ORACOLO_RISPOSTE = [
     code: "580",
     text: "Chiediti che cosa farebbe la sposa in bianco di Tarantino al posto tuo.",
     cardImage: "carta_580.png",
-    videoId: ""
+    videoId: "90-AGgK0YTg"
   },
   {
     id: 581,
@@ -4344,7 +4344,7 @@ const ORACOLO_RISPOSTE = [
     code: "618",
     text: "Ascolta altre due risposte. La prima la condividi senza dare spiegazioni, la seconda è per te.",
     cardImage: "carta_618.png",
-    videoId: ""
+    videoId: "Hk6FRqTB9WU"
   },
   {
     id: 619,
@@ -4365,105 +4365,105 @@ const ORACOLO_RISPOSTE = [
     code: "621",
     text: "Mai fidarti di un batterista che non ha almeno tre vicini incazzati.",
     cardImage: "carta_621.png",
-    videoId: ""
+    videoId: "tFwAQMy8EqY"
   },
   {
     id: 622,
     code: "622",
     text: "Mai fidarti di un bassista senza calli sulle dita.",
     cardImage: "carta_622.png",
-    videoId: ""
+    videoId: "PAIap1n_wnY"
   },
   {
     id: 623,
     code: "623",
     text: "Mai fidarti del leader di una Rock band. No, mai fidarti del leader di una Rock band, mai.",
     cardImage: "carta_623.png",
-    videoId: ""
+    videoId: "oQzoQbbzvKg"
   },
   {
     id: 624,
     code: "624",
     text: "Mai fidarti di chi ti dice “E' tutto sotto controllo, dai stai sereno che è tranquillo”.",
     cardImage: "carta_624.png",
-    videoId: ""
+    videoId: "vYuU39PahIk"
   },
   {
     id: 625,
     code: "625",
     text: "Mai fidarti della donna del leader di una Rock band.",
     cardImage: "carta_625.png",
-    videoId: ""
+    videoId: "6yGOZlsi2g4"
   },
   {
     id: 626,
     code: "626",
     text: "Mai fidarti di un locale con una sola birra alla spina.",
     cardImage: "carta_626.png",
-    videoId: ""
+    videoId: "c-X7lzqn99Q"
   },
   {
     id: 627,
     code: "627",
     text: "La decima regola dell'Oracolo del Rock è : non limitarti a giocare con le risposte, ascolta un po' di Rock!",
     cardImage: "carta_627.png",
-    videoId: ""
+    videoId: "Ug6K_OhkPA4"
   },
   {
     id: 628,
     code: "628",
     text: "Non dare perle ai porci, no. E nemmeno le tue migliori playlist Rock.",
     cardImage: "carta_628.png",
-    videoId: ""
+    videoId: "O3EnAsvYzNQ"
   },
   {
     id: 629,
     code: "629",
     text: "Mai fidarti di un vecchio juke box.",
     cardImage: "carta_629.png",
-    videoId: ""
+    videoId: "GyKnWUcArSE"
   },
   {
     id: 630,
     code: "630",
     text: "Mai fidarti di un “era proprio a te a cui stavamo pensando”.",
     cardImage: "carta_630.png",
-    videoId: ""
+    videoId: "2hjbPez0Fcw"
   },
   {
     id: 631,
     code: "631",
     text: "Mai fidarti del primo della classe, se la materia non è il Rock'n'Roll.",
     cardImage: "carta_631.png",
-    videoId: ""
+    videoId: "4YTJ8SUfn8"
   },
   {
     id: 632,
     code: "632",
     text: "Mai fidarti dell'ultimo degli stronzi.",
     cardImage: "carta_632.png",
-    videoId: ""
+    videoId: "PNU7B4GFCbs"
   },
   {
     id: 633,
     code: "633",
     text: "Mai fidarti delle confessioni non richieste.",
     cardImage: "carta_633.png",
-    videoId: ""
+    videoId: "5WUNw7-BmKs"
   },
   {
     id: 634,
     code: "634",
     text: "Mai fidarti di una birra senza schiuma.",
     cardImage: "carta_634.png",
-    videoId: ""
+    videoId: "o6gfHUbsCxc"
   },
   {
     id: 635,
     code: "635",
     text: "Mai fidarti di un pubblico troppo sobrio.",
     cardImage: "carta_635.png",
-    videoId: ""
+    videoId: "Z8vtqJ61sfA"
   },
   {
     id: 636,
@@ -4477,7 +4477,7 @@ const ORACOLO_RISPOSTE = [
     code: "637",
     text: "Si ma non strafare. Regalaci un disastro per volta.",
     cardImage: "carta_637.png",
-    videoId: ""
+    videoId: "jxMaf7XvZQM"
   },
   {
     id: 638,
@@ -4505,14 +4505,14 @@ const ORACOLO_RISPOSTE = [
     code: "641",
     text: "Fai come se fosse tutta tua la baracca.",
     cardImage: "carta_641.png",
-    videoId: ""
+    videoId: "2iHG3hFkqOY"
   },
   {
     id: 642,
     code: "642",
     text: "Scegli un'etichetta indipendente. Indie pendente mente.",
     cardImage: "carta_642.png",
-    videoId: ""
+    videoId: "Tz59_ImACqs"
   },
   {
     id: 643,
