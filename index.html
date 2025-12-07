@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Chiedilo all’Oracolo del Rock</title>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
+  <!-- Font calligrafico per il testo carta -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
 
-  
   <style>
     body{
       margin:0;
@@ -242,35 +242,31 @@
 
     .note{ font-size:13px; opacity:.7; }
 
-    /* TESTO NELLA CABINA PRESO DALLE RISPOSTE */
-.oracle-text{
-  position:absolute;
-  top:76%;                     /* più basso, quasi sul petto */
-  left:50%;
-  transform:translate(-50%, -50%);
-  width:80%;                   /* un po’ più larga */
-  color:#fffdf5;
-  font-size:26px;              /* più grande, stile calligrafico */
-  line-height:1.25;
-  text-align:center;
-  font-family: "Great Vibes", cursive;
-  font-weight:400;
-  letter-spacing:0.03em;
+    /* TESTO NELLA CABINA */
+    .oracle-text{
+      position:absolute;
+      top:76%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width:80%;
+      color:#fffdf5;
+      font-size:26px;
+      line-height:1.25;
+      text-align:center;
+      font-family:"Great Vibes", cursive;
+      font-weight:400;
+      letter-spacing:0.03em;
+      text-shadow:
+        0 0 6px rgba(0,0,0,0.7),
+        0 0 16px rgba(255,255,255,0.9),
+        0 0 28px rgba(255,105,180,0.75);
+      opacity:0;
+      transition:opacity .6s ease;
+    }
 
-  /* bagliore morbido */
-  text-shadow:
-    0 0 6px rgba(0,0,0,0.7),
-    0 0 16px rgba(255,255,255,0.9),
-    0 0 28px rgba(255,105,180,0.75);
-
-  opacity:0;
-  transition: opacity .6s ease;
-}
-
-.oracle-text.visible{
-  opacity:1;
-}
-
+    .oracle-text.visible{
+      opacity:1;
+    }
   </style>
 </head>
 
@@ -316,7 +312,7 @@
     <p class="note">L'oracolo custodisce 666 risposte e solo una è destinata a te. Da un’idea originale di FredBee — tutti i diritti riservati ©2025</p>
   </main>
 
-  <!-- CARTE -->
+  <!-- CARTE (solo dati) -->
   <script src="cards.js"></script>
 
   <script>
@@ -330,23 +326,20 @@
     let entranceTimer = null;
     let outroInterval = null;
     let outroTriggered = false;
-    let textTimer = null;   // per il ritardo del testo
+    let textTimer = null;
 
     // MOSTRA / NASCONDE IL TESTO NELLA CABINA CON FADE
     function mostraTestoNellaCabina(testo, delayMs = 0){
       const box = document.getElementById("oracle-text");
       if(!box) return;
 
-      // pulisco eventuale timer precedente
       if (textTimer){
         clearTimeout(textTimer);
         textTimer = null;
       }
 
       if(!testo){
-        // fade-out
         box.classList.remove("visible");
-        // dopo la dissolvenza svuoto il testo
         setTimeout(() => {
           if(!box.classList.contains("visible")){
             box.textContent = "";
@@ -355,13 +348,10 @@
         return;
       }
 
-      // imposto il testo ma lo tengo nascosto
       box.textContent = testo;
       box.classList.remove("visible");
 
-      const show = () => {
-        box.classList.add("visible");
-      };
+      const show = () => box.classList.add("visible");
 
       if (delayMs <= 0){
         requestAnimationFrame(show);
@@ -393,8 +383,13 @@
     };
 
     function onReady(){
-      const btn     = document.getElementById("new");
+      let btn     = document.getElementById("new");
       const heroImg = document.querySelector(".hero-img");
+
+      // 🔧 QUI: eliminiamo TUTTI i vecchi listener (anche quelli di cards.js)
+      const cleanBtn = btn.cloneNode(true);
+      btn.parentNode.replaceChild(cleanBtn, btn);
+      btn = cleanBtn;
 
       btn.classList.add("disabled");
       btn.textContent = "ACCENSIONE DELL'ORACOLO...";
@@ -633,5 +628,3 @@
   </script>
 </body>
 </html>
-
-
