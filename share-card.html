@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Carta condivisibile - Oracolo del Rock</title>
+
+  <!-- Stesso font calligrafico del sito -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap">
+
+  <style>
+    body{
+      margin:0;
+      padding:0;
+      background:#000;
+      color:#eee;
+      font-family:system-ui,Arial,sans-serif;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:100vh;
+    }
+
+    /* Contenitore esatto 1080x1350, scalato per stare nello schermo */
+    .card-wrapper{
+      width:min(90vw, 540px); /* la metà di 1080 così non esplode sullo schermo */
+      aspect-ratio:1080/1350;
+      position:relative;
+      overflow:hidden;
+      box-shadow:
+        0 18px 40px rgba(0,0,0,0.9),
+        0 0 20px rgba(0,0,0,0.8);
+    }
+
+    /* Immagine di base: la tua card-template.png */
+    .card-wrapper img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+    }
+
+    /* Testo della risposta */
+    .card-text{
+      position:absolute;
+      top:38%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width:75%;
+      text-align:center;
+      font-family:"Great Vibes", cursive;
+      font-size:2.1rem;
+      line-height:1.25;
+      color:#fffdf5;
+      text-shadow:
+        0 0 6px rgba(0,0,0,0.9),
+        0 0 16px rgba(0,0,0,0.85);
+    }
+
+    /* Numero: RISPOSTA N:000 sotto la scritta */
+    .card-number{
+      position:absolute;
+      top:60%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      font-size:0.9rem;
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      color:#f5f5f5;
+      text-shadow:
+        0 0 4px rgba(0,0,0,0.9),
+        0 0 10px rgba(0,0,0,0.8);
+      background:rgba(0,0,0,0.45);
+      padding:4px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.25);
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card-wrapper">
+    <!-- ⚠️ Assicurati che card-template.png sia nella stessa cartella di questo file -->
+    <img src="card-template.png" alt="Carta Oracolo del Rock">
+
+    <!-- Testo di prova: poi lo sostituiremo con il vero testo della risposta -->
+    <div class="card-text">
+      Questa è una risposta di prova<br>
+      dell’Oracolo del Rock.
+    </div>
+
+    <!-- Numero di prova -->
+    <div class="card-number">
+      RISPOSTA N:023
+    </div>
+  </div>
+
+</body>
+</html>
