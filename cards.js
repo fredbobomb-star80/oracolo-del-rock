@@ -1250,21 +1250,21 @@ const ORACOLO_RISPOSTE = [
     code: "176",
     text: "Anche l’attesa ha il suo ritmo. Puoi sostenerlo.",
     cardImage: "carta_176.png",
-    videoId: ""
+    videoId: "-64xcbJloGI"
   },
   {
     id: 177,
     code: "177",
     text: "Quando tutto tace, ascolta il respiro corto del tuo amplificatore.",
     cardImage: "carta_177.png",
-    videoId: ""
+    videoId: "DbgpRHKzNtI"
   },
   {
     id: 178,
     code: "178",
     text: "Ogni pausa può diventare un nuovo inizio.",
     cardImage: "carta_178.png",
-    videoId: ""
+    videoId: "I7U2xU3P2XY"
   },
   {
     id: 179,
@@ -1278,7 +1278,7 @@ const ORACOLO_RISPOSTE = [
     code: "180",
     text: "Sei caduto sette volte? Risorgine otto.",
     cardImage: "carta_180.png",
-    videoId: ""
+    videoId: "FXqBOVeMWDw"
   },
   {
     id: 181,
@@ -1292,7 +1292,7 @@ const ORACOLO_RISPOSTE = [
     code: "182",
     text: "Li chiamavano stupidi punk, ora li chiamano saggi, visionari, maestri, guru si prendi tutti i miei soldi e profeti.",
     cardImage: "carta_182.png",
-    videoId: ""
+    videoId: "dGJjcBaYpGk"
   },
   {
     id: 183,
@@ -1635,7 +1635,7 @@ const ORACOLO_RISPOSTE = [
     code: "231",
     text: "Molla il vittimismo e prenditi quella cazzo di responsabilità",
     cardImage: "carta_231.png",
-    videoId: ""
+    videoId: "FRxVFjr2COs"
   },
   {
     id: 232,
@@ -1950,7 +1950,7 @@ const ORACOLO_RISPOSTE = [
     code: "276",
     text: "Hai pisciato fuori dal vaso. Hai decisamente pisciato fuori dal vaso, si.",
     cardImage: "carta_276.png",
-    videoId: ""
+    videoId: "mYo6HWeA2Po"
   },
   {
     id: 277,
@@ -3133,14 +3133,14 @@ const ORACOLO_RISPOSTE = [
     code: "445",
     text: "Qualcuno è vecchio, qualcun altro è Lenny Kravitz.",
     cardImage: "carta_445.png",
-    videoId: ""
+    videoId: "uSNMROk2Ok4"
   },
   {
     id: 446,
     code: "446",
     text: "C'è così tanta mediocrità in giro, che l'originalità non piace.",
     cardImage: "carta_446.png",
-    videoId: ""
+    videoId: "5dOYti2cDEQ"
   },
   {
     id: 447,
@@ -3168,42 +3168,42 @@ const ORACOLO_RISPOSTE = [
     code: "450",
     text: "Parli dei supereroi come se esistessero. Sparli delle Rock star come se ti cagassero.",
     cardImage: "carta_450.png",
-    videoId: ""
+    videoId: "wBHLUAoUIuY"
   },
   {
     id: 451,
     code: "451",
     text: "Chi ti sta rubando, tempo, idee ed energie, se la vedrà con l'ira implacabile degli dei del Rock.",
     cardImage: "carta_451.png",
-    videoId: ""
+    videoId: "8wtjwReBDHg"
   },
   {
     id: 452,
     code: "452",
     text: "I tuoi falsi amici si mangeranno il fegato farcito con una spruzzatina di culo bruciato.",
     cardImage: "carta_452.png",
-    videoId: ""
+    videoId: "XaLb05mz8bo"
   },
   {
     id: 453,
     code: "453",
     text: "I tuoi nemici continueranno a parlare male di te, si, ma con le quattro mura del manicomio.",
     cardImage: "carta_453.png",
-    videoId: ""
+    videoId: "sH0TNCCDBK0"
   },
   {
     id: 454,
     code: "454",
     text: "Chi vuole colpirti sotto la cintura inciamperà sulla sua ridicola coda di topo da laboratorio.",
     cardImage: "carta_454.png",
-    videoId: ""
+    videoId: "mNk51mpSaO4"
   },
   {
     id: 455,
     code: "455",
     text: "Chi ti ha tradito passerà più tempo seduto sul cesso che sul suo trono di carta igienica.",
     cardImage: "carta_455.png",
-    videoId: ""
+    videoId: "CgRbLbZypLs"
   },
   {
     id: 456,
@@ -3217,21 +3217,21 @@ const ORACOLO_RISPOSTE = [
     code: "457",
     text: "Chi ti ha messo all'angolo quando avevi bisogno di lui, fidati che andrà in KO tecnico per un bel po'.",
     cardImage: "carta_457.png",
-    videoId: ""
+    videoId: "V5GUlfySU6M"
   },
   {
     id: 458,
     code: "458",
     text: "Chi ti sta sminuendo perché si crede migliore di te, verrà a lucidarti le chitarre, le scarpe e tutti i tuoi trofei.",
     cardImage: "carta_458.png",
-    videoId: ""
+    videoId: "cQ0QHndTHuI"
   },
   {
     id: 459,
     code: "459",
     text: "Chi ti ha preso in giro alle tue spalle, riderà ancora ma solo nei suoi sogni migliori.",
     cardImage: "carta_459.png",
-    videoId: ""
+    videoId: "8dkJvjPYPfM"
   },
   {
     id: 460,
@@ -3245,14 +3245,14 @@ const ORACOLO_RISPOSTE = [
     code: "461",
     text: "Chi ti ha tradito solo per farsi bello, pagherà caro per entrare ai tuoi concerti ma non entrerà mai.",
     cardImage: "carta_461.png",
-    videoId: ""
+    videoId: "fESf6R49-M0"
   },
   {
     id: 462,
     code: "462",
     text: "Chi ti ha invidiato e covato rancore per te, saprà solo scimmiottare i tuoi peggiori sbagli.",
     cardImage: "carta_462.png",
-    videoId: ""
+    videoId: "o7XJAmNsk3c"
   },
   {
     id: 463,
@@ -3266,14 +3266,14 @@ const ORACOLO_RISPOSTE = [
     code: "464",
     text: "Chi ti ha ignorato perché gli è convenuto, vedrà i propri figli tatuarsi in petto il tuo nome.",
     cardImage: "carta_464.png",
-    videoId: ""
+    videoId: "H3LJSYwK5Po"
   },
   {
     id: 465,
     code: "465",
     text: "Chi ti ha sputato addosso il suo ego, odio e veleno, ingoierà la sua lingua e litri di bile.",
     cardImage: "carta_465.png",
-    videoId: ""
+    videoId: "TO_xe7gaCmc"
   },
   {
     id: 466,
@@ -3287,7 +3287,7 @@ const ORACOLO_RISPOSTE = [
     code: "467",
     text: "Si, sobrio come un santo protettore dei gin tonic.",
     cardImage: "carta_467.png",
-    videoId: ""
+    videoId: "_ekgZaR2t1o"
   },
   {
     id: 468,
@@ -3476,7 +3476,7 @@ const ORACOLO_RISPOSTE = [
     code: "494",
     text: "E tu, quale pillola ingoieresti, la blu o la rossa? Già... ci avrei scommesso.",
     cardImage: "carta_494.png",
-    videoId: ""
+    videoId: "aJYeqoCKH8Q"
   },
   {
     id: 495,
@@ -3525,7 +3525,7 @@ const ORACOLO_RISPOSTE = [
     code: "501",
     text: "Chiedi aiuto a qualcuno che ha per lo meno dieci anni più di te ed una moto.",
     cardImage: "carta_501.png",
-    videoId: ""
+    videoId: "75wC2i2Jabg"
   },
   {
     id: 502,
@@ -3896,7 +3896,7 @@ const ORACOLO_RISPOSTE = [
     code: "554",
     text: "Oggi stampati un sorriso sul volto. E non dare spiegazioni.",
     cardImage: "carta_554.png",
-    videoId: ""
+    videoId: "SPqEDorDLiU"
   },
   {
     id: 555,
@@ -4029,7 +4029,7 @@ const ORACOLO_RISPOSTE = [
     code: "573",
     text: "Ascolta altre due risposte. La prima è per il tuo peggior nemico, la seconda è per te.",
     cardImage: "carta_573.png",
-    videoId: ""
+    videoId: "K2ZoLskq4ho"
   },
   {
     id: 574,
@@ -4162,7 +4162,7 @@ const ORACOLO_RISPOSTE = [
     code: "592",
     text: "Ascolta altre due risposte. La prima è per chi ti è vicino, la seconda è per te.",
     cardImage: "carta_592.png",
-    videoId: ""
+    videoId: "hhFiwsLGMAg"
   },
   {
     id: 593,
@@ -4176,7 +4176,7 @@ const ORACOLO_RISPOSTE = [
     code: "594",
     text: "Chiediti che cosa farebbe la signora Mia Wallace al posto tuo.",
     cardImage: "carta_594.png",
-    videoId: ""
+    videoId: "iK3QClVNwmE"
   },
   {
     id: 595,
@@ -4204,7 +4204,7 @@ const ORACOLO_RISPOSTE = [
     code: "598",
     text: "Cambia paroliere. Se non hai un gruppo allora non è il momento.",
     cardImage: "carta_598.png",
-    videoId: ""
+    videoId: "LvAbn0fjMBs"
   },
   {
     id: 599,
