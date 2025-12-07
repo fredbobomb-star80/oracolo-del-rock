@@ -732,77 +732,77 @@ const ORACOLO_RISPOSTE = [
     code: "102",
     text: "Si. Ma con più stile questa volta. Tipo a duecento all'ora contro mano.",
     cardImage: "carta_102.png",
-    videoId: ""
+    videoId: "3FBxBvxeRu8"
   },
   {
     id: 103,
     code: "103",
     text: "No, non farlo no. Scegli meglio il tuo palco la prossima volta.",
     cardImage: "carta_103.png",
-    videoId: ""
+    videoId: "xoncoEj5KMw"
   },
   {
     id: 104,
     code: "104",
     text: "Allenta il carico. Svuota il peso dell'anima. Ripulisci l'armadio dei ricordi.",
     cardImage: "carta_104.png",
-    videoId: ""
+    videoId: "ENV07It-X50"
   },
   {
     id: 105,
     code: "105",
     text: "Il tuo ego vuole solo un biscottino. La tua anima vuole tutto il buffet.",
     cardImage: "carta_105.png",
-    videoId: ""
+    videoId: "4W-FWCQUy3U"
   },
   {
     id: 106,
     code: "106",
     text: "Si, ma non permettere di farti sporcare l'abito nuovo. E giù quelle manacce!",
     cardImage: "carta_106.png",
-    videoId: ""
+    videoId: "AAmD0rcTBTs"
   },
   {
     id: 107,
     code: "107",
     text: "Qui non è vietato piangere. Qui è vietato anestetizzare l'anima.",
     cardImage: "carta_107.png",
-    videoId: ""
+    videoId: "HlmZKnuojXY"
   },
   {
     id: 108,
     code: "108",
     text: "Prova a sfidare quella tua paura invece. Come? Metti un brano Rock e va.",
     cardImage: "carta_108.png",
-    videoId: ""
+    videoId: "_HpZVzoSFQw"
   },
   {
     id: 109,
     code: "109",
     text: "Si, ma quando è l'ultima volta che hai fatto del buon sesso? Del buon sesso si!",
     cardImage: "carta_109.png",
-    videoId: ""
+    videoId: "tbMyZ5lG5oI"
   },
   {
     id: 110,
     code: "110",
     text: "Se vuoi incontrare un demone vai pure. Ma attento ai suoi tracobetti. Si dice così no?",
     cardImage: "carta_110.png",
-    videoId: ""
+    videoId: "u0iVI0JtUSA"
   },
   {
     id: 111,
     code: "111",
     text: "Cosa? Adesso saresti tu il problema? Ma hai guardato bene chi lo ha sentenziato?",
     cardImage: "carta_111.png",
-    videoId: ""
+    videoId: "KMxBxyrY8sY"
   },
   {
     id: 112,
     code: "112",
     text: "Su forza, ridi sopra a questa folle e bizzarra idea.",
     cardImage: "carta_112.png",
-    videoId: ""
+    videoId: "uDlhcjmvm3Y"
   },
   {
     id: 113,
@@ -907,7 +907,7 @@ const ORACOLO_RISPOSTE = [
     code: "127",
     text: "La seconda regola dell'Oracolo del Rock è : tra una risposta e l'altra fatti una risata e se puoi balla.",
     cardImage: "carta_127.png",
-    videoId: ""
+    videoId: "IYlP30s88aA"
   },
   {
     id: 128,
@@ -998,7 +998,7 @@ const ORACOLO_RISPOSTE = [
     code: "140",
     text: "Prendi il toro per le maledette corna. Prendi il toro per le corna. Prendi il toro per le stramaledette corna.",
     cardImage: "carta_140.png",
-    videoId: ""
+    videoId: "Bg2sSpmpogw"
   },
   {
     id: 141,
@@ -1285,7 +1285,7 @@ const ORACOLO_RISPOSTE = [
     code: "181",
     text: "No, non è la fine. E' solo un altro sound check.",
     cardImage: "carta_181.png",
-    videoId: ""
+    videoId: "6jcahFb_8hM"
   },
   {
     id: 182,
@@ -1397,7 +1397,7 @@ const ORACOLO_RISPOSTE = [
     code: "197",
     text: "Le rinascite non si annunciano, all'improvviso esplodono. Si, esplodono!",
     cardImage: "carta_197.png",
-    videoId: ""
+    videoId: "hXvQfHj1VLk"
   },
   {
     id: 198,
@@ -1705,7 +1705,7 @@ const ORACOLO_RISPOSTE = [
     code: "241",
     text: "Ogni bacio è un rischio. Vieni qui che ti do un bel bacetto.",
     cardImage: "carta_241.png",
-    videoId: ""
+    videoId: "NOMTAEL2v1U"
   },
   {
     id: 242,
@@ -4645,14 +4645,14 @@ const ORACOLO_RISPOSTE = [
     code: "661",
     text: "Non dimenticare mai che il sole è una stella.",
     cardImage: "carta_661.png",
-    videoId: ""
+    videoId: "8hj2grR7cTw"
   },
   {
     id: 662,
     code: "662",
     text: "Resta in piedi, anche se a pezzi dentro. Resta in piedi ancora un po'.",
     cardImage: "carta_662.png",
-    videoId: ""
+    videoId: "KOwswwFAoDM"
   },
   {
     id: 663,
