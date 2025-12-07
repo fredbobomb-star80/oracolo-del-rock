@@ -1530,7 +1530,7 @@ const ORACOLO_RISPOSTE = [
     code: "216",
     text: "La terza regola dell'Oracolo del Rock è : poni una domanda per volta. Se te lo sto dicendo ci sarà un motivo, si?",
     cardImage: "carta_216.png",
-    videoId: ""
+    videoId: "MuLIzZ74a9M"
   },
   {
     id: 217,
@@ -1803,7 +1803,7 @@ const ORACOLO_RISPOSTE = [
     code: "255",
     text: "La quarta regola dell'Oracolo del Rock è : nessun discorso troppo complicato, ci penserà l'Oracolo ad incasinarti un po'.",
     cardImage: "carta_255.png",
-    videoId: ""
+    videoId: "i7oY4ywhOJE"
   },
   {
     id: 256,
@@ -2069,7 +2069,7 @@ const ORACOLO_RISPOSTE = [
     code: "293",
     text: "La sesta regola dell'Oracolo del Rock è : niente haters e niente spazzatura. E' chiaro? Tenete le vostre boiate fuori di qui!",
     cardImage: "carta_293.png",
-    videoId: ""
+    videoId: "KFiFBgtjFko"
   },
   {
     id: 294,
@@ -2146,7 +2146,7 @@ const ORACOLO_RISPOSTE = [
     code: "304",
     text: "Le settima regola dell'Oracolo del Rock è : sono severamente vietati i leoni da tastiera. Tranne quelli che hanno fondato un gruppo Rock.",
     cardImage: "carta_304.png",
-    videoId: ""
+    videoId: "U1ajvmsbeK4"
   },
   {
     id: 305,
@@ -2342,7 +2342,7 @@ const ORACOLO_RISPOSTE = [
     code: "332",
     text: "L'ottava regola dell'Oracolo del Rock è : se una risposta ha risuonato con la tua anima, devi condividerla. La tua anima o la risposta!? Decidi tu.",
     cardImage: "carta_332.png",
-    videoId: ""
+    videoId: "B_DpxNxgS28"
   },
   {
     id: 333,
@@ -4638,7 +4638,7 @@ const ORACOLO_RISPOSTE = [
     code: "660",
     text: "Una lacrima scenderà sul volto. Chi la raccoglierà?",
     cardImage: "carta_660.png",
-    videoId: ""
+    videoId: "cCZ3tool5mY"
   },
   {
     id: 661,
@@ -4666,7 +4666,7 @@ const ORACOLO_RISPOSTE = [
     code: "664",
     text: "La vita non è fatta solo di sbronze e di letti di cosce. Ma che peccato!",
     cardImage: "carta_664.png",
-    videoId: ""
+    videoId: "6Z8LUl5pN2Q"
   },
   {
     id: 665,
@@ -4680,7 +4680,7 @@ const ORACOLO_RISPOSTE = [
     code: "666",
     text: "Non oggi, non adesso, no, non ora.",
     cardImage: "carta_666.png",
-    videoId: "Pxxxxxxxxx"     // <--- ULTIMA CARTA 666
+    videoId: "NRO86Bq1n7E"     // <--- ULTIMA CARTA 666
   }
 ];
 
