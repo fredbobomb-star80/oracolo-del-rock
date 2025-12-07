@@ -809,35 +809,35 @@ const ORACOLO_RISPOSTE = [
     code: "113",
     text: "Hai voluto fare l’eroe ma ti sei trovato in prima fila all’inferno.",
     cardImage: "carta_113.png",
-    videoId: ""
+    videoId: "rvlEgArpaPU"
   },
   {
     id: 114,
     code: "114",
     text: "Puoi farlo, ma quei bastardi usciranno dalle fottute pareti. Da quelle fottute pareti, si.",
     cardImage: "carta_114.png",
-    videoId: ""
+    videoId: "EB5FuH-DamY"
   },
   {
     id: 115,
     code: "115",
     text: "Prima devi ritrovare la fede. Quella tua, quella vera, quella Rock.",
     cardImage: "carta_115.png",
-    videoId: ""
+    videoId: "q2VZlm9fgkw"
   },
   {
     id: 116,
     code: "116",
     text: "Chiedi una mano a qualcuno che abbia almeno dieci anni meno di te.",
     cardImage: "carta_116.png",
-    videoId: ""
+    videoId: "Fbg7A9y552o"
   },
   {
     id: 117,
     code: "117",
     text: "Il purgatorio è pieno di musicisti che hanno smesso troppo presto di crederci. Non ti mettere in coda anche tu.",
     cardImage: "carta_117.png",
-    videoId: ""
+    videoId: "BXe8aQO5ReM"
   },
   {
     id: 118,
@@ -851,7 +851,7 @@ const ORACOLO_RISPOSTE = [
     code: "119",
     text: "Me lo chiedi solo per farmi girare i coglioni, non è vero? Non è così?",
     cardImage: "carta_119.png",
-    videoId: ""
+    videoId: "c0tweQL-LDc"
   },
   {
     id: 120,
@@ -872,7 +872,7 @@ const ORACOLO_RISPOSTE = [
     code: "122",
     text: "Il sistema ti vuole confuso ed infelice. Inverti il gioco, confondilo tu. Si scuoti le stramaledette acque.",
     cardImage: "carta_122.png",
-    videoId: ""
+    videoId: "gSF-XM9tfhA"
   },
   {
     id: 123,
@@ -900,7 +900,7 @@ const ORACOLO_RISPOSTE = [
     code: "126",
     text: "Ribelli di oggi non ti vendono abbonamenti a corsi motivazionali. Ti fanno vedere come si fa, punto e basta.",
     cardImage: "carta_126.png",
-    videoId: ""
+    videoId: "nZr1p8s_Ccw"
   },
   {
     id: 127,
@@ -970,14 +970,14 @@ const ORACOLO_RISPOSTE = [
     code: "136",
     text: "Non serve cambiare il mondo ma possiamo evitare di suonare per i bastardi.",
     cardImage: "carta_136.png",
-    videoId: ""
+    videoId: "xnAvpt7ZeGY"
   },
   {
     id: 137,
     code: "137",
     text: "La Dea della fortuna oggi busserà alla tua porta. Fatti trovare a casa.",
     cardImage: "carta_137.png",
-    videoId: ""
+    videoId: "kWSBe3YGGLk"
   },
   {
     id: 138,
@@ -1012,7 +1012,7 @@ const ORACOLO_RISPOSTE = [
     code: "142",
     text: "Non sei rotto, sei solo accordato per un’altra frequenza. Quella vera, quella tua.",
     cardImage: "carta_142.png",
-    videoId: ""
+    videoId: "o1507d2dWSY"
   },
   {
     id: 143,
@@ -1033,7 +1033,7 @@ const ORACOLO_RISPOSTE = [
     code: "145",
     text: "Componi una hit, ma con solo quattro accordi. Si, i soliti banali quattro potenti accordi del Rock.",
     cardImage: "carta_145.png",
-    videoId: ""
+    videoId: "lPCQ0heyzGU"
   },
   {
     id: 146,
@@ -1096,7 +1096,7 @@ const ORACOLO_RISPOSTE = [
     code: "154",
     text: "Butta tutti quei vecchi spartiti scritti a metà. Adesso, te ne serve solo uno e completo.",
     cardImage: "carta_154.png",
-    videoId: ""
+    videoId: "uxzrZZWJZJ8"
   },
   {
     id: 155,
@@ -1124,14 +1124,14 @@ const ORACOLO_RISPOSTE = [
     code: "158",
     text: "Chi ti ha spezzato non ti ha ferito, ti ha temprato.",
     cardImage: "carta_158.png",
-    videoId: ""
+    videoId: "Tipcw6O_3dE"
   },
   {
     id: 159,
     code: "159",
     text: "Ricordati di goderti tutto il casino, non solo l’arrivo.",
     cardImage: "carta_159.png",
-    videoId: ""
+    videoId: "46OkkWFvaC8"
   },
   {
     id: 160,
@@ -1152,7 +1152,7 @@ const ORACOLO_RISPOSTE = [
     code: "162",
     text: "Si certo, originale come una cover band dei Queen.",
     cardImage: "carta_162.png",
-    videoId: ""
+    videoId: "aAEXgGs8hEY"
   },
   {
     id: 163,
@@ -1222,7 +1222,7 @@ const ORACOLO_RISPOSTE = [
     code: "172",
     text: "La malinconia sa essere puntuale, puntualissima. Ma tu spostale le lancette.",
     cardImage: "carta_172.png",
-    videoId: ""
+    videoId: "ss9siIbOZ6M"
   },
   {
     id: 173,
@@ -1271,7 +1271,7 @@ const ORACOLO_RISPOSTE = [
     code: "179",
     text: "Interessante come un accordo tra il fa cagare maggiore ed il si coglione bemolle.",
     cardImage: "carta_179.png",
-    videoId: ""
+    videoId: "91dFxD1FiSw"
   },
   {
     id: 180,
@@ -1320,7 +1320,7 @@ const ORACOLO_RISPOSTE = [
     code: "186",
     text: "Oggi celebrerai con una bevuta la vittoria di qualcun altro.",
     cardImage: "carta_186.png",
-    videoId: ""
+    videoId: "rK0OQOI1Tcs"
   },
   {
     id: 187,
@@ -1355,7 +1355,7 @@ const ORACOLO_RISPOSTE = [
     code: "191",
     text: "Il Rock non guarisce gli zombie, il Rock è il vaccino all'epidemia. Si. Il vaccino all'epidemia!",
     cardImage: "carta_191.png",
-    videoId: ""
+    videoId: "EaL1g1aM9pg"
   },
   {
     id: 192,
@@ -1481,14 +1481,14 @@ const ORACOLO_RISPOSTE = [
     code: "209",
     text: "Non cercare il paradiso, cerca di evitare troppi rimpianti.",
     cardImage: "carta_209.png",
-    videoId: ""
+    videoId: "x0Tjzguxei4"
   },
   {
     id: 210,
     code: "210",
     text: "La fine del mondo fa sempre comodo a qualcuno.",
     cardImage: "carta_210.png",
-    videoId: ""
+    videoId: "7nbO7R-6bcg"
   },
   {
     id: 211,
@@ -1565,28 +1565,28 @@ const ORACOLO_RISPOSTE = [
     code: "221",
     text: "Non cercare amore, ma cerca una chitarra più affidabile.",
     cardImage: "carta_221.png",
-    videoId: ""
+    videoId: "g-WbM_7Jwtg"
   },
   {
     id: 222,
     code: "222",
     text: "Prenota il tuo prossimo viaggio.",
     cardImage: "carta_222.png",
-    videoId: ""
+    videoId: "OUqHZoKTjyk"
   },
   {
     id: 223,
     code: "223",
     text: "Fai i debiti e compra quel biglietto. No, non mi interessa. Fai i debiti e compra quel biglietto.",
     cardImage: "carta_223.png",
-    videoId: ""
+    videoId: "dwKwY_RNm-k"
   },
   {
     id: 224,
     code: "224",
     text: "Non è possibile.",
     cardImage: "carta_224.png",
-    videoId: ""
+    videoId: "ZbFh8zo4cOI"
   },
   {
     id: 225,
@@ -1663,7 +1663,7 @@ const ORACOLO_RISPOSTE = [
     code: "235",
     text: "Non chiamarlo amore, chiamalo Broken Negroni. Just a Broken Negroni.",
     cardImage: "carta_235.png",
-    videoId: ""
+    videoId: "Jyp3kjvf0DE"
   },
   {
     id: 236,
@@ -1691,14 +1691,14 @@ const ORACOLO_RISPOSTE = [
     code: "239",
     text: "C'è chi fa sesso e poi ci sei tu.",
     cardImage: "carta_239.png",
-    videoId: ""
+    videoId: "bvz6_RIGxWA"
   },
   {
     id: 240,
     code: "240",
     text: "Hai confuso una scoreggia per una Stratocaster.",
     cardImage: "carta_240.png",
-    videoId: ""
+    videoId: "6rolG9FfrIE"
   },
   {
     id: 241,
@@ -1747,14 +1747,14 @@ const ORACOLO_RISPOSTE = [
     code: "247",
     text: "Ma dimmi un po'. Se non ti fa perdere il fiato, il sonno e sudore, non lo farebbe qualsiasi coglione?",
     cardImage: "carta_247.png",
-    videoId: ""
+    videoId: "JDqmm5qP11E"
   },
   {
     id: 248,
     code: "248",
     text: "E' come un biscotto della fortuna, ha il sapore di carta e ti racconta stronzate.",
     cardImage: "carta_248.png",
-    videoId: ""
+    videoId: "FIsx_N-9rgM"
   },
   {
     id: 249,
@@ -1789,14 +1789,14 @@ const ORACOLO_RISPOSTE = [
     code: "253",
     text: "Aspetta che scotta, scotta, scotta. Aspetta che scatta, scatta, scatta. Aspetta che sboccia, sboccia, sboccia.",
     cardImage: "carta_253.png",
-    videoId: ""
+    videoId: "I8ctpxfpFvU"
   },
   {
     id: 254,
     code: "254",
     text: "Blocca ed ignora. Blocca ed ignora. Blocca ed ignora. E perché no, segnala. God save the blocking.",
     cardImage: "carta_254.png",
-    videoId: ""
+    videoId: "nZfXsZtjVtI"
   },
   {
     id: 255,
@@ -1810,7 +1810,7 @@ const ORACOLO_RISPOSTE = [
     code: "256",
     text: "A questo punto qualcuno bestemmia. Lo fanno anche per molto meno si. Ma a questo punto qualcuno bestemmia.",
     cardImage: "carta_256.png",
-    videoId: ""
+    videoId: "p7PvxIk6X3M"
   },
   {
     id: 257,
@@ -1866,7 +1866,7 @@ const ORACOLO_RISPOSTE = [
     code: "264",
     text: "Non fare debiti per comprare una nuova prigione. No, non fare debiti per comprare una nuova prigione.",
     cardImage: "carta_264.png",
-    videoId: ""
+    videoId: "N6NeJI3J28Y"
   },
   {
     id: 265,
@@ -1887,14 +1887,14 @@ const ORACOLO_RISPOSTE = [
     code: "267",
     text: "Come un giro di basso che rivoluziona il tutto ma che, mette in crisi il produttore, la majors ed il DJ",
     cardImage: "carta_267.png",
-    videoId: ""
+    videoId: "blOHhPixQz4"
   },
   {
     id: 268,
     code: "268",
     text: "Manda a fanculo il tuo capo.",
     cardImage: "carta_268.png",
-    videoId: ""
+    videoId: "qrtqt3oM5s4"
   },
   {
     id: 269,
@@ -1978,7 +1978,7 @@ const ORACOLO_RISPOSTE = [
     code: "280",
     text: "No, non cercare il lieto fine. Cerca il fottuto, fottuto inizio, si.",
     cardImage: "carta_280.png",
-    videoId: ""
+    videoId: "cgbpBDA514g"
   },
   {
     id: 281,
@@ -3147,7 +3147,7 @@ const ORACOLO_RISPOSTE = [
     code: "447",
     text: "Già fai proprio così. Come se fosse scritto e diretto da Quentin Tarantino. Da, Quentin Tarantino, si!",
     cardImage: "carta_447.png",
-    videoId: ""
+    videoId: "wIfJAi2UT-g"
   },
   {
     id: 448,
@@ -3336,7 +3336,7 @@ const ORACOLO_RISPOSTE = [
     code: "474",
     text: "Si, è come l'ultimo giorno di galera.",
     cardImage: "carta_474.png",
-    videoId: ""
+    videoId: "rX_7H6nNc7A"
   },
   {
     id: 475,
@@ -3497,7 +3497,7 @@ const ORACOLO_RISPOSTE = [
     code: "497",
     text: "No. Non vai dal maestro di spade per imparare l'uncinetto. No!",
     cardImage: "carta_497.png",
-    videoId: ""
+    videoId: "9aMsSD8Bwng"
   },
   {
     id: 498,
@@ -3574,7 +3574,7 @@ const ORACOLO_RISPOSTE = [
     code: "508",
     text: "Figliolo, chiedi un consiglio a chi ha visto tutti i film di Clint Eastwood.",
     cardImage: "carta_508.png",
-    videoId: ""
+    videoId: "V8pzjPPB0WI"
   },
   {
     id: 509,
@@ -3728,7 +3728,7 @@ const ORACOLO_RISPOSTE = [
     code: "530",
     text: "Come in quel film di Sergio Leone, tieni giù la testa coglione!",
     cardImage: "carta_530.png",
-    videoId: ""
+    videoId: "onG4f9NmGCg"
   },
   {
     id: 531,
@@ -4001,7 +4001,7 @@ const ORACOLO_RISPOSTE = [
     code: "569",
     text: "Chiediti che cosa farebbe Bob Marley al posto tuo.",
     cardImage: "carta_569.png",
-    videoId: ""
+    videoId: "pR2Tm--qwvc"
   },
   {
     id: 570,
@@ -4288,7 +4288,7 @@ const ORACOLO_RISPOSTE = [
     code: "610",
     text: "Chi ti ha detto che è troppo tardi per non provarci più? Non provarci più?",
     cardImage: "carta_610.png",
-    videoId: ""
+    videoId: "jLoIp_vwJtk"
   },
   {
     id: 611,
@@ -4470,7 +4470,7 @@ const ORACOLO_RISPOSTE = [
     code: "636",
     text: "Fai questo salto nel vuoto! Scuoti le acque del destino e sorridi un po' di più.",
     cardImage: "carta_636.png",
-    videoId: ""
+    videoId: "GQR13xfSkJY"
   },
   {
     id: 637,
@@ -4631,7 +4631,7 @@ const ORACOLO_RISPOSTE = [
     code: "659",
     text: "Qualche volta una sveglia per alzare il culo, no non basta! Prova ad impostarne tre.",
     cardImage: "carta_659.png",
-    videoId: ""
+    videoId: "dEkj5jL_YGE"
   },
   {
     id: 660,
