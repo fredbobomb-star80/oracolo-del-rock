@@ -23,13 +23,14 @@
 
     /* Contenitore esatto 1080x1350, scalato per stare nello schermo */
     .card-wrapper{
-      width:min(90vw, 540px); /* la metà di 1080 così non esplode sullo schermo */
+      width:min(90vw, 540px);
       aspect-ratio:1080/1350;
       position:relative;
       overflow:hidden;
       box-shadow:
         0 18px 40px rgba(0,0,0,0.9),
         0 0 20px rgba(0,0,0,0.8);
+      background:#111;
     }
 
     /* Immagine di base: la tua card-template.png */
@@ -57,13 +58,13 @@
         0 0 16px rgba(0,0,0,0.85);
     }
 
-    /* Numero: RISPOSTA N:000 sotto la scritta */
+    /* Numero: RISPOSTA N:000 ANCORATO IN BASSO */
     .card-number{
       position:absolute;
-      top:60%;
+      bottom:9%;              /* distanza dal fondo della carta */
       left:50%;
-      transform:translate(-50%, -50%);
-      font-size:0.6rem;
+      transform:translateX(-50%);
+      font-size:0.6rem;       /* grandezza che avevi scelto */
       letter-spacing:0.12em;
       text-transform:uppercase;
       color:#f5f5f5;
