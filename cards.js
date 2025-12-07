@@ -1824,7 +1824,7 @@ const ORACOLO_RISPOSTE = [
     code: "258",
     text: "Valuta di inserire i cori e di cambiare il riff. Se non hai la minima idea di cosa stia parlando allora è un vai a cagare! Si, vai a cagare si!",
     cardImage: "carta_258.png",
-    videoId: ""
+    videoId: "4qMIfg6-fck"
   },
   {
     id: 259,
@@ -2251,7 +2251,7 @@ const ORACOLO_RISPOSTE = [
     code: "319",
     text: "Non forgiare altre catene. Non forgiare altre catene, no!",
     cardImage: "carta_319.png",
-    videoId: ""
+    videoId: "Kw_5cYMowJM"
   },
   {
     id: 320,
@@ -2489,7 +2489,7 @@ const ORACOLO_RISPOSTE = [
     code: "353",
     text: "Tatuati un ideogramma cinese senza saperne il significato. Dai, corri il rischio che sul tuo cuore ci sia un bel “Involtino primavera”.",
     cardImage: "carta_353.png",
-    videoId: ""
+    videoId: "cxC11sqEVLw"
   },
   {
     id: 354,
@@ -2559,7 +2559,7 @@ const ORACOLO_RISPOSTE = [
     code: "363",
     text: "Se non puoi farne a meno, allora il pubblico, è il tuo inferno.",
     cardImage: "carta_363.png",
-    videoId: ""
+    videoId: "NKibtSs5auw"
   },
   {
     id: 364,
@@ -3980,21 +3980,21 @@ const ORACOLO_RISPOSTE = [
     code: "566",
     text: "Chiediti cosa farebbe il grande Lebowski al posto tuo.",
     cardImage: "carta_566.png",
-    videoId: ""
+    videoId: "Th9t30WXn8E"
   },
   {
     id: 567,
     code: "567",
     text: "Chiediti cosa farebbe Bruce Lee al posto tuo.",
     cardImage: "carta_567.png",
-    videoId: ""
+    videoId: "_0mMNJuncHE"
   },
   {
     id: 568,
     code: "568",
     text: "Chiediti che cosa farebbe Ozzy Osbourne al posto tuo.",
     cardImage: "carta_568.png",
-    videoId: ""
+    videoId: "d_b9HcOj3Fo"
   },
   {
     id: 569,
@@ -4155,7 +4155,7 @@ const ORACOLO_RISPOSTE = [
     code: "591",
     text: "Ascolta altre due risposte e fanne un mash up di saggezza.",
     cardImage: "carta_591.png",
-    videoId: ""
+    videoId: "kWkCnCSomIw"
   },
   {
     id: 592,
@@ -4575,56 +4575,56 @@ const ORACOLO_RISPOSTE = [
     code: "651",
     text: "Una buona idea. Una nuova pelle. Un sapore di un'altra terra.",
     cardImage: "carta_651.png",
-    videoId: ""
+    videoId: "mpuqT-FvbFQ"
   },
   {
     id: 652,
     code: "652",
     text: "Questa la mettiamo qui, sulla mensola delle idee del cazzo.",
     cardImage: "carta_652.png",
-    videoId: ""
+    videoId: "DiK2miDkbaM"
   },
   {
     id: 653,
     code: "653",
     text: "Non te l'ha ordinato il dottore di chiedere qualcosa all'Oracolo del Rock. Ma te l'ha sussurrato il destino.",
     cardImage: "carta_653.png",
-    videoId: ""
+    videoId: "u8UTkwEBoT4"
   },
   {
     id: 654,
     code: "654",
     text: "Cambia ruolo al batterista. Se non hai un gruppo allora è un si.",
     cardImage: "carta_654.png",
-    videoId: ""
+    videoId: "nzhQ8b1dxS8"
   },
   {
     id: 655,
     code: "655",
     text: "Devi imparare una lezione che rimandi da troppi anni ormai, poi sarai più grande e si vedrà.",
     cardImage: "carta_655.png",
-    videoId: ""
+    videoId: "dj7SD8oTxos"
   },
   {
     id: 656,
     code: "656",
     text: "Lavora sodo e raccoglierai buoni frutti.",
     cardImage: "carta_656.png",
-    videoId: ""
+    videoId: "U-dBiBt12hw"
   },
   {
     id: 657,
     code: "657",
     text: "Se credi che ti farà bene, fallo e basta. Si, fallo adesso, si!",
     cardImage: "carta_657.png",
-    videoId: ""
+    videoId: "iznfggWz7MI"
   },
   {
     id: 658,
     code: "658",
     text: "Non fare il boomer. Dai, non fare il solito boomer.",
     cardImage: "carta_658.png",
-    videoId: ""
+    videoId: "_CqCK31lgfc"
   },
   {
     id: 659,
@@ -4673,7 +4673,7 @@ const ORACOLO_RISPOSTE = [
     code: "665",
     text: "Ci sono delle rose da raccogliere. Qualcuna pungerà ma qualcuna no.",
     cardImage: "carta_665.png",
-    videoId: ""
+    videoId: "E_3kUJI2jxc"
    },
   {
     id: 666,
