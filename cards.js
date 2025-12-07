@@ -4008,7 +4008,7 @@ const ORACOLO_RISPOSTE = [
     code: "570",
     text: "Chiediti che cosa farebbe Elvis al posto tuo.",
     cardImage: "carta_570.png",
-    videoId: ""
+    videoId: "YAYr5LSr2ts"
   },
   {
     id: 571,
