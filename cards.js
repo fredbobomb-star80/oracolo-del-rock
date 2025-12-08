@@ -2545,14 +2545,14 @@ const ORACOLO_RISPOSTE = [
     code: "361",
     text: "Non si tratta di vincere o perdere. Si tratta di restare autentici.",
     cardImage: "carta_361.png",
-    videoId: ""
+    videoId: "xHSlMhT5W6U"
   },
   {
     id: 362,
     code: "362",
     text: "Problema tuo.",
     cardImage: "carta_362.png",
-    videoId: ""
+    videoId: "evvAM0z0ojU"
   },
   {
     id: 363,
@@ -2566,21 +2566,21 @@ const ORACOLO_RISPOSTE = [
     code: "364",
     text: "Non mi interessa.",
     cardImage: "carta_364.png",
-    videoId: ""
+    videoId: "3PrXJ28TUkY"
   },
   {
     id: 365,
     code: "365",
     text: "Mostrati senza filtri. Il Rock ama tutte quelle adorabili imperfezioni.",
     cardImage: "carta_365.png",
-    videoId: ""
+    videoId: "QsydrAtCoyU"
   },
   {
     id: 366,
     code: "366",
     text: "Le lacrime non rovinano il trucco delle Rockstar, ma lo esaltano.",
     cardImage: "carta_366.png",
-    videoId: ""
+    videoId: "uM3_ZSFUlu4"
   },
   {
     id: 367,
@@ -2594,7 +2594,7 @@ const ORACOLO_RISPOSTE = [
     code: "368",
     text: "Siediti e tieniti forte : perché i deejay suonano.",
     cardImage: "carta_368.png",
-    videoId: ""
+    videoId: "mL0mesO-snk"
   },
   {
     id: 369,
@@ -2615,7 +2615,7 @@ const ORACOLO_RISPOSTE = [
     code: "371",
     text: "Ti hanno messo al collo un guinzaglio, su scioglilo prima che diventi un cappio.",
     cardImage: "carta_371.png",
-    videoId: ""
+    videoId: "cHfl3-R5sa8"
   },
   {
     id: 372,
@@ -2629,42 +2629,42 @@ const ORACOLO_RISPOSTE = [
     code: "373",
     text: "Non pretendere di realizzare ciò che non osi nemmeno desiderare.",
     cardImage: "carta_373.png",
-    videoId: ""
+    videoId: "TRtoT1om7XM"
   },
   {
     id: 374,
     code: "374",
     text: "Disintossicati da tutte quelle banalità che dici.",
     cardImage: "carta_374.png",
-    videoId: ""
+    videoId: "1YydeOztNqo"
   },
   {
     id: 375,
     code: "375",
     text: "Ti illudono di essere indispensabile. Grazie mille, senza di te l'Oracolo del Rock non va da nessuna parte.",
     cardImage: "carta_375.png",
-    videoId: ""
+    videoId: "JS0oKg7lS7Q"
   },
   {
     id: 376,
     code: "376",
     text: "Io sarò anche un inquietante pupazzo meccanico ma a differenza tua io so di esserlo.",
     cardImage: "carta_376.png",
-    videoId: ""
+    videoId: "2heu9Dj_EBw"
   },
   {
     id: 377,
     code: "377",
     text: "Datti una calmata e non rompermi il tasto.",
     cardImage: "carta_377.png",
-    videoId: ""
+    videoId: "2Vjyny98gu0"
   },
   {
     id: 378,
     code: "378",
     text: "Ti stai rilassando troppo sugli allori ma non sai neanche che cosa sono.",
     cardImage: "carta_378.png",
-    videoId: ""
+    videoId: "GUdpDSBdmsg"
   },
   {
     id: 379,
@@ -2748,7 +2748,7 @@ const ORACOLO_RISPOSTE = [
     code: "390",
     text: "Fatti una tisana di calma, di rhum e di resistenza.",
     cardImage: "carta_390.png",
-    videoId: ""
+    videoId: "0d07mMvPTrc"
   },
   {
     id: 391,
@@ -3392,7 +3392,7 @@ const ORACOLO_RISPOSTE = [
     code: "482",
     text: "Sono questioni che non ti riguardano. Sono questioni che ti fan male al Rock'n'Roll.",
     cardImage: "carta_482.png",
-    videoId: ""
+    videoId: "zkGIf6yZR6A"
   },
   {
     id: 483,
@@ -3777,7 +3777,7 @@ const ORACOLO_RISPOSTE = [
     code: "537",
     text: "Non preoccuparti di insonorizzare le pareti. Preoccupati di sfondarle.",
     cardImage: "carta_537.png",
-    videoId: ""
+    videoId: "wrdtV82YfXg"
   },
   {
     id: 538,
@@ -4120,14 +4120,14 @@ const ORACOLO_RISPOSTE = [
     code: "586",
     text: "Dovrai aspettare ancora un po'.",
     cardImage: "carta_586.png",
-    videoId: ""
+    videoId: "OyLfYiMzF6g"
   },
   {
     id: 587,
     code: "587",
     text: "Smettila di tentare la fortuna ma seducila.",
     cardImage: "carta_587.png",
-    videoId: ""
+    videoId: "DXcxbhtyR9w"
   },
   {
     id: 588,
