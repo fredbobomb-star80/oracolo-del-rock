@@ -1726,21 +1726,21 @@ const ORACOLO_RISPOSTE = [
     code: "244",
     text: "Ti salverà una birra fresca non una zuppa calda.",
     cardImage: "carta_244.png",
-    videoId: ""
+    videoId: "HQYMYt8a3n4"
   },
   {
     id: 245,
     code: "245",
     text: "Non tutti i demoni vengono per farti soffrire. Qualcuno arriva per ricordarti chi sei.",
     cardImage: "carta_245.png",
-    videoId: ""
+    videoId: "YFwbRMkDC_M"
   },
   {
     id: 246,
     code: "246",
     text: "Fai qualche sound check in più.",
     cardImage: "carta_246.png",
-    videoId: ""
+    videoId: "GLdZ1LmGD_E"
   },
   {
     id: 247,
@@ -1761,7 +1761,7 @@ const ORACOLO_RISPOSTE = [
     code: "249",
     text: "Smettila di accordare le chitarre degli altri.",
     cardImage: "carta_249.png",
-    videoId: ""
+    videoId: "A23lzw-m5Kc"
   },
   {
     id: 250,
@@ -1782,7 +1782,7 @@ const ORACOLO_RISPOSTE = [
     code: "252",
     text: "Si, eccitante come una birra analcolica scaldata al microonde.",
     cardImage: "carta_252.png",
-    videoId: ""
+    videoId: "eKr4GLdqaOA"
   },
   {
     id: 253,
@@ -1831,14 +1831,14 @@ const ORACOLO_RISPOSTE = [
     code: "259",
     text: "Il suo odore sarà la tua nuova religione.",
     cardImage: "carta_259.png",
-    videoId: ""
+    videoId: "1dSwnR6FOa0"
   },
   {
     id: 260,
     code: "260",
     text: "Ti serve un letto più grande.",
     cardImage: "carta_260.png",
-    videoId: ""
+    videoId: "fKPWvHfU7VU"
   },
   {
     id: 261,
@@ -1859,7 +1859,7 @@ const ORACOLO_RISPOSTE = [
     code: "263",
     text: "La pelle non mente. Le labbra si.",
     cardImage: "carta_263.png",
-    videoId: ""
+    videoId: "j49Wt_g07CQ"
   },
   {
     id: 264,
@@ -1985,7 +1985,7 @@ const ORACOLO_RISPOSTE = [
     code: "281",
     text: "Si ma perderai qualche fan.",
     cardImage: "carta_281.png",
-    videoId: ""
+    videoId: "N8snSlcyiBU"
   },
   {
     id: 282,
@@ -2118,7 +2118,7 @@ const ORACOLO_RISPOSTE = [
     code: "300",
     text: "Non inciampare dalle scale del paradiso.",
     cardImage: "carta_300.png",
-    videoId: ""
+    videoId: "beoTEK-V8Xc"
   },
   {
     id: 301,
@@ -2237,7 +2237,7 @@ const ORACOLO_RISPOSTE = [
     code: "317",
     text: "Prepara lo zaino per affrontare la prossima fine del mondo.",
     cardImage: "carta_317.png",
-    videoId: ""
+    videoId: "afHdhjirgfM"
   },
   {
     id: 318,
@@ -2307,7 +2307,7 @@ const ORACOLO_RISPOSTE = [
     code: "327",
     text: "Ruba tutte le password all'ispirazione.",
     cardImage: "carta_327.png",
-    videoId: ""
+    videoId: "vOApCXeYfbw"
   },
   {
     id: 328,
@@ -2349,7 +2349,7 @@ const ORACOLO_RISPOSTE = [
     code: "333",
     text: "Sii gentile, ma non disarmato.",
     cardImage: "carta_333.png",
-    videoId: ""
+    videoId: "y43yGq8vAbo"
   },
   {
     id: 334,
@@ -2426,7 +2426,7 @@ const ORACOLO_RISPOSTE = [
     code: "344",
     text: "A volte tra la scelta A e la scelta B quella giusta non è neanche nell'alfabeto.",
     cardImage: "carta_344.png",
-    videoId: ""
+    videoId: "b4-fWnrzgFY"
   },
   {
     id: 345,
@@ -2601,7 +2601,7 @@ const ORACOLO_RISPOSTE = [
     code: "369",
     text: "Non cadere in una trappola che già conosci.",
     cardImage: "carta_369.png",
-    videoId: ""
+    videoId: "xqzpRUZwmLM"
   },
   {
     id: 370,
@@ -2720,7 +2720,7 @@ const ORACOLO_RISPOSTE = [
     code: "386",
     text: "Non fare la Rock star e rimetti a posto il letto, l'orgoglio ed il casino della vita che hai fatto.",
     cardImage: "carta_386.png",
-    videoId: ""
+    videoId: "C2wi_8QoasM"
   },
   {
     id: 387,
@@ -3035,7 +3035,7 @@ const ORACOLO_RISPOSTE = [
     code: "431",
     text: "Quando credi di non avere più voce lascia che sia il tuo cuore a cantare.",
     cardImage: "carta_431.png",
-    videoId: ""
+    videoId: "BpGn9Le3UYM"
   },
   {
     id: 432,
@@ -3539,7 +3539,7 @@ const ORACOLO_RISPOSTE = [
     code: "503",
     text: "Ci sono paure, ombre, serpenti e demoni che dovrai sconfiggere.",
     cardImage: "carta_503.png",
-    videoId: ""
+    videoId: "opsRhHHdh30"
   },
   {
     id: 504,
@@ -4134,7 +4134,7 @@ const ORACOLO_RISPOSTE = [
     code: "588",
     text: "Nessuno lo fa perché costa cara la libertà.",
     cardImage: "carta_588.png",
-    videoId: ""
+    videoId: "wAuX1DZp4hA"
   },
   {
     id: 589,
