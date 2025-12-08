@@ -2223,7 +2223,7 @@ const ORACOLO_RISPOSTE = [
     code: "315",
     text: "Cedi volentieri a questa nuova tentazione.",
     cardImage: "carta_315.png",
-    videoId: ""
+    videoId: "lLW3y97ACGU"
   },
   {
     id: 316,
@@ -2622,7 +2622,7 @@ const ORACOLO_RISPOSTE = [
     code: "372",
     text: "Non farti rubare tutto il tuo tempo.",
     cardImage: "carta_372.png",
-    videoId: ""
+    videoId: "KWelWlpY7Ms"
   },
   {
     id: 373,
@@ -3721,7 +3721,7 @@ const ORACOLO_RISPOSTE = [
     code: "529",
     text: "Non fidarti di chi non canta mai al Karaoke.",
     cardImage: "carta_529.png",
-    videoId: ""
+    videoId: "mht4cQOD52Y"
   },
   {
     id: 530,
@@ -3798,7 +3798,7 @@ const ORACOLO_RISPOSTE = [
     code: "540",
     text: "Fai l'autostop lungo le strade dei tuoi dubbi.",
     cardImage: "carta_540.png",
-    videoId: ""
+    videoId: "yKvLxNnc3Kk"
   },
   {
     id: 541,
