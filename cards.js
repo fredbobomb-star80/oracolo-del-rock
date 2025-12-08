@@ -1908,7 +1908,7 @@ const ORACOLO_RISPOSTE = [
     code: "270",
     text: "Hai l'orecchio assoluto per certe stronzate.",
     cardImage: "carta_270.png",
-    videoId: ""
+    videoId: "0L6MlHg5psQ"
   },
   {
     id: 271,
