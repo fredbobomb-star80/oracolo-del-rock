@@ -844,7 +844,7 @@ const ORACOLO_RISPOSTE = [
     code: "118",
     text: "Improvvisa e facci il favore, si. Cerca di essere meno prevedibile di così.",
     cardImage: "carta_118.png",
-    videoId: ""
+    videoId: "YCxR-OgyRVs"
   },
   {
     id: 119,
