@@ -293,7 +293,7 @@
       <button class="share-btn" id="share-audio">
         🎵 Condividi 🎵
       </button>
-      <button class="share-btn share-btn-off" id="share-card">
+      <button class="share-btn" id="share-card">
         ✍️ Condividi ✍️
       </button>
     </div>
@@ -453,12 +453,6 @@
       if(!player || !allIds.length) return;
 
       const ytBox = document.getElementById("yt");
-      const shareCardBtn = document.getElementById("share-card");
-
-      // disabilito il tasto ✍️ finché non ho una nuova carta valida
-      if (shareCardBtn) {
-        shareCardBtn.classList.add("share-btn-off");
-      }
 
       if(entranceTimer){
         clearTimeout(entranceTimer);
@@ -528,11 +522,6 @@
 
           // Mostra il testo dopo il delay (qui il tuo timing di ingresso)
           mostraTestoNellaCabina(card.text, 7000);
-
-          // Abilito il bottone ✍️ Condividi
-          if (shareCardBtn) {
-            shareCardBtn.classList.remove("share-btn-off");
-          }
         } else {
           // se non trovo la carta, pulisco riferimento
           lastCardForShare = null;
