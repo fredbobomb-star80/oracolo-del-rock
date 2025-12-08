@@ -1495,7 +1495,7 @@ const ORACOLO_RISPOSTE = [
     code: "211",
     text: "Sei ciò che ami fare non ciò che ami collezionare.",
     cardImage: "carta_211.png",
-    videoId: ""
+    videoId: "osuFW8LT2QY"
   },
   {
     id: 212,
@@ -1509,7 +1509,7 @@ const ORACOLO_RISPOSTE = [
     code: "213",
     text: "L’anima Rock non ha bisogno di un cauto manager. Vuole un palco più grande ed un amplificatore più forte.",
     cardImage: "carta_213.png",
-    videoId: ""
+    videoId: "KB1gDkeEeCw"
   },
   {
     id: 214,
@@ -1544,7 +1544,7 @@ const ORACOLO_RISPOSTE = [
     code: "218",
     text: "Il Rock è morto? E tu cosa hai fatto per salvarlo?",
     cardImage: "carta_218.png",
-    videoId: ""
+    videoId: "2TGqYcd1smo"
   },
   {
     id: 219,
@@ -1558,7 +1558,7 @@ const ORACOLO_RISPOSTE = [
     code: "220",
     text: "Ascolta una playlist che non avresti mai ascoltato.",
     cardImage: "carta_220.png",
-    videoId: ""
+    videoId: "ASrd1BtgSP0"
   },
   {
     id: 221,
@@ -1593,7 +1593,7 @@ const ORACOLO_RISPOSTE = [
     code: "225",
     text: "Il peccato è un'invenzione redditizia per chi vende le redenzioni.",
     cardImage: "carta_225.png",
-    videoId: ""
+    videoId: "JndN6jPe6OM"
   },
   {
     id: 226,
@@ -1649,14 +1649,14 @@ const ORACOLO_RISPOSTE = [
     code: "233",
     text: "Le tue mani sono troppo stanche.",
     cardImage: "carta_233.png",
-    videoId: ""
+    videoId: "yrDweEhk4dM"
   },
   {
     id: 234,
     code: "234",
     text: "Le tue mani possono reggere questo peso.",
     cardImage: "carta_234.png",
-    videoId: ""
+    videoId: "UlJiHa_BRFU"
   },
   {
     id: 235,
@@ -1670,7 +1670,7 @@ const ORACOLO_RISPOSTE = [
     code: "236",
     text: "Solo se hai già fissato tutte le date del tour.",
     cardImage: "carta_236.png",
-    videoId: ""
+    videoId: "hLBXPAAlPR8"
   },
   {
     id: 237,
@@ -1684,7 +1684,7 @@ const ORACOLO_RISPOSTE = [
     code: "238",
     text: "È un pericolo che ha il gusto di un buon Rock.",
     cardImage: "carta_238.png",
-    videoId: ""
+    videoId: "93TSjuXWc5U"
   },
   {
     id: 239,
@@ -1712,7 +1712,7 @@ const ORACOLO_RISPOSTE = [
     code: "242",
     text: "Ci sono passioni che uccidono lentamente. Scegli con cura.",
     cardImage: "carta_242.png",
-    videoId: ""
+    videoId: "XPufhOdlyZA"
   },
   {
     id: 243,
@@ -1845,7 +1845,7 @@ const ORACOLO_RISPOSTE = [
     code: "261",
     text: "L’amore non è una materia obbligatoria. L'odio si impara dalla prima ora di scuola.",
     cardImage: "carta_261.png",
-    videoId: ""
+    videoId: "EkOUF313zjU"
   },
   {
     id: 262,
@@ -2125,7 +2125,7 @@ const ORACOLO_RISPOSTE = [
     code: "301",
     text: "Non scivolare dalle scale dell'inferno.",
     cardImage: "carta_301.png",
-    videoId: ""
+    videoId: "tk1lGcPfYS8"
   },
   {
     id: 302,
@@ -3532,7 +3532,7 @@ const ORACOLO_RISPOSTE = [
     code: "502",
     text: "L’anima Rock non ha bisogno di un cauto manager. Vuole un avvocato più forte per bruciare tutti i contratti.",
     cardImage: "carta_502.png",
-    videoId: ""
+    videoId: "B3SMRIQ7zAY"
   },
   {
     id: 503,
@@ -3735,14 +3735,14 @@ const ORACOLO_RISPOSTE = [
     code: "531",
     text: "L’anima Rock non ha bisogno di nuove regole. Vuole nuovi orizzonti da esplorare e vento sulla pelle.",
     cardImage: "carta_531.png",
-    videoId: ""
+    videoId: "WD1hphnJI3c"
   },
   {
     id: 532,
     code: "532",
     text: "L’anima Rock non ha bisogno di vecchie favole. Vuole pagine bianche per ridisegnare tutte le stelle.",
     cardImage: "carta_532.png",
-    videoId: ""
+    videoId: "ncnXVDkqA8w"
   },
   {
     id: 533,
@@ -3763,7 +3763,7 @@ const ORACOLO_RISPOSTE = [
     code: "535",
     text: "L’anima Rock non ha bisogno di un cauto manager. Ha già licenziato il buonsenso ed assunto il caos.",
     cardImage: "carta_535.png",
-    videoId: ""
+    videoId: "F0gP3jAmEko"
   },
   {
     id: 536,
@@ -4169,7 +4169,7 @@ const ORACOLO_RISPOSTE = [
     code: "593",
     text: "Lascia andare i carichi del dolore.",
     cardImage: "carta_593.png",
-    videoId: ""
+    videoId: "gZmter66oeg"
   },
   {
     id: 594,
