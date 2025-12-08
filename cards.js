@@ -130,7 +130,7 @@ const ORACOLO_RISPOSTE = [
     code: "016",
     text: "Non puoi accordare delle corde che non puoi ascoltare.",
     cardImage: "carta_016.png",
-    videoId: ""
+    videoId: "3lamXJdnQYc"
   },
   {
     id: 17,
