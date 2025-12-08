@@ -2438,7 +2438,7 @@ const ORACOLO_RISPOSTE = [
   {
     id: 346,
     code: "346",
-    text: "Hai ordinato una birra scura e ti hanno servito del latte parzialmente scremato.",
+    text: "Hai ordinato una birra scura ma ti hanno servito del latte parzialmente scremato.",
     cardImage: "carta_346.png",
     videoId: "4kYiKIBzgmk"
   },
