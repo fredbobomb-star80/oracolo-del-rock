@@ -6,7 +6,7 @@
   <title>Chiedilo all’Oracolo del Rock</title>
 
   <!-- Font calligrafico per il testo carta -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel Decorative&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap">
 
   <style>
     body{
@@ -248,46 +248,48 @@
     }
 
     /* TESTO NELLA CABINA */
-.oracle-text{
-  position:absolute;
-  top:70%;
-  left:50%;
-  transform:translate(-50%, -50%);
-  width:80%;
-  color:#fffdf5;
+    .oracle-text{
+      position:absolute;
+      top:70%;
+      left:50%;
+      transform:translate(-50%, -50%);
+      width:80%;
+      color:#fffdf5;
 
-  /* AUTO-RESIZE TESTO */
-  font-size: clamp(14px, 4vw, 26px);
-  overflow-wrap: break-word;
-  line-height:1.25;
-  text-align:center;
+      /* AUTO-RESIZE TESTO */
+      font-size: clamp(14px, 4vw, 26px);
+      overflow-wrap: break-word;
+      line-height:1.25;
+      text-align:center;
 
-  font-family:"Cinzel Decorative", serif;
-  font-weight:400;
-  letter-spacing:0.03em;
+      font-family:"Cinzel Decorative", serif;
+      font-weight:400;
+      letter-spacing:0.03em;
 
-  /* Maiuscola automatica */
-  text-transform: capitalize;
+      /* --- CONTORNO NETTO + GLOW --- */
+      text-shadow:
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000,
+        0 2px 3px rgba(0,0,0,0.6),
+        0 0 8px rgba(255,105,180,0.35);
 
-  /* --- CONTORNO NETTO --- */
-  text-shadow:
-    -2px -2px 0 #000,
-     2px -2px 0 #000,
-    -2px  2px 0 #000,
-     2px  2px 0 #000,
-    /* Ombra di profondità */
-    0 2px 3px rgba(0,0,0,0.6),
-    /* Glow rosa molto più controllato */
-    0 0 8px rgba(255,105,180,0.35);
+      opacity:0;
+      transition:opacity .6s ease;
+    }
 
-  opacity:0;
-  transition:opacity .6s ease;
-}
+    .oracle-text.visible{
+      opacity:1;
+    }
 
-.oracle-text.visible{
-  opacity:1;
-}
-
+    /* INIZIALI PIÙ GRANDI STILE BIG */
+    .oracle-text .big-init{
+      font-size:1.9em;      /* 1.9x più grande */
+      line-height:0.8;
+      display:inline-block;
+      vertical-align:-8%;
+      padding-right:1px;
     }
   </style>
 </head>
@@ -352,6 +354,18 @@
     let lastCardForShare = null;      // conterrà l'oggetto carta (testo, videoId, ecc.)
     let lastCardIndexForShare = null; // numero della risposta (1..666)
 
+    // FORMATTA IL TESTO STILE BIG: iniziale maiuscola + grande
+    function formatOracleText(testo){
+      if(!testo) return "";
+
+      const words = testo.trim().split(/\s+/);
+      return words.map(word => {
+        const first = word.charAt(0).toUpperCase();
+        const rest  = word.slice(1);
+        return `<span class="big-init">${first}</span>${rest}`;
+      }).join(" ");
+    }
+
     // MOSTRA / NASCONDE IL TESTO (NO SPOILER, NO FLASH)
     function mostraTestoNellaCabina(testo, delayMs = 0){
       const box = document.getElementById("oracle-text");
@@ -366,17 +380,17 @@
       // Se non c'è testo → svuoto subito, senza far apparire nulla
       if(!testo){
         box.classList.remove("visible");
-        box.textContent = "";
+        box.innerHTML = "";
         return;
       }
 
-      // Non inserisco ancora il testo nel DOM → nessun flash possibile
+      // schermo vuoto prima del delay
       box.classList.remove("visible");
-      box.textContent = "";  // schermo vuoto
+      box.innerHTML = "";
 
-      // Quando scatta il delay → SOLO allora monto il testo e lo mostro
+      // Quando scatta il delay → monto il testo formattato e lo mostro
       textTimer = setTimeout(() => {
-        box.textContent = testo;
+        box.innerHTML = formatOracleText(testo);
         requestAnimationFrame(() => box.classList.add("visible"));
         textTimer = null;
       }, delayMs);
@@ -702,19 +716,3 @@
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
