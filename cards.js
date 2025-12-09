@@ -2564,7 +2564,7 @@ const ORACOLO_RISPOSTE = [
   {
     id: 364,
     code: "364",
-    text: "Non mi interessa.",
+    text: "Problema tuo.",
     cardImage: "carta_364.png",
     videoId: "3PrXJ28TUkY"
   },
