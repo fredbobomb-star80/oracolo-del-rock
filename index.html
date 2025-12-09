@@ -248,35 +248,46 @@
     }
 
     /* TESTO NELLA CABINA */
-    .oracle-text{
-      position:absolute;
-      top:70%;
-      left:50%;
-      transform:translate(-50%, -50%);
-      width:80%;
-      color:#fffdf5;
-        /* AUTO-RESIZE TESTO */
-      font-size: clamp(14px, 4vw, 26px);
-      overflow-wrap: break-word;
-      line-height:1.25;
-      text-align:center;
-      font-family:"Cinzel Decorative", serif;
-      font-weight:400;
-      letter-spacing:0.03em;
+.oracle-text{
+  position:absolute;
+  top:70%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  width:80%;
+  color:#fffdf5;
 
-      text-shadow:
-     -1px -1px 0 #000,
-      1px -1px 0 #000,
-     -1px 1px 0 #000,
-      1px 1px 0 #000,
-      0 2px 3px rgba(0,0,0,0.7);
-        0 0 18px rgba(255,105,180,0.75);  /* glow rosa magico */
-      opacity:0;
-      transition:opacity .6s ease;
-    }
+  /* AUTO-RESIZE TESTO */
+  font-size: clamp(14px, 4vw, 26px);
+  overflow-wrap: break-word;
+  line-height:1.25;
+  text-align:center;
 
-    .oracle-text.visible{
-      opacity:1;
+  font-family:"Cinzel Decorative", serif;
+  font-weight:400;
+  letter-spacing:0.03em;
+
+  /* Maiuscola automatica */
+  text-transform: capitalize;
+
+  /* --- CONTORNO NETTO --- */
+  text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000,
+    /* Ombra di profondità */
+    0 2px 3px rgba(0,0,0,0.6),
+    /* Glow rosa molto più controllato */
+    0 0 8px rgba(255,105,180,0.35);
+
+  opacity:0;
+  transition:opacity .6s ease;
+}
+
+.oracle-text.visible{
+  opacity:1;
+}
+
     }
   </style>
 </head>
@@ -691,6 +702,7 @@
   </script>
 </body>
 </html>
+
 
 
 
