@@ -54,11 +54,11 @@
       overflow-wrap: break-word;
       
       color:#fffdf5;
-       /* STESSO EFFETTO MAGIA DELLA CABINA */
+
       text-shadow:
-      0 0 3px rgba(0,0,0,0.9),
-      0 0 6px rgba(0,0,0,0.9),
-      0 0 18px rgba(255,105,180,0.75);
+        0 0 3px rgba(0,0,0,0.9),
+        0 0 6px rgba(0,0,0,0.9),
+        0 0 18px rgba(255,105,180,0.75);
     }
 
     /* NUMERO RISPOSTA – RISPOSTA N:000 */
@@ -80,7 +80,6 @@
       border:1px solid rgba(255,255,255,0.25);
     }
 
-    /* Messaggino piccolo per debugging (non verrà visto dall'utente normale) */
     .debug-note{
       position:fixed;
       bottom:6px;
@@ -96,15 +95,13 @@
 <body>
 
   <div class="card-wrapper" id="card-wrapper">
-    <!-- La tua card-template.png (1080x1350) -->
-    <img src="card-template.png" alt="Carta Oracolo del Rock">
+    <!-- ⚠️ AGGIUNTO id="card-image" -->
+    <img id="card-image" src="card-template.png" alt="Carta Oracolo del Rock">
 
-    <!-- Frase: verrà sostituita dal parametro ?text= -->
     <div class="card-text" id="card-text">
       questa è una frase di prova per verificare il font
     </div>
 
-    <!-- Numero: verrà formattato come RISPOSTA N:000 -->
     <div class="card-number" id="card-number">
       RISPOSTA N:000
     </div>
@@ -114,12 +111,31 @@
     Generazione immagine in corso...
   </div>
 
-  <!-- html2canvas per trasformare la carta in PNG -->
+  <!-- html2canvas -->
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
   <script>
     (function(){
       const params = new URLSearchParams(window.location.search);
+
+      /* ------------------------------
+         🎸 LISTA VARIANTI DELLA CARTA
+         ------------------------------ */
+      const cardVariants = [
+        "card-template.png",
+        "card-template-bullet.png",
+        "card-template-lipstick.png",
+        "card-template-burned.png"
+      ];
+
+      /* ---------------------------------------------------
+         🎸 SCEGLIE A CASO UNA CARTA PRIMA DELLA GENERAZIONE
+         --------------------------------------------------- */
+      const cardImg = document.getElementById("card-image");
+      if (cardImg){
+        const randomIndex = Math.floor(Math.random() * cardVariants.length);
+        cardImg.src = cardVariants[randomIndex];
+      }
 
       const rawText = params.get("text");
       const rawNum  = params.get("n");
@@ -131,13 +147,11 @@
 
       let paddedNum = "000";
 
-      // 1) Gestione testo dalla URL
       if (rawText && textEl){
         const decoded = decodeURIComponent(rawText.replace(/\+/g, " "));
         textEl.textContent = decoded;
       }
 
-      // 2) Gestione numero formattato RISPOSTA N:000
       if (rawNum && numEl){
         const n = parseInt(rawNum, 10);
         if (!isNaN(n) && n > 0){
@@ -146,11 +160,10 @@
         }
       }
 
-      // Aspettiamo un attimo che il font e l'immagine siano pronti
       window.addEventListener("load", () => {
         setTimeout(() => {
           generaECondividi(wrapper, paddedNum, textEl?.textContent || "", debugEl);
-        }, 400); // piccolo delay per sicurezza
+        }, 400);
       });
 
       async function generaECondividi(wrapper, numeroFormattato, frase, debugEl){
@@ -165,53 +178,41 @@
           const canvas = await html2canvas(wrapper, {
             useCORS: true,
             backgroundColor: null,
-            scale: 2 // qualità migliore
+            scale: 2
           });
 
           if (debugEl) debugEl.textContent = "Preparo il file per la condivisione...";
 
           canvas.toBlob(async (blob) => {
             if (!blob){
-              if (debugEl) debugEl.textContent = "Impossibile creare il blob dell'immagine.";
+              if (debugEl) debugEl.textContent = "Impossibile creare il blob.";
               return;
             }
 
             const fileName = "oracolo-risposta-" + numeroFormattato + ".png";
             const file = new File([blob], fileName, { type: "image/png" });
 
-            // Dati per la condivisione
             const shareData = {
               files: [file],
               title: "Chiedilo all’Oracolo del Rock",
               text: frase ? ("La mia carta dell'Oracolo del Rock:\n\n" + frase) : "La mia carta dell'Oracolo del Rock"
             };
 
-            // 1) TENTATIVO DI CONDIVISIONE DIRETTA (se supportato)
             if (navigator.canShare && navigator.canShare({ files: [file] })){
               try{
                 if (debugEl) debugEl.textContent = "Apro il menu di condivisione...";
                 await navigator.share(shareData);
-                if (debugEl) debugEl.textContent = "Condivisione completata.";
-                // opzionale: chiudere la scheda se il browser lo permette
-                if (window.close) {
-                  // window.close(); // lo lasciamo commentato, decidi tu se usarlo un giorno
-                }
                 return;
               }catch(err){
-                console.log("Condivisione annullata o fallita:", err);
-                if (debugEl) debugEl.textContent = "Condivisione annullata, apro comunque l'immagine.";
                 apriPngInNuovaScheda(canvas);
                 return;
               }
             }else{
-              // 2) FALLBACK: apriamo la PNG in una nuova scheda
-              if (debugEl) debugEl.textContent = "Il tuo browser non supporta la condivisione diretta. Apro l'immagine.";
               apriPngInNuovaScheda(canvas);
             }
           }, "image/png");
         }catch(err){
-          console.error("Errore durante la generazione della carta:", err);
-          if (debugEl) debugEl.textContent = "Errore nella generazione dell'immagine.";
+          if (debugEl) debugEl.textContent = "Errore nella generazione.";
         }
       }
 
