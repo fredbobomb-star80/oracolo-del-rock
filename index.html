@@ -361,16 +361,19 @@
     let lastCardIndexForShare = null; // numero della risposta (1..666)
 
     // FORMATTA IL TESTO STILE BIG: iniziale maiuscola + grande
-    function formatOracleText(testo){
-      if(!testo) return "";
 
-      const words = testo.trim().split(/\s+/);
-      return words.map(word => {
-        const first = word.charAt(0).toUpperCase();
-        const rest  = word.slice(1);
-        return `<span class="big-init">${first}</span>${rest}`;
-      }).join(" ");
-    }
+function formatOracleText(testo){
+  if(!testo) return "";
+
+  const words = testo.trim().split(/\s+/);
+
+  return words.map(word => {
+    const first = word.charAt(0).toUpperCase();
+    const rest  = word.slice(1);
+    return `<span class="word"><span class="big-init">${first}</span>${rest}</span>`;
+  }).join(" ");
+}
+    
 
     // MOSTRA / NASCONDE IL TESTO (NO SPOILER, NO FLASH)
     function mostraTestoNellaCabina(testo, delayMs = 0){
@@ -722,4 +725,5 @@
   </script>
 </body>
 </html>
+
 
