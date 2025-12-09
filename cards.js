@@ -2550,7 +2550,7 @@ const ORACOLO_RISPOSTE = [
   {
     id: 362,
     code: "362",
-    text: "Problema tuo.",
+    text: "Problema tuo. Problema tuo. Problema tuo.",
     cardImage: "carta_362.png",
     videoId: "evvAM0z0ojU"
   },
