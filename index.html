@@ -283,14 +283,20 @@
       opacity:1;
     }
 
-    /* INIZIALI PIÙ GRANDI STILE BIG */
-    .oracle-text .big-init{
-      font-size:1.9em;      /* 1.9x più grande */
-      line-height:0.8;
-      display:inline-block;
-      vertical-align:-8%;
-      padding-right:1px;
-    }
+/* OGNI PAROLA È UN BLOCCO, COSÌ NON SI SPEZZA */
+.oracle-text .word{
+  display:inline-block;
+}
+
+/* INIZIALI PIÙ GRANDI MA PIÙ BILANCIATE */
+.oracle-text .big-init{
+  font-size:1.6em;      /* un po' più piccolo, meno sbilanciato */
+  line-height:0.9;
+  display:inline-block;
+  vertical-align:-6%;
+  padding-right:1px;
+}
+
   </style>
 </head>
 
@@ -716,3 +722,4 @@
   </script>
 </body>
 </html>
+
