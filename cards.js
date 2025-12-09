@@ -996,7 +996,7 @@ const ORACOLO_RISPOSTE = [
   {
     id: 140,
     code: "140",
-    text: "Prendi il toro per le maledette corna. Prendi il toro per le corna. Prendi il toro per le stramaledette corna.",
+    text: "Prendi il toro per le corna. Prendi il toro per le corna. Prendi il toro per le stramaledette corna.",
     cardImage: "carta_140.png",
     videoId: "Bg2sSpmpogw"
   },
