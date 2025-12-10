@@ -390,19 +390,24 @@
     }
 
     /* GABBIA FISSA PER IL TESTO (la "cornice gialla" invisibile) */
-    .share-card-generator .card-text-box{
-      position:absolute;
-      top:52%;               /* centro verticale della gabbia */
-      left:50%;
-      transform:translate(-50%, -50%);
-      width:70%;             /* larghezza gabbia */
-      height:46%;            /* altezza massima per il testo */
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      overflow:hidden;       /* se esagera comunque non esce */
-    }
+.share-card-generator .card-text-box{
+  position:absolute;
+  top:52%;              /* centro della gabbia */
+  left:50%;
+  transform:translate(-50%, -50%);
+
+  /* PIÙ STRETTA → niente frasi “tagliate” ai bordi */
+  width:52%;
+  height:42%;
+
+  display:flex;
+  align-items:center;   /* centra verticalmente il blocco testo */
+  justify-content:center;
+  text-align:center;
+
+  overflow:hidden;      /* se una frase è davvero esagerata, viene solo accorciata in basso */
+}
+
 
     /* TESTO DENTRO LA GABBIA */
     .share-card-generator .card-text{
@@ -1044,3 +1049,4 @@
   </script>
 </body>
 </html>
+
