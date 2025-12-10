@@ -6,7 +6,7 @@
   <title>Carta condivisibile - Oracolo del Rock</title>
 
   <!-- Font calligrafico, come la cabina -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel Decorative&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap">
 
   <style>
     body{
@@ -60,8 +60,7 @@
         0 0 6px rgba(0,0,0,0.9),
         0 0 18px rgba(255,105,180,0.75);
 
-      text-transform: capitalize; /* <-- Tutte le frasi iniziano con la maiuscola
-      
+      text-transform: capitalize; /* <-- Tutte le parole iniziano con la maiuscola */
     }
 
     /* NUMERO RISPOSTA – RISPOSTA N:000 */
@@ -98,7 +97,6 @@
 <body>
 
   <div class="card-wrapper" id="card-wrapper">
-    <!-- ⚠️ AGGIUNTO id="card-image" -->
     <img id="card-image" src="card-template.png" alt="Carta Oracolo del Rock">
 
     <div class="card-text" id="card-text">
@@ -120,25 +118,6 @@
   <script>
     (function(){
       const params = new URLSearchParams(window.location.search);
-
-      /* ------------------------------
-         🎸 LISTA VARIANTI DELLA CARTA
-         ------------------------------ */
-      const cardVariants = [
-        "card-template.png",
-        "card-template-bullet.png",
-        "card-template-lipstick.png",
-        "card-template-burned.png"
-      ];
-
-      /* ---------------------------------------------------
-         🎸 SCEGLIE A CASO UNA CARTA PRIMA DELLA GENERAZIONE
-         --------------------------------------------------- */
-      const cardImg = document.getElementById("card-image");
-      if (cardImg){
-        const randomIndex = Math.floor(Math.random() * cardVariants.length);
-        cardImg.src = cardVariants[randomIndex];
-      }
 
       const rawText = params.get("text");
       const rawNum  = params.get("n");
