@@ -39,14 +39,13 @@
       object-fit:cover;
     }
 
-    /* TESTO RISPOSTA – stile cabina + iniziale più grande */
+    /* TESTO RISPOSTA – clone di .oracle-text */
     .card-text{
       position:absolute;
-      bottom:37%;
+      bottom:37%;          /* equivalente visivo del top:70% sulla cabina */
       left:50%;
       transform:translateX(-50%);
       width:80%;
-
       color:#fffdf5;
 
       /* AUTO-RESIZE TESTO */
@@ -67,13 +66,20 @@
          2px  2px 0 #000,
         0 2px 3px rgba(0,0,0,0.6),
         0 0 8px rgba(255,105,180,0.35);
-
-      text-transform:capitalize; /* ogni parola con iniziale maiuscola */
     }
 
-    /* Prima lettera più grande */
-    .card-text::first-letter{
-      font-size:120%;
+    /* OGNI PAROLA È UN BLOCCO, COSÌ NON SI SPEZZA (clone) */
+    .card-text .word{
+      display:inline-block;
+    }
+
+    /* INIZIALI PIÙ GRANDI MA BILANCIATE (clone di .big-init) */
+    .card-text .big-init{
+      font-size:1.6em;
+      line-height:0.9;
+      display:inline-block;
+      vertical-align:-6%;
+      padding-right:1px;
     }
 
     /* NUMERO RISPOSTA – badge premium */
@@ -115,7 +121,7 @@
     <img id="card-image" src="card-template.png" alt="Carta Oracolo del Rock">
 
     <div class="card-text" id="card-text">
-      questa è una frase di prova per verificare il font
+      <!-- verrà riempito via JS con gli span .word / .big-init -->
     </div>
 
     <div class="card-number" id="card-number">
@@ -144,9 +150,21 @@
 
       let paddedNum = "000";
 
+      // === clone di formatOracleText dal sito ===
+      function formatOracleText(testo){
+        if(!testo) return "";
+        const words = testo.trim().split(/\s+/);
+
+        return words.map(word => {
+          const first = word.charAt(0).toUpperCase();
+          const rest  = word.slice(1);
+          return `<span class="word"><span class="big-init">${first}</span>${rest}</span>`;
+        }).join(" ");
+      }
+
       if (rawText && textEl){
         const decoded = decodeURIComponent(rawText.replace(/\+/g, " "));
-        textEl.textContent = decoded;
+        textEl.innerHTML = formatOracleText(decoded);
       }
 
       if (rawNum && numEl){
