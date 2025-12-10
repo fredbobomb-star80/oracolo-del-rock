@@ -924,6 +924,9 @@
       textEl.innerHTML = formatOracleText(lastCardForShare.text || "");
       numEl.textContent = "RISPOSTA N:" + padded;
 
+      // adatta il testo alla gabbia prima dello scatto
+      autoFitShareCardText();
+
       await new Promise(res => requestAnimationFrame(res));
 
       const canvas = await html2canvas(wrapper, {
@@ -1047,6 +1050,7 @@
   </script>
 </body>
 </html>
+
 
 
 
