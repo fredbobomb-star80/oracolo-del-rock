@@ -879,6 +879,33 @@
       });
     }
 
+
+    // Adatta il font del testo della carta alla gabbia (auto-fit "dolce")
+    function autoFitShareCardText(){
+      const wrapper = document.getElementById("share-card-wrapper");
+      if (!wrapper) return;
+
+      const box  = wrapper.querySelector(".card-text-box");
+      const text = wrapper.querySelector(".card-text");
+      if (!box || !text) return;
+
+      // dimensione di partenza
+      let currentSize = 40;
+      const minSize   = 18;   // non andare sotto questo (leggibilità)
+      let safety      = 0;
+
+      text.style.fontSize = currentSize + "px";
+
+      // finché il contenuto è più alto della gabbia, riduci
+      while (text.scrollHeight > box.clientHeight && currentSize > minSize && safety < 40){
+        currentSize -= 1;
+        text.style.fontSize = currentSize + "px";
+        safety++;
+      }
+    }
+
+
+    
     // === FUNZIONE: genera PNG della carta usando il generatore nascosto ===
     async function generaPngCartaCondivisibile(){
       if (!lastCardForShare || !lastCardForShare.text){
@@ -1020,6 +1047,7 @@
   </script>
 </body>
 </html>
+
 
 
 
