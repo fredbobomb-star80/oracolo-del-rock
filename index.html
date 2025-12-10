@@ -375,6 +375,12 @@
       top:-9999px;
     }
 
+    .share-card-generator{
+      position:absolute;
+      left:-9999px;
+      top:-9999px;
+    }
+
     .share-card-generator .card-wrapper{
       width:1080px;
       height:1350px;
@@ -389,15 +395,27 @@
       display:block;
     }
 
-    .share-card-generator .card-text{
+    /* GABBIA FISSA PER IL TESTO (la tua “cornice gialla” invisibile) */
+    .share-card-generator .card-text-box{
       position:absolute;
-      bottom:40%;
+      top:52%;               /* centro verticale della gabbia */
       left:50%;
-      transform:translateX(-50%);
-      width:45%;
+      transform:translate(-50%, -50%);
+      width:70%;             /* larghezza della gabbia */
+      height:42%;            /* altezza massima disponibile per il testo */
+      display:flex;
+      align-items:center;    /* centra verticalmente il blocco testo */
+      justify-content:center;
+      text-align:center;
+      overflow:hidden;       /* se proprio esagera, viene tagliato */
+    }
+
+    /* TESTO DENTRO LA GABBIA */
+    .share-card-generator .card-text{
+      width:100%;
       color:#fffdf5;
 
-      font-size: 40px; /* adatto al 1080x1350 fisso */
+      font-size:40px;        /* dimensione di partenza */
       overflow-wrap: break-word;
       line-height:1.25;
       text-align:center;
@@ -406,7 +424,6 @@
       font-weight:400;
       letter-spacing:0.03em;
 
-
       text-shadow:
         -2px -2px 0 #000,
          2px -2px 0 #000,
@@ -414,7 +431,6 @@
          2px  2px 0 #000,
         0 2px 3px rgba(0,0,0,0.6),
         0 0 8px rgba(255,105,180,0.35);
-
     }
 
     .share-card-generator .card-text .word{
@@ -434,7 +450,7 @@
       bottom:11%;
       left:50%;
       transform:translateX(-50%);
-      margin-bottom:8px; /* <-- NUOVO, alza la scritta di 8px */
+      margin-bottom:8px;
       font-size:30px;
       letter-spacing:0.18em;
       text-transform:uppercase;
@@ -448,6 +464,7 @@
       border:1px solid rgba(255,255,255,0.35);
     }
 
+ 
   </style>
 </head>
 
@@ -1003,6 +1020,7 @@
   </script>
 </body>
 </html>
+
 
 
 
