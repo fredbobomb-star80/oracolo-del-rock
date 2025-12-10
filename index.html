@@ -368,7 +368,7 @@
       flex-wrap:wrap;
     }
 
-    /* ===== GENERATORE NASCOSTO PER LA CARTA ===== */
+    /* generatore nascosto per la carta */
     .share-card-generator{
       position:absolute;
       left:-9999px;
@@ -389,35 +389,15 @@
       display:block;
     }
 
-    /* GABBIA FISSA PER IL TESTO (la "cornice gialla" invisibile) */
-    .share-card-generator .card-text-box{
-      position:absolute;
-      top:52%;              /* centro della gabbia */
-      left:50%;
-      transform:translate(-50%, -50%);
-
-      width:52%;
-      height:42%;
-
-      display:flex;
-      align-items:center;   /* centra verticalmente il blocco testo */
-      justify-content:center;
-      text-align:center;
-
-      padding:0 18px;       /* margine interno per non tagliare le iniziali */
-      box-sizing:border-box;
-
-      /* niente taglio laterale delle lettere */
-      overflow-y:hidden;
-      overflow-x:visible;
-    }
-
-    /* TESTO DENTRO LA GABBIA */
     .share-card-generator .card-text{
-      width:100%;
-      color:#fffef5;
+      position:absolute;
+      bottom:40%;
+      left:50%;
+      transform:translateX(-50%);
+      width:45%;
+      color:#fffdf5;
 
-      font-size:40px;        /* dimensione di partenza */
+      font-size: 40px; /* adatto al 1080x1350 fisso */
       overflow-wrap: break-word;
       line-height:1.25;
       text-align:center;
@@ -426,15 +406,15 @@
       font-weight:400;
       letter-spacing:0.03em;
 
-      /* contorno + glow PIÙ FORTE per la carta condivisa */
+
       text-shadow:
         -2px -2px 0 #000,
          2px -2px 0 #000,
         -2px  2px 0 #000,
          2px  2px 0 #000,
-        0 0 6px rgba(0,0,0,0.95),
-        0 0 14px rgba(0,0,0,0.85),
-        0 0 10px rgba(255,105,180,0.45);
+        0 2px 3px rgba(0,0,0,0.6),
+        0 0 8px rgba(255,105,180,0.35);
+
     }
 
     .share-card-generator .card-text .word{
@@ -454,7 +434,7 @@
       bottom:11%;
       left:50%;
       transform:translateX(-50%);
-      margin-bottom:8px;
+      margin-bottom:8px; /* <-- NUOVO, alza la scritta di 8px */
       font-size:30px;
       letter-spacing:0.18em;
       text-transform:uppercase;
@@ -467,6 +447,7 @@
       border-radius:999px;
       border:1px solid rgba(255,255,255,0.35);
     }
+
   </style>
 </head>
 
@@ -509,8 +490,8 @@
       <a href="https://www.instagram.com/chiedilo_all_oracolo_del_rock" target="_blank" class="social-btn instagram">Instagram</a>
     </div>
 
-    <p class="note">Chiedilo all'Oracolo del Rock custodisce 666 brani ma solo uno è destinato a te. FredBee's Tutti i diritti riservati ©2025</p>
-  </main>
+ <p class="note">Chiedilo all'Oracolo del Rock custodisce 666 brani ma solo uno è destinato a te. FredBee's Tutti i diritti riservati ©2025</p>
+</main>
 
   <!-- OVERLAY CONDIVISIONE CARTA -->
   <div id="card-share-overlay" class="card-share-overlay">
@@ -535,12 +516,7 @@
   <div class="share-card-generator">
     <div class="card-wrapper" id="share-card-wrapper">
       <img src="card-template.png" alt="Carta Oracolo del Rock">
-
-      <!-- GABBIA DEL TESTO -->
-      <div class="card-text-box">
-        <div class="card-text" id="share-card-text"></div>
-      </div>
-
+      <div class="card-text" id="share-card-text"></div>
       <div class="card-number" id="share-card-number"></div>
     </div>
   </div>
@@ -886,28 +862,6 @@
       });
     }
 
-    // Adatta il font del testo della carta alla gabbia (auto-fit "dolce")
-    function autoFitShareCardText(){
-      const wrapper = document.getElementById("share-card-wrapper");
-      if (!wrapper) return;
-
-      const box  = wrapper.querySelector(".card-text-box");
-      const text = wrapper.querySelector(".card-text");
-      if (!box || !text) return;
-
-      let currentSize = 40;
-      const minSize   = 18;
-      let safety      = 0;
-
-      text.style.fontSize = currentSize + "px";
-
-      while (text.scrollHeight > box.clientHeight && currentSize > minSize && safety < 40){
-        currentSize -= 1;
-        text.style.fontSize = currentSize + "px";
-        safety++;
-      }
-    }
-
     // === FUNZIONE: genera PNG della carta usando il generatore nascosto ===
     async function generaPngCartaCondivisibile(){
       if (!lastCardForShare || !lastCardForShare.text){
@@ -925,9 +879,6 @@
 
       textEl.innerHTML = formatOracleText(lastCardForShare.text || "");
       numEl.textContent = "RISPOSTA N:" + padded;
-
-      // adatta il testo alla gabbia prima dello "scatto"
-      autoFitShareCardText();
 
       await new Promise(res => requestAnimationFrame(res));
 
@@ -1052,3 +1003,9 @@
   </script>
 </body>
 </html>
+
+
+
+
+
+
