@@ -39,7 +39,7 @@
       object-fit:cover;
     }
 
-    /* TESTO RISPOSTA – clone dello stile cabina */
+    /* TESTO RISPOSTA – stile cabina + iniziale più grande */
     .card-text{
       position:absolute;
       bottom:37%;
@@ -68,7 +68,12 @@
         0 2px 3px rgba(0,0,0,0.6),
         0 0 8px rgba(255,105,180,0.35);
 
-      text-transform:capitalize; /* iniziali maiuscole come volevi */
+      text-transform:capitalize; /* ogni parola con iniziale maiuscola */
+    }
+
+    /* Prima lettera più grande */
+    .card-text::first-letter{
+      font-size:120%;
     }
 
     /* NUMERO RISPOSTA – badge premium */
