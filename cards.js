@@ -2501,7 +2501,7 @@ const ORACOLO_RISPOSTE = [
   {
     id: 355,
     code: "355",
-    text: "Siediti e respira. Lascia che sia la musica a trovare te.",
+    text: "Siediti e respira. Lascia che sia la buona musica a trovare te.",
     cardImage: "carta_355.png",
     videoId: "8X9kzWtlCmc"
   },
