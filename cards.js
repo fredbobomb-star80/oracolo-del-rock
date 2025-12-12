@@ -4097,7 +4097,7 @@ const ORACOLO_RISPOSTE = [
   {
     id: 583,
     code: "583",
-    text: "Hai pazientato anche troppo.",
+    text: "Hai pazientato troppo.",
     cardImage: "carta_583.png",
     videoId: "Ohn2J5CSc1E"
   },
