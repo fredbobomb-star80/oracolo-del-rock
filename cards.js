@@ -3355,7 +3355,7 @@ const ORACOLO_RISPOSTE = [
   {
     id: 477,
     code: "477",
-    text: "Si, è tutto magico come un open bar. Come un open bar.",
+    text: "Si, è tutto magico come un open bar.",
     cardImage: "carta_477.png",
     videoId: "a1pXo1ok9g0"
   },
