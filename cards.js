@@ -2566,7 +2566,7 @@ const ORACOLO_RISPOSTE = [
     code: "364",
     text: "Daranno il tuo nome al liceo che hai frequentato.",
     cardImage: "carta_364.png",
-    videoId: "3PrXJ28TUkY"
+    videoId: "lR3uHpFjKhQ"
   },
   {
     id: 365,
