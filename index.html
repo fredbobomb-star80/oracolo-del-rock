@@ -58,21 +58,21 @@
     /* AREA VIDEO */
     .yt-overlay.is-hidden{
       opacity: 0;
-      transform: translate(-50%, 6px) scale(.97);
+      transform: translate(-50%, calc(-50% + 6px)) scale(.97);
       transition: opacity .6s ease, transform .6s ease;
       pointer-events: none;
     }
 
     .yt-overlay.is-visible{
       opacity: 1;
-      transform: translate(-50%, 0) scale(1);
+      transform: translate(-50%, -50%) scale(1);
       transition: opacity .6s ease, transform .6s ease;
       pointer-events: auto;
     }
 
     .yt-overlay.is-visible.audio-first{
       opacity: 0;
-      transform: translate(-50%, 6px) scale(.97);
+      transform: translate(-50%, calc(-50% + 6px)) scale(.97);
       pointer-events: none;
     }
 
@@ -83,7 +83,7 @@
     .yt-overlay{
       position:absolute;
       left:50%;
-      top:28%;
+      top:50%;
       width:clamp(220px, 55vw, 300px);
       height:clamp(220px, 55vw, 300px);
       display:flex;
@@ -104,10 +104,6 @@
       border-radius:10px;
       border:2px solid rgba(0,200,255,0.6);
       box-shadow:0 0 12px rgba(0,200,255,0.35);
-    }
-
-    @media (max-width:350px){
-      .yt-overlay{ top:20%; }
     }
 
     /* SEZIONE AZIONI SOTTO LA CABINA */
