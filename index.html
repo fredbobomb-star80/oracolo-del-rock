@@ -58,21 +58,21 @@
     /* AREA VIDEO */
     .yt-overlay.is-hidden{
       opacity: 0;
-      transform: translateY(6px);
+      transform: translate(-50%, 6px) scale(.97);
       transition: opacity .6s ease, transform .6s ease;
       pointer-events: none;
     }
 
     .yt-overlay.is-visible{
       opacity: 1;
-      transform: translateY(0);
+      transform: translate(-50%, 0) scale(1);
       transition: opacity .6s ease, transform .6s ease;
       pointer-events: auto;
     }
 
     .yt-overlay.is-visible.audio-first{
       opacity: 0;
-      transform: translateY(6px);
+      transform: translate(-50%, 6px) scale(.97);
       pointer-events: none;
     }
 
@@ -82,10 +82,10 @@
 
     .yt-overlay{
       position:absolute;
-      left:41%;
-      top:80%;
-      width:15%;
-      height:12%;
+      left:50%;
+      top:28%;
+      width:clamp(220px, 55vw, 300px);
+      height:clamp(220px, 55vw, 300px);
       display:flex;
       align-items:center;
       justify-content:center;
@@ -95,6 +95,7 @@
       box-shadow:0 0 10px rgba(0,0,0,0.6);
       backdrop-filter: blur(2px);
       overflow:hidden;
+      z-index:1;
     }
 
     .yt-overlay iframe{
@@ -103,6 +104,10 @@
       border-radius:10px;
       border:2px solid rgba(0,200,255,0.6);
       box-shadow:0 0 12px rgba(0,200,255,0.35);
+    }
+
+    @media (max-width:350px){
+      .yt-overlay{ top:20%; }
     }
 
     /* SEZIONE AZIONI SOTTO LA CABINA */
@@ -220,19 +225,19 @@
     .project-links{
       display:flex;
       justify-content:center;
-      gap:10px;
+      gap:7px;
       flex-wrap:wrap;
       margin-top:0;
     }
 
     .project-link{
-      min-width:112px;
+      min-width:76px;
       text-decoration:none;
       color:#fff;
       background:#09090d;
       border:2px solid #0fe3ff;
-      padding:9px 18px;
-      font-size:13px;
+      padding:5px 11px;
+      font-size:11px;
       border-radius:999px;
       font-weight:900;
       letter-spacing:.08em;
@@ -316,6 +321,7 @@
 
       opacity:0;
       transition:opacity .6s ease;
+      z-index:2;
     }
 
     .oracle-text.visible{
@@ -641,7 +647,7 @@
       player = new YT.Player('yt', {
         height: '390',
         width:  '640',
-        playerVars: { modestbranding: 1, rel: 0 },
+        playerVars: { modestbranding: 1, rel: 0, playsinline: 1 },
         events: {
           onReady: onReady,
           onStateChange: onStateChange
