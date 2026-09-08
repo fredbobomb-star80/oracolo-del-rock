@@ -220,19 +220,19 @@
     .project-links{
       display:flex;
       justify-content:center;
-      gap:10px;
+      gap:6px;
       flex-wrap:wrap;
       margin-top:0;
     }
 
     .project-link{
-      min-width:112px;
+      min-width:80px;
       text-decoration:none;
       color:#fff;
       background:#09090d;
       border:2px solid #0fe3ff;
-      padding:9px 18px;
-      font-size:13px;
+      padding:4px 10px;
+      font-size:12px;
       border-radius:999px;
       font-weight:900;
       letter-spacing:.08em;
@@ -245,6 +245,15 @@
       transform:translateY(-1px) scale(1.03);
       filter:brightness(1.15);
       box-shadow:0 0 18px rgba(15,227,255,.5);
+    }
+
+    .project-link.ebook{
+      border-color:#ff3ccf;
+      box-shadow:0 0 12px rgba(255,60,207,.28);
+    }
+
+    .project-link.ebook:hover{
+      box-shadow:0 0 18px rgba(255,60,207,.5);
     }
 
     .project-link.spotify{
@@ -524,6 +533,7 @@
   <!-- SOTTO CABINA: SOCIAL + TESTO -->
   <main class="wrap">
     <div class="project-links" aria-label="Scopri il progetto">
+      <a href="https://www.amazon.it/dp/B0HJ344BTD" target="_blank" rel="noopener noreferrer" class="project-link ebook">Ebook</a>
       <a href="info.html" target="_blank" rel="noopener noreferrer" class="project-link">Info</a>
       <a href="https://open.spotify.com/playlist/3gXQ5FPC0mRNcdaWWpDBcn" target="_blank" rel="noopener noreferrer" class="project-link spotify">Spotify</a>
     </div>
