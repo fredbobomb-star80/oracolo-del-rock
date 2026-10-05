@@ -116,6 +116,20 @@
     /* Il contenitore mantiene la geometria originale; solo il figlio diventa iframe. */
     .yt-overlay iframe{ box-sizing:border-box; border:0; border-radius:10px; }
 
+    /* Player ingrandito solo su Android, sotto la cabina senza sovrapposizioni. */
+    html.android-player .yt-overlay{
+      position:relative;
+      left:auto;
+      top:auto;
+      width:240px;
+      max-width:calc(100% - 24px);
+      height:200px;
+      margin:12px auto;
+      flex-shrink:0;
+    }
+    html.android-player .yt-overlay.is-hidden{ display:none; }
+    html.android-player .yt-overlay.is-visible{ display:flex; }
+
     /* SEZIONE AZIONI SOTTO LA CABINA */
     .actions{
       margin-top:14px;
@@ -594,6 +608,12 @@
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
   <script>
+    // Solo Android: dimensione utile del video 240 x 200, fuori dalla cabina.
+    if(/Android/i.test(navigator.userAgent || "")){
+      document.documentElement.classList.add("android-player");
+      document.querySelector(".actions").before(document.getElementById("yt"));
+    }
+
     let player = null;
     let playerReady = false;
     let apiLoading = false;
