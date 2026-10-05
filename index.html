@@ -9,6 +9,7 @@
   
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="google-site-verification" content="Fs9pt1PIxJkI39a1qmChmNJoUCB-iYbxHkGcxcjG1AM" />
   <title>Chiedilo all’Oracolo del Rock</title>
 
@@ -110,6 +111,10 @@
       border:2px solid rgba(0,200,255,0.6);
       box-shadow:0 0 12px rgba(0,200,255,0.35);
     }
+
+    #yt-player{ width:100%; height:100%; }
+    /* Il contenitore mantiene la geometria originale; solo il figlio diventa iframe. */
+    .yt-overlay iframe{ box-sizing:border-box; border:0; border-radius:10px; }
 
     /* SEZIONE AZIONI SOTTO LA CABINA */
     .actions{
@@ -519,7 +524,8 @@
     <div id="oracle-text" class="oracle-text"></div>
 
     <!-- SCATOLA CONTENITRICE DEL VIDEO -->
-    <div id="yt" class="yt-overlay is-hidden"></div>
+    <div id="yt" class="yt-overlay is-hidden"><div id="yt-player"></div></div>
+
   </header>
 
   <!-- AZIONI SOTTO LA CABINA -->
@@ -588,19 +594,15 @@
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
   <script>
-    const API_KEY     = "AIzaSyDNsQKEvKwHOyZCJ0mojJS325Sbw6wX9as";
-    const PLAYLIST_ID = "PL5l5Dspe3Obumt-dqGDVzM4bHp5Qc_vVx";
-    const PAGE_SIZE   = 50;
-
     let player = null;
-    let allIds = [];
+    let playerReady = false;
+    let apiLoading = false;
+    let apiTimer = null;
+    let playbackTimer = null;
     let currentVideoId = null;
-    let entranceTimer = null;
-    let outroInterval = null;
-    let outroTriggered = false;
-    let textTimer = null;
     let lastCardForShare = null;
     let lastCardIndexForShare = null;
+    let textTimer = null;
 
     // per la condivisione immagine
     let lastCardImageBlob = null;
@@ -646,247 +648,223 @@
       }, delayMs);
     }
 
-    // carico API YouTube
-    (function(){
-      const s = document.createElement('script');
-      s.src = "https://www.youtube.com/iframe_api";
-      document.head.appendChild(s);
-    })();
+    const VIDEO_ID_PATTERN = /^[A-Za-z0-9_-]{11}$/;
+    const availableCards = typeof cards !== "undefined" && Array.isArray(cards)
+      ? cards.filter(c => VIDEO_ID_PATTERN.test((c.videoId || "").trim())) : [];
+    const drawButton = document.getElementById("new");
+    let retryCurrent = false;
+    let consentPending = false;
+
+    function marketingAllowed(){
+      return !window.Cookiebot || !!window.Cookiebot.consent?.marketing;
+    }
+
+    function showVideoStatus(message, retry = true){
+      if(!currentVideoId) return;
+      drawButton.title = message;
+      drawButton.setAttribute("aria-label", message || "Pesca la tua carta");
+      retryCurrent = retry;
+      drawButton.textContent = retry ? "AVVIA / RIPROVA IL BRANO" : "PESCA LA TUA CARTA";
+    }
+
+    function showCurrentText(){
+      if(lastCardForShare) mostraTestoNellaCabina(lastCardForShare.text, 0);
+    }
+
+    function clearPlaybackTimer(){
+      clearTimeout(playbackTimer);
+      playbackTimer = null;
+    }
+
+    function watchPlayback(){
+      clearPlaybackTimer();
+      const selectedId = currentVideoId;
+      playbackTimer = setTimeout(() => {
+        if(currentVideoId !== selectedId) return;
+        showVideoStatus("Il video non è partito. Tocca Play nel player, riprova oppure apri il brano su YouTube.");
+        showCurrentText();
+      }, 12000);
+    }
+
+    function videoUnavailable(message){
+      clearPlaybackTimer();
+      showVideoStatus(message);
+      showCurrentText();
+    }
+
+    function showConsentStatus(){
+      consentPending = true;
+      showVideoStatus("Abilita YouTube nelle preferenze cookie oppure usa il pulsante YouTube.", false);
+      drawButton.textContent = "ABILITA YOUTUBE";
+      showCurrentText();
+    }
+
+    function loadYouTubeAPI(){
+      if(!marketingAllowed()) { showConsentStatus(); return; }
+      if(window.YT?.Player) { createPlayer(); return; }
+      if(apiLoading) return;
+      apiLoading = true;
+      document.getElementById("youtube-api")?.remove();
+      const script = document.createElement("script");
+      script.id = "youtube-api";
+      script.src = "https://www.youtube.com/iframe_api";
+      script.onerror = () => {
+        apiLoading = false;
+        clearTimeout(apiTimer);
+        videoUnavailable("YouTube non è raggiungibile. Riprova oppure apri il brano su YouTube.");
+      };
+      apiTimer = setTimeout(() => {
+        apiLoading = false;
+        videoUnavailable("YouTube non risponde. Riprova oppure apri il brano su YouTube.");
+      }, 12000);
+      document.head.appendChild(script);
+    }
 
     window.onYouTubeIframeAPIReady = () => {
-      player = new YT.Player('yt', {
-        height: '390',
-        width:  '640',
-        playerVars: { modestbranding: 1, rel: 0 },
-        events: {
-          onReady: onReady,
-          onStateChange: onStateChange
-        }
-      });
+      clearTimeout(apiTimer);
+      apiLoading = false;
+      createPlayer();
     };
 
-    function onReady(){
-      let btn     = document.getElementById("new");
-      const heroImg = document.querySelector(".hero-img");
-
-      const cleanBtn = btn.cloneNode(true);
-      btn.parentNode.replaceChild(cleanBtn, btn);
-      btn = cleanBtn;
-
-      btn.classList.add("disabled");
-      btn.textContent = "ACCENSIONE DELL'ORACOLO...";
-
-      if(heroImg){
-        heroImg.classList.add("activating");
-      }
-
-      btn.addEventListener("click", playRandom);
-
-      boot();
-    }
-
-    async function boot(){
+    function createPlayer(){
+      if(player || !marketingAllowed()) return;
       try{
-        allIds = await fetchAllPlaylistIds(PLAYLIST_ID);
-      }catch(err){
-        console.error(err);
-        alert("Errore nel caricare la playlist.");
-      }
-
-      const btn     = document.getElementById("new");
-      const heroImg = document.querySelector(".hero-img");
-
-      btn.classList.remove("disabled");
-      btn.textContent = "PESCA LA TUA CARTA";
-
-      if(heroImg){
-        heroImg.classList.remove("activating");
+        player = new YT.Player("yt-player", {
+          width: "480", height: "270",
+          playerVars: { playsinline: 1, controls: 1, rel: 0, origin: location.origin },
+          events: {
+            onReady: onReady,
+            onStateChange: onStateChange,
+            onError: onPlayerError,
+            onAutoplayBlocked: () => videoUnavailable("Tocca Play nel player o «Avvia / riprova il video» per ascoltare la risposta.")
+          }
+        });
+        const frame = player.getIframe();
+        frame.setAttribute("title", "Video della risposta dell’Oracolo del Rock");
+        frame.setAttribute("allow", "autoplay; encrypted-media; fullscreen; picture-in-picture");
+        frame.setAttribute("allowfullscreen", "");
+        frame.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+        clearTimeout(apiTimer);
+        apiTimer = setTimeout(() => {
+          if(!playerReady) videoUnavailable("Il player non risponde. Riprova oppure apri il brano su YouTube.");
+        }, 12000);
+      }catch(error){
+        player = null;
+        videoUnavailable("Impossibile caricare il player. Riprova oppure apri il brano su YouTube.");
       }
     }
 
-    async function fetchAllPlaylistIds(playlistId){
-      let ids = [];
-      let pageToken = "";
+    function onReady(event){
+      if(!marketingAllowed()) { removePlayer(); showConsentStatus(); return; }
+      playerReady = true;
+      clearTimeout(apiTimer);
+      if(currentVideoId){
+        // Il caricamento asincrono può perdere il gesto dell'utente su Android:
+        // prepariamo lo stesso brano e lasciamo un controllo Play accessibile.
+        event.target.cueVideoById(currentVideoId);
+        showVideoStatus("Tocca Play nel player o «Avvia / riprova il video» per ascoltare la risposta.");
+      }
+    }
 
-      do{
-        const url = new URL("https://www.googleapis.com/youtube/v3/playlistItems");
-        url.searchParams.set("key", API_KEY);
-        url.searchParams.set("part", "snippet");
-        url.searchParams.set("playlistId", playlistId);
-        url.searchParams.set("maxResults", PAGE_SIZE);
-        if(pageToken) url.searchParams.set("pageToken", pageToken);
+    function removePlayer(){
+      clearTimeout(apiTimer);
+      clearPlaybackTimer();
+      playerReady = false;
+      if(player){ try{ player.destroy(); }catch(_){} }
+      player = null;
+      document.getElementById("yt").replaceChildren(Object.assign(document.createElement("div"), {id:"yt-player"}));
+    }
 
-        const res = await fetch(url.toString());
-        if(!res.ok) throw new Error("HTTP " + res.status);
-        const data = await res.json();
-
-        const batch = (data.items || [])
-          .map(i => i?.snippet?.resourceId?.videoId)
-          .filter(Boolean);
-
-        ids.push(...batch);
-        pageToken = data.nextPageToken || "";
-
-      } while(pageToken);
-
-      return [...new Set(ids)];
+    function startCurrentVideo(){
+      if(!currentVideoId) return;
+      if(!marketingAllowed()) { showConsentStatus(); return; }
+      showVideoStatus("Caricamento del brano…");
+      if(!playerReady){
+        if(player) removePlayer();
+        loadYouTubeAPI();
+        return;
+      }
+      watchPlayback();
+      try{
+        // Chiamata sincrona nel click: conserva il gesto dell'utente.
+        player.loadVideoById(currentVideoId);
+      }catch(error){
+        removePlayer();
+        videoUnavailable("Il player si è bloccato. Riprova oppure apri il brano su YouTube.");
+      }
     }
 
     function playRandom(){
-      const btn = document.getElementById("new");
-      if(btn.classList.contains("disabled")) return;
-      if(!player || !allIds.length) return;
-
-      const ytBox = document.getElementById("yt");
-
-      if(entranceTimer){
-        clearTimeout(entranceTimer);
-        entranceTimer = null;
-      }
-      if(textTimer){
-        clearTimeout(textTimer);
-        textTimer = null;
-      }
-
-      clearOutroWatcher();
-      outroTriggered = false;
-
-      ytBox.classList.remove("is-hidden");
-      ytBox.classList.add("is-visible");
-      ytBox.classList.add("audio-first");
-
-      let idsPool = allIds;
-      if (typeof cards !== "undefined" && Array.isArray(cards)){
-        const validIds = new Set(
-          cards
-            .filter(c => c.videoId && c.videoId.trim() !== "")
-            .map(c => c.videoId.trim())
-        );
-        const filtered = allIds.filter(id => validIds.has(id));
-        if (filtered.length){
-          idsPool = filtered;
-        }
-      }
-
-      if (!idsPool.length){
-        mostraTestoNellaCabina("");
-        lastCardForShare = null;
-        lastCardIndexForShare = null;
-        return;
-      }
-
-      const idx = Math.floor(Math.random() * idsPool.length);
-      const id  = idsPool[idx];
-
-      currentVideoId = id;
-      player.loadVideoById(id);
-
-      mostraTestoNellaCabina("");
-
-      if (typeof cards !== "undefined" && Array.isArray(cards)){
-        const card = cards.find(c => (c.videoId || "").trim() === id);
-
-        if (card && card.text){
-          lastCardForShare = card;
-
-          let n = null;
-          if (typeof card.n === "number") {
-            n = card.n;
-          } else if (typeof card.id === "number") {
-            n = card.id;
-          } else {
-            const pos = cards.indexOf(card);
-            if (pos >= 0) n = pos + 1;
-          }
-          lastCardIndexForShare = n;
-
-          mostraTestoNellaCabina(card.text, 7000);
-        } else {
-          lastCardForShare = null;
-          lastCardIndexForShare = null;
-        }
-      }
-
-      entranceTimer = setTimeout(() => {
-        ytBox.classList.remove("audio-first");
-        entranceTimer = null;
-      }, 3000);
+      if(!availableCards.length) return;
+      clearPlaybackTimer();
+      clearTimeout(textTimer);
+      const pool = availableCards.length > 1
+        ? availableCards.filter(c => c.videoId.trim() !== currentVideoId) : availableCards;
+      const card = pool[Math.floor(Math.random() * pool.length)] || availableCards[0];
+      currentVideoId = card.videoId.trim();
+      lastCardForShare = card;
+      lastCardIndexForShare = typeof card.n === "number" ? card.n
+        : typeof card.id === "number" ? card.id : cards.indexOf(card) + 1;
+      document.querySelector(".social-btn.youtube").href = "https://www.youtube.com/watch?v=" + encodeURIComponent(currentVideoId);
+      document.getElementById("yt").classList.replace("is-hidden", "is-visible");
+      mostraTestoNellaCabina(card.text, 7000);
+      startCurrentVideo();
     }
 
-    function onStateChange(e){
-      const ytBox = document.getElementById("yt");
-
-      if(e.data === YT.PlayerState.PLAYING){
-        startOutroWatcher();
-      }
-
-      if(
-        e.data === YT.PlayerState.PAUSED ||
-        e.data === YT.PlayerState.BUFFERING
-      ){
-        clearOutroWatcher();
-      }
-
-      if(e.data === YT.PlayerState.ENDED){
-        clearOutroWatcher();
-        outroTriggered = false;
-
-        if(entranceTimer){
-          clearTimeout(entranceTimer);
-          entranceTimer = null;
-        }
-        if(textTimer){
-          clearTimeout(textTimer);
-          textTimer = null;
-        }
-
-        ytBox.classList.remove("audio-first");
-        ytBox.classList.remove("is-visible");
-        ytBox.classList.add("is-hidden");
-
-        mostraTestoNellaCabina("");
+    function onStateChange(event){
+      if(!currentVideoId) return;
+      if(event.data === YT.PlayerState.PLAYING){
+        clearPlaybackTimer();
+        showVideoStatus("", false);
+        retryCurrent = false;
+        drawButton.textContent = "PESCA LA TUA CARTA";
+      }else if(event.data === YT.PlayerState.BUFFERING){
+        showVideoStatus("Caricamento del brano…");
+        watchPlayback();
+      }else if(event.data === YT.PlayerState.PAUSED){
+        clearPlaybackTimer();
+        showVideoStatus("Video in pausa: tocca Play nel player per continuare.", false);
+      }else if(event.data === YT.PlayerState.ENDED){
+        clearPlaybackTimer();
+        showVideoStatus("Puoi riascoltare la risposta oppure pescare un’altra carta.");
       }
     }
 
-    function startOutroWatcher(){
-      clearOutroWatcher();
-      outroTriggered = false;
-
-      outroInterval = setInterval(() => {
-        if(!player || outroTriggered) return;
-
-        const dur = player.getDuration();
-        const cur = player.getCurrentTime();
-        if(!dur || !cur) return;
-
-        const remaining = dur - cur;
-
-        if(remaining <= 1.0){
-          outroTriggered = true;
-          triggerOutro();
-        }
-      }, 250);
+    function onPlayerError(event){
+      const messages = {
+        2: "Il collegamento del video non è valido.",
+        5: "Il browser non riesce a riprodurre questo video.",
+        100: "Questo video non è disponibile su YouTube.",
+        101: "YouTube non consente di riprodurre questo video nel sito.",
+        150: "YouTube non consente di riprodurre questo video nel sito.",
+        153: "YouTube non riconosce questa pagina e ha bloccato il player."
+      };
+      videoUnavailable((messages[event.data] || "La riproduzione si è interrotta.") + " Riprova oppure apri il brano su YouTube.");
+      // Un player in errore viene ricreato al prossimo gesto, per lo stesso brano.
+      removePlayer();
     }
 
-    function clearOutroWatcher(){
-      if(outroInterval){
-        clearInterval(outroInterval);
-        outroInterval = null;
+    drawButton.addEventListener("click", () => {
+      if(consentPending && !marketingAllowed()){ window.Cookiebot?.renew(); return; }
+      consentPending = false;
+      if(retryCurrent && currentVideoId) startCurrentVideo();
+      else playRandom();
+    });
+    drawButton.disabled = !availableCards.length;
+    if(!availableCards.length) drawButton.textContent = "CARTE NON DISPONIBILI: RICARICA LA PAGINA";
+    function syncConsent(){
+      if(marketingAllowed()){
+        consentPending = false;
+        if(currentVideoId) loadYouTubeAPI();
+      }else{
+        removePlayer();
+        if(currentVideoId) showConsentStatus();
       }
     }
-
-    function triggerOutro(){
-      const ytBox = document.getElementById("yt");
-
-      ytBox.classList.remove("is-visible");
-      ytBox.classList.add("is-hidden");
-
-      setTimeout(() => {
-        try{ player.stopVideo(); }catch(_){}
-      }, 200);
-
-      clearOutroWatcher();
-    }
+    window.addEventListener("CookiebotOnConsentReady", syncConsent);
+    window.addEventListener("CookiebotOnAccept", syncConsent);
+    window.addEventListener("CookiebotOnDecline", syncConsent);
+    if(marketingAllowed()) loadYouTubeAPI();
 
     // TASTO CONDIVIDI AUDIO
     const shareAudioBtn = document.getElementById("share-audio");
