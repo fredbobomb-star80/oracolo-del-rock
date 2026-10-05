@@ -137,6 +137,19 @@
     html.android-player .yt-overlay.is-hidden{ display:none; }
     html.android-player .yt-overlay.is-visible{ display:flex; }
 
+    #android-fullscreen{ display:none; margin:8px auto; padding:10px 16px; }
+    html.android-player #android-fullscreen:not([hidden]){ display:block; }
+    html.android-player .yt-overlay:fullscreen{
+      width:100vw; max-width:none; height:100vh; min-height:0;
+      margin:0; padding:0; border:0; border-radius:0;
+      background:#000; aspect-ratio:auto; box-shadow:none; backdrop-filter:none;
+      opacity:1; transform:none;
+    }
+    html.android-player .yt-overlay:fullscreen iframe,
+    html.android-player .yt-overlay:fullscreen #yt-player{
+      width:100%; height:100%; border:0; border-radius:0;
+    }
+
     /* SEZIONE AZIONI SOTTO LA CABINA */
     .actions{
       margin-top:14px;
@@ -553,10 +566,10 @@
   <section class="actions">
     <div class="share-row">
       <button class="share-btn" id="share-audio">
-        🎵 Condividi 🎵
+        🎵 Condividi brano 🎵
       </button>
       <button class="share-btn" id="share-card">
-        ✍️ Condividi ✍️
+        ✍️ Condividi carta ✍️
       </button>
     </div>
 
@@ -615,10 +628,73 @@
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
   <script>
+    const isAndroid = /Android/i.test(navigator.userAgent || "");
+    let fullscreenTimer = null;
+    let fullscreenAttempted = false;
+    let fullscreenButton = null;
+
+    function clearFullscreenTimer(){
+      clearTimeout(fullscreenTimer);
+      fullscreenTimer = null;
+    }
+
+    function openAndroidFullscreen(){
+      const box = document.getElementById("yt");
+      if(!isAndroid || !currentVideoId || replayFinished) return;
+      if(document.fullscreenElement){
+        if(fullscreenButton) fullscreenButton.hidden = true;
+        return;
+      }
+      const selectedId = currentVideoId;
+      const denied = () => {
+        if(selectedId === currentVideoId && !replayFinished && fullscreenButton) fullscreenButton.hidden = false;
+      };
+      if(!box.requestFullscreen){ denied(); return; }
+      try{
+        // Il browser decide se il gesto iniziale è ancora valido dopo il timer.
+        const request = box.requestFullscreen();
+        Promise.resolve(request).then(() => {
+          if(fullscreenButton) fullscreenButton.hidden = true;
+          if(replayFinished || currentVideoId !== selectedId) leaveAndroidFullscreen();
+        }, denied);
+      }catch(_){ denied(); }
+    }
+
+    function leaveAndroidFullscreen(){
+      const box = document.getElementById("yt");
+      const active = document.fullscreenElement;
+      if(active && (active === box || box.contains(active)) && document.exitFullscreen){
+        try{ Promise.resolve(document.exitFullscreen()).catch(() => {}); }catch(_){}
+      }
+    }
+
+    function scheduleAndroidFullscreen(){
+      if(!isAndroid || fullscreenAttempted || replayFinished) return;
+      fullscreenAttempted = true;
+      clearFullscreenTimer();
+      fullscreenTimer = setTimeout(() => {
+        fullscreenTimer = null;
+        if(!playerReady || replayFinished) return;
+        let state;
+        try{ state = player.getPlayerState(); }catch(_){}
+        if(state === YT.PlayerState.PLAYING || state === YT.PlayerState.BUFFERING) openAndroidFullscreen();
+        else if(fullscreenButton) fullscreenButton.hidden = false;
+      }, 3000);
+    }
+
     // Solo Android: video adattato alla larghezza dello schermo, fino a 480 x 270, fuori dalla cabina.
-    if(/Android/i.test(navigator.userAgent || "")){
+    if(isAndroid){
       document.documentElement.classList.add("android-player");
-      document.querySelector(".actions").before(document.getElementById("yt"));
+      const actions = document.querySelector(".actions");
+      actions.before(document.getElementById("yt"));
+      fullscreenButton = document.createElement("button");
+      fullscreenButton.id = "android-fullscreen";
+      fullscreenButton.type = "button";
+      fullscreenButton.className = "share-btn";
+      fullscreenButton.textContent = "Apri a tutto schermo";
+      fullscreenButton.hidden = true;
+      fullscreenButton.addEventListener("click", openAndroidFullscreen);
+      actions.before(fullscreenButton);
     }
 
     let player = null;
@@ -849,6 +925,7 @@
     }
 
     function removePlayer(){
+      clearFullscreenTimer();
       rememberPosition();
       stopProgressWatcher();
       loadedVideoId = null;
@@ -890,6 +967,9 @@
 
     function playRandom(){
       if(!availableCards.length) return;
+      clearFullscreenTimer();
+      fullscreenAttempted = false;
+      if(fullscreenButton) fullscreenButton.hidden = true;
       clearPlaybackTimer();
       clearTimeout(textTimer);
       const pool = availableCards.length > 1
@@ -914,6 +994,7 @@
       if(event.data === YT.PlayerState.PLAYING){
         clearPlaybackTimer();
         replayFinished = false;
+        scheduleAndroidFullscreen();
         startProgressWatcher();
         showVideoStatus("", false);
         retryCurrent = false;
@@ -933,7 +1014,12 @@
         replayFinished = true;
         resumeSeconds = 0;
         clearPlaybackTimer();
-        showVideoStatus("Puoi riascoltare la risposta oppure pescare un’altra carta.");
+        clearFullscreenTimer();
+        if(fullscreenButton) fullscreenButton.hidden = true;
+        leaveAndroidFullscreen();
+        showVideoStatus("Pesca una nuova carta per un’altra risposta.", false);
+        retryCurrent = false;
+        drawButton.textContent = "PESCA LA TUA CARTA";
       }
     }
 
@@ -990,13 +1076,13 @@
         if (navigator.share) {
           try {
             await navigator.share({
-              title: "Ascolta il brano che mi è uscito dall'Oracolo del Rock!",
-              text: "Ecco il mio responso musicale:",
+              title: "Ascolta la mia risposta dell’Oracolo del Rock",
               url: videoUrl
             });
             return;
           } catch (e) {
-            console.log("Condivisione annullata", e);
+            if(e.name === "AbortError") return;
+            console.log("Condivisione non disponibile", e);
           }
         }
 
