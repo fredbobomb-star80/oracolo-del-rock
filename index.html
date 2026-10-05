@@ -599,6 +599,11 @@
     let apiLoading = false;
     let apiTimer = null;
     let playbackTimer = null;
+    let progressTimer = null;
+    let loadedVideoId = null;
+    let resumeSeconds = 0;
+    let autoRecoveryUsed = false;
+    let replayFinished = false;
     let currentVideoId = null;
     let lastCardForShare = null;
     let lastCardIndexForShare = null;
@@ -676,18 +681,67 @@
       playbackTimer = null;
     }
 
+    function rememberPosition(){
+      if(!playerReady || loadedVideoId !== currentVideoId || replayFinished) return;
+      try{
+        const seconds = player.getCurrentTime();
+        if(Number.isFinite(seconds) && seconds >= 0) resumeSeconds = seconds;
+      }catch(_){}
+    }
+
+    function stopProgressWatcher(){
+      clearInterval(progressTimer);
+      progressTimer = null;
+    }
+
+    function startProgressWatcher(){
+      stopProgressWatcher();
+      let previous = resumeSeconds;
+      let stalledFor = 0;
+      progressTimer = setInterval(() => {
+        if(document.visibilityState === "hidden") { stalledFor = 0; return; }
+        if(!playerReady || loadedVideoId !== currentVideoId) return;
+        rememberPosition();
+        if(resumeSeconds > previous + 0.05) stalledFor = 0;
+        else stalledFor += 1;
+        previous = resumeSeconds;
+        if(stalledFor >= 18){
+          stopProgressWatcher();
+          recoverInterruptedVideo();
+        }
+      }, 1000);
+    }
+
+    function recoverInterruptedVideo(){
+      rememberPosition();
+      // Una sola ripresa automatica, senza ricaricare il video o azzerare il tempo.
+      // Non riprendiamo una pausa volontaria o una pagina in secondo piano.
+      if(playerReady && marketingAllowed() && document.visibilityState !== "hidden" && !autoRecoveryUsed){
+        let state;
+        try{ state = player.getPlayerState(); }catch(_){}
+        if(state === YT.PlayerState.BUFFERING || state === YT.PlayerState.PLAYING){
+          autoRecoveryUsed = true;
+          watchPlayback();
+          try{ player.playVideo(); return; }catch(_){}
+        }
+      }
+      videoUnavailable("La riproduzione si è interrotta. Riprova per riprendere il brano dal punto raggiunto, oppure aprilo su YouTube.");
+    }
+
     function watchPlayback(){
       clearPlaybackTimer();
       const selectedId = currentVideoId;
       playbackTimer = setTimeout(() => {
+        playbackTimer = null;
         if(currentVideoId !== selectedId) return;
-        showVideoStatus("Il video non è partito. Tocca Play nel player, riprova oppure apri il brano su YouTube.");
-        showCurrentText();
+        recoverInterruptedVideo();
       }, 12000);
     }
 
     function videoUnavailable(message){
       clearPlaybackTimer();
+      stopProgressWatcher();
+      rememberPosition();
       showVideoStatus(message);
       showCurrentText();
     }
@@ -761,12 +815,16 @@
       if(currentVideoId){
         // Il caricamento asincrono può perdere il gesto dell'utente su Android:
         // prepariamo lo stesso brano e lasciamo un controllo Play accessibile.
-        event.target.cueVideoById(currentVideoId);
+        loadedVideoId = currentVideoId;
+        event.target.cueVideoById({videoId: currentVideoId, startSeconds: resumeSeconds});
         showVideoStatus("Tocca Play nel player o «Avvia / riprova il video» per ascoltare la risposta.");
       }
     }
 
     function removePlayer(){
+      rememberPosition();
+      stopProgressWatcher();
+      loadedVideoId = null;
       clearTimeout(apiTimer);
       clearPlaybackTimer();
       playerReady = false;
@@ -778,6 +836,8 @@
     function startCurrentVideo(){
       if(!currentVideoId) return;
       if(!marketingAllowed()) { showConsentStatus(); return; }
+      if(replayFinished){ resumeSeconds = 0; replayFinished = false; loadedVideoId = null; }
+      autoRecoveryUsed = false;
       showVideoStatus("Caricamento del brano…");
       if(!playerReady){
         if(player) removePlayer();
@@ -787,7 +847,14 @@
       watchPlayback();
       try{
         // Chiamata sincrona nel click: conserva il gesto dell'utente.
-        player.loadVideoById(currentVideoId);
+        if(loadedVideoId === currentVideoId){
+          // Play conserva la posizione; loadVideoById ricominciava da zero.
+          rememberPosition();
+          player.playVideo();
+        }else{
+          loadedVideoId = currentVideoId;
+          player.loadVideoById({videoId: currentVideoId, startSeconds: resumeSeconds});
+        }
       }catch(error){
         removePlayer();
         videoUnavailable("Il player si è bloccato. Riprova oppure apri il brano su YouTube.");
@@ -801,6 +868,10 @@
       const pool = availableCards.length > 1
         ? availableCards.filter(c => c.videoId.trim() !== currentVideoId) : availableCards;
       const card = pool[Math.floor(Math.random() * pool.length)] || availableCards[0];
+      stopProgressWatcher();
+      resumeSeconds = 0;
+      autoRecoveryUsed = false;
+      replayFinished = false;
       currentVideoId = card.videoId.trim();
       lastCardForShare = card;
       lastCardIndexForShare = typeof card.n === "number" ? card.n
@@ -812,25 +883,35 @@
     }
 
     function onStateChange(event){
-      if(!currentVideoId) return;
+      if(!currentVideoId || (event.target && event.target !== player)) return;
       if(event.data === YT.PlayerState.PLAYING){
         clearPlaybackTimer();
+        replayFinished = false;
+        startProgressWatcher();
         showVideoStatus("", false);
         retryCurrent = false;
         drawButton.textContent = "PESCA LA TUA CARTA";
       }else if(event.data === YT.PlayerState.BUFFERING){
+        rememberPosition();
+        stopProgressWatcher();
         showVideoStatus("Caricamento del brano…");
         watchPlayback();
       }else if(event.data === YT.PlayerState.PAUSED){
+        rememberPosition();
+        stopProgressWatcher();
         clearPlaybackTimer();
         showVideoStatus("Video in pausa: tocca Play nel player per continuare.", false);
       }else if(event.data === YT.PlayerState.ENDED){
+        stopProgressWatcher();
+        replayFinished = true;
+        resumeSeconds = 0;
         clearPlaybackTimer();
         showVideoStatus("Puoi riascoltare la risposta oppure pescare un’altra carta.");
       }
     }
 
     function onPlayerError(event){
+      if(event.target && event.target !== player) return;
       const messages = {
         2: "Il collegamento del video non è valido.",
         5: "Il browser non riesce a riprodurre questo video.",
