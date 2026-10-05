@@ -121,11 +121,18 @@
       position:relative;
       left:auto;
       top:auto;
-      width:300px;
-      max-width:calc(100% - 24px);
-      height:200px;
+      width:calc(100% - 24px);
+      max-width:480px;
+      height:auto;
+      min-height:200px;
+      aspect-ratio:16 / 9;
       margin:12px auto;
       flex-shrink:0;
+    }
+    html.android-player #yt-player,
+    html.android-player .yt-overlay iframe{
+      width:100%;
+      height:clamp(200px, calc((100vw - 24px) * 9 / 16), 270px);
     }
     html.android-player .yt-overlay.is-hidden{ display:none; }
     html.android-player .yt-overlay.is-visible{ display:flex; }
@@ -608,7 +615,7 @@
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
 
   <script>
-    // Solo Android: dimensione utile del video 300 x 200, fuori dalla cabina.
+    // Solo Android: video adattato alla larghezza dello schermo, fino a 480 x 270, fuori dalla cabina.
     if(/Android/i.test(navigator.userAgent || "")){
       document.documentElement.classList.add("android-player");
       document.querySelector(".actions").before(document.getElementById("yt"));
